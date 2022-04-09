@@ -56,13 +56,13 @@ if HAVE_INTROSPECTION
 # Note: we only include the headers here so far because there's no gtk-doc at all anyway
 introspection_sources = $(libcafe_menu_include_HEADERS) cafemenu-tree.c
 
-MateMenu-2.0.gir: libcafe-menu.la
-MateMenu_2_0_gir_INCLUDES = Gio-2.0
-MateMenu_2_0_gir_CFLAGS = $(AM_CPPFLAGS)
-MateMenu_2_0_gir_LIBS = libcafe-menu.la
-MateMenu_2_0_gir_SCANNERFLAGS = --identifier-prefix=MateMenu --symbol-prefix=cafemenu --pkg-export=libcafe-menu --c-include=cafemenu-tree.h
-MateMenu_2_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_sources))
-INTROSPECTION_GIRS += MateMenu-2.0.gir
+CafeMenu-2.0.gir: libcafe-menu.la
+CafeMenu_2_0_gir_INCLUDES = Gio-2.0
+CafeMenu_2_0_gir_CFLAGS = $(AM_CPPFLAGS)
+CafeMenu_2_0_gir_LIBS = libcafe-menu.la
+CafeMenu_2_0_gir_SCANNERFLAGS = --identifier-prefix=CafeMenu --symbol-prefix=cafemenu --pkg-export=libcafe-menu --c-include=cafemenu-tree.h
+CafeMenu_2_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_sources))
+INTROSPECTION_GIRS += CafeMenu-2.0.gir
 
 girdir = $(datadir)/gir-1.0/
 gir_DATA = $(INTROSPECTION_GIRS)

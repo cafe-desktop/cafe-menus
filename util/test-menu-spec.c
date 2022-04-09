@@ -41,10 +41,10 @@ static GOptionEntry options[] = {
 };
 
 static void
-append_directory_path (MateMenuTreeDirectory *directory,
+append_directory_path (CafeMenuTreeDirectory *directory,
 		GString            *path)
 {
-	MateMenuTreeDirectory *parent;
+	CafeMenuTreeDirectory *parent;
 
 	parent = cafemenu_tree_directory_get_parent(directory);
 
@@ -63,7 +63,7 @@ append_directory_path (MateMenuTreeDirectory *directory,
 }
 
 static char *
-make_path (MateMenuTreeDirectory *directory)
+make_path (CafeMenuTreeDirectory *directory)
 {
 	GString *path;
 
@@ -77,7 +77,7 @@ make_path (MateMenuTreeDirectory *directory)
 }
 
 static void
-print_entry (MateMenuTreeEntry *entry,
+print_entry (CafeMenuTreeEntry *entry,
 		const char     *path)
 {
 	char *utf8_path;
@@ -100,9 +100,9 @@ print_entry (MateMenuTreeEntry *entry,
 }
 
 static void
-print_directory(MateMenuTreeDirectory *directory)
+print_directory(CafeMenuTreeDirectory *directory)
 {
-	MateMenuTreeIter *iter;
+	CafeMenuTreeIter *iter;
 	const char *path;
 	char       *freeme;
 
@@ -125,12 +125,12 @@ print_directory(MateMenuTreeDirectory *directory)
 
 			case MATEMENU_TREE_ITEM_ENTRY:
 				item = cafemenu_tree_iter_get_entry(iter);
-				print_entry((MateMenuTreeEntry*)item, path);
+				print_entry((CafeMenuTreeEntry*)item, path);
 				break;
 
 			case MATEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory(iter);
-				print_directory((MateMenuTreeDirectory*)item);
+				print_directory((CafeMenuTreeDirectory*)item);
 				break;
 
 			case MATEMENU_TREE_ITEM_HEADER:
@@ -144,7 +144,7 @@ print_directory(MateMenuTreeDirectory *directory)
 
 					if (cafemenu_tree_alias_get_aliased_item_type (item) == MATEMENU_TREE_ITEM_ENTRY)
 					{
-						MateMenuTreeEntry *entry = cafemenu_tree_alias_get_aliased_entry(item);
+						CafeMenuTreeEntry *entry = cafemenu_tree_alias_get_aliased_entry(item);
 						print_entry(entry, path);
 						cafemenu_tree_item_unref(entry);
 					}
@@ -168,9 +168,9 @@ done:
 }
 
 static void
-handle_tree_changed (MateMenuTree *tree)
+handle_tree_changed (CafeMenuTree *tree)
 {
-	MateMenuTreeDirectory *root;
+	CafeMenuTreeDirectory *root;
 	GError *error = NULL;
 
 	g_print(_("\n\n\n==== Menu changed, reloading ====\n\n\n"));
@@ -197,9 +197,9 @@ int
 main (int argc, char **argv)
 {
 	GOptionContext    *options_context;
-	MateMenuTree          *tree;
-	MateMenuTreeDirectory *root;
-	MateMenuTreeFlags      flags;
+	CafeMenuTree          *tree;
+	CafeMenuTreeDirectory *root;
+	CafeMenuTreeFlags      flags;
 	GError             *error = NULL;
 
 	setlocale(LC_ALL, "");

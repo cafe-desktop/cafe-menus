@@ -8,7 +8,7 @@
 
 ========== an.po ==========
 # Aragonese translations cafe-menus.
-# Copyright (C) 2010 Mate Foundation
+# Copyright (C) 2010 Cafe Foundation
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Martinez <entaltoaragon@gmail.com>, 2010.
 #
@@ -251,7 +251,7 @@
 
 ========== en_GB.po ==========
 # English (British) translation for cafe-menus
-# Copyright (C) 2005 The Mate Foundation
+# Copyright (C) 2005 The Cafe Foundation
 # This file is distributed under the same license as the cafe-menus package.
 # David Lodge <dave@cirt.net>, 2005.
 # Philip Withnall <philip@tecnocode.co.uk>, 2009.
@@ -275,7 +275,7 @@
 ========== es.po ==========
 # translation of cafe-menus to spanish
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) 2005 Mate Foundation, 2005.
+# Copyright (C) 2005 Cafe Foundation, 2005.
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2005, 2006.
 # Claudio Saavedra <csaavedra@alumnos.utalca.cl>, 2007.
@@ -286,11 +286,11 @@
 
 ========== et.po ==========
 # MATE menüüde eesti keele tõlge
-# Estonian translation of Mate-menus
+# Estonian translation of Cafe-menus
 #
 # Copyright (C) 2005 Free Software Foundation, Inc.
 # Copyright (C) 2007 The MATE Project
-# This file is distributed under the same license as the Mate-menus package.
+# This file is distributed under the same license as the Cafe-menus package.
 #
 # Priit Laes <amd@store20.com>, 2005.
 # Ivar Smolin <okul@linux.ee>, 2005, 2007.
@@ -517,7 +517,7 @@
 
 
 ========== is.po ==========
-# Icelandic translation of Mate.
+# Icelandic translation of Cafe.
 # Icelandic translation of cafe-menus.
 # Copyright (C) 2008 Free Software Foundation, Inc.
 # Anna Jonna Ármannsdóttir <annajonna@gmail.com>, 2008.
@@ -945,7 +945,7 @@
 # This file is distributed under the same license as the program package.
 #
 # Matic Žgur <mr.zgur@gmail.com>, 2006.
-# Matej Urbančič <cafeju@svn.gnome.org>, 2005 - 2010.
+# Cafej Urbančič <cafeju@svn.gnome.org>, 2005 - 2010.
 #
 
 
@@ -1039,9 +1039,9 @@
 
 ========== tr.po ==========
 # translation of tr.po to Turkish
-# translation of Mate-menus.
-# Copyright (C) 2004 THE Mate-menus'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the Mate-menus package.
+# translation of Cafe-menus.
+# Copyright (C) 2004 THE Cafe-menus'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Cafe-menus package.
 #
 #
 # Onur Can Çakmak <onur.cakmak@gmail.com>, 2006.
@@ -1082,8 +1082,8 @@
 
 
 ========== vi.po ==========
-# Vietnamese Translation for Mate Menus.
-# Copyright © 2007 Mate i18n Project for Vietnamese.
+# Vietnamese Translation for Cafe Menus.
+# Copyright © 2007 Cafe i18n Project for Vietnamese.
 # This file is distributed under the same license as the cafe-menus package.
 # Trinh Minh Thanh <tmthanh@yahoo.com>, 2004.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
