@@ -4,12 +4,12 @@
 <Menu>
 
   <Name>Applications</Name>
-  <Directory>mate-menu-applications.directory</Directory>
+  <Directory>cafe-menu-applications.directory</Directory>
 
   <!-- Scan legacy dirs first, as later items take priority -->
   <KDELegacyDirs/>
   <LegacyDir>/etc/X11/applnk</LegacyDir>
-  <LegacyDir>/usr/share/mate/apps</LegacyDir>
+  <LegacyDir>/usr/share/cafe/apps</LegacyDir>
 
   <!-- Read standard .directory and .desktop file locations -->
   <DefaultAppDirs/>
@@ -22,7 +22,7 @@
   <!-- Accessories submenu -->
   <Menu>
     <Name>Accessories</Name>
-    <Directory>mate-utility.directory</Directory>
+    <Directory>cafe-utility.directory</Directory>
     <Include>
       <And>
         <Category>Utility</Category>
@@ -39,7 +39,7 @@
   <!-- Accessibility submenu -->
   <Menu>
     <Name>Universal Access</Name>
-    <Directory>mate-utility-accessibility.directory</Directory>
+    <Directory>cafe-utility-accessibility.directory</Directory>
     <Include>
       <And>
         <Category>Accessibility</Category>
@@ -51,7 +51,7 @@
   <!-- Development Tools -->
   <Menu>
     <Name>Development</Name>
-    <Directory>mate-development.directory</Directory>
+    <Directory>cafe-development.directory</Directory>
     <Include>
       <And>
         <Category>Development</Category>
@@ -63,7 +63,7 @@
   <!-- Education -->
   <Menu>
     <Name>Education</Name>
-    <Directory>mate-education.directory</Directory>
+    <Directory>cafe-education.directory</Directory>
     <Include>
       <And>
         <Category>Education</Category>
@@ -74,7 +74,7 @@
   <!-- Games -->
   <Menu>
     <Name>Games</Name>
-    <Directory>mate-game.directory</Directory>
+    <Directory>cafe-game.directory</Directory>
     <Include>
       <And>
         <Category>Game</Category>
@@ -85,7 +85,7 @@
   <!-- Graphics -->
   <Menu>
     <Name>Graphics</Name>
-    <Directory>mate-graphics.directory</Directory>
+    <Directory>cafe-graphics.directory</Directory>
     <Include>
       <And>
         <Category>Graphics</Category>
@@ -96,7 +96,7 @@
   <!-- Internet -->
   <Menu>
     <Name>Internet</Name>
-    <Directory>mate-network.directory</Directory>
+    <Directory>cafe-network.directory</Directory>
     <Include>
       <And>
         <Category>Network</Category>
@@ -107,7 +107,7 @@
   <!-- Multimedia -->
   <Menu>
     <Name>Multimedia</Name>
-    <Directory>mate-audio-video.directory</Directory>
+    <Directory>cafe-audio-video.directory</Directory>
     <Include>
       <And>
         <Category>AudioVideo</Category>
@@ -118,7 +118,7 @@
   <!-- Office -->
   <Menu>
     <Name>Office</Name>
-    <Directory>mate-office.directory</Directory>
+    <Directory>cafe-office.directory</Directory>
     <Include>
       <And>
         <Category>Office</Category>
@@ -129,7 +129,7 @@
   <!-- System Tools-->
   <Menu>
     <Name>System</Name>
-    <Directory>mate-system-tools.directory</Directory>
+    <Directory>cafe-system-tools.directory</Directory>
     <Include>
       <And>
         <Category>System</Category>
@@ -141,7 +141,7 @@
   <!-- Other -->
   <Menu>
     <Name>Other</Name>
-    <Directory>mate-other.directory</Directory>
+    <Directory>cafe-other.directory</Directory>
     <OnlyUnallocated/>
     <Include>
       <And>

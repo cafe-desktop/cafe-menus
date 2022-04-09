@@ -1,4 +1,4 @@
-noinst_PROGRAMS = mate-menu-spec-test
+noinst_PROGRAMS = cafe-menu-spec-test
 
 AM_CPPFLAGS = \
 	$(GIO_UNIX_CFLAGS)					\
@@ -10,15 +10,15 @@ AM_CPPFLAGS = \
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
-mate_menu_spec_test_SOURCES = \
+cafe_menu_spec_test_SOURCES = \
 	test-menu-spec.c
 
-mate_menu_spec_test_LDADD = \
+cafe_menu_spec_test_LDADD = \
 	$(GIO_UNIX_LIBS)		\
-	../libmenu/libmate-menu.la
+	../libmenu/libcafe-menu.la
 
 exampledir = $(pkgdatadir)/examples
-example_DATA = mate-menus-ls.py
+example_DATA = cafe-menus-ls.py
 
 EXTRA_DIST = $(example_DATA)
 

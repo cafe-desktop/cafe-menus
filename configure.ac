@@ -1,7 +1,7 @@
 AC_PREREQ(2.62)
 
-AC_INIT([mate-menus], [1.24.1], [https://mate-desktop.org])
-AC_CONFIG_SRCDIR(libmenu/matemenu-tree.h)
+AC_INIT([cafe-menus], [1.24.1], [https://cafe-desktop.org])
+AC_CONFIG_SRCDIR(libmenu/cafemenu-tree.h)
 
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz check-news])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -26,7 +26,7 @@ AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
 
-GETTEXT_PACKAGE=mate-menus
+GETTEXT_PACKAGE=cafe-menus
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of default gettext domain])
 AC_SUBST(GETTEXT_PACKAGE)
 
@@ -73,8 +73,8 @@ GOBJECT_INTROSPECTION_CHECK([0.6.7])
 AC_CONFIG_FILES([
 Makefile
 libmenu/Makefile
-libmenu/libmate-menu.pc
-libmenu/libmate-menu-uninstalled.pc
+libmenu/libcafe-menu.pc
+libmenu/libcafe-menu-uninstalled.pc
 layout/Makefile
 desktop-directories/Makefile
 util/Makefile
@@ -88,8 +88,8 @@ dnl - Show summary
 dnl ---------------------------------------------------------------------------
 
 echo "
-              mate-menus $VERSION
-              `echo mate-menus $VERSION | sed "s/./=/g"`
+              cafe-menus $VERSION
+              `echo cafe-menus $VERSION | sed "s/./=/g"`
 
         prefix:                       ${prefix}
         exec_prefix:                  ${exec_prefix}

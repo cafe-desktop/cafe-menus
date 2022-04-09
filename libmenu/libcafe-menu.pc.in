@@ -3,9 +3,9 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: libmate-menu
+Name: libcafe-menu
 Description: Desktop Menu Specification Implementation
 Requires: gio-unix-2.0
 Version: @VERSION@
-Libs: -L${libdir} -lmate-menu
-Cflags: -I${includedir}/mate-menus
+Libs: -L${libdir} -lcafe-menu
+Cflags: -I${includedir}/cafe-menus

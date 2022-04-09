@@ -1,29 +1,29 @@
-directorydir = $(datadir)/mate/desktop-directories
+directorydir = $(datadir)/cafe/desktop-directories
 
-# Should be moved to mate-control-center:
+# Should be moved to cafe-control-center:
 directory_in_controlcenterfiles = \
-	mate-hardware.directory.in \
-	mate-internet-and-network.directory.in \
-	mate-look-and-feel.directory.in \
-	mate-personal.directory.in \
-	mate-system.directory.in
+	cafe-hardware.directory.in \
+	cafe-internet-and-network.directory.in \
+	cafe-look-and-feel.directory.in \
+	cafe-personal.directory.in \
+	cafe-system.directory.in
 
 directory_in_files = \
-	mate-audio-video.directory.in \
-	mate-development.directory.in \
-	mate-education.directory.in \
-	mate-game.directory.in \
-	mate-graphics.directory.in \
-	mate-network.directory.in \
-	mate-office.directory.in \
-	mate-settings.directory.in \
-	mate-settings-system.directory.in \
-	mate-system-tools.directory.in \
-	mate-utility.directory.in \
-	mate-utility-accessibility.directory.in \
-	mate-other.directory.in \
-	mate-menu-applications.directory.in \
-	mate-menu-system.directory.in \
+	cafe-audio-video.directory.in \
+	cafe-development.directory.in \
+	cafe-education.directory.in \
+	cafe-game.directory.in \
+	cafe-graphics.directory.in \
+	cafe-network.directory.in \
+	cafe-office.directory.in \
+	cafe-settings.directory.in \
+	cafe-settings-system.directory.in \
+	cafe-system-tools.directory.in \
+	cafe-utility.directory.in \
+	cafe-utility-accessibility.directory.in \
+	cafe-other.directory.in \
+	cafe-menu-applications.directory.in \
+	cafe-menu-system.directory.in \
 	$(directory_in_controlcenterfiles)
 
 directory_DATA = $(directory_in_files:.directory.in=.directory)

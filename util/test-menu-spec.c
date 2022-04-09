@@ -21,7 +21,7 @@
 #include <glib/gi18n.h>
 #include <locale.h>
 
-#include "matemenu-tree.h"
+#include "cafemenu-tree.h"
 
 #include <string.h>
 
@@ -46,7 +46,7 @@ append_directory_path (MateMenuTreeDirectory *directory,
 {
 	MateMenuTreeDirectory *parent;
 
-	parent = matemenu_tree_directory_get_parent(directory);
+	parent = cafemenu_tree_directory_get_parent(directory);
 
 	if (!parent)
 	{
@@ -56,10 +56,10 @@ append_directory_path (MateMenuTreeDirectory *directory,
 
 	append_directory_path(parent, path);
 
-	g_string_append(path, matemenu_tree_directory_get_name (directory));
+	g_string_append(path, cafemenu_tree_directory_get_name (directory));
 	g_string_append_c(path, '/');
 
-	matemenu_tree_item_unref(parent);
+	cafemenu_tree_item_unref(parent);
 }
 
 static char *
@@ -83,17 +83,17 @@ print_entry (MateMenuTreeEntry *entry,
 	char *utf8_path;
 	char *utf8_file_id;
 
-	utf8_path = g_filename_to_utf8(matemenu_tree_entry_get_desktop_file_path (entry),
+	utf8_path = g_filename_to_utf8(cafemenu_tree_entry_get_desktop_file_path (entry),
 			-1, NULL, NULL, NULL);
 
-	utf8_file_id = g_filename_to_utf8(matemenu_tree_entry_get_desktop_file_id (entry),
+	utf8_file_id = g_filename_to_utf8(cafemenu_tree_entry_get_desktop_file_id (entry),
 			-1, NULL, NULL, NULL);
 
 	g_print("%s\t%s\t%s%s\n",
 			path,
 			utf8_file_id ? utf8_file_id : _("Invalid desktop file ID"),
 			utf8_path ? utf8_path : _("[Invalid Filename]"),
-			matemenu_tree_entry_get_is_excluded(entry) ? _(" <excluded>") : "");
+			cafemenu_tree_entry_get_is_excluded(entry) ? _(" <excluded>") : "");
 
 	g_free(utf8_file_id);
 	g_free(utf8_path);
@@ -112,24 +112,24 @@ print_directory(MateMenuTreeDirectory *directory)
 	else
 		path = freeme + 1;
 
-	iter = matemenu_tree_directory_iter(directory);
+	iter = cafemenu_tree_directory_iter(directory);
 
 	while(TRUE)
 	{
 		gpointer item;
 
-		switch (matemenu_tree_iter_next (iter))
+		switch (cafemenu_tree_iter_next (iter))
 		{
 			case MATEMENU_TREE_ITEM_INVALID:
 				goto done;
 
 			case MATEMENU_TREE_ITEM_ENTRY:
-				item = matemenu_tree_iter_get_entry(iter);
+				item = cafemenu_tree_iter_get_entry(iter);
 				print_entry((MateMenuTreeEntry*)item, path);
 				break;
 
 			case MATEMENU_TREE_ITEM_DIRECTORY:
-				item = matemenu_tree_iter_get_directory(iter);
+				item = cafemenu_tree_iter_get_directory(iter);
 				print_directory((MateMenuTreeDirectory*)item);
 				break;
 
@@ -140,13 +140,13 @@ print_directory(MateMenuTreeDirectory *directory)
 
 			case MATEMENU_TREE_ITEM_ALIAS:
 				{
-					item = matemenu_tree_iter_get_alias(iter);
+					item = cafemenu_tree_iter_get_alias(iter);
 
-					if (matemenu_tree_alias_get_aliased_item_type (item) == MATEMENU_TREE_ITEM_ENTRY)
+					if (cafemenu_tree_alias_get_aliased_item_type (item) == MATEMENU_TREE_ITEM_ENTRY)
 					{
-						MateMenuTreeEntry *entry = matemenu_tree_alias_get_aliased_entry(item);
+						MateMenuTreeEntry *entry = cafemenu_tree_alias_get_aliased_entry(item);
 						print_entry(entry, path);
-						matemenu_tree_item_unref(entry);
+						cafemenu_tree_item_unref(entry);
 					}
 				}
 				break;
@@ -156,13 +156,13 @@ print_directory(MateMenuTreeDirectory *directory)
 				break;
 		}
 
-		matemenu_tree_item_unref(item);
+		cafemenu_tree_item_unref(item);
 		continue;
 done:
 		break;
 	}
 
-	matemenu_tree_iter_unref(iter);
+	cafemenu_tree_iter_unref(iter);
 
 	g_free(freeme);
 }
@@ -175,14 +175,14 @@ handle_tree_changed (MateMenuTree *tree)
 
 	g_print(_("\n\n\n==== Menu changed, reloading ====\n\n\n"));
 
-	if(!matemenu_tree_load_sync (tree, &error))
+	if(!cafemenu_tree_load_sync (tree, &error))
 	{
 		g_printerr("Failed to load tree: %s\n", error->message);
 		g_clear_error(&error);
 		return;
 	}
 
-	root = matemenu_tree_get_root_directory(tree);
+	root = cafemenu_tree_get_root_directory(tree);
 	if (root == NULL)
 	{
 		g_warning(_("Menu tree is empty"));
@@ -190,7 +190,7 @@ handle_tree_changed (MateMenuTree *tree)
 	}
 
 	print_directory(root);
-	matemenu_tree_item_unref(root);
+	cafemenu_tree_item_unref(root);
 }
 
 int
@@ -216,22 +216,22 @@ main (int argc, char **argv)
 	if (include_unallocated)
 		flags |= MATEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED;
 
-	tree = matemenu_tree_new(menu_file ? menu_file : "mate-applications.menu", flags);
+	tree = cafemenu_tree_new(menu_file ? menu_file : "cafe-applications.menu", flags);
 	g_assert(tree != NULL);
 
-	if (!matemenu_tree_load_sync (tree, &error))
+	if (!cafemenu_tree_load_sync (tree, &error))
 	{
 		g_printerr("Failed to load tree: %s\n", error->message);
 		return 1;
 	}
 
-	g_print("Loaded menu from %s\n", matemenu_tree_get_canonical_menu_path(tree));
+	g_print("Loaded menu from %s\n", cafemenu_tree_get_canonical_menu_path(tree));
 
-	root = matemenu_tree_get_root_directory(tree);
+	root = cafemenu_tree_get_root_directory(tree);
 	if (root != NULL)
 	{
 		print_directory(root);
-		matemenu_tree_item_unref(root);
+		cafemenu_tree_item_unref(root);
 	}
 	else
 	{
