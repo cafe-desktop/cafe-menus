@@ -1,0 +1,82 @@
+### mate-menus 1.24.1
+
+  * Translations update
+  * build: silent build warnings for distcheck
+  * Do not collect the translation for Icon
+
+### mate-menus 1.24.0
+
+  * build: show warning flags on configuration summary
+  * Translations update
+  * migrate from intltools to gettext
+
+### mate-menus 1.23.0
+
+  * Translations update
+  * Use datadir and libdir when install gir files
+  * Change url project's website
+  * [ci] Add cppcheck html report
+  * [ci] Enable Clang Static Analyzer
+
+### mate-menus 1.22.0
+
+  * Translations update
+  * initial travis-ci support
+  * Switch to modern realpath()
+  * disable deprecation warnings for distcheck
+  * drop Python support leftovers
+
+### mate-menus 1.21.0
+
+  * udpate examples
+  * backports from gnome-menus
+  * use G_BEGIN/END_DECLS
+  * require gio-unix, drop python example
+  * require gio-unix
+  * drop python2 support
+
+### mate-menus 1.20.0
+
+  * Translations update
+  * bump gio version to 2.50.0
+  * require GLib 2.50.0
+
+### mate-menus 1.19.0
+
+  * Translations update
+  * make mate-applications-merged symlink
+  * Restore Polish translation credits from GNOME
+
+### mate-menus 1.18.0
+
+  * NEWS: use consistent, project wide, markdown-like formatting
+    to make generating release announcements easier
+  * Translations update
+
+### mate-menus 1.16.0
+
+  * Translations update
+
+### mate-menus 1.14.0
+
+  * Move mate-preferences-categories.menu from mate-control-center.
+    That file can be packaged separately in distros to let users
+    decide whether they want categories in preferences menu or not.
+  * Translations update
+  * Add Changelog generation
+
+### mate-menus 1.12.0
+
+  * Use pkg-config to check for python (requires python 2.7)
+  * Some fixes and cleanups
+  * Translations update
+
+### mate-menus 1.10.0
+
+  * Translations update
+  * Bugfixes
+
+### mate-menus 1.8.0
+
+  * Add a possibility to enable old gnome-2 preferences menu style with
+    categories
