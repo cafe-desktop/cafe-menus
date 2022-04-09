@@ -23,13 +23,5 @@ before_scripts:
 
 build_scripts:
   - ./before-build
-  - NOCONFIGURE=1 ./autogen.sh
-  - scan-build $CHECKERS ./configure
-  - if [ $CPU_COUNT -gt 1 ]; then
-  -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
-  - else
-  -     scan-build $CHECKERS --keep-cc -o html-report make
-  - fi
-
-after_scripts:
-  - make distcheck
+  - ./make-scanbuild '--enable-compile-warnings=maximum'
+  - ./after-build
