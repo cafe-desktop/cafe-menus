@@ -17,10 +17,10 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef __MATEMENU_TREE_H__
-#define __MATEMENU_TREE_H__
+#ifndef __CAFEMENU_TREE_H__
+#define __CAFEMENU_TREE_H__
 
-#ifndef MATEMENU_I_KNOW_THIS_IS_UNSTABLE
+#ifndef CAFEMENU_I_KNOW_THIS_IS_UNSTABLE
 #error "libcafe-menu should only be used if you understand that it's subject to frequent change, and is not supported as a fixed API/ABI or as part of the platform"
 #endif
 
@@ -28,12 +28,12 @@
 
 G_BEGIN_DECLS
 
-#define MATEMENU_TYPE_TREE         (cafemenu_tree_get_type ())
-#define MATEMENU_TREE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MATEMENU_TYPE_TREE, CafeMenuTree))
-#define MATEMENU_TREE_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MATEMENU_TYPE_TREE, CafeMenuTreeClass))
-#define MATEMENU_IS_TREE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MATEMENU_TYPE_TREE))
-#define MATEMENU_IS_TREE_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MATEMENU_TYPE_TREE))
-#define MATEMENU_TREE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DESKTOP_APP_INFO, CafeMenuTreeClass))
+#define CAFEMENU_TYPE_TREE         (cafemenu_tree_get_type ())
+#define CAFEMENU_TREE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), CAFEMENU_TYPE_TREE, CafeMenuTree))
+#define CAFEMENU_TREE_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), CAFEMENU_TYPE_TREE, CafeMenuTreeClass))
+#define CAFEMENU_IS_TREE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), CAFEMENU_TYPE_TREE))
+#define CAFEMENU_IS_TREE_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), CAFEMENU_TYPE_TREE))
+#define CAFEMENU_TREE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DESKTOP_APP_INFO, CafeMenuTreeClass))
 
 typedef struct _CafeMenuTree        CafeMenuTree;
 typedef struct _CafeMenuTreeClass   CafeMenuTreeClass;
@@ -54,12 +54,12 @@ typedef struct CafeMenuTreeAlias     CafeMenuTreeAlias;
 
 typedef enum
 {
-  MATEMENU_TREE_ITEM_INVALID = 0,
-  MATEMENU_TREE_ITEM_DIRECTORY,
-  MATEMENU_TREE_ITEM_ENTRY,
-  MATEMENU_TREE_ITEM_SEPARATOR,
-  MATEMENU_TREE_ITEM_HEADER,
-  MATEMENU_TREE_ITEM_ALIAS
+  CAFEMENU_TREE_ITEM_INVALID = 0,
+  CAFEMENU_TREE_ITEM_DIRECTORY,
+  CAFEMENU_TREE_ITEM_ENTRY,
+  CAFEMENU_TREE_ITEM_SEPARATOR,
+  CAFEMENU_TREE_ITEM_HEADER,
+  CAFEMENU_TREE_ITEM_ALIAS
 } CafeMenuTreeItemType;
 
 GType cafemenu_tree_iter_get_type (void);
@@ -73,18 +73,18 @@ GType cafemenu_tree_alias_get_type (void);
 
 typedef enum
 {
-  MATEMENU_TREE_FLAGS_NONE                = 0,
-  MATEMENU_TREE_FLAGS_INCLUDE_EXCLUDED    = 1 << 0,
-  MATEMENU_TREE_FLAGS_INCLUDE_NODISPLAY   = 1 << 1,
-  MATEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED = 1 << 2,
+  CAFEMENU_TREE_FLAGS_NONE                = 0,
+  CAFEMENU_TREE_FLAGS_INCLUDE_EXCLUDED    = 1 << 0,
+  CAFEMENU_TREE_FLAGS_INCLUDE_NODISPLAY   = 1 << 1,
+  CAFEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED = 1 << 2,
   /* leave some space for more include flags */
-  MATEMENU_TREE_FLAGS_SHOW_EMPTY          = 1 << 8,
-  MATEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS = 1 << 9,
+  CAFEMENU_TREE_FLAGS_SHOW_EMPTY          = 1 << 8,
+  CAFEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS = 1 << 9,
   /* leave some space for more show flags */
-  MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME   = 1 << 16
+  CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME   = 1 << 16
 } CafeMenuTreeFlags;
 GType cafemenu_tree_flags_get_type (void);
-#define MATEMENU_TYPE_TREE_FLAGS (cafemenu_tree_flags_get_type ())
+#define CAFEMENU_TYPE_TREE_FLAGS (cafemenu_tree_flags_get_type ())
 
 CafeMenuTree *cafemenu_tree_new (const char     *menu_basename,
                            CafeMenuTreeFlags  flags);
@@ -159,4 +159,4 @@ CafeMenuTreeDirectory *cafemenu_tree_separator_get_parent (CafeMenuTreeSeparator
 
 G_END_DECLS
 
-#endif /* __MATEMENU_TREE_H__ */
+#endif /* __CAFEMENU_TREE_H__ */

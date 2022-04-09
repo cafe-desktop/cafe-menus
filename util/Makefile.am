@@ -3,8 +3,8 @@ noinst_PROGRAMS = cafe-menu-spec-test
 AM_CPPFLAGS = \
 	$(GIO_UNIX_CFLAGS)					\
 	-I$(srcdir)/../libmenu \
-	-DMATEMENU_I_KNOW_THIS_IS_UNSTABLE \
-	-DMATELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+	-DCAFEMENU_I_KNOW_THIS_IS_UNSTABLE \
+	-DCAFELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	$(DISABLE_DEPRECATED_CFLAGS) \
 	$(DEBUG_CFLAGS)
 

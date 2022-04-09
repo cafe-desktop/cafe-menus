@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
  
-[MATE.1-24--cafe-menus]
+[CAFE.1-24--cafe-menus]
 file_filter = po/<lang>.po
 source_file = cafe-menus.pot
 source_lang = en

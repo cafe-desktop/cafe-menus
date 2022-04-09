@@ -120,29 +120,29 @@ print_directory(CafeMenuTreeDirectory *directory)
 
 		switch (cafemenu_tree_iter_next (iter))
 		{
-			case MATEMENU_TREE_ITEM_INVALID:
+			case CAFEMENU_TREE_ITEM_INVALID:
 				goto done;
 
-			case MATEMENU_TREE_ITEM_ENTRY:
+			case CAFEMENU_TREE_ITEM_ENTRY:
 				item = cafemenu_tree_iter_get_entry(iter);
 				print_entry((CafeMenuTreeEntry*)item, path);
 				break;
 
-			case MATEMENU_TREE_ITEM_DIRECTORY:
+			case CAFEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory(iter);
 				print_directory((CafeMenuTreeDirectory*)item);
 				break;
 
-			case MATEMENU_TREE_ITEM_HEADER:
-			case MATEMENU_TREE_ITEM_SEPARATOR:
+			case CAFEMENU_TREE_ITEM_HEADER:
+			case CAFEMENU_TREE_ITEM_SEPARATOR:
 				item = NULL;
 				break;
 
-			case MATEMENU_TREE_ITEM_ALIAS:
+			case CAFEMENU_TREE_ITEM_ALIAS:
 				{
 					item = cafemenu_tree_iter_get_alias(iter);
 
-					if (cafemenu_tree_alias_get_aliased_item_type (item) == MATEMENU_TREE_ITEM_ENTRY)
+					if (cafemenu_tree_alias_get_aliased_item_type (item) == CAFEMENU_TREE_ITEM_ENTRY)
 					{
 						CafeMenuTreeEntry *entry = cafemenu_tree_alias_get_aliased_entry(item);
 						print_entry(entry, path);
@@ -203,18 +203,18 @@ main (int argc, char **argv)
 	GError             *error = NULL;
 
 	setlocale(LC_ALL, "");
-	options_context = g_option_context_new(_("- test MATE's implementation of the Desktop Menu Specification"));
+	options_context = g_option_context_new(_("- test CAFE's implementation of the Desktop Menu Specification"));
 	g_option_context_add_main_entries(options_context, options, GETTEXT_PACKAGE);
 	g_option_context_parse(options_context, &argc, &argv, NULL);
 	g_option_context_free(options_context);
 
-	flags = MATEMENU_TREE_FLAGS_NONE;
+	flags = CAFEMENU_TREE_FLAGS_NONE;
 	if (include_excluded)
-		flags |= MATEMENU_TREE_FLAGS_INCLUDE_EXCLUDED;
+		flags |= CAFEMENU_TREE_FLAGS_INCLUDE_EXCLUDED;
 	if (include_nodisplay)
-		flags |= MATEMENU_TREE_FLAGS_INCLUDE_NODISPLAY;
+		flags |= CAFEMENU_TREE_FLAGS_INCLUDE_NODISPLAY;
 	if (include_unallocated)
-		flags |= MATEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED;
+		flags |= CAFEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED;
 
 	tree = cafemenu_tree_new(menu_file ? menu_file : "cafe-applications.menu", flags);
 	g_assert(tree != NULL);

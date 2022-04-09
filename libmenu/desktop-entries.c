@@ -95,7 +95,7 @@ get_current_desktop (void)
   static char *current_desktop = NULL;
 
   /* Support XDG_CURRENT_DESKTOP environment variable; this can be used
-   * to abuse cafe-menus in non-MATE desktops. */
+   * to abuse cafe-menus in non-CAFE desktops. */
   if (!current_desktop)
     {
       const char *desktop;
@@ -105,7 +105,7 @@ get_current_desktop (void)
       /* Note: if XDG_CURRENT_DESKTOP is set but empty, do as if it
        * was not set */
       if (!desktop || desktop[0] == '\0')
-        current_desktop = g_strdup ("MATE");
+        current_desktop = g_strdup ("CAFE");
       else
         current_desktop = g_strdup (desktop);
     }
