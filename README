@@ -2,7 +2,7 @@ cafe-menus
 ===========
 
 cafe-menus contains the libcafe-menu library, the layout configuration
-files for the MATE menu, as well as a simple menu editor.
+files for the CAFE menu, as well as a simple menu editor.
 
 The libcafe-menu library implements the "Desktop Menu Specification"
 from freedesktop.org:
@@ -26,7 +26,7 @@ you checked out the code from git), you first need to run './autogen.sh'.
 How to report bugs
 ==================
 
-Bugs should be reported to the MATE bug tracking system:
+Bugs should be reported to the CAFE bug tracking system:
 
    https://github.com/cafe-desktop/cafe-menus/issues
 

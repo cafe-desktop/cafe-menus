@@ -32,12 +32,12 @@
 
 /* private */
 typedef struct CafeMenuTreeItem CafeMenuTreeItem;
-#define MATEMENU_TREE_ITEM(i)      ((CafeMenuTreeItem *)(i))
-#define MATEMENU_TREE_DIRECTORY(i) ((CafeMenuTreeDirectory *)(i))
-#define MATEMENU_TREE_ENTRY(i)     ((CafeMenuTreeEntry *)(i))
-#define MATEMENU_TREE_SEPARATOR(i) ((CafeMenuTreeSeparator *)(i))
-#define MATEMENU_TREE_HEADER(i)    ((CafeMenuTreeHeader *)(i))
-#define MATEMENU_TREE_ALIAS(i)     ((CafeMenuTreeAlias *)(i))
+#define CAFEMENU_TREE_ITEM(i)      ((CafeMenuTreeItem *)(i))
+#define CAFEMENU_TREE_DIRECTORY(i) ((CafeMenuTreeDirectory *)(i))
+#define CAFEMENU_TREE_ENTRY(i)     ((CafeMenuTreeEntry *)(i))
+#define CAFEMENU_TREE_SEPARATOR(i) ((CafeMenuTreeSeparator *)(i))
+#define CAFEMENU_TREE_HEADER(i)    ((CafeMenuTreeHeader *)(i))
+#define CAFEMENU_TREE_ALIAS(i)     ((CafeMenuTreeAlias *)(i))
 
 enum {
   PROP_0,
@@ -492,7 +492,7 @@ cafemenu_tree_new (const char     *menu_basename,
 {
   g_return_val_if_fail (menu_basename != NULL, NULL);
 
-  return g_object_new (MATEMENU_TYPE_TREE,
+  return g_object_new (CAFEMENU_TYPE_TREE,
                        "menu-basename", menu_basename,
                        "flags", flags,
                        NULL);
@@ -511,7 +511,7 @@ cafemenu_tree_new_for_path (const char     *menu_path,
 {
   g_return_val_if_fail (menu_path != NULL, NULL);
 
-  return g_object_new (MATEMENU_TYPE_TREE,
+  return g_object_new (CAFEMENU_TYPE_TREE,
                        "menu-path", menu_path,
                        "flags", flags,
                        NULL);
@@ -534,7 +534,7 @@ cafemenu_tree_constructor (GType                  type,
          * value). This has to be done here, in the constructor, since the
          * properties are construct-only. */
 
-	self = MATEMENU_TREE (obj);
+	self = CAFEMENU_TREE (obj);
 
         if (self->path != NULL)
           g_object_set (self, "menu-basename", NULL, NULL);
@@ -548,7 +548,7 @@ cafemenu_tree_set_property (GObject         *object,
                          const GValue    *value,
                          GParamSpec      *pspec)
 {
-  CafeMenuTree *self = MATEMENU_TREE (object);
+  CafeMenuTree *self = CAFEMENU_TREE (object);
 
   switch (prop_id)
     {
@@ -576,7 +576,7 @@ cafemenu_tree_get_property (GObject         *object,
                          GValue          *value,
                          GParamSpec      *pspec)
 {
-  CafeMenuTree *self = MATEMENU_TREE (object);
+  CafeMenuTree *self = CAFEMENU_TREE (object);
 
   switch (prop_id)
     {
@@ -598,7 +598,7 @@ cafemenu_tree_get_property (GObject         *object,
 static void
 cafemenu_tree_finalize (GObject *object)
 {
-  CafeMenuTree *tree = MATEMENU_TREE (object);
+  CafeMenuTree *tree = CAFEMENU_TREE (object);
 
   cafemenu_tree_force_recanonicalize (tree);
 
@@ -670,8 +670,8 @@ cafemenu_tree_class_init (CafeMenuTreeClass *klass)
   g_object_class_install_property (gobject_class,
                                    PROP_FLAGS,
                                    g_param_spec_flags ("flags", "", "",
-                                                       MATEMENU_TYPE_TREE_FLAGS,
-                                                       MATEMENU_TREE_FLAGS_NONE,
+                                                       CAFEMENU_TYPE_TREE_FLAGS,
+                                                       CAFEMENU_TREE_FLAGS_NONE,
                                                        G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 
   /**
@@ -703,7 +703,7 @@ cafemenu_tree_class_init (CafeMenuTreeClass *klass)
 const char *
 cafemenu_tree_get_canonical_menu_path (CafeMenuTree *tree)
 {
-  g_return_val_if_fail (MATEMENU_IS_TREE (tree), NULL);
+  g_return_val_if_fail (CAFEMENU_IS_TREE (tree), NULL);
   g_return_val_if_fail (tree->loaded, NULL);
 
   return tree->canonical_path;
@@ -791,20 +791,20 @@ find_path (CafeMenuTreeDirectory *directory,
     {
       CafeMenuTreeItem *item = tmp->data;
 
-      if (item->type != MATEMENU_TREE_ITEM_DIRECTORY)
+      if (item->type != CAFEMENU_TREE_ITEM_DIRECTORY)
         {
           tmp = tmp->next;
           continue;
         }
 
-      if (!strcmp (name, MATEMENU_TREE_DIRECTORY (item)->name))
+      if (!strcmp (name, CAFEMENU_TREE_DIRECTORY (item)->name))
 	{
 	  g_free (freeme);
 
 	  if (path)
-	    return find_path (MATEMENU_TREE_DIRECTORY (item), path);
+	    return find_path (CAFEMENU_TREE_DIRECTORY (item), path);
 	  else
-	    return MATEMENU_TREE_DIRECTORY (item);
+	    return CAFEMENU_TREE_DIRECTORY (item);
 	}
 
       tmp = tmp->next;
@@ -1003,14 +1003,14 @@ cafemenu_tree_directory_iter (CafeMenuTreeDirectory *directory)
  * @iter: iter
  *
  * Change the iterator to the next item, and return its type.  If
- * there are no more items, %MATEMENU_TREE_ITEM_INVALID is returned.
+ * there are no more items, %CAFEMENU_TREE_ITEM_INVALID is returned.
  *
  * Returns: The type of the next item that can be retrived from the iterator
  */
 CafeMenuTreeItemType
 cafemenu_tree_iter_next (CafeMenuTreeIter *iter)
 {
-  g_return_val_if_fail (iter != NULL, MATEMENU_TREE_ITEM_INVALID);
+  g_return_val_if_fail (iter != NULL, CAFEMENU_TREE_ITEM_INVALID);
 
   if (iter->contents_iter)
     {
@@ -1019,7 +1019,7 @@ cafemenu_tree_iter_next (CafeMenuTreeIter *iter)
       return iter->item->type;
     }
   else
-    return MATEMENU_TREE_ITEM_INVALID;
+    return CAFEMENU_TREE_ITEM_INVALID;
 }
 
 /**
@@ -1027,7 +1027,7 @@ cafemenu_tree_iter_next (CafeMenuTreeIter *iter)
  * @iter: iter
  *
  * This method may only be called if cafemenu_tree_iter_next()
- * returned MATEMENU_TREE_ITEM_DIRECTORY.
+ * returned CAFEMENU_TREE_ITEM_DIRECTORY.
  *
  * Returns: (transfer full): A directory
  */
@@ -1036,7 +1036,7 @@ cafemenu_tree_iter_get_directory (CafeMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
-  g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_DIRECTORY, NULL);
+  g_return_val_if_fail (iter->item->type == CAFEMENU_TREE_ITEM_DIRECTORY, NULL);
 
   return (CafeMenuTreeDirectory*)cafemenu_tree_item_ref (iter->item);
 }
@@ -1046,7 +1046,7 @@ cafemenu_tree_iter_get_directory (CafeMenuTreeIter *iter)
  * @iter: iter
  *
  * This method may only be called if cafemenu_tree_iter_next()
- * returned MATEMENU_TREE_ITEM_ENTRY.
+ * returned CAFEMENU_TREE_ITEM_ENTRY.
  *
  * Returns: (transfer full): An entry
  */
@@ -1055,7 +1055,7 @@ cafemenu_tree_iter_get_entry (CafeMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
-  g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_ENTRY, NULL);
+  g_return_val_if_fail (iter->item->type == CAFEMENU_TREE_ITEM_ENTRY, NULL);
 
   return (CafeMenuTreeEntry*)cafemenu_tree_item_ref (iter->item);
 }
@@ -1065,7 +1065,7 @@ cafemenu_tree_iter_get_entry (CafeMenuTreeIter *iter)
  * @iter: iter
  *
  * This method may only be called if cafemenu_tree_iter_next()
- * returned MATEMENU_TREE_ITEM_HEADER.
+ * returned CAFEMENU_TREE_ITEM_HEADER.
  *
  * Returns: (transfer full): A header
  */
@@ -1074,7 +1074,7 @@ cafemenu_tree_iter_get_header (CafeMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
-  g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_HEADER, NULL);
+  g_return_val_if_fail (iter->item->type == CAFEMENU_TREE_ITEM_HEADER, NULL);
 
   return (CafeMenuTreeHeader*)cafemenu_tree_item_ref (iter->item);
 }
@@ -1084,7 +1084,7 @@ cafemenu_tree_iter_get_header (CafeMenuTreeIter *iter)
  * @iter: iter
  *
  * This method may only be called if cafemenu_tree_iter_next()
- * returned MATEMENU_TREE_ITEM_ALIAS.
+ * returned CAFEMENU_TREE_ITEM_ALIAS.
  *
  * Returns: (transfer full): An alias
  */
@@ -1093,7 +1093,7 @@ cafemenu_tree_iter_get_alias (CafeMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
-  g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_ALIAS, NULL);
+  g_return_val_if_fail (iter->item->type == CAFEMENU_TREE_ITEM_ALIAS, NULL);
 
   return (CafeMenuTreeAlias*)cafemenu_tree_item_ref (iter->item);
 }
@@ -1103,7 +1103,7 @@ cafemenu_tree_iter_get_alias (CafeMenuTreeIter *iter)
  * @iter: iter
  *
  * This method may only be called if cafemenu_tree_iter_next()
- * returned #MATEMENU_TREE_ITEM_SEPARATOR.
+ * returned #CAFEMENU_TREE_ITEM_SEPARATOR.
  *
  * Returns: (transfer full): A separator
  */
@@ -1112,7 +1112,7 @@ cafemenu_tree_iter_get_separator (CafeMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
-  g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_SEPARATOR, NULL);
+  g_return_val_if_fail (iter->item->type == CAFEMENU_TREE_ITEM_SEPARATOR, NULL);
 
   return (CafeMenuTreeSeparator*)cafemenu_tree_item_ref (iter->item);
 }
@@ -1362,7 +1362,7 @@ cafemenu_tree_header_get_tree (CafeMenuTreeHeader *header)
 CafeMenuTreeItemType
 cafemenu_tree_alias_get_aliased_item_type (CafeMenuTreeAlias *alias)
 {
-  g_return_val_if_fail (alias != NULL, MATEMENU_TREE_ITEM_INVALID);
+  g_return_val_if_fail (alias != NULL, CAFEMENU_TREE_ITEM_INVALID);
 
   g_assert (alias->aliased_item != NULL);
   return alias->aliased_item->type;
@@ -1417,7 +1417,7 @@ CafeMenuTreeDirectory *
 cafemenu_tree_alias_get_aliased_directory (CafeMenuTreeAlias *alias)
 {
   g_return_val_if_fail (alias != NULL, NULL);
-  g_return_val_if_fail (alias->aliased_item->type == MATEMENU_TREE_ITEM_DIRECTORY, NULL);
+  g_return_val_if_fail (alias->aliased_item->type == CAFEMENU_TREE_ITEM_DIRECTORY, NULL);
 
   return (CafeMenuTreeDirectory *) cafemenu_tree_item_ref (alias->aliased_item);
 }
@@ -1432,7 +1432,7 @@ CafeMenuTreeEntry *
 cafemenu_tree_alias_get_aliased_entry (CafeMenuTreeAlias *alias)
 {
   g_return_val_if_fail (alias != NULL, NULL);
-  g_return_val_if_fail (alias->aliased_item->type == MATEMENU_TREE_ITEM_ENTRY, NULL);
+  g_return_val_if_fail (alias->aliased_item->type == CAFEMENU_TREE_ITEM_ENTRY, NULL);
 
   return (CafeMenuTreeEntry *) cafemenu_tree_item_ref (alias->aliased_item);
 }
@@ -1446,7 +1446,7 @@ cafemenu_tree_directory_new (CafeMenuTree          *tree,
 
   retval = g_slice_new0 (CafeMenuTreeDirectory);
 
-  retval->item.type     = MATEMENU_TREE_ITEM_DIRECTORY;
+  retval->item.type     = CAFEMENU_TREE_ITEM_DIRECTORY;
   retval->item.parent   = parent;
   retval->item.refcount = 1;
   retval->item.tree     = tree;
@@ -1526,7 +1526,7 @@ cafemenu_tree_separator_new (CafeMenuTreeDirectory *parent)
 
   retval = g_slice_new0 (CafeMenuTreeSeparator);
 
-  retval->item.type     = MATEMENU_TREE_ITEM_SEPARATOR;
+  retval->item.type     = CAFEMENU_TREE_ITEM_SEPARATOR;
   retval->item.parent   = parent;
   retval->item.refcount = 1;
   retval->item.tree     = parent->item.tree;
@@ -1550,14 +1550,14 @@ cafemenu_tree_header_new (CafeMenuTreeDirectory *parent,
 
   retval = g_slice_new0 (CafeMenuTreeHeader);
 
-  retval->item.type     = MATEMENU_TREE_ITEM_HEADER;
+  retval->item.type     = CAFEMENU_TREE_ITEM_HEADER;
   retval->item.parent   = parent;
   retval->item.refcount = 1;
   retval->item.tree     = parent->item.tree;
 
   retval->directory = cafemenu_tree_item_ref (directory);
 
-  cafemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (retval->directory), NULL);
+  cafemenu_tree_item_set_parent (CAFEMENU_TREE_ITEM (retval->directory), NULL);
 
   return retval;
 }
@@ -1583,21 +1583,21 @@ cafemenu_tree_alias_new (CafeMenuTreeDirectory *parent,
 
   retval = g_slice_new0 (CafeMenuTreeAlias);
 
-  retval->item.type     = MATEMENU_TREE_ITEM_ALIAS;
+  retval->item.type     = CAFEMENU_TREE_ITEM_ALIAS;
   retval->item.parent   = parent;
   retval->item.refcount = 1;
   retval->item.tree     = parent->item.tree;
 
   retval->directory    = cafemenu_tree_item_ref (directory);
-  if (item->type != MATEMENU_TREE_ITEM_ALIAS)
+  if (item->type != CAFEMENU_TREE_ITEM_ALIAS)
     retval->aliased_item = cafemenu_tree_item_ref (item);
   else
     {
-      CafeMenuTreeAlias *alias = MATEMENU_TREE_ALIAS (item);
+      CafeMenuTreeAlias *alias = CAFEMENU_TREE_ALIAS (item);
       retval->aliased_item = cafemenu_tree_item_ref (alias->aliased_item);
     }
 
-  cafemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (retval->directory), NULL);
+  cafemenu_tree_item_set_parent (CAFEMENU_TREE_ITEM (retval->directory), NULL);
   cafemenu_tree_item_set_parent (retval->aliased_item, NULL);
 
   return retval;
@@ -1630,7 +1630,7 @@ cafemenu_tree_entry_new (CafeMenuTreeDirectory *parent,
 
   retval = g_slice_new0 (CafeMenuTreeEntry);
 
-  retval->item.type     = MATEMENU_TREE_ITEM_ENTRY;
+  retval->item.type     = CAFEMENU_TREE_ITEM_ENTRY;
   retval->item.parent   = parent;
   retval->item.refcount = 1;
   retval->item.tree     = parent->item.tree;
@@ -1662,14 +1662,14 @@ static int
 cafemenu_tree_entry_compare_by_id (CafeMenuTreeItem *a,
 				CafeMenuTreeItem *b)
 {
-  if (a->type == MATEMENU_TREE_ITEM_ALIAS)
-    a = MATEMENU_TREE_ALIAS (a)->aliased_item;
+  if (a->type == CAFEMENU_TREE_ITEM_ALIAS)
+    a = CAFEMENU_TREE_ALIAS (a)->aliased_item;
 
-  if (b->type == MATEMENU_TREE_ITEM_ALIAS)
-    b = MATEMENU_TREE_ALIAS (b)->aliased_item;
+  if (b->type == CAFEMENU_TREE_ITEM_ALIAS)
+    b = CAFEMENU_TREE_ALIAS (b)->aliased_item;
 
-  return strcmp (MATEMENU_TREE_ENTRY (a)->desktop_file_id,
-                 MATEMENU_TREE_ENTRY (b)->desktop_file_id);
+  return strcmp (CAFEMENU_TREE_ENTRY (a)->desktop_file_id,
+                 CAFEMENU_TREE_ENTRY (b)->desktop_file_id);
 }
 
 /**
@@ -1705,24 +1705,24 @@ cafemenu_tree_item_unref (gpointer itemp)
     {
       switch (item->type)
 	{
-	case MATEMENU_TREE_ITEM_DIRECTORY:
-	  cafemenu_tree_directory_finalize (MATEMENU_TREE_DIRECTORY (item));
+	case CAFEMENU_TREE_ITEM_DIRECTORY:
+	  cafemenu_tree_directory_finalize (CAFEMENU_TREE_DIRECTORY (item));
 	  break;
 
-	case MATEMENU_TREE_ITEM_ENTRY:
-	  cafemenu_tree_entry_finalize (MATEMENU_TREE_ENTRY (item));
+	case CAFEMENU_TREE_ITEM_ENTRY:
+	  cafemenu_tree_entry_finalize (CAFEMENU_TREE_ENTRY (item));
 	  break;
 
-	case MATEMENU_TREE_ITEM_SEPARATOR:
-	  cafemenu_tree_separator_finalize (MATEMENU_TREE_SEPARATOR (item));
+	case CAFEMENU_TREE_ITEM_SEPARATOR:
+	  cafemenu_tree_separator_finalize (CAFEMENU_TREE_SEPARATOR (item));
 	  break;
 
-	case MATEMENU_TREE_ITEM_HEADER:
-	  cafemenu_tree_header_finalize (MATEMENU_TREE_HEADER (item));
+	case CAFEMENU_TREE_ITEM_HEADER:
+	  cafemenu_tree_header_finalize (CAFEMENU_TREE_HEADER (item));
 	  break;
 
-	case MATEMENU_TREE_ITEM_ALIAS:
-	  cafemenu_tree_alias_finalize (MATEMENU_TREE_ALIAS (item));
+	case CAFEMENU_TREE_ITEM_ALIAS:
+	  cafemenu_tree_alias_finalize (CAFEMENU_TREE_ALIAS (item));
 	  break;
 
 	default:
@@ -1755,30 +1755,30 @@ cafemenu_tree_item_compare_get_name_helper (CafeMenuTreeItem    *item,
 
   switch (item->type)
     {
-    case MATEMENU_TREE_ITEM_DIRECTORY:
-      if (MATEMENU_TREE_DIRECTORY (item)->directory_entry)
-	name = desktop_entry_get_name (MATEMENU_TREE_DIRECTORY (item)->directory_entry);
+    case CAFEMENU_TREE_ITEM_DIRECTORY:
+      if (CAFEMENU_TREE_DIRECTORY (item)->directory_entry)
+	name = desktop_entry_get_name (CAFEMENU_TREE_DIRECTORY (item)->directory_entry);
       else
-	name = MATEMENU_TREE_DIRECTORY (item)->name;
+	name = CAFEMENU_TREE_DIRECTORY (item)->name;
       break;
 
-    case MATEMENU_TREE_ITEM_ENTRY:
-      if (flags & MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME)
-        name = g_app_info_get_display_name (G_APP_INFO (cafemenu_tree_entry_get_app_info (MATEMENU_TREE_ENTRY (item))));
+    case CAFEMENU_TREE_ITEM_ENTRY:
+      if (flags & CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME)
+        name = g_app_info_get_display_name (G_APP_INFO (cafemenu_tree_entry_get_app_info (CAFEMENU_TREE_ENTRY (item))));
       else
-        name = desktop_entry_get_name (MATEMENU_TREE_ENTRY (item)->desktop_entry);
+        name = desktop_entry_get_name (CAFEMENU_TREE_ENTRY (item)->desktop_entry);
       break;
 
-    case MATEMENU_TREE_ITEM_ALIAS:
+    case CAFEMENU_TREE_ITEM_ALIAS:
       {
         CafeMenuTreeItem *dir;
-        dir = MATEMENU_TREE_ITEM (MATEMENU_TREE_ALIAS (item)->directory);
+        dir = CAFEMENU_TREE_ITEM (CAFEMENU_TREE_ALIAS (item)->directory);
         name = cafemenu_tree_item_compare_get_name_helper (dir, flags);
       }
       break;
 
-    case MATEMENU_TREE_ITEM_SEPARATOR:
-    case MATEMENU_TREE_ITEM_HEADER:
+    case CAFEMENU_TREE_ITEM_SEPARATOR:
+    case CAFEMENU_TREE_ITEM_HEADER:
     default:
       g_assert_not_reached ();
       break;
@@ -3448,7 +3448,7 @@ process_layout (CafeMenuTree          *tree,
   entries = desktop_entry_set_new ();
   allocated_set = desktop_entry_set_new ();
 
-  if (tree->flags & MATEMENU_TREE_FLAGS_INCLUDE_EXCLUDED)
+  if (tree->flags & CAFEMENU_TREE_FLAGS_INCLUDE_EXCLUDED)
     excluded_set = desktop_entry_set_new ();
   else
     excluded_set = NULL;
@@ -3633,7 +3633,7 @@ process_layout (CafeMenuTree          *tree,
         {
           directory->is_nodisplay = TRUE;
 
-          if (!(tree->flags & MATEMENU_TREE_FLAGS_INCLUDE_NODISPLAY))
+          if (!(tree->flags & CAFEMENU_TREE_FLAGS_INCLUDE_NODISPLAY))
             {
               menu_verbose ("Not showing menu %s because NoDisplay=true\n",
                         desktop_entry_get_name (directory->directory_entry));
@@ -3698,7 +3698,7 @@ process_layout (CafeMenuTree          *tree,
           delete = TRUE;
         }
 
-      if (!(tree->flags & MATEMENU_TREE_FLAGS_INCLUDE_NODISPLAY) &&
+      if (!(tree->flags & CAFEMENU_TREE_FLAGS_INCLUDE_NODISPLAY) &&
           desktop_entry_get_no_display (entry->desktop_entry))
         {
           menu_verbose ("Deleting %s because NoDisplay=true\n",
@@ -3800,7 +3800,7 @@ get_still_unallocated_foreach (const char                     *file_id,
   if (desktop_entry_get_hidden (entry))
     return;
 
-  if (!(data->tree->flags & MATEMENU_TREE_FLAGS_INCLUDE_NODISPLAY) &&
+  if (!(data->tree->flags & CAFEMENU_TREE_FLAGS_INCLUDE_NODISPLAY) &&
       desktop_entry_get_no_display (entry))
     return;
 
@@ -3845,7 +3845,7 @@ get_layout_info (CafeMenuTreeDirectory *directory,
 	  return iter->default_layout_info;
 	}
 
-      iter = MATEMENU_TREE_ITEM (iter)->parent;
+      iter = CAFEMENU_TREE_ITEM (iter)->parent;
     }
 
   return NULL;
@@ -3915,7 +3915,7 @@ preprocess_layout_info_subdir_helper (CafeMenuTree          *tree,
 
   if (subdir->subdirs == NULL && subdir->entries == NULL)
     {
-      if (!(tree->flags & MATEMENU_TREE_FLAGS_SHOW_EMPTY) &&
+      if (!(tree->flags & CAFEMENU_TREE_FLAGS_SHOW_EMPTY) &&
           !layout_values->show_empty)
 	{
 	  menu_verbose ("Not showing empty menu '%s'\n", subdir->name);
@@ -3941,14 +3941,14 @@ preprocess_layout_info_subdir_helper (CafeMenuTree          *tree,
           else
             list = subdir->entries;
 
-          item = MATEMENU_TREE_ITEM (list->data);
+          item = CAFEMENU_TREE_ITEM (list->data);
 
           menu_verbose ("Inline aliasing '%s' to '%s'\n",
-                        item->type == MATEMENU_TREE_ITEM_ENTRY ?
-                          g_app_info_get_name (G_APP_INFO (cafemenu_tree_entry_get_app_info (MATEMENU_TREE_ENTRY (item)))) :
-                          (item->type == MATEMENU_TREE_ITEM_DIRECTORY ?
-                             cafemenu_tree_directory_get_name (MATEMENU_TREE_DIRECTORY (item)) :
-                             cafemenu_tree_directory_get_name (MATEMENU_TREE_ALIAS (item)->directory)),
+                        item->type == CAFEMENU_TREE_ITEM_ENTRY ?
+                          g_app_info_get_name (G_APP_INFO (cafemenu_tree_entry_get_app_info (CAFEMENU_TREE_ENTRY (item)))) :
+                          (item->type == CAFEMENU_TREE_ITEM_DIRECTORY ?
+                             cafemenu_tree_directory_get_name (CAFEMENU_TREE_DIRECTORY (item)) :
+                             cafemenu_tree_directory_get_name (CAFEMENU_TREE_ALIAS (item)->directory)),
                         subdir->name);
 
           alias = cafemenu_tree_alias_new (directory, subdir, item);
@@ -3960,7 +3960,7 @@ preprocess_layout_info_subdir_helper (CafeMenuTree          *tree,
           subdir->subdirs = NULL;
           subdir->entries = NULL;
 
-          if (item->type == MATEMENU_TREE_ITEM_DIRECTORY)
+          if (item->type == CAFEMENU_TREE_ITEM_DIRECTORY)
             directory->subdirs = g_slist_append (directory->subdirs, alias);
           else
             directory->entries = g_slist_append (directory->entries, alias);
@@ -4111,7 +4111,7 @@ preprocess_layout_info (CafeMenuTree          *tree,
             }
 
           directory->subdirs = g_slist_remove (directory->subdirs, subdir);
-          cafemenu_tree_item_unref_and_unset_parent (MATEMENU_TREE_ITEM (subdir));
+          cafemenu_tree_item_unref_and_unset_parent (CAFEMENU_TREE_ITEM (subdir));
         }
     }
 
@@ -4140,7 +4140,7 @@ preprocess_layout_info (CafeMenuTree          *tree,
       if (should_remove)
         {
           tmp = g_slist_delete_link (tmp, tmp->next);
-          cafemenu_tree_item_unref_and_unset_parent (MATEMENU_TREE_ITEM (subdir));
+          cafemenu_tree_item_unref_and_unset_parent (CAFEMENU_TREE_ITEM (subdir));
         }
       else
         tmp = tmp->next;
@@ -4164,14 +4164,14 @@ preprocess_layout_info (CafeMenuTree          *tree,
           CafeMenuTreeItem *a = tmp->data;
           CafeMenuTreeItem *b = tmp->next->data;
 
-          if (a->type == MATEMENU_TREE_ITEM_ALIAS)
-            a = MATEMENU_TREE_ALIAS (a)->aliased_item;
+          if (a->type == CAFEMENU_TREE_ITEM_ALIAS)
+            a = CAFEMENU_TREE_ALIAS (a)->aliased_item;
 
-          if (b->type == MATEMENU_TREE_ITEM_ALIAS)
-            b = MATEMENU_TREE_ALIAS (b)->aliased_item;
+          if (b->type == CAFEMENU_TREE_ITEM_ALIAS)
+            b = CAFEMENU_TREE_ALIAS (b)->aliased_item;
 
-          if (strcmp (MATEMENU_TREE_ENTRY (a)->desktop_file_id,
-                      MATEMENU_TREE_ENTRY (b)->desktop_file_id) == 0)
+          if (strcmp (CAFEMENU_TREE_ENTRY (a)->desktop_file_id,
+                      CAFEMENU_TREE_ENTRY (b)->desktop_file_id) == 0)
             {
               tmp = g_slist_delete_link (tmp, tmp->next);
               cafemenu_tree_item_unref (b);
@@ -4208,9 +4208,9 @@ merge_alias (CafeMenuTree          *tree,
   menu_verbose ("Merging alias '%s' in directory '%s'\n",
 		alias->directory->name, directory->name);
 
-  if (alias->aliased_item->type == MATEMENU_TREE_ITEM_DIRECTORY)
+  if (alias->aliased_item->type == CAFEMENU_TREE_ITEM_DIRECTORY)
     {
-      process_layout_info (tree, MATEMENU_TREE_DIRECTORY (alias->aliased_item));
+      process_layout_info (tree, CAFEMENU_TREE_DIRECTORY (alias->aliased_item));
     }
 
   check_pending_separator (directory);
@@ -4248,7 +4248,7 @@ merge_subdir (CafeMenuTree          *tree,
       subdir->contents = NULL;
       subdir->will_inline_header = G_MAXUINT16;
 
-      cafemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (subdir), NULL);
+      cafemenu_tree_item_set_parent (CAFEMENU_TREE_ITEM (subdir), NULL);
     }
   else
     {
@@ -4275,7 +4275,7 @@ merge_subdir_by_name (CafeMenuTree          *tree,
 
       /* if it's an alias, then it cannot be affected by
        * the Merge nodes in the layout */
-      if (MATEMENU_TREE_ITEM (subdir)->type == MATEMENU_TREE_ITEM_ALIAS)
+      if (CAFEMENU_TREE_ITEM (subdir)->type == CAFEMENU_TREE_ITEM_ALIAS)
         continue;
 
       if (!strcmp (subdir->name, subdir_name))
@@ -4320,7 +4320,7 @@ merge_entry_by_id (CafeMenuTree          *tree,
 
       /* if it's an alias, then it cannot be affected by
        * the Merge nodes in the layout */
-      if (MATEMENU_TREE_ITEM (entry)->type == MATEMENU_TREE_ITEM_ALIAS)
+      if (CAFEMENU_TREE_ITEM (entry)->type == CAFEMENU_TREE_ITEM_ALIAS)
         continue;
 
       if (!strcmp (entry->desktop_file_id, file_id))
@@ -4364,16 +4364,16 @@ merge_subdirs (CafeMenuTree          *tree,
 
   subdirs = g_slist_sort_with_data (subdirs,
 				    (GCompareDataFunc) cafemenu_tree_item_compare,
-                                    GINT_TO_POINTER (MATEMENU_TREE_FLAGS_NONE));
+                                    GINT_TO_POINTER (CAFEMENU_TREE_FLAGS_NONE));
 
   tmp = subdirs;
   while (tmp != NULL)
     {
       CafeMenuTreeDirectory *subdir = tmp->data;
 
-      if (MATEMENU_TREE_ITEM (subdir)->type == MATEMENU_TREE_ITEM_ALIAS)
+      if (CAFEMENU_TREE_ITEM (subdir)->type == CAFEMENU_TREE_ITEM_ALIAS)
         {
-	  merge_alias (tree, directory, MATEMENU_TREE_ALIAS (subdir));
+	  merge_alias (tree, directory, CAFEMENU_TREE_ALIAS (subdir));
 	  cafemenu_tree_item_unref (subdir);
         }
       else if (!find_name_in_list (subdir->name, except))
@@ -4416,9 +4416,9 @@ merge_entries (CafeMenuTree          *tree,
     {
       CafeMenuTreeEntry *entry = tmp->data;
 
-      if (MATEMENU_TREE_ITEM (entry)->type == MATEMENU_TREE_ITEM_ALIAS)
+      if (CAFEMENU_TREE_ITEM (entry)->type == CAFEMENU_TREE_ITEM_ALIAS)
         {
-	  merge_alias (tree, directory, MATEMENU_TREE_ALIAS (entry));
+	  merge_alias (tree, directory, CAFEMENU_TREE_ALIAS (entry));
 	  cafemenu_tree_item_unref (entry);
         }
       else if (!find_name_in_list (entry->desktop_file_id, except))
@@ -4468,38 +4468,38 @@ merge_subdirs_and_entries (CafeMenuTree          *tree,
 
       type = item->type;
 
-      if (type == MATEMENU_TREE_ITEM_ALIAS)
+      if (type == CAFEMENU_TREE_ITEM_ALIAS)
         {
-          merge_alias (tree, directory, MATEMENU_TREE_ALIAS (item));
+          merge_alias (tree, directory, CAFEMENU_TREE_ALIAS (item));
           cafemenu_tree_item_unref (item);
         }
-      else if (type == MATEMENU_TREE_ITEM_DIRECTORY)
+      else if (type == CAFEMENU_TREE_ITEM_DIRECTORY)
 	{
-	  if (!find_name_in_list (MATEMENU_TREE_DIRECTORY (item)->name, except_subdirs))
+	  if (!find_name_in_list (CAFEMENU_TREE_DIRECTORY (item)->name, except_subdirs))
 	    {
 	      merge_subdir (tree,
 			    directory,
-			    MATEMENU_TREE_DIRECTORY (item));
+			    CAFEMENU_TREE_DIRECTORY (item));
 	      cafemenu_tree_item_unref (item);
 	    }
 	  else
 	    {
 	      menu_verbose ("Not merging directory '%s' yet\n",
-			    MATEMENU_TREE_DIRECTORY (item)->name);
+			    CAFEMENU_TREE_DIRECTORY (item)->name);
 	      directory->subdirs = g_slist_append (directory->subdirs, item);
 	    }
 	}
-      else if (type == MATEMENU_TREE_ITEM_ENTRY)
+      else if (type == CAFEMENU_TREE_ITEM_ENTRY)
 	{
-	  if (!find_name_in_list (MATEMENU_TREE_ENTRY (item)->desktop_file_id, except_entries))
+	  if (!find_name_in_list (CAFEMENU_TREE_ENTRY (item)->desktop_file_id, except_entries))
 	    {
-	      merge_entry (tree, directory, MATEMENU_TREE_ENTRY (item));
+	      merge_entry (tree, directory, CAFEMENU_TREE_ENTRY (item));
 	      cafemenu_tree_item_unref (item);
 	    }
 	  else
 	    {
 	      menu_verbose ("Not merging entry '%s' yet\n",
-			    MATEMENU_TREE_ENTRY (item)->desktop_file_id);
+			    CAFEMENU_TREE_ENTRY (item)->desktop_file_id);
 	      directory->entries = g_slist_append (directory->entries, item);
 	    }
 	}
@@ -4617,7 +4617,7 @@ process_layout_info (CafeMenuTree          *tree,
 	       * the separators now, and instead make it pending. This way, we
 	       * won't show two consecutive separators nor will we show a
 	       * separator at the end of a menu. */
-              if (tree->flags & MATEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS)
+              if (tree->flags & CAFEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS)
 		{
 		  directory->layout_pending_separator = TRUE;
 		  check_pending_separator (directory);
@@ -4719,13 +4719,13 @@ update_entry_index (CafeMenuTree           *tree,
   CafeMenuTreeIter *iter = cafemenu_tree_directory_iter (dir);
   CafeMenuTreeItemType next_type;
 
-  while ((next_type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID)
+  while ((next_type = cafemenu_tree_iter_next (iter)) != CAFEMENU_TREE_ITEM_INVALID)
     {
       gpointer item = NULL;
 
       switch (next_type)
         {
-        case MATEMENU_TREE_ITEM_ENTRY:
+        case CAFEMENU_TREE_ITEM_ENTRY:
           {
 	    const char *id;
 
@@ -4735,7 +4735,7 @@ update_entry_index (CafeMenuTree           *tree,
               g_hash_table_insert (tree->entries_by_id, (char*)id, item);
           }
           break;
-        case MATEMENU_TREE_ITEM_DIRECTORY:
+        case CAFEMENU_TREE_ITEM_DIRECTORY:
           {
             item = cafemenu_tree_iter_get_directory (iter);
             update_entry_index (tree, (CafeMenuTreeDirectory*)item);
@@ -4779,7 +4779,7 @@ cafemenu_tree_build_from_layout (CafeMenuTree  *tree,
       unallocated_used = desktop_entry_set_new ();
 
       process_only_unallocated (tree, tree->root, allocated, unallocated_used);
-      if (tree->flags & MATEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED)
+      if (tree->flags & CAFEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED)
         {
           DesktopEntrySet *entry_pool;
           DesktopEntrySet *still_unallocated;
@@ -4930,13 +4930,13 @@ cafemenu_tree_flags_get_type (void)
   if (G_UNLIKELY (!enum_type_id))
     {
       static const GFlagsValue values[] = {
-        { MATEMENU_TREE_FLAGS_NONE, "MATEMENU_TREE_FLAGS_NONE", "none" },
-        { MATEMENU_TREE_FLAGS_INCLUDE_EXCLUDED, "MATEMENU_TREE_FLAGS_INCLUDE_EXCLUDED", "include-excluded" },
-        { MATEMENU_TREE_FLAGS_SHOW_EMPTY, "MATEMENU_TREE_FLAGS_SHOW_EMPTY", "show-empty" },
-        { MATEMENU_TREE_FLAGS_INCLUDE_NODISPLAY, "MATEMENU_TREE_FLAGS_INCLUDE_NODISPLAY", "include-nodisplay" },
-        { MATEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS, "MATEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS", "show-all-separators" },
-        { MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME, "MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME", "sort-display-name" },
-        { MATEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED, "MATEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED,", "include-unallocated" },
+        { CAFEMENU_TREE_FLAGS_NONE, "CAFEMENU_TREE_FLAGS_NONE", "none" },
+        { CAFEMENU_TREE_FLAGS_INCLUDE_EXCLUDED, "CAFEMENU_TREE_FLAGS_INCLUDE_EXCLUDED", "include-excluded" },
+        { CAFEMENU_TREE_FLAGS_SHOW_EMPTY, "CAFEMENU_TREE_FLAGS_SHOW_EMPTY", "show-empty" },
+        { CAFEMENU_TREE_FLAGS_INCLUDE_NODISPLAY, "CAFEMENU_TREE_FLAGS_INCLUDE_NODISPLAY", "include-nodisplay" },
+        { CAFEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS, "CAFEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS", "show-all-separators" },
+        { CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME, "CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME", "sort-display-name" },
+        { CAFEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED, "CAFEMENU_TREE_FLAGS_INCLUDE_UNALLOCATED,", "include-unallocated" },
         { 0, NULL, NULL }
       };
       enum_type_id = g_flags_register_static ("CafeMenuTreeFlags", values);
