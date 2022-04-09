@@ -41,7 +41,7 @@ AC_SUBST(GIO_UNIX_LIBS)
 MATE_COMPILE_WARNINGS(yes)
 
 AC_ARG_ENABLE(deprecation_flags,
-              [AC_HELP_STRING([--enable-deprecation-flags],
+              [AS_HELP_STRING([--enable-deprecation-flags],
                               [use *_DISABLE_DEPRECATED flags @<:@default=no@:>@])],,
               [enable_deprecation_flags=no])
 
@@ -52,7 +52,7 @@ fi
 
 dnl --enable-debug=(yes|minimum|no)
 AC_ARG_ENABLE(debug,
-              [AC_HELP_STRING([--enable-debug],
+              [AS_HELP_STRING([--enable-debug],
                               [turn on debugging @<:@default=minimum@:>@])],,
               [enable_debug=minimum])
 if test "$enable_debug" = "yes"; then
