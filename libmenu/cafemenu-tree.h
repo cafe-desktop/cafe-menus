@@ -29,28 +29,28 @@
 G_BEGIN_DECLS
 
 #define MATEMENU_TYPE_TREE         (cafemenu_tree_get_type ())
-#define MATEMENU_TREE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MATEMENU_TYPE_TREE, MateMenuTree))
-#define MATEMENU_TREE_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MATEMENU_TYPE_TREE, MateMenuTreeClass))
+#define MATEMENU_TREE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MATEMENU_TYPE_TREE, CafeMenuTree))
+#define MATEMENU_TREE_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MATEMENU_TYPE_TREE, CafeMenuTreeClass))
 #define MATEMENU_IS_TREE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MATEMENU_TYPE_TREE))
 #define MATEMENU_IS_TREE_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MATEMENU_TYPE_TREE))
-#define MATEMENU_TREE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DESKTOP_APP_INFO, MateMenuTreeClass))
+#define MATEMENU_TREE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), G_TYPE_DESKTOP_APP_INFO, CafeMenuTreeClass))
 
-typedef struct _MateMenuTree        MateMenuTree;
-typedef struct _MateMenuTreeClass   MateMenuTreeClass;
+typedef struct _CafeMenuTree        CafeMenuTree;
+typedef struct _CafeMenuTreeClass   CafeMenuTreeClass;
 
-struct _MateMenuTreeClass
+struct _CafeMenuTreeClass
 {
   GObjectClass parent_class;
 };
 
 GType cafemenu_tree_get_type (void) G_GNUC_CONST;
 
-typedef struct MateMenuTreeIter      MateMenuTreeIter;
-typedef struct MateMenuTreeDirectory MateMenuTreeDirectory;
-typedef struct MateMenuTreeEntry     MateMenuTreeEntry;
-typedef struct MateMenuTreeSeparator MateMenuTreeSeparator;
-typedef struct MateMenuTreeHeader    MateMenuTreeHeader;
-typedef struct MateMenuTreeAlias     MateMenuTreeAlias;
+typedef struct CafeMenuTreeIter      CafeMenuTreeIter;
+typedef struct CafeMenuTreeDirectory CafeMenuTreeDirectory;
+typedef struct CafeMenuTreeEntry     CafeMenuTreeEntry;
+typedef struct CafeMenuTreeSeparator CafeMenuTreeSeparator;
+typedef struct CafeMenuTreeHeader    CafeMenuTreeHeader;
+typedef struct CafeMenuTreeAlias     CafeMenuTreeAlias;
 
 typedef enum
 {
@@ -60,7 +60,7 @@ typedef enum
   MATEMENU_TREE_ITEM_SEPARATOR,
   MATEMENU_TREE_ITEM_HEADER,
   MATEMENU_TREE_ITEM_ALIAS
-} MateMenuTreeItemType;
+} CafeMenuTreeItemType;
 
 GType cafemenu_tree_iter_get_type (void);
 
@@ -82,80 +82,80 @@ typedef enum
   MATEMENU_TREE_FLAGS_SHOW_ALL_SEPARATORS = 1 << 9,
   /* leave some space for more show flags */
   MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME   = 1 << 16
-} MateMenuTreeFlags;
+} CafeMenuTreeFlags;
 GType cafemenu_tree_flags_get_type (void);
 #define MATEMENU_TYPE_TREE_FLAGS (cafemenu_tree_flags_get_type ())
 
-MateMenuTree *cafemenu_tree_new (const char     *menu_basename,
-                           MateMenuTreeFlags  flags);
+CafeMenuTree *cafemenu_tree_new (const char     *menu_basename,
+                           CafeMenuTreeFlags  flags);
 
-MateMenuTree *cafemenu_tree_new_for_path (const char     *menu_path,
-                                    MateMenuTreeFlags  flags);
+CafeMenuTree *cafemenu_tree_new_for_path (const char     *menu_path,
+                                    CafeMenuTreeFlags  flags);
 
-gboolean   cafemenu_tree_load_sync (MateMenuTree  *tree,
+gboolean   cafemenu_tree_load_sync (CafeMenuTree  *tree,
                                  GError    **error);
 
-const char         *cafemenu_tree_get_canonical_menu_path (MateMenuTree  *tree);
-MateMenuTreeDirectory *cafemenu_tree_get_root_directory      (MateMenuTree  *tree);
-MateMenuTreeDirectory *cafemenu_tree_get_directory_from_path (MateMenuTree  *tree,
+const char         *cafemenu_tree_get_canonical_menu_path (CafeMenuTree  *tree);
+CafeMenuTreeDirectory *cafemenu_tree_get_root_directory      (CafeMenuTree  *tree);
+CafeMenuTreeDirectory *cafemenu_tree_get_directory_from_path (CafeMenuTree  *tree,
 							const char *path);
-MateMenuTreeEntry     *cafemenu_tree_get_entry_by_id         (MateMenuTree  *tree,
+CafeMenuTreeEntry     *cafemenu_tree_get_entry_by_id         (CafeMenuTree  *tree,
 							const char *id);
 
 gpointer cafemenu_tree_item_ref   (gpointer item);
 void     cafemenu_tree_item_unref (gpointer item);
 
-MateMenuTreeDirectory *cafemenu_tree_directory_get_parent    (MateMenuTreeDirectory *directory);
-const char *cafemenu_tree_directory_get_name              (MateMenuTreeDirectory *directory);
-const char *cafemenu_tree_directory_get_generic_name      (MateMenuTreeDirectory *directory);
-const char *cafemenu_tree_directory_get_comment           (MateMenuTreeDirectory *directory);
-GIcon      *cafemenu_tree_directory_get_icon              (MateMenuTreeDirectory *directory);
-const char *cafemenu_tree_directory_get_desktop_file_path (MateMenuTreeDirectory *directory);
-const char *cafemenu_tree_directory_get_menu_id           (MateMenuTreeDirectory *directory);
-MateMenuTree  *cafemenu_tree_directory_get_tree              (MateMenuTreeDirectory *directory);
+CafeMenuTreeDirectory *cafemenu_tree_directory_get_parent    (CafeMenuTreeDirectory *directory);
+const char *cafemenu_tree_directory_get_name              (CafeMenuTreeDirectory *directory);
+const char *cafemenu_tree_directory_get_generic_name      (CafeMenuTreeDirectory *directory);
+const char *cafemenu_tree_directory_get_comment           (CafeMenuTreeDirectory *directory);
+GIcon      *cafemenu_tree_directory_get_icon              (CafeMenuTreeDirectory *directory);
+const char *cafemenu_tree_directory_get_desktop_file_path (CafeMenuTreeDirectory *directory);
+const char *cafemenu_tree_directory_get_menu_id           (CafeMenuTreeDirectory *directory);
+CafeMenuTree  *cafemenu_tree_directory_get_tree              (CafeMenuTreeDirectory *directory);
 
-gboolean cafemenu_tree_directory_get_is_nodisplay (MateMenuTreeDirectory *directory);
+gboolean cafemenu_tree_directory_get_is_nodisplay (CafeMenuTreeDirectory *directory);
 
-MateMenuTreeIter      *cafemenu_tree_directory_iter            (MateMenuTreeDirectory *directory);
+CafeMenuTreeIter      *cafemenu_tree_directory_iter            (CafeMenuTreeDirectory *directory);
 
-MateMenuTreeIter      *cafemenu_tree_iter_ref                  (MateMenuTreeIter *iter);
-void                cafemenu_tree_iter_unref                (MateMenuTreeIter *iter);
+CafeMenuTreeIter      *cafemenu_tree_iter_ref                  (CafeMenuTreeIter *iter);
+void                cafemenu_tree_iter_unref                (CafeMenuTreeIter *iter);
 
-MateMenuTreeItemType   cafemenu_tree_iter_next                 (MateMenuTreeIter *iter);
-MateMenuTreeDirectory *cafemenu_tree_iter_get_directory        (MateMenuTreeIter *iter);
-MateMenuTreeEntry     *cafemenu_tree_iter_get_entry            (MateMenuTreeIter *iter);
-MateMenuTreeHeader    *cafemenu_tree_iter_get_header           (MateMenuTreeIter *iter);
-MateMenuTreeAlias     *cafemenu_tree_iter_get_alias            (MateMenuTreeIter *iter);
-MateMenuTreeSeparator *cafemenu_tree_iter_get_separator        (MateMenuTreeIter *iter);
+CafeMenuTreeItemType   cafemenu_tree_iter_next                 (CafeMenuTreeIter *iter);
+CafeMenuTreeDirectory *cafemenu_tree_iter_get_directory        (CafeMenuTreeIter *iter);
+CafeMenuTreeEntry     *cafemenu_tree_iter_get_entry            (CafeMenuTreeIter *iter);
+CafeMenuTreeHeader    *cafemenu_tree_iter_get_header           (CafeMenuTreeIter *iter);
+CafeMenuTreeAlias     *cafemenu_tree_iter_get_alias            (CafeMenuTreeIter *iter);
+CafeMenuTreeSeparator *cafemenu_tree_iter_get_separator        (CafeMenuTreeIter *iter);
 
-char *cafemenu_tree_directory_make_path (MateMenuTreeDirectory *directory,
-				      MateMenuTreeEntry     *entry);
+char *cafemenu_tree_directory_make_path (CafeMenuTreeDirectory *directory,
+				      CafeMenuTreeEntry     *entry);
 
 
-GDesktopAppInfo    *cafemenu_tree_entry_get_app_info       (MateMenuTreeEntry *entry);
-MateMenuTreeDirectory *cafemenu_tree_entry_get_parent         (MateMenuTreeEntry *entry);
-MateMenuTree          *cafemenu_tree_entry_get_tree           (MateMenuTreeEntry *entry);
+GDesktopAppInfo    *cafemenu_tree_entry_get_app_info       (CafeMenuTreeEntry *entry);
+CafeMenuTreeDirectory *cafemenu_tree_entry_get_parent         (CafeMenuTreeEntry *entry);
+CafeMenuTree          *cafemenu_tree_entry_get_tree           (CafeMenuTreeEntry *entry);
 
-const char *cafemenu_tree_entry_get_desktop_file_path (MateMenuTreeEntry *entry);
-const char *cafemenu_tree_entry_get_desktop_file_id   (MateMenuTreeEntry *entry);
+const char *cafemenu_tree_entry_get_desktop_file_path (CafeMenuTreeEntry *entry);
+const char *cafemenu_tree_entry_get_desktop_file_id   (CafeMenuTreeEntry *entry);
 
-gboolean cafemenu_tree_entry_get_is_nodisplay_recurse  (MateMenuTreeEntry *entry);
-gboolean cafemenu_tree_entry_get_is_excluded  (MateMenuTreeEntry *entry);
-gboolean cafemenu_tree_entry_get_is_unallocated  (MateMenuTreeEntry *entry);
+gboolean cafemenu_tree_entry_get_is_nodisplay_recurse  (CafeMenuTreeEntry *entry);
+gboolean cafemenu_tree_entry_get_is_excluded  (CafeMenuTreeEntry *entry);
+gboolean cafemenu_tree_entry_get_is_unallocated  (CafeMenuTreeEntry *entry);
 
-MateMenuTreeDirectory *cafemenu_tree_header_get_directory (MateMenuTreeHeader *header);
-MateMenuTree          *cafemenu_tree_header_get_tree      (MateMenuTreeHeader *header);
-MateMenuTreeDirectory *cafemenu_tree_header_get_parent    (MateMenuTreeHeader *header);
+CafeMenuTreeDirectory *cafemenu_tree_header_get_directory (CafeMenuTreeHeader *header);
+CafeMenuTree          *cafemenu_tree_header_get_tree      (CafeMenuTreeHeader *header);
+CafeMenuTreeDirectory *cafemenu_tree_header_get_parent    (CafeMenuTreeHeader *header);
 
-MateMenuTreeDirectory *cafemenu_tree_alias_get_directory         (MateMenuTreeAlias *alias);
-MateMenuTreeItemType   cafemenu_tree_alias_get_aliased_item_type (MateMenuTreeAlias *alias);
-MateMenuTreeDirectory *cafemenu_tree_alias_get_aliased_directory (MateMenuTreeAlias *alias);
-MateMenuTreeEntry     *cafemenu_tree_alias_get_aliased_entry     (MateMenuTreeAlias *alias);
-MateMenuTree          *cafemenu_tree_alias_get_tree              (MateMenuTreeAlias *alias);
-MateMenuTreeDirectory *cafemenu_tree_alias_get_parent            (MateMenuTreeAlias *alias);
+CafeMenuTreeDirectory *cafemenu_tree_alias_get_directory         (CafeMenuTreeAlias *alias);
+CafeMenuTreeItemType   cafemenu_tree_alias_get_aliased_item_type (CafeMenuTreeAlias *alias);
+CafeMenuTreeDirectory *cafemenu_tree_alias_get_aliased_directory (CafeMenuTreeAlias *alias);
+CafeMenuTreeEntry     *cafemenu_tree_alias_get_aliased_entry     (CafeMenuTreeAlias *alias);
+CafeMenuTree          *cafemenu_tree_alias_get_tree              (CafeMenuTreeAlias *alias);
+CafeMenuTreeDirectory *cafemenu_tree_alias_get_parent            (CafeMenuTreeAlias *alias);
 
-MateMenuTree          *cafemenu_tree_separator_get_tree (MateMenuTreeSeparator *separator);
-MateMenuTreeDirectory *cafemenu_tree_separator_get_parent (MateMenuTreeSeparator *separator);
+CafeMenuTree          *cafemenu_tree_separator_get_tree (CafeMenuTreeSeparator *separator);
+CafeMenuTreeDirectory *cafemenu_tree_separator_get_parent (CafeMenuTreeSeparator *separator);
 
 G_END_DECLS
 

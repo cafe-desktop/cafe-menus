@@ -24,8 +24,8 @@
 import optparse
 import sys
 import gi
-gi.require_version('MateMenu', '2.0')
-from gi.repository import MateMenu
+gi.require_version('CafeMenu', '2.0')
+from gi.repository import CafeMenu
 
 def print_directory(dir, parent_path = None):
     if not parent_path:
@@ -35,11 +35,11 @@ def print_directory(dir, parent_path = None):
 
     iter = dir.iter()
     nextType = iter.next()
-    while(nextType != MateMenu.TreeItemType.INVALID):
-        if (nextType == MateMenu.TreeItemType.ENTRY):
+    while(nextType != CafeMenu.TreeItemType.INVALID):
+        if (nextType == CafeMenu.TreeItemType.ENTRY):
             entry = iter.get_entry()
             print(path + "\t" + entry.get_app_info().get_name() + "\t" + entry.get_desktop_file_path())
-        elif (nextType == MateMenu.TreeItemType.DIRECTORY):
+        elif (nextType == CafeMenu.TreeItemType.DIRECTORY):
             print_directory(iter.get_directory(), path);
         nextType = iter.next()
 
@@ -62,12 +62,12 @@ def main(args):
     else:
         menu_file = 'cafe-applications.menu'
 
-    flags = MateMenu.TreeFlags.NONE
+    flags = CafeMenu.TreeFlags.NONE
     if options.exclude:
-        flags |= MateMenu.TreeFlags.INCLUDE_EXCLUDED
+        flags |= CafeMenu.TreeFlags.INCLUDE_EXCLUDED
     if options.nodisplay:
-        flags |= MateMenu.TreeFlags.INCLUDE_NODISPLAY
-    tree = MateMenu.Tree(menu_basename = "cafe-applications.menu", flags = flags)
+        flags |= CafeMenu.TreeFlags.INCLUDE_NODISPLAY
+    tree = CafeMenu.Tree(menu_basename = "cafe-applications.menu", flags = flags)
     tree.load_sync();
     root = tree.get_root_directory()
 

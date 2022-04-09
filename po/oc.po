@@ -81,7 +81,7 @@ msgstr "applications-graphics"
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
-msgstr "Material"
+msgstr "Caferial"
 
 #: desktop-directories/cafe-hardware.directory.in:4
 msgid "Settings for several hardware devices"
