@@ -433,12 +433,13 @@ DesktopEntry* desktop_entry_copy(DesktopEntry* entry)
     {
       DesktopEntryDesktop *desktop_entry = (DesktopEntryDesktop*) entry;
       DesktopEntryDesktop *retval_desktop_entry = (DesktopEntryDesktop*) retval;
-      int i;
 
       retval_desktop_entry->appinfo = g_object_ref (desktop_entry->appinfo);
 
       if (desktop_entry->categories != NULL)
         {
+          int i;
+
           i = 0;
           for (; desktop_entry->categories[i]; i++);
 
