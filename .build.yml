@@ -25,3 +25,6 @@ build_scripts:
   - ./before-build
   - ./make-scanbuild '--enable-compile-warnings=maximum'
   - ./after-build
+
+after_scripts:
+  - if [ -f "gen-index" ]; then ./gen-index -l 20; fi
