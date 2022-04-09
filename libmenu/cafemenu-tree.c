@@ -19,7 +19,7 @@
 
 #include <config.h>
 
-#include "matemenu-tree.h"
+#include "cafemenu-tree.h"
 
 #include <gio/gio.h>
 #include <string.h>
@@ -54,7 +54,7 @@ enum
   LAST_SIGNAL
 };
 
-static guint matemenu_tree_signals [LAST_SIGNAL] = { 0 };
+static guint cafemenu_tree_signals [LAST_SIGNAL] = { 0 };
 
 struct _MateMenuTree
 {
@@ -77,7 +77,7 @@ struct _MateMenuTree
   guint loaded    : 1;
 };
 
-G_DEFINE_TYPE (MateMenuTree, matemenu_tree, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MateMenuTree, cafemenu_tree, G_TYPE_OBJECT)
 
 struct MateMenuTreeItem
 {
@@ -153,19 +153,19 @@ struct MateMenuTreeAlias
   MateMenuTreeItem      *aliased_item;
 };
 
-static gboolean  matemenu_tree_load_layout          (MateMenuTree       *tree,
+static gboolean  cafemenu_tree_load_layout          (MateMenuTree       *tree,
                                                   GError         **error);
-static void      matemenu_tree_force_reload         (MateMenuTree       *tree);
-static gboolean  matemenu_tree_build_from_layout    (MateMenuTree       *tree,
+static void      cafemenu_tree_force_reload         (MateMenuTree       *tree);
+static gboolean  cafemenu_tree_build_from_layout    (MateMenuTree       *tree,
                                                   GError         **error);
-static void      matemenu_tree_force_rebuild        (MateMenuTree       *tree);
-static void      matemenu_tree_resolve_files        (MateMenuTree       *tree,
+static void      cafemenu_tree_force_rebuild        (MateMenuTree       *tree);
+static void      cafemenu_tree_resolve_files        (MateMenuTree       *tree,
 						  GHashTable      *loaded_menu_files,
 						  MenuLayoutNode  *layout);
-static void      matemenu_tree_force_recanonicalize (MateMenuTree       *tree);
-static void      matemenu_tree_invoke_monitors      (MateMenuTree       *tree);
+static void      cafemenu_tree_force_recanonicalize (MateMenuTree       *tree);
+static void      cafemenu_tree_invoke_monitors      (MateMenuTree       *tree);
 
-static void matemenu_tree_item_unref_and_unset_parent (gpointer itemp);
+static void cafemenu_tree_item_unref_and_unset_parent (gpointer itemp);
 
 typedef enum
 {
@@ -194,8 +194,8 @@ handle_nonexistent_menu_file_changed (MenuMonitor      *monitor,
                     path,
                     event == MENU_MONITOR_EVENT_CREATED ? "created" : "changed");
 
-      matemenu_tree_force_recanonicalize (tree);
-      matemenu_tree_invoke_monitors (tree);
+      cafemenu_tree_force_recanonicalize (tree);
+      cafemenu_tree_invoke_monitors (tree);
     }
 }
 
@@ -210,8 +210,8 @@ handle_menu_file_changed (MenuMonitor      *monitor,
 		event == MENU_MONITOR_EVENT_CREATED ? "created" :
 		event == MENU_MONITOR_EVENT_CHANGED ? "changed" : "deleted");
 
-  matemenu_tree_force_recanonicalize (tree);
-  matemenu_tree_invoke_monitors (tree);
+  cafemenu_tree_force_recanonicalize (tree);
+  cafemenu_tree_invoke_monitors (tree);
 }
 
 static void
@@ -228,12 +228,12 @@ handle_menu_file_directory_changed (MenuMonitor      *monitor,
 		event == MENU_MONITOR_EVENT_CREATED ? "created" :
 		event == MENU_MONITOR_EVENT_CHANGED ? "changed" : "deleted");
 
-  matemenu_tree_force_recanonicalize (tree);
-  matemenu_tree_invoke_monitors (tree);
+  cafemenu_tree_force_recanonicalize (tree);
+  cafemenu_tree_invoke_monitors (tree);
 }
 
 static void
-matemenu_tree_add_menu_file_monitor (MateMenuTree           *tree,
+cafemenu_tree_add_menu_file_monitor (MateMenuTree           *tree,
 				  const char          *path,
 				  MenuFileMonitorType  type)
 {
@@ -318,7 +318,7 @@ remove_menu_file_monitor (MenuFileMonitor *monitor,
 }
 
 static void
-matemenu_tree_remove_menu_file_monitors (MateMenuTree *tree)
+cafemenu_tree_remove_menu_file_monitors (MateMenuTree *tree)
 {
   menu_verbose ("Removing all menu file monitors\n");
 
@@ -337,13 +337,13 @@ canonicalize_path (MateMenuTree  *tree,
   if (tree->canonical_path)
     {
       tree->canonical = TRUE;
-      matemenu_tree_add_menu_file_monitor (tree,
+      cafemenu_tree_add_menu_file_monitor (tree,
 					tree->canonical_path,
 					MENU_FILE_MONITOR_FILE);
     }
   else
     {
-      matemenu_tree_add_menu_file_monitor (tree,
+      cafemenu_tree_add_menu_file_monitor (tree,
 					path,
 					MENU_FILE_MONITOR_NONEXISTENT_FILE);
     }
@@ -392,7 +392,7 @@ canonicalize_basename (MateMenuTree  *tree,
     }
 }
 
-static gboolean matemenu_tree_canonicalize_path(MateMenuTree* tree,
+static gboolean cafemenu_tree_canonicalize_path(MateMenuTree* tree,
                               GError   **error)
 {
   const char *menu_file = NULL;
@@ -402,7 +402,7 @@ static gboolean matemenu_tree_canonicalize_path(MateMenuTree* tree,
 
 	g_assert(tree->canonical_path == NULL);
 
-  matemenu_tree_remove_menu_file_monitors (tree);
+  cafemenu_tree_remove_menu_file_monitors (tree);
 
   if (tree->path)
     {
@@ -432,12 +432,12 @@ static gboolean matemenu_tree_canonicalize_path(MateMenuTree* tree,
            * the non-prefixed basename and use it later when calling
            * menu_layout_load().
            */
-          if (!g_strcmp0 (tree->basename, "mate-applications.menu") ||
+          if (!g_strcmp0 (tree->basename, "cafe-applications.menu") ||
               !g_strcmp0 (tree->basename, prefixed_basename))
             {
               canonicalize_basename (tree, prefixed_basename);
               g_free (tree->non_prefixed_basename);
-              tree->non_prefixed_basename = g_strdup ("mate-applications.menu");
+              tree->non_prefixed_basename = g_strdup ("cafe-applications.menu");
             }
           g_free (prefixed_basename);
         }
@@ -464,13 +464,13 @@ static gboolean matemenu_tree_canonicalize_path(MateMenuTree* tree,
 }
 
 static void
-matemenu_tree_force_recanonicalize (MateMenuTree *tree)
+cafemenu_tree_force_recanonicalize (MateMenuTree *tree)
 {
-  matemenu_tree_remove_menu_file_monitors (tree);
+  cafemenu_tree_remove_menu_file_monitors (tree);
 
   if (tree->canonical)
     {
-      matemenu_tree_force_reload (tree);
+      cafemenu_tree_force_reload (tree);
 
       g_free (tree->canonical_path);
       tree->canonical_path = NULL;
@@ -480,14 +480,14 @@ matemenu_tree_force_recanonicalize (MateMenuTree *tree)
 }
 
 /**
- * matemenu_tree_new:
+ * cafemenu_tree_new:
  * @menu_basename: Basename of menu file
  * @flags: Flags controlling menu content
  *
  * Returns: (transfer full): A new #MateMenuTree instance
  */
 MateMenuTree *
-matemenu_tree_new (const char     *menu_basename,
+cafemenu_tree_new (const char     *menu_basename,
                 MateMenuTreeFlags  flags)
 {
   g_return_val_if_fail (menu_basename != NULL, NULL);
@@ -499,14 +499,14 @@ matemenu_tree_new (const char     *menu_basename,
 }
 
 /**
- * matemenu_tree_new_fo_path:
+ * cafemenu_tree_new_fo_path:
  * @menu_path: Path of menu file
  * @flags: Flags controlling menu content
  *
  * Returns: (transfer full): A new #MateMenuTree instance
  */
 MateMenuTree *
-matemenu_tree_new_for_path (const char     *menu_path,
+cafemenu_tree_new_for_path (const char     *menu_path,
                          MateMenuTreeFlags  flags)
 {
   g_return_val_if_fail (menu_path != NULL, NULL);
@@ -518,14 +518,14 @@ matemenu_tree_new_for_path (const char     *menu_path,
 }
 
 static GObject *
-matemenu_tree_constructor (GType                  type,
+cafemenu_tree_constructor (GType                  type,
                         guint                  n_construct_properties,
                         GObjectConstructParam *construct_properties)
 {
 	GObject   *obj;
 	MateMenuTree *self;
 
-	obj = G_OBJECT_CLASS (matemenu_tree_parent_class)->constructor (type,
+	obj = G_OBJECT_CLASS (cafemenu_tree_parent_class)->constructor (type,
                                                                      n_construct_properties,
                                                                      construct_properties);
 
@@ -543,7 +543,7 @@ matemenu_tree_constructor (GType                  type,
 }
 
 static void
-matemenu_tree_set_property (GObject         *object,
+cafemenu_tree_set_property (GObject         *object,
                          guint            prop_id,
                          const GValue    *value,
                          GParamSpec      *pspec)
@@ -571,7 +571,7 @@ matemenu_tree_set_property (GObject         *object,
 }
 
 static void
-matemenu_tree_get_property (GObject         *object,
+cafemenu_tree_get_property (GObject         *object,
                          guint            prop_id,
                          GValue          *value,
                          GParamSpec      *pspec)
@@ -596,11 +596,11 @@ matemenu_tree_get_property (GObject         *object,
 }
 
 static void
-matemenu_tree_finalize (GObject *object)
+cafemenu_tree_finalize (GObject *object)
 {
   MateMenuTree *tree = MATEMENU_TREE (object);
 
-  matemenu_tree_force_recanonicalize (tree);
+  cafemenu_tree_force_recanonicalize (tree);
 
   if (tree->basename != NULL)
     g_free (tree->basename);
@@ -620,24 +620,24 @@ matemenu_tree_finalize (GObject *object)
   g_hash_table_destroy (tree->entries_by_id);
   tree->entries_by_id = NULL;
 
-  G_OBJECT_CLASS (matemenu_tree_parent_class)->finalize (object);
+  G_OBJECT_CLASS (cafemenu_tree_parent_class)->finalize (object);
 }
 
 static void
-matemenu_tree_init (MateMenuTree *self)
+cafemenu_tree_init (MateMenuTree *self)
 {
   self->entries_by_id = g_hash_table_new (g_str_hash, g_str_equal);
 }
 
 static void
-matemenu_tree_class_init (MateMenuTreeClass *klass)
+cafemenu_tree_class_init (MateMenuTreeClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
-  gobject_class->constructor = matemenu_tree_constructor;
-  gobject_class->get_property = matemenu_tree_get_property;
-  gobject_class->set_property = matemenu_tree_set_property;
-  gobject_class->finalize = matemenu_tree_finalize;
+  gobject_class->constructor = cafemenu_tree_constructor;
+  gobject_class->get_property = cafemenu_tree_get_property;
+  gobject_class->set_property = cafemenu_tree_set_property;
+  gobject_class->finalize = cafemenu_tree_finalize;
 
   /**
    * MateMenuTree:menu-basename:
@@ -679,9 +679,9 @@ matemenu_tree_class_init (MateMenuTreeClass *klass)
    *
    * This signal is emitted when applications are added, removed, or
    * upgraded.  But note the new data will only be visible after
-   * matemenu_tree_load_sync() or a variant thereof is invoked.
+   * cafemenu_tree_load_sync() or a variant thereof is invoked.
    */
-  matemenu_tree_signals[CHANGED] =
+  cafemenu_tree_signals[CHANGED] =
       g_signal_new ("changed",
                     G_TYPE_FROM_CLASS (klass),
                     G_SIGNAL_RUN_LAST,
@@ -692,16 +692,16 @@ matemenu_tree_class_init (MateMenuTreeClass *klass)
 }
 
 /**
- * matemenu_tree_get_canonical_menu_path:
+ * cafemenu_tree_get_canonical_menu_path:
  * @tree: a #MateMenuTree
  *
  * This function is only available if the tree has been loaded via
- * matemenu_tree_load_sync() or a variant thereof.
+ * cafemenu_tree_load_sync() or a variant thereof.
  *
  * Returns: The absolute and canonicalized path to the loaded menu file
  */
 const char *
-matemenu_tree_get_canonical_menu_path (MateMenuTree *tree)
+cafemenu_tree_get_canonical_menu_path (MateMenuTree *tree)
 {
   g_return_val_if_fail (MATEMENU_IS_TREE (tree), NULL);
   g_return_val_if_fail (tree->loaded, NULL);
@@ -710,7 +710,7 @@ matemenu_tree_get_canonical_menu_path (MateMenuTree *tree)
 }
 
 /**
- * matemenu_tree_load_sync:
+ * cafemenu_tree_load_sync:
  * @tree: a #MateMenuTree
  * @error: a #GError
  *
@@ -721,7 +721,7 @@ matemenu_tree_get_canonical_menu_path (MateMenuTree *tree)
  * Returns: %TRUE on success, %FALSE on error
  */
 gboolean
-matemenu_tree_load_sync (MateMenuTree  *tree,
+cafemenu_tree_load_sync (MateMenuTree  *tree,
                       GError    **error)
 {
   GError *local_error = NULL;
@@ -729,7 +729,7 @@ matemenu_tree_load_sync (MateMenuTree  *tree,
   if (tree->loaded)
     return TRUE;
 
-  if (!matemenu_tree_build_from_layout (tree, &local_error))
+  if (!cafemenu_tree_build_from_layout (tree, &local_error))
     {
       if (local_error)
         g_propagate_error (error, local_error);
@@ -742,21 +742,21 @@ matemenu_tree_load_sync (MateMenuTree  *tree,
 }
 
 /**
- * matemenu_tree_get_root_directory:
+ * cafemenu_tree_get_root_directory:
  * @tree: a #MateMenuTree
  *
  * Get the root directory; you must have loaded the tree first (at
- * least once) via matemenu_tree_load_sync() or a variant thereof.
+ * least once) via cafemenu_tree_load_sync() or a variant thereof.
  *
  * Returns: (transfer full): Root of the tree
  */
 MateMenuTreeDirectory *
-matemenu_tree_get_root_directory (MateMenuTree *tree)
+cafemenu_tree_get_root_directory (MateMenuTree *tree)
 {
   g_return_val_if_fail (tree != NULL, NULL);
   g_return_val_if_fail (tree->loaded, NULL);
 
-  return matemenu_tree_item_ref (tree->root);
+  return cafemenu_tree_item_ref (tree->root);
 }
 
 static MateMenuTreeDirectory *
@@ -816,7 +816,7 @@ find_path (MateMenuTreeDirectory *directory,
 }
 
 MateMenuTreeDirectory *
-matemenu_tree_get_directory_from_path (MateMenuTree  *tree,
+cafemenu_tree_get_directory_from_path (MateMenuTree  *tree,
 				    const char *path)
 {
   MateMenuTreeDirectory *root;
@@ -828,18 +828,18 @@ matemenu_tree_get_directory_from_path (MateMenuTree  *tree,
   if (path[0] != G_DIR_SEPARATOR)
     return NULL;
 
-  if (!(root = matemenu_tree_get_root_directory (tree)))
+  if (!(root = cafemenu_tree_get_root_directory (tree)))
     return NULL;
 
   directory = find_path (root, path);
 
-  matemenu_tree_item_unref (root);
+  cafemenu_tree_item_unref (root);
 
-  return directory ? matemenu_tree_item_ref (directory) : NULL;
+  return directory ? cafemenu_tree_item_ref (directory) : NULL;
 }
 
 /**
- * matemenu_tree_get_entry_by_id:
+ * cafemenu_tree_get_entry_by_id:
  * @tree: a #MateMenuTree
  * @id: a desktop file ID
  *
@@ -848,7 +848,7 @@ matemenu_tree_get_directory_from_path (MateMenuTree  *tree,
  * Returns: (transfer full): A newly referenced #MateMenuTreeEntry, or %NULL if none
  */
 MateMenuTreeEntry     *
-matemenu_tree_get_entry_by_id (MateMenuTree  *tree,
+cafemenu_tree_get_entry_by_id (MateMenuTree  *tree,
 			    const char *id)
 {
   MateMenuTreeEntry *entry;
@@ -857,86 +857,86 @@ matemenu_tree_get_entry_by_id (MateMenuTree  *tree,
 
   entry = g_hash_table_lookup (tree->entries_by_id, id);
   if (entry != NULL)
-    matemenu_tree_item_ref (entry);
+    cafemenu_tree_item_ref (entry);
 
   return entry;
 }
 
 static void
-matemenu_tree_invoke_monitors (MateMenuTree *tree)
+cafemenu_tree_invoke_monitors (MateMenuTree *tree)
 {
-  g_signal_emit (tree, matemenu_tree_signals[CHANGED], 0);
+  g_signal_emit (tree, cafemenu_tree_signals[CHANGED], 0);
 }
 
 static MateMenuTreeDirectory *
 get_parent (MateMenuTreeItem *item)
 {
   g_return_val_if_fail (item != NULL, NULL);
-  return item->parent ? matemenu_tree_item_ref (item->parent) : NULL;
+  return item->parent ? cafemenu_tree_item_ref (item->parent) : NULL;
 }
 
 /**
- * matemenu_tree_directory_get_parent:
+ * cafemenu_tree_directory_get_parent:
  * @directory: a #MateMenuTreeDirectory
  *
  * Returns: (transfer full): The parent directory, or %NULL if none
  */
 MateMenuTreeDirectory *
-matemenu_tree_directory_get_parent (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_parent (MateMenuTreeDirectory *directory)
 {
   return get_parent ((MateMenuTreeItem *)directory);
 }
 
 /**
- * matemenu_tree_entry_get_parent:
+ * cafemenu_tree_entry_get_parent:
  * @entry: a #MateMenuTreeEntry
  *
  * Returns: (transfer full): The parent directory, or %NULL if none
  */
 MateMenuTreeDirectory *
-matemenu_tree_entry_get_parent (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_parent (MateMenuTreeEntry *entry)
 {
   return get_parent ((MateMenuTreeItem *)entry);
 }
 
 /**
- * matemenu_tree_alias_get_parent:
+ * cafemenu_tree_alias_get_parent:
  * @alias: a #MateMenuTreeAlias
  *
  * Returns: (transfer full): The parent directory, or %NULL if none
  */
 MateMenuTreeDirectory *
-matemenu_tree_alias_get_parent (MateMenuTreeAlias *alias)
+cafemenu_tree_alias_get_parent (MateMenuTreeAlias *alias)
 {
   return get_parent ((MateMenuTreeItem *)alias);
 }
 
 /**
- * matemenu_tree_header_get_parent:
+ * cafemenu_tree_header_get_parent:
  * @header: a #MateMenuTreeHeader
  *
  * Returns: (transfer full): The parent directory, or %NULL if none
  */
 MateMenuTreeDirectory *
-matemenu_tree_header_get_parent (MateMenuTreeHeader *header)
+cafemenu_tree_header_get_parent (MateMenuTreeHeader *header)
 {
   return get_parent ((MateMenuTreeItem *)header);
 }
 
 /**
- * matemenu_tree_separator_get_parent:
+ * cafemenu_tree_separator_get_parent:
  * @separator: a #MateMenuTreeSeparator
  *
  * Returns: (transfer full): The parent directory, or %NULL if none
  */
 MateMenuTreeDirectory *
-matemenu_tree_separator_get_parent (MateMenuTreeSeparator *separator)
+cafemenu_tree_separator_get_parent (MateMenuTreeSeparator *separator)
 {
   return get_parent ((MateMenuTreeItem *)separator);
 }
 
 static void
-matemenu_tree_item_set_parent (MateMenuTreeItem      *item,
+cafemenu_tree_item_set_parent (MateMenuTreeItem      *item,
 			    MateMenuTreeDirectory *parent)
 {
   g_return_if_fail (item != NULL);
@@ -945,44 +945,44 @@ matemenu_tree_item_set_parent (MateMenuTreeItem      *item,
 }
 
 /**
- * matemenu_tree_iter_ref: (skip)
+ * cafemenu_tree_iter_ref: (skip)
  * @iter: iter
  *
  * Increment the reference count of @iter
  */
 MateMenuTreeIter *
-matemenu_tree_iter_ref (MateMenuTreeIter *iter)
+cafemenu_tree_iter_ref (MateMenuTreeIter *iter)
 {
   g_atomic_int_inc (&iter->refcount);
   return iter;
 }
 
 /**
- * matemenu_tree_iter_unref: (skip)
+ * cafemenu_tree_iter_unref: (skip)
  * @iter: iter
  *
  * Decrement the reference count of @iter
  */
 void
-matemenu_tree_iter_unref (MateMenuTreeIter *iter)
+cafemenu_tree_iter_unref (MateMenuTreeIter *iter)
 {
   if (!g_atomic_int_dec_and_test (&iter->refcount))
     return;
 
-  g_slist_foreach (iter->contents, (GFunc)matemenu_tree_item_unref, NULL);
+  g_slist_foreach (iter->contents, (GFunc)cafemenu_tree_item_unref, NULL);
   g_slist_free (iter->contents);
 
   g_slice_free (MateMenuTreeIter, iter);
 }
 
 /**
- * matemenu_tree_directory_iter:
+ * cafemenu_tree_directory_iter:
  * @directory: directory
  *
  * Returns: (transfer full): A new iterator over the directory contents
  */
 MateMenuTreeIter *
-matemenu_tree_directory_iter (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_iter (MateMenuTreeDirectory *directory)
 {
   MateMenuTreeIter *iter;
 
@@ -993,13 +993,13 @@ matemenu_tree_directory_iter (MateMenuTreeDirectory *directory)
 
   iter->contents = g_slist_copy (directory->contents);
   iter->contents_iter = iter->contents;
-  g_slist_foreach (iter->contents, (GFunc) matemenu_tree_item_ref, NULL);
+  g_slist_foreach (iter->contents, (GFunc) cafemenu_tree_item_ref, NULL);
 
   return iter;
 }
 
 /**
- * matemenu_tree_iter_next:
+ * cafemenu_tree_iter_next:
  * @iter: iter
  *
  * Change the iterator to the next item, and return its type.  If
@@ -1008,7 +1008,7 @@ matemenu_tree_directory_iter (MateMenuTreeDirectory *directory)
  * Returns: The type of the next item that can be retrived from the iterator
  */
 MateMenuTreeItemType
-matemenu_tree_iter_next (MateMenuTreeIter *iter)
+cafemenu_tree_iter_next (MateMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, MATEMENU_TREE_ITEM_INVALID);
 
@@ -1023,102 +1023,102 @@ matemenu_tree_iter_next (MateMenuTreeIter *iter)
 }
 
 /**
- * matemenu_tree_iter_get_directory:
+ * cafemenu_tree_iter_get_directory:
  * @iter: iter
  *
- * This method may only be called if matemenu_tree_iter_next()
+ * This method may only be called if cafemenu_tree_iter_next()
  * returned MATEMENU_TREE_ITEM_DIRECTORY.
  *
  * Returns: (transfer full): A directory
  */
 MateMenuTreeDirectory *
-matemenu_tree_iter_get_directory (MateMenuTreeIter *iter)
+cafemenu_tree_iter_get_directory (MateMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
   g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_DIRECTORY, NULL);
 
-  return (MateMenuTreeDirectory*)matemenu_tree_item_ref (iter->item);
+  return (MateMenuTreeDirectory*)cafemenu_tree_item_ref (iter->item);
 }
 
 /**
- * matemenu_tree_iter_get_entry:
+ * cafemenu_tree_iter_get_entry:
  * @iter: iter
  *
- * This method may only be called if matemenu_tree_iter_next()
+ * This method may only be called if cafemenu_tree_iter_next()
  * returned MATEMENU_TREE_ITEM_ENTRY.
  *
  * Returns: (transfer full): An entry
  */
 MateMenuTreeEntry *
-matemenu_tree_iter_get_entry (MateMenuTreeIter *iter)
+cafemenu_tree_iter_get_entry (MateMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
   g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_ENTRY, NULL);
 
-  return (MateMenuTreeEntry*)matemenu_tree_item_ref (iter->item);
+  return (MateMenuTreeEntry*)cafemenu_tree_item_ref (iter->item);
 }
 
 /**
- * matemenu_tree_iter_get_header:
+ * cafemenu_tree_iter_get_header:
  * @iter: iter
  *
- * This method may only be called if matemenu_tree_iter_next()
+ * This method may only be called if cafemenu_tree_iter_next()
  * returned MATEMENU_TREE_ITEM_HEADER.
  *
  * Returns: (transfer full): A header
  */
 MateMenuTreeHeader *
-matemenu_tree_iter_get_header (MateMenuTreeIter *iter)
+cafemenu_tree_iter_get_header (MateMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
   g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_HEADER, NULL);
 
-  return (MateMenuTreeHeader*)matemenu_tree_item_ref (iter->item);
+  return (MateMenuTreeHeader*)cafemenu_tree_item_ref (iter->item);
 }
 
 /**
- * matemenu_tree_iter_get_alias:
+ * cafemenu_tree_iter_get_alias:
  * @iter: iter
  *
- * This method may only be called if matemenu_tree_iter_next()
+ * This method may only be called if cafemenu_tree_iter_next()
  * returned MATEMENU_TREE_ITEM_ALIAS.
  *
  * Returns: (transfer full): An alias
  */
 MateMenuTreeAlias *
-matemenu_tree_iter_get_alias (MateMenuTreeIter *iter)
+cafemenu_tree_iter_get_alias (MateMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
   g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_ALIAS, NULL);
 
-  return (MateMenuTreeAlias*)matemenu_tree_item_ref (iter->item);
+  return (MateMenuTreeAlias*)cafemenu_tree_item_ref (iter->item);
 }
 
 /**
- * matemenu_tree_iter_get_separator:
+ * cafemenu_tree_iter_get_separator:
  * @iter: iter
  *
- * This method may only be called if matemenu_tree_iter_next()
+ * This method may only be called if cafemenu_tree_iter_next()
  * returned #MATEMENU_TREE_ITEM_SEPARATOR.
  *
  * Returns: (transfer full): A separator
  */
 MateMenuTreeSeparator *
-matemenu_tree_iter_get_separator (MateMenuTreeIter *iter)
+cafemenu_tree_iter_get_separator (MateMenuTreeIter *iter)
 {
   g_return_val_if_fail (iter != NULL, NULL);
   g_return_val_if_fail (iter->item != NULL, NULL);
   g_return_val_if_fail (iter->item->type == MATEMENU_TREE_ITEM_SEPARATOR, NULL);
 
-  return (MateMenuTreeSeparator*)matemenu_tree_item_ref (iter->item);
+  return (MateMenuTreeSeparator*)cafemenu_tree_item_ref (iter->item);
 }
 
 const char *
-matemenu_tree_directory_get_name (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_name (MateMenuTreeDirectory *directory)
 {
   g_return_val_if_fail (directory != NULL, NULL);
 
@@ -1129,7 +1129,7 @@ matemenu_tree_directory_get_name (MateMenuTreeDirectory *directory)
 }
 
 const char *
-matemenu_tree_directory_get_generic_name (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_generic_name (MateMenuTreeDirectory *directory)
 {
   g_return_val_if_fail (directory != NULL, NULL);
 
@@ -1140,7 +1140,7 @@ matemenu_tree_directory_get_generic_name (MateMenuTreeDirectory *directory)
 }
 
 const char *
-matemenu_tree_directory_get_comment (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_comment (MateMenuTreeDirectory *directory)
 {
   g_return_val_if_fail (directory != NULL, NULL);
 
@@ -1151,7 +1151,7 @@ matemenu_tree_directory_get_comment (MateMenuTreeDirectory *directory)
 }
 
 /**
- * matemenu_tree_directory_get_icon:
+ * cafemenu_tree_directory_get_icon:
  * @directory: a #MateMenuTreeDirectory
  *
  * Gets the icon for the directory.
@@ -1159,7 +1159,7 @@ matemenu_tree_directory_get_comment (MateMenuTreeDirectory *directory)
  * Returns: (transfer none): The #GIcon for this directory
  */
 GIcon *
-matemenu_tree_directory_get_icon (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_icon (MateMenuTreeDirectory *directory)
 {
 	g_return_val_if_fail(directory != NULL, NULL);
 
@@ -1170,7 +1170,7 @@ matemenu_tree_directory_get_icon (MateMenuTreeDirectory *directory)
 }
 
 const char *
-matemenu_tree_directory_get_desktop_file_path (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_desktop_file_path (MateMenuTreeDirectory *directory)
 {
   g_return_val_if_fail (directory != NULL, NULL);
 
@@ -1181,7 +1181,7 @@ matemenu_tree_directory_get_desktop_file_path (MateMenuTreeDirectory *directory)
 }
 
 const char *
-matemenu_tree_directory_get_menu_id (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_menu_id (MateMenuTreeDirectory *directory)
 {
   g_return_val_if_fail (directory != NULL, NULL);
 
@@ -1189,7 +1189,7 @@ matemenu_tree_directory_get_menu_id (MateMenuTreeDirectory *directory)
 }
 
 gboolean
-matemenu_tree_directory_get_is_nodisplay (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_is_nodisplay (MateMenuTreeDirectory *directory)
 {
   g_return_val_if_fail (directory != NULL, FALSE);
 
@@ -1197,7 +1197,7 @@ matemenu_tree_directory_get_is_nodisplay (MateMenuTreeDirectory *directory)
 }
 
 /**
- * matemenu_tree_directory_get_tree:
+ * cafemenu_tree_directory_get_tree:
  * @directory: A #MateMenuTreeDirectory
  *
  * Grab the tree associated with a #MateMenuTreeItem.
@@ -1205,7 +1205,7 @@ matemenu_tree_directory_get_is_nodisplay (MateMenuTreeDirectory *directory)
  * Returns: (transfer full): The #MateMenuTree
  */
 MateMenuTree *
-matemenu_tree_directory_get_tree (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_get_tree (MateMenuTreeDirectory *directory)
 {
   g_return_val_if_fail (directory != NULL, NULL);
 
@@ -1230,7 +1230,7 @@ append_directory_path (MateMenuTreeDirectory *directory,
 }
 
 char *
-matemenu_tree_directory_make_path (MateMenuTreeDirectory *directory,
+cafemenu_tree_directory_make_path (MateMenuTreeDirectory *directory,
 				MateMenuTreeEntry     *entry)
 {
   GString *path;
@@ -1249,13 +1249,13 @@ matemenu_tree_directory_make_path (MateMenuTreeDirectory *directory,
 }
 
 /**
- * matemenu_tree_entry_get_app_info:
+ * cafemenu_tree_entry_get_app_info:
  * @entry: a #MateMenuTreeEntry
  *
  * Returns: (transfer none): The #GDesktopAppInfo for this entry
  */
 GDesktopAppInfo *
-matemenu_tree_entry_get_app_info (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_app_info (MateMenuTreeEntry *entry)
 {
   g_return_val_if_fail (entry != NULL, NULL);
 
@@ -1263,7 +1263,7 @@ matemenu_tree_entry_get_app_info (MateMenuTreeEntry *entry)
 }
 
 const char *
-matemenu_tree_entry_get_desktop_file_path (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_desktop_file_path (MateMenuTreeEntry *entry)
 {
   g_return_val_if_fail (entry != NULL, NULL);
 
@@ -1271,7 +1271,7 @@ matemenu_tree_entry_get_desktop_file_path (MateMenuTreeEntry *entry)
 }
 
 const char *
-matemenu_tree_entry_get_desktop_file_id (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_desktop_file_id (MateMenuTreeEntry *entry)
 {
   g_return_val_if_fail (entry != NULL, NULL);
 
@@ -1279,14 +1279,14 @@ matemenu_tree_entry_get_desktop_file_id (MateMenuTreeEntry *entry)
 }
 
 gboolean
-matemenu_tree_entry_get_is_nodisplay_recurse (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_is_nodisplay_recurse (MateMenuTreeEntry *entry)
 {
   MateMenuTreeDirectory *directory;
   GDesktopAppInfo *app_info;
 
   g_return_val_if_fail (entry != NULL, FALSE);
 
-  app_info = matemenu_tree_entry_get_app_info (entry);
+  app_info = cafemenu_tree_entry_get_app_info (entry);
 
   if (g_desktop_app_info_get_nodisplay (app_info))
     return TRUE;
@@ -1304,7 +1304,7 @@ matemenu_tree_entry_get_is_nodisplay_recurse (MateMenuTreeEntry *entry)
 }
 
 gboolean
-matemenu_tree_entry_get_is_excluded (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_is_excluded (MateMenuTreeEntry *entry)
 {
   g_return_val_if_fail(entry != NULL, FALSE);
 
@@ -1312,7 +1312,7 @@ matemenu_tree_entry_get_is_excluded (MateMenuTreeEntry *entry)
 }
 
 gboolean
-matemenu_tree_entry_get_is_unallocated (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_is_unallocated (MateMenuTreeEntry *entry)
 {
   g_return_val_if_fail (entry != NULL, FALSE);
 
@@ -1320,7 +1320,7 @@ matemenu_tree_entry_get_is_unallocated (MateMenuTreeEntry *entry)
 }
 
 /**
- * matemenu_tree_entry_get_tree:
+ * cafemenu_tree_entry_get_tree:
  * @entry: A #MateMenuTreeEntry
  *
  * Grab the tree associated with a #MateMenuTreeEntry.
@@ -1328,7 +1328,7 @@ matemenu_tree_entry_get_is_unallocated (MateMenuTreeEntry *entry)
  * Returns: (transfer full): The #MateMenuTree
  */
 MateMenuTree *
-matemenu_tree_entry_get_tree (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_get_tree (MateMenuTreeEntry *entry)
 {
 	g_return_val_if_fail(entry != NULL, NULL);
 
@@ -1336,15 +1336,15 @@ matemenu_tree_entry_get_tree (MateMenuTreeEntry *entry)
 }
 
 MateMenuTreeDirectory *
-matemenu_tree_header_get_directory (MateMenuTreeHeader *header)
+cafemenu_tree_header_get_directory (MateMenuTreeHeader *header)
 {
   g_return_val_if_fail (header != NULL, NULL);
 
-  return matemenu_tree_item_ref (header->directory);
+  return cafemenu_tree_item_ref (header->directory);
 }
 
 /**
- * matemenu_tree_header_get_tree:
+ * cafemenu_tree_header_get_tree:
  * @header: A #MateMenuTreeHeader
  *
  * Grab the tree associated with a #MateMenuTreeHeader.
@@ -1352,7 +1352,7 @@ matemenu_tree_header_get_directory (MateMenuTreeHeader *header)
  * Returns: (transfer full): The #MateMenuTree
  */
 MateMenuTree *
-matemenu_tree_header_get_tree (MateMenuTreeHeader *header)
+cafemenu_tree_header_get_tree (MateMenuTreeHeader *header)
 {
   g_return_val_if_fail (header != NULL, NULL);
 
@@ -1360,7 +1360,7 @@ matemenu_tree_header_get_tree (MateMenuTreeHeader *header)
 }
 
 MateMenuTreeItemType
-matemenu_tree_alias_get_aliased_item_type (MateMenuTreeAlias *alias)
+cafemenu_tree_alias_get_aliased_item_type (MateMenuTreeAlias *alias)
 {
   g_return_val_if_fail (alias != NULL, MATEMENU_TREE_ITEM_INVALID);
 
@@ -1368,15 +1368,15 @@ matemenu_tree_alias_get_aliased_item_type (MateMenuTreeAlias *alias)
   return alias->aliased_item->type;
 }
 
-MateMenuTreeDirectory* matemenu_tree_alias_get_directory(MateMenuTreeAlias* alias)
+MateMenuTreeDirectory* cafemenu_tree_alias_get_directory(MateMenuTreeAlias* alias)
 {
 	g_return_val_if_fail (alias != NULL, NULL);
 
-	return matemenu_tree_item_ref(alias->directory);
+	return cafemenu_tree_item_ref(alias->directory);
 }
 
 /**
- * matemenu_tree_alias_get_tree:
+ * cafemenu_tree_alias_get_tree:
  * @alias: A #MateMenuTreeAlias
  *
  * Grab the tree associated with a #MateMenuTreeAlias.
@@ -1384,7 +1384,7 @@ MateMenuTreeDirectory* matemenu_tree_alias_get_directory(MateMenuTreeAlias* alia
  * Returns: (transfer full): The #MateMenuTree
  */
 MateMenuTree *
-matemenu_tree_alias_get_tree (MateMenuTreeAlias *alias)
+cafemenu_tree_alias_get_tree (MateMenuTreeAlias *alias)
 {
   g_return_val_if_fail (alias != NULL, NULL);
 
@@ -1392,7 +1392,7 @@ matemenu_tree_alias_get_tree (MateMenuTreeAlias *alias)
 }
 
 /**
- * matemenu_tree_separator_get_tree:
+ * cafemenu_tree_separator_get_tree:
  * @separator: A #MateMenuTreeSeparator
  *
  * Grab the tree associated with a #MateMenuTreeSeparator.
@@ -1400,7 +1400,7 @@ matemenu_tree_alias_get_tree (MateMenuTreeAlias *alias)
  * Returns: (transfer full): The #MateMenuTree
  */
 MateMenuTree *
-matemenu_tree_separator_get_tree (MateMenuTreeSeparator *separator)
+cafemenu_tree_separator_get_tree (MateMenuTreeSeparator *separator)
 {
   g_return_val_if_fail (separator != NULL, NULL);
 
@@ -1408,37 +1408,37 @@ matemenu_tree_separator_get_tree (MateMenuTreeSeparator *separator)
 }
 
 /**
- * matemenu_tree_alias_get_aliased_directory:
+ * cafemenu_tree_alias_get_aliased_directory:
  * @alias: alias
  *
  * Returns: (transfer full): The aliased directory entry
  */
 MateMenuTreeDirectory *
-matemenu_tree_alias_get_aliased_directory (MateMenuTreeAlias *alias)
+cafemenu_tree_alias_get_aliased_directory (MateMenuTreeAlias *alias)
 {
   g_return_val_if_fail (alias != NULL, NULL);
   g_return_val_if_fail (alias->aliased_item->type == MATEMENU_TREE_ITEM_DIRECTORY, NULL);
 
-  return (MateMenuTreeDirectory *) matemenu_tree_item_ref (alias->aliased_item);
+  return (MateMenuTreeDirectory *) cafemenu_tree_item_ref (alias->aliased_item);
 }
 
 /**
- * matemenu_tree_alias_get_aliased_entry:
+ * cafemenu_tree_alias_get_aliased_entry:
  * @alias: alias
  *
  * Returns: (transfer full): The aliased entry
  */
 MateMenuTreeEntry *
-matemenu_tree_alias_get_aliased_entry (MateMenuTreeAlias *alias)
+cafemenu_tree_alias_get_aliased_entry (MateMenuTreeAlias *alias)
 {
   g_return_val_if_fail (alias != NULL, NULL);
   g_return_val_if_fail (alias->aliased_item->type == MATEMENU_TREE_ITEM_ENTRY, NULL);
 
-  return (MateMenuTreeEntry *) matemenu_tree_item_ref (alias->aliased_item);
+  return (MateMenuTreeEntry *) cafemenu_tree_item_ref (alias->aliased_item);
 }
 
 static MateMenuTreeDirectory *
-matemenu_tree_directory_new (MateMenuTree          *tree,
+cafemenu_tree_directory_new (MateMenuTree          *tree,
                           MateMenuTreeDirectory *parent,
 			  const char         *name)
 {
@@ -1475,12 +1475,12 @@ matemenu_tree_directory_new (MateMenuTree          *tree,
 }
 
 static void
-matemenu_tree_directory_finalize (MateMenuTreeDirectory *directory)
+cafemenu_tree_directory_finalize (MateMenuTreeDirectory *directory)
 {
   g_assert (directory->item.refcount == 0);
 
   g_slist_foreach (directory->contents,
-		   (GFunc) matemenu_tree_item_unref_and_unset_parent,
+		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
 		   NULL);
   g_slist_free (directory->contents);
   directory->contents = NULL;
@@ -1498,13 +1498,13 @@ matemenu_tree_directory_finalize (MateMenuTreeDirectory *directory)
   directory->layout_info = NULL;
 
   g_slist_foreach (directory->subdirs,
-		   (GFunc) matemenu_tree_item_unref_and_unset_parent,
+		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
 		   NULL);
   g_slist_free (directory->subdirs);
   directory->subdirs = NULL;
 
   g_slist_foreach (directory->entries,
-		   (GFunc) matemenu_tree_item_unref_and_unset_parent,
+		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
 		   NULL);
   g_slist_free (directory->entries);
   directory->entries = NULL;
@@ -1520,7 +1520,7 @@ matemenu_tree_directory_finalize (MateMenuTreeDirectory *directory)
 }
 
 static MateMenuTreeSeparator *
-matemenu_tree_separator_new (MateMenuTreeDirectory *parent)
+cafemenu_tree_separator_new (MateMenuTreeDirectory *parent)
 {
   MateMenuTreeSeparator *retval;
 
@@ -1535,7 +1535,7 @@ matemenu_tree_separator_new (MateMenuTreeDirectory *parent)
 }
 
 static void
-matemenu_tree_separator_finalize (MateMenuTreeSeparator *separator)
+cafemenu_tree_separator_finalize (MateMenuTreeSeparator *separator)
 {
   g_assert (separator->item.refcount == 0);
 
@@ -1543,7 +1543,7 @@ matemenu_tree_separator_finalize (MateMenuTreeSeparator *separator)
 }
 
 static MateMenuTreeHeader *
-matemenu_tree_header_new (MateMenuTreeDirectory *parent,
+cafemenu_tree_header_new (MateMenuTreeDirectory *parent,
 		       MateMenuTreeDirectory *directory)
 {
   MateMenuTreeHeader *retval;
@@ -1555,27 +1555,27 @@ matemenu_tree_header_new (MateMenuTreeDirectory *parent,
   retval->item.refcount = 1;
   retval->item.tree     = parent->item.tree;
 
-  retval->directory = matemenu_tree_item_ref (directory);
+  retval->directory = cafemenu_tree_item_ref (directory);
 
-  matemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (retval->directory), NULL);
+  cafemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (retval->directory), NULL);
 
   return retval;
 }
 
 static void
-matemenu_tree_header_finalize (MateMenuTreeHeader *header)
+cafemenu_tree_header_finalize (MateMenuTreeHeader *header)
 {
   g_assert (header->item.refcount == 0);
 
   if (header->directory != NULL)
-    matemenu_tree_item_unref (header->directory);
+    cafemenu_tree_item_unref (header->directory);
   header->directory = NULL;
 
   g_slice_free (MateMenuTreeHeader, header);
 }
 
 static MateMenuTreeAlias *
-matemenu_tree_alias_new (MateMenuTreeDirectory *parent,
+cafemenu_tree_alias_new (MateMenuTreeDirectory *parent,
 		      MateMenuTreeDirectory *directory,
 		      MateMenuTreeItem      *item)
 {
@@ -1588,39 +1588,39 @@ matemenu_tree_alias_new (MateMenuTreeDirectory *parent,
   retval->item.refcount = 1;
   retval->item.tree     = parent->item.tree;
 
-  retval->directory    = matemenu_tree_item_ref (directory);
+  retval->directory    = cafemenu_tree_item_ref (directory);
   if (item->type != MATEMENU_TREE_ITEM_ALIAS)
-    retval->aliased_item = matemenu_tree_item_ref (item);
+    retval->aliased_item = cafemenu_tree_item_ref (item);
   else
     {
       MateMenuTreeAlias *alias = MATEMENU_TREE_ALIAS (item);
-      retval->aliased_item = matemenu_tree_item_ref (alias->aliased_item);
+      retval->aliased_item = cafemenu_tree_item_ref (alias->aliased_item);
     }
 
-  matemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (retval->directory), NULL);
-  matemenu_tree_item_set_parent (retval->aliased_item, NULL);
+  cafemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (retval->directory), NULL);
+  cafemenu_tree_item_set_parent (retval->aliased_item, NULL);
 
   return retval;
 }
 
 static void
-matemenu_tree_alias_finalize (MateMenuTreeAlias *alias)
+cafemenu_tree_alias_finalize (MateMenuTreeAlias *alias)
 {
   g_assert (alias->item.refcount == 0);
 
   if (alias->directory != NULL)
-    matemenu_tree_item_unref (alias->directory);
+    cafemenu_tree_item_unref (alias->directory);
   alias->directory = NULL;
 
   if (alias->aliased_item != NULL)
-    matemenu_tree_item_unref (alias->aliased_item);
+    cafemenu_tree_item_unref (alias->aliased_item);
   alias->aliased_item = NULL;
 
   g_slice_free (MateMenuTreeAlias, alias);
 }
 
 static MateMenuTreeEntry *
-matemenu_tree_entry_new (MateMenuTreeDirectory *parent,
+cafemenu_tree_entry_new (MateMenuTreeDirectory *parent,
 		      DesktopEntry       *desktop_entry,
 		      const char         *desktop_file_id,
 		      gboolean            is_excluded,
@@ -1644,7 +1644,7 @@ matemenu_tree_entry_new (MateMenuTreeDirectory *parent,
 }
 
 static void
-matemenu_tree_entry_finalize (MateMenuTreeEntry *entry)
+cafemenu_tree_entry_finalize (MateMenuTreeEntry *entry)
 {
   g_assert (entry->item.refcount == 0);
 
@@ -1659,7 +1659,7 @@ matemenu_tree_entry_finalize (MateMenuTreeEntry *entry)
 }
 
 static int
-matemenu_tree_entry_compare_by_id (MateMenuTreeItem *a,
+cafemenu_tree_entry_compare_by_id (MateMenuTreeItem *a,
 				MateMenuTreeItem *b)
 {
   if (a->type == MATEMENU_TREE_ITEM_ALIAS)
@@ -1673,13 +1673,13 @@ matemenu_tree_entry_compare_by_id (MateMenuTreeItem *a,
 }
 
 /**
- * matemenu_tree_item_ref:
+ * cafemenu_tree_item_ref:
  * @item: a #MateMenuTreeItem
  *
  * Returns: (transfer full): The same @item, or %NULL if @item is not a valid #MateMenuTreeItem
  */
 gpointer
-matemenu_tree_item_ref (gpointer itemp)
+cafemenu_tree_item_ref (gpointer itemp)
 {
 	MateMenuTreeItem* item = (MateMenuTreeItem*) itemp;
 
@@ -1692,7 +1692,7 @@ matemenu_tree_item_ref (gpointer itemp)
 }
 
 void
-matemenu_tree_item_unref (gpointer itemp)
+cafemenu_tree_item_unref (gpointer itemp)
 {
   MateMenuTreeItem *item;
 
@@ -1706,23 +1706,23 @@ matemenu_tree_item_unref (gpointer itemp)
       switch (item->type)
 	{
 	case MATEMENU_TREE_ITEM_DIRECTORY:
-	  matemenu_tree_directory_finalize (MATEMENU_TREE_DIRECTORY (item));
+	  cafemenu_tree_directory_finalize (MATEMENU_TREE_DIRECTORY (item));
 	  break;
 
 	case MATEMENU_TREE_ITEM_ENTRY:
-	  matemenu_tree_entry_finalize (MATEMENU_TREE_ENTRY (item));
+	  cafemenu_tree_entry_finalize (MATEMENU_TREE_ENTRY (item));
 	  break;
 
 	case MATEMENU_TREE_ITEM_SEPARATOR:
-	  matemenu_tree_separator_finalize (MATEMENU_TREE_SEPARATOR (item));
+	  cafemenu_tree_separator_finalize (MATEMENU_TREE_SEPARATOR (item));
 	  break;
 
 	case MATEMENU_TREE_ITEM_HEADER:
-	  matemenu_tree_header_finalize (MATEMENU_TREE_HEADER (item));
+	  cafemenu_tree_header_finalize (MATEMENU_TREE_HEADER (item));
 	  break;
 
 	case MATEMENU_TREE_ITEM_ALIAS:
-	  matemenu_tree_alias_finalize (MATEMENU_TREE_ALIAS (item));
+	  cafemenu_tree_alias_finalize (MATEMENU_TREE_ALIAS (item));
 	  break;
 
 	default:
@@ -1733,7 +1733,7 @@ matemenu_tree_item_unref (gpointer itemp)
 }
 
 static void
-matemenu_tree_item_unref_and_unset_parent (gpointer itemp)
+cafemenu_tree_item_unref_and_unset_parent (gpointer itemp)
 {
   MateMenuTreeItem *item;
 
@@ -1741,12 +1741,12 @@ matemenu_tree_item_unref_and_unset_parent (gpointer itemp)
 
   g_return_if_fail (item != NULL);
 
-  matemenu_tree_item_set_parent (item, NULL);
-  matemenu_tree_item_unref (item);
+  cafemenu_tree_item_set_parent (item, NULL);
+  cafemenu_tree_item_unref (item);
 }
 
 static inline const char *
-matemenu_tree_item_compare_get_name_helper (MateMenuTreeItem    *item,
+cafemenu_tree_item_compare_get_name_helper (MateMenuTreeItem    *item,
 					 MateMenuTreeFlags    flags)
 {
   const char *name;
@@ -1764,7 +1764,7 @@ matemenu_tree_item_compare_get_name_helper (MateMenuTreeItem    *item,
 
     case MATEMENU_TREE_ITEM_ENTRY:
       if (flags & MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME)
-        name = g_app_info_get_display_name (G_APP_INFO (matemenu_tree_entry_get_app_info (MATEMENU_TREE_ENTRY (item))));
+        name = g_app_info_get_display_name (G_APP_INFO (cafemenu_tree_entry_get_app_info (MATEMENU_TREE_ENTRY (item))));
       else
         name = desktop_entry_get_name (MATEMENU_TREE_ENTRY (item)->desktop_entry);
       break;
@@ -1773,7 +1773,7 @@ matemenu_tree_item_compare_get_name_helper (MateMenuTreeItem    *item,
       {
         MateMenuTreeItem *dir;
         dir = MATEMENU_TREE_ITEM (MATEMENU_TREE_ALIAS (item)->directory);
-        name = matemenu_tree_item_compare_get_name_helper (dir, flags);
+        name = cafemenu_tree_item_compare_get_name_helper (dir, flags);
       }
       break;
 
@@ -1788,7 +1788,7 @@ matemenu_tree_item_compare_get_name_helper (MateMenuTreeItem    *item,
 }
 
 static int
-matemenu_tree_item_compare (MateMenuTreeItem *a,
+cafemenu_tree_item_compare (MateMenuTreeItem *a,
 			 MateMenuTreeItem *b,
 			 gpointer       flags_p)
 {
@@ -1798,8 +1798,8 @@ matemenu_tree_item_compare (MateMenuTreeItem *a,
 
   flags = GPOINTER_TO_INT (flags_p);
 
-  name_a = matemenu_tree_item_compare_get_name_helper (a, flags);
-  name_b = matemenu_tree_item_compare_get_name_helper (b, flags);
+  name_a = cafemenu_tree_item_compare_get_name_helper (a, flags);
+  name_b = cafemenu_tree_item_compare_get_name_helper (b, flags);
 
   return g_utf8_collate (name_a, name_b);
 }
@@ -1826,7 +1826,7 @@ merge_resolved_children (MateMenuTree      *tree,
   MenuLayoutNode *menu_child;
   MenuLayoutNode *from_child;
 
-  matemenu_tree_resolve_files (tree, loaded_menu_files, from);
+  cafemenu_tree_resolve_files (tree, loaded_menu_files, from);
 
   insert_after = where;
   g_assert (menu_layout_node_get_type (insert_after) != MENU_LAYOUT_NODE_ROOT);
@@ -1891,7 +1891,7 @@ load_merge_file (MateMenuTree      *tree,
       if (canonical == NULL)
         {
 	  if (add_monitor)
-	    matemenu_tree_add_menu_file_monitor (tree,
+	    cafemenu_tree_add_menu_file_monitor (tree,
 					     filename,
 					     MENU_FILE_MONITOR_NONEXISTENT_FILE);
 
@@ -1928,7 +1928,7 @@ load_merge_file (MateMenuTree      *tree,
   g_hash_table_insert (loaded_menu_files, (char *) canonical, GUINT_TO_POINTER (TRUE));
 
   if (add_monitor)
-    matemenu_tree_add_menu_file_monitor (tree,
+    cafemenu_tree_add_menu_file_monitor (tree,
 				      canonical,
 				      MENU_FILE_MONITOR_FILE);
 
@@ -2067,7 +2067,7 @@ static gboolean load_parent_merge_file(MateMenuTree* tree, GHashTable* loaded_me
 	found = FALSE;
 	menu_file = g_strconcat(menu_name, ".menu", NULL);
 
-	if (strcmp(menu_file, "mate-applications.menu") == 0 && g_getenv("XDG_MENU_PREFIX"))
+	if (strcmp(menu_file, "cafe-applications.menu") == 0 && g_getenv("XDG_MENU_PREFIX"))
 	{
 		char* prefixed_basename;
 		prefixed_basename = g_strdup_printf("%s%s", g_getenv("XDG_MENU_PREFIX"), menu_file);
@@ -2097,7 +2097,7 @@ load_merge_dir (MateMenuTree      *tree,
 
   menu_verbose ("Loading merge dir \"%s\"\n", dirname);
 
-  matemenu_tree_add_menu_file_monitor (tree,
+  cafemenu_tree_add_menu_file_monitor (tree,
 				    dirname,
 				    MENU_FILE_MONITOR_DIRECTORY);
 
@@ -2257,8 +2257,8 @@ static MenuLayoutNode* add_directory_dir(MateMenuTree* tree, MenuLayoutNode* bef
 	return tmp;
 }
 
-/* According to desktop spec, since our menu file is called 'mate-applications', our
- * merged menu folders need to be called 'mate-applications-merged'.  We'll setup the folder
+/* According to desktop spec, since our menu file is called 'cafe-applications', our
+ * merged menu folders need to be called 'cafe-applications-merged'.  We'll setup the folder
  * 'applications-merged' if it doesn't exist yet, and a symlink pointing to it in the
  * ~/.config/menus directory
  */
@@ -2273,7 +2273,7 @@ setup_merge_dir_symlink(void)
 
     g_file_make_directory_with_parents (merge_file, NULL, NULL);
 
-    sym_path = g_build_filename (user_config, "menus", "mate-applications-merged", NULL);
+    sym_path = g_build_filename (user_config, "menus", "cafe-applications-merged", NULL);
     sym_file = g_file_new_for_path (sym_path);
     if (!g_file_query_exists (sym_file, NULL)) {
         g_file_make_symbolic_link (sym_file, merge_path, NULL, NULL);
@@ -2302,8 +2302,8 @@ resolve_default_directory_dirs (MateMenuTree      *tree,
   i = 0;
   while (system_data_dirs[i] != NULL)
     {
-		/* Parche para tomar las carpetas /mate/ */
-		char* path = g_build_filename(system_data_dirs[i], "mate", NULL);
+		/* Parche para tomar las carpetas /cafe/ */
+		char* path = g_build_filename(system_data_dirs[i], "cafe", NULL);
 		before = add_directory_dir(tree, before, path);
 		g_free(path);
 		/* /fin parche */
@@ -2608,7 +2608,7 @@ resolve_kde_legacy_dirs (MateMenuTree      *tree,
 }
 
 static void
-matemenu_tree_resolve_files (MateMenuTree      *tree,
+cafemenu_tree_resolve_files (MateMenuTree      *tree,
 			  GHashTable     *loaded_menu_files,
 			  MenuLayoutNode *layout)
 {
@@ -2659,7 +2659,7 @@ matemenu_tree_resolve_files (MateMenuTree      *tree,
         {
           MenuLayoutNode *next = menu_layout_node_get_next (child);
 
-          matemenu_tree_resolve_files (tree, loaded_menu_files, child);
+          cafemenu_tree_resolve_files (tree, loaded_menu_files, child);
 
           child = next;
         }
@@ -2760,7 +2760,7 @@ node_menu_compare_func (const void *a,
 }
 
 static void
-matemenu_tree_strip_duplicate_children (MateMenuTree      *tree,
+cafemenu_tree_strip_duplicate_children (MateMenuTree      *tree,
 				     MenuLayoutNode *layout)
 {
   MenuLayoutNode *child;
@@ -2881,7 +2881,7 @@ matemenu_tree_strip_duplicate_children (MateMenuTree      *tree,
   while (child != NULL)
     {
       if (menu_layout_node_get_type (child) == MENU_LAYOUT_NODE_MENU)
-        matemenu_tree_strip_duplicate_children (tree, child);
+        cafemenu_tree_strip_duplicate_children (tree, child);
 
       child = menu_layout_node_get_next (child);
     }
@@ -2984,7 +2984,7 @@ find_submenu (MenuLayoutNode *layout,
  * move one of Foo, not all the merged Foo.
  */
 static void
-matemenu_tree_execute_moves (MateMenuTree      *tree,
+cafemenu_tree_execute_moves (MateMenuTree      *tree,
 			  MenuLayoutNode *layout,
 			  gboolean       *need_remove_dups_p)
 {
@@ -3006,7 +3006,7 @@ matemenu_tree_execute_moves (MateMenuTree      *tree,
           /* Recurse - we recurse first and process the current node
            * second, as the spec dictates.
            */
-          matemenu_tree_execute_moves (tree, child, &need_remove_dups);
+          cafemenu_tree_execute_moves (tree, child, &need_remove_dups);
           break;
 
         case MENU_LAYOUT_NODE_MOVE:
@@ -3074,11 +3074,11 @@ matemenu_tree_execute_moves (MateMenuTree      *tree,
   if (need_remove_dups_p)
     *need_remove_dups_p = need_remove_dups;
   else if (need_remove_dups)
-    matemenu_tree_strip_duplicate_children (tree, layout);
+    cafemenu_tree_strip_duplicate_children (tree, layout);
 }
 
 static gboolean
-matemenu_tree_load_layout (MateMenuTree  *tree,
+cafemenu_tree_load_layout (MateMenuTree  *tree,
                         GError    **error)
 {
   GHashTable *loaded_menu_files;
@@ -3086,7 +3086,7 @@ matemenu_tree_load_layout (MateMenuTree  *tree,
   if (tree->layout)
     return TRUE;
 
-  if (!matemenu_tree_canonicalize_path (tree, error))
+  if (!cafemenu_tree_canonicalize_path (tree, error))
     return FALSE;
 
   menu_verbose ("Loading menu layout from \"%s\"\n",
@@ -3100,19 +3100,19 @@ matemenu_tree_load_layout (MateMenuTree  *tree,
 
   loaded_menu_files = g_hash_table_new (g_str_hash, g_str_equal);
   g_hash_table_insert (loaded_menu_files, tree->canonical_path, GUINT_TO_POINTER (TRUE));
-  matemenu_tree_resolve_files (tree, loaded_menu_files, tree->layout);
+  cafemenu_tree_resolve_files (tree, loaded_menu_files, tree->layout);
   g_hash_table_destroy (loaded_menu_files);
 
-  matemenu_tree_strip_duplicate_children (tree, tree->layout);
-  matemenu_tree_execute_moves (tree, tree->layout, NULL);
+  cafemenu_tree_strip_duplicate_children (tree, tree->layout);
+  cafemenu_tree_execute_moves (tree, tree->layout, NULL);
 
   return TRUE;
 }
 
 static void
-matemenu_tree_force_reload (MateMenuTree *tree)
+cafemenu_tree_force_reload (MateMenuTree *tree)
 {
-  matemenu_tree_force_rebuild (tree);
+  cafemenu_tree_force_rebuild (tree);
 
   if (tree->layout)
     menu_layout_node_unref (tree->layout);
@@ -3354,7 +3354,7 @@ entries_listify_foreach (const char         *desktop_file_id,
 {
   directory->entries =
     g_slist_prepend (directory->entries,
-		     matemenu_tree_entry_new (directory,
+		     cafemenu_tree_entry_new (directory,
                                            desktop_entry,
                                            desktop_file_id,
                                            FALSE,
@@ -3368,7 +3368,7 @@ excluded_entries_listify_foreach (const char         *desktop_file_id,
 {
   directory->entries =
     g_slist_prepend (directory->entries,
-		     matemenu_tree_entry_new (directory,
+		     cafemenu_tree_entry_new (directory,
 					   desktop_entry,
 					   desktop_file_id,
 					   TRUE,
@@ -3382,7 +3382,7 @@ unallocated_entries_listify_foreach (const char         *desktop_file_id,
 {
   directory->entries =
     g_slist_prepend (directory->entries,
-		     matemenu_tree_entry_new (directory,
+		     cafemenu_tree_entry_new (directory,
                                            desktop_entry,
                                            desktop_file_id,
                                            FALSE,
@@ -3436,7 +3436,7 @@ process_layout (MateMenuTree          *tree,
   g_assert (menu_layout_node_get_type (layout) == MENU_LAYOUT_NODE_MENU);
   g_assert (menu_layout_node_menu_get_name (layout) != NULL);
 
-  directory = matemenu_tree_directory_new (tree, parent,
+  directory = cafemenu_tree_directory_new (tree, parent,
 					menu_layout_node_menu_get_name (layout));
 
   menu_verbose ("=== Menu name = %s ===\n", directory->name);
@@ -3654,7 +3654,7 @@ process_layout (MateMenuTree          *tree,
       if (excluded_set != NULL)
 	desktop_entry_set_unref (excluded_set);
       desktop_entry_set_unref (entries);
-      matemenu_tree_item_unref (directory);
+      cafemenu_tree_item_unref (directory);
       return NULL;
     }
 
@@ -3720,7 +3720,7 @@ process_layout (MateMenuTree          *tree,
         {
           directory->entries = g_slist_delete_link (directory->entries,
                                                    tmp);
-          matemenu_tree_item_unref_and_unset_parent (entry);
+          cafemenu_tree_item_unref_and_unset_parent (entry);
         }
 
       tmp = next;
@@ -3755,7 +3755,7 @@ process_only_unallocated (MateMenuTree          *tree,
             {
               directory->entries = g_slist_delete_link (directory->entries,
                                                         tmp);
-              matemenu_tree_item_unref_and_unset_parent (entry);
+              cafemenu_tree_item_unref_and_unset_parent (entry);
             }
           else
             {
@@ -3945,16 +3945,16 @@ preprocess_layout_info_subdir_helper (MateMenuTree          *tree,
 
           menu_verbose ("Inline aliasing '%s' to '%s'\n",
                         item->type == MATEMENU_TREE_ITEM_ENTRY ?
-                          g_app_info_get_name (G_APP_INFO (matemenu_tree_entry_get_app_info (MATEMENU_TREE_ENTRY (item)))) :
+                          g_app_info_get_name (G_APP_INFO (cafemenu_tree_entry_get_app_info (MATEMENU_TREE_ENTRY (item)))) :
                           (item->type == MATEMENU_TREE_ITEM_DIRECTORY ?
-                             matemenu_tree_directory_get_name (MATEMENU_TREE_DIRECTORY (item)) :
-                             matemenu_tree_directory_get_name (MATEMENU_TREE_ALIAS (item)->directory)),
+                             cafemenu_tree_directory_get_name (MATEMENU_TREE_DIRECTORY (item)) :
+                             cafemenu_tree_directory_get_name (MATEMENU_TREE_ALIAS (item)->directory)),
                         subdir->name);
 
-          alias = matemenu_tree_alias_new (directory, subdir, item);
+          alias = cafemenu_tree_alias_new (directory, subdir, item);
 
           g_slist_foreach (list,
-                           (GFunc) matemenu_tree_item_unref_and_unset_parent,
+                           (GFunc) cafemenu_tree_item_unref_and_unset_parent,
                            NULL);
           g_slist_free (list);
           subdir->subdirs = NULL;
@@ -3986,14 +3986,14 @@ preprocess_layout_info_subdir_helper (MateMenuTree          *tree,
           else
             {
               g_slist_foreach (subdir->subdirs,
-                               (GFunc) matemenu_tree_item_set_parent,
+                               (GFunc) cafemenu_tree_item_set_parent,
                                directory);
               directory->subdirs = g_slist_concat (directory->subdirs,
                                                    subdir->subdirs);
               subdir->subdirs = NULL;
 
               g_slist_foreach (subdir->entries,
-                               (GFunc) matemenu_tree_item_set_parent,
+                               (GFunc) cafemenu_tree_item_set_parent,
                                directory);
               directory->entries = g_slist_concat (directory->entries,
                                                    subdir->entries);
@@ -4111,7 +4111,7 @@ preprocess_layout_info (MateMenuTree          *tree,
             }
 
           directory->subdirs = g_slist_remove (directory->subdirs, subdir);
-          matemenu_tree_item_unref_and_unset_parent (MATEMENU_TREE_ITEM (subdir));
+          cafemenu_tree_item_unref_and_unset_parent (MATEMENU_TREE_ITEM (subdir));
         }
     }
 
@@ -4140,7 +4140,7 @@ preprocess_layout_info (MateMenuTree          *tree,
       if (should_remove)
         {
           tmp = g_slist_delete_link (tmp, tmp->next);
-          matemenu_tree_item_unref_and_unset_parent (MATEMENU_TREE_ITEM (subdir));
+          cafemenu_tree_item_unref_and_unset_parent (MATEMENU_TREE_ITEM (subdir));
         }
       else
         tmp = tmp->next;
@@ -4157,7 +4157,7 @@ preprocess_layout_info (MateMenuTree          *tree,
     {
       /* strip duplicate entries; there should be no duplicate directories */
       directory->entries = g_slist_sort (directory->entries,
-                                         (GCompareFunc) matemenu_tree_entry_compare_by_id);
+                                         (GCompareFunc) cafemenu_tree_entry_compare_by_id);
       tmp = directory->entries;
       while (tmp != NULL && tmp->next != NULL)
         {
@@ -4174,7 +4174,7 @@ preprocess_layout_info (MateMenuTree          *tree,
                       MATEMENU_TREE_ENTRY (b)->desktop_file_id) == 0)
             {
               tmp = g_slist_delete_link (tmp, tmp->next);
-              matemenu_tree_item_unref (b);
+              cafemenu_tree_item_unref (b);
             }
           else
             tmp = tmp->next;
@@ -4195,7 +4195,7 @@ check_pending_separator (MateMenuTreeDirectory *directory)
       menu_verbose ("Adding pending separator in '%s'\n", directory->name);
 
       directory->contents = g_slist_append (directory->contents,
-					    matemenu_tree_separator_new (directory));
+					    cafemenu_tree_separator_new (directory));
       directory->layout_pending_separator = FALSE;
     }
 }
@@ -4216,7 +4216,7 @@ merge_alias (MateMenuTree          *tree,
   check_pending_separator (directory);
 
   directory->contents = g_slist_append (directory->contents,
-					matemenu_tree_item_ref (alias));
+					cafemenu_tree_item_ref (alias));
 }
 
 static void
@@ -4237,23 +4237,23 @@ merge_subdir (MateMenuTree          *tree,
     {
       MateMenuTreeHeader *header;
 
-      header = matemenu_tree_header_new (directory, subdir);
+      header = cafemenu_tree_header_new (directory, subdir);
       directory->contents = g_slist_append (directory->contents, header);
 
       g_slist_foreach (subdir->contents,
-                       (GFunc) matemenu_tree_item_set_parent,
+                       (GFunc) cafemenu_tree_item_set_parent,
                        directory);
       directory->contents = g_slist_concat (directory->contents,
                                             subdir->contents);
       subdir->contents = NULL;
       subdir->will_inline_header = G_MAXUINT16;
 
-      matemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (subdir), NULL);
+      cafemenu_tree_item_set_parent (MATEMENU_TREE_ITEM (subdir), NULL);
     }
   else
     {
       directory->contents = g_slist_append (directory->contents,
-					    matemenu_tree_item_ref (subdir));
+					    cafemenu_tree_item_ref (subdir));
     }
 }
 
@@ -4282,7 +4282,7 @@ merge_subdir_by_name (MateMenuTree          *tree,
 	{
 	  directory->subdirs = g_slist_delete_link (directory->subdirs, tmp);
 	  merge_subdir (tree, directory, subdir);
-	  matemenu_tree_item_unref (subdir);
+	  cafemenu_tree_item_unref (subdir);
 	}
 
       tmp = next;
@@ -4299,7 +4299,7 @@ merge_entry (MateMenuTree          *tree,
 
   check_pending_separator (directory);
   directory->contents = g_slist_append (directory->contents,
-					matemenu_tree_item_ref (entry));
+					cafemenu_tree_item_ref (entry));
 }
 
 static void
@@ -4327,7 +4327,7 @@ merge_entry_by_id (MateMenuTree          *tree,
 	{
 	  directory->entries = g_slist_delete_link (directory->entries, tmp);
 	  merge_entry (tree, directory, entry);
-	  matemenu_tree_item_unref (entry);
+	  cafemenu_tree_item_unref (entry);
 	}
 
       tmp = next;
@@ -4363,7 +4363,7 @@ merge_subdirs (MateMenuTree          *tree,
   directory->subdirs = NULL;
 
   subdirs = g_slist_sort_with_data (subdirs,
-				    (GCompareDataFunc) matemenu_tree_item_compare,
+				    (GCompareDataFunc) cafemenu_tree_item_compare,
                                     GINT_TO_POINTER (MATEMENU_TREE_FLAGS_NONE));
 
   tmp = subdirs;
@@ -4374,12 +4374,12 @@ merge_subdirs (MateMenuTree          *tree,
       if (MATEMENU_TREE_ITEM (subdir)->type == MATEMENU_TREE_ITEM_ALIAS)
         {
 	  merge_alias (tree, directory, MATEMENU_TREE_ALIAS (subdir));
-	  matemenu_tree_item_unref (subdir);
+	  cafemenu_tree_item_unref (subdir);
         }
       else if (!find_name_in_list (subdir->name, except))
 	{
 	  merge_subdir (tree, directory, subdir);
-	  matemenu_tree_item_unref (subdir);
+	  cafemenu_tree_item_unref (subdir);
 	}
       else
 	{
@@ -4408,7 +4408,7 @@ merge_entries (MateMenuTree          *tree,
   directory->entries = NULL;
 
   entries = g_slist_sort_with_data (entries,
-				    (GCompareDataFunc) matemenu_tree_item_compare,
+				    (GCompareDataFunc) cafemenu_tree_item_compare,
                                     GINT_TO_POINTER (tree->flags));
 
   tmp = entries;
@@ -4419,12 +4419,12 @@ merge_entries (MateMenuTree          *tree,
       if (MATEMENU_TREE_ITEM (entry)->type == MATEMENU_TREE_ITEM_ALIAS)
         {
 	  merge_alias (tree, directory, MATEMENU_TREE_ALIAS (entry));
-	  matemenu_tree_item_unref (entry);
+	  cafemenu_tree_item_unref (entry);
         }
       else if (!find_name_in_list (entry->desktop_file_id, except))
 	{
 	  merge_entry (tree, directory, entry);
-	  matemenu_tree_item_unref (entry);
+	  cafemenu_tree_item_unref (entry);
 	}
       else
 	{
@@ -4457,7 +4457,7 @@ merge_subdirs_and_entries (MateMenuTree          *tree,
   directory->entries = NULL;
 
   items = g_slist_sort_with_data (items,
-				  (GCompareDataFunc) matemenu_tree_item_compare,
+				  (GCompareDataFunc) cafemenu_tree_item_compare,
                                   GINT_TO_POINTER (tree->flags));
 
   tmp = items;
@@ -4471,7 +4471,7 @@ merge_subdirs_and_entries (MateMenuTree          *tree,
       if (type == MATEMENU_TREE_ITEM_ALIAS)
         {
           merge_alias (tree, directory, MATEMENU_TREE_ALIAS (item));
-          matemenu_tree_item_unref (item);
+          cafemenu_tree_item_unref (item);
         }
       else if (type == MATEMENU_TREE_ITEM_DIRECTORY)
 	{
@@ -4480,7 +4480,7 @@ merge_subdirs_and_entries (MateMenuTree          *tree,
 	      merge_subdir (tree,
 			    directory,
 			    MATEMENU_TREE_DIRECTORY (item));
-	      matemenu_tree_item_unref (item);
+	      cafemenu_tree_item_unref (item);
 	    }
 	  else
 	    {
@@ -4494,7 +4494,7 @@ merge_subdirs_and_entries (MateMenuTree          *tree,
 	  if (!find_name_in_list (MATEMENU_TREE_ENTRY (item)->desktop_file_id, except_entries))
 	    {
 	      merge_entry (tree, directory, MATEMENU_TREE_ENTRY (item));
-	      matemenu_tree_item_unref (item);
+	      cafemenu_tree_item_unref (item);
 	    }
 	  else
 	    {
@@ -4575,7 +4575,7 @@ process_layout_info (MateMenuTree          *tree,
   menu_verbose ("Processing menu layout hints for %s\n", directory->name);
 
   g_slist_foreach (directory->contents,
-		   (GFunc) matemenu_tree_item_unref_and_unset_parent,
+		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
 		   NULL);
   g_slist_free (directory->contents);
   directory->contents = NULL;
@@ -4677,13 +4677,13 @@ process_layout_info (MateMenuTree          *tree,
     }
 
   g_slist_foreach (directory->subdirs,
-		   (GFunc) matemenu_tree_item_unref,
+		   (GFunc) cafemenu_tree_item_unref,
 		   NULL);
   g_slist_free (directory->subdirs);
   directory->subdirs = NULL;
 
   g_slist_foreach (directory->entries,
-		   (GFunc) matemenu_tree_item_unref,
+		   (GFunc) cafemenu_tree_item_unref,
 		   NULL);
   g_slist_free (directory->entries);
   directory->entries = NULL;
@@ -4707,8 +4707,8 @@ handle_entries_changed (MenuLayoutNode *layout,
 {
   if (tree->layout == layout)
     {
-      matemenu_tree_force_rebuild (tree);
-      matemenu_tree_invoke_monitors (tree);
+      cafemenu_tree_force_rebuild (tree);
+      cafemenu_tree_invoke_monitors (tree);
     }
 }
 
@@ -4716,10 +4716,10 @@ static void
 update_entry_index (MateMenuTree           *tree,
 		    MateMenuTreeDirectory  *dir)
 {
-  MateMenuTreeIter *iter = matemenu_tree_directory_iter (dir);
+  MateMenuTreeIter *iter = cafemenu_tree_directory_iter (dir);
   MateMenuTreeItemType next_type;
 
-  while ((next_type = matemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID)
+  while ((next_type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID)
     {
       gpointer item = NULL;
 
@@ -4729,15 +4729,15 @@ update_entry_index (MateMenuTree           *tree,
           {
 	    const char *id;
 
-            item = matemenu_tree_iter_get_entry (iter);
-            id = matemenu_tree_entry_get_desktop_file_id (item);
+            item = cafemenu_tree_iter_get_entry (iter);
+            id = cafemenu_tree_entry_get_desktop_file_id (item);
             if (id != NULL)
               g_hash_table_insert (tree->entries_by_id, (char*)id, item);
           }
           break;
         case MATEMENU_TREE_ITEM_DIRECTORY:
           {
-            item = matemenu_tree_iter_get_directory (iter);
+            item = cafemenu_tree_iter_get_directory (iter);
             update_entry_index (tree, (MateMenuTreeDirectory*)item);
           }
           break;
@@ -4745,14 +4745,14 @@ update_entry_index (MateMenuTree           *tree,
           break;
         }
       if (item != NULL)
-        matemenu_tree_item_unref (item);
+        cafemenu_tree_item_unref (item);
     }
 
-  matemenu_tree_iter_unref (iter);
+  cafemenu_tree_iter_unref (iter);
 }
 
 static gboolean
-matemenu_tree_build_from_layout (MateMenuTree  *tree,
+cafemenu_tree_build_from_layout (MateMenuTree  *tree,
                               GError    **error)
 {
   DesktopEntrySet *allocated;
@@ -4760,7 +4760,7 @@ matemenu_tree_build_from_layout (MateMenuTree  *tree,
   if (tree->root)
     return TRUE;
 
-  if (!matemenu_tree_load_layout (tree, error))
+  if (!cafemenu_tree_load_layout (tree, error))
     return FALSE;
 
   menu_verbose ("Building menu tree from layout\n");
@@ -4828,12 +4828,12 @@ matemenu_tree_build_from_layout (MateMenuTree  *tree,
 }
 
 static void
-matemenu_tree_force_rebuild (MateMenuTree *tree)
+cafemenu_tree_force_rebuild (MateMenuTree *tree)
 {
   if (tree->root)
     {
       g_hash_table_remove_all (tree->entries_by_id);
-      matemenu_tree_item_unref (tree->root);
+      cafemenu_tree_item_unref (tree->root);
       tree->root = NULL;
       tree->loaded = FALSE;
 
@@ -4846,85 +4846,85 @@ matemenu_tree_force_rebuild (MateMenuTree *tree)
 }
 
 GType
-matemenu_tree_iter_get_type (void)
+cafemenu_tree_iter_get_type (void)
 {
   static GType gtype = G_TYPE_INVALID;
   if (gtype == G_TYPE_INVALID)
     {
       gtype = g_boxed_type_register_static ("MateMenuTreeIter",
-          (GBoxedCopyFunc)matemenu_tree_iter_ref,
-          (GBoxedFreeFunc)matemenu_tree_iter_unref);
+          (GBoxedCopyFunc)cafemenu_tree_iter_ref,
+          (GBoxedFreeFunc)cafemenu_tree_iter_unref);
     }
   return gtype;
 }
 
 GType
-matemenu_tree_directory_get_type (void)
+cafemenu_tree_directory_get_type (void)
 {
   static GType gtype = G_TYPE_INVALID;
   if (gtype == G_TYPE_INVALID)
     {
       gtype = g_boxed_type_register_static ("MateMenuTreeDirectory",
-          (GBoxedCopyFunc)matemenu_tree_item_ref,
-          (GBoxedFreeFunc)matemenu_tree_item_unref);
+          (GBoxedCopyFunc)cafemenu_tree_item_ref,
+          (GBoxedFreeFunc)cafemenu_tree_item_unref);
     }
   return gtype;
 }
 
 GType
-matemenu_tree_entry_get_type (void)
+cafemenu_tree_entry_get_type (void)
 {
   static GType gtype = G_TYPE_INVALID;
   if (gtype == G_TYPE_INVALID)
     {
       gtype = g_boxed_type_register_static ("MateMenuTreeEntry",
-          (GBoxedCopyFunc)matemenu_tree_item_ref,
-          (GBoxedFreeFunc)matemenu_tree_item_unref);
+          (GBoxedCopyFunc)cafemenu_tree_item_ref,
+          (GBoxedFreeFunc)cafemenu_tree_item_unref);
     }
   return gtype;
 }
 
 GType
-matemenu_tree_separator_get_type (void)
+cafemenu_tree_separator_get_type (void)
 {
   static GType gtype = G_TYPE_INVALID;
   if (gtype == G_TYPE_INVALID)
     {
       gtype = g_boxed_type_register_static ("MateMenuTreeSeparator",
-          (GBoxedCopyFunc)matemenu_tree_item_ref,
-          (GBoxedFreeFunc)matemenu_tree_item_unref);
+          (GBoxedCopyFunc)cafemenu_tree_item_ref,
+          (GBoxedFreeFunc)cafemenu_tree_item_unref);
     }
   return gtype;
 }
 
 GType
-matemenu_tree_header_get_type (void)
+cafemenu_tree_header_get_type (void)
 {
   static GType gtype = G_TYPE_INVALID;
   if (gtype == G_TYPE_INVALID)
     {
       gtype = g_boxed_type_register_static ("MateMenuTreeHeader",
-          (GBoxedCopyFunc)matemenu_tree_item_ref,
-          (GBoxedFreeFunc)matemenu_tree_item_unref);
+          (GBoxedCopyFunc)cafemenu_tree_item_ref,
+          (GBoxedFreeFunc)cafemenu_tree_item_unref);
     }
   return gtype;
 }
 
 GType
-matemenu_tree_alias_get_type (void)
+cafemenu_tree_alias_get_type (void)
 {
   static GType gtype = G_TYPE_INVALID;
   if (gtype == G_TYPE_INVALID)
     {
       gtype = g_boxed_type_register_static ("MateMenuTreeAlias",
-          (GBoxedCopyFunc)matemenu_tree_item_ref,
-          (GBoxedFreeFunc)matemenu_tree_item_unref);
+          (GBoxedCopyFunc)cafemenu_tree_item_ref,
+          (GBoxedFreeFunc)cafemenu_tree_item_unref);
     }
   return gtype;
 }
 
 GType
-matemenu_tree_flags_get_type (void)
+cafemenu_tree_flags_get_type (void)
 {
   static GType enum_type_id = 0;
   if (G_UNLIKELY (!enum_type_id))

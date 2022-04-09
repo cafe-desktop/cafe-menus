@@ -6,7 +6,7 @@
  
   <Menu>
     <Name>Personal</Name>
-    <Directory>mate-personal.directory</Directory>
+    <Directory>cafe-personal.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -32,7 +32,7 @@
 
   <Menu>
     <Name>Look and Feel</Name>
-    <Directory>mate-look-and-feel.directory</Directory>
+    <Directory>cafe-look-and-feel.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -51,7 +51,7 @@
 
   <Menu>
     <Name>Internet and Network</Name>
-    <Directory>mate-internet-and-network.directory</Directory>
+    <Directory>cafe-internet-and-network.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -73,7 +73,7 @@
 
   <Menu>
     <Name>Hardware</Name>
-    <Directory>mate-hardware.directory</Directory>
+    <Directory>cafe-hardware.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -85,7 +85,7 @@
 
   <Menu>
     <Name>Other</Name>
-    <Directory>mate-other.directory</Directory>
+    <Directory>cafe-other.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -103,7 +103,7 @@
       </And>
     </Include>
     <Exclude>
-      <Filename>matecc.desktop</Filename>
+      <Filename>cafecc.desktop</Filename>
     </Exclude>
   </Menu>
 

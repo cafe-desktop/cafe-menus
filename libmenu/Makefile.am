@@ -1,4 +1,4 @@
-lib_LTLIBRARIES = libmate-menu.la
+lib_LTLIBRARIES = libcafe-menu.la
 
 AM_CPPFLAGS = \
 	$(GIO_UNIX_CFLAGS)		\
@@ -8,41 +8,41 @@ AM_CPPFLAGS = \
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
-libmate_menu_includedir = $(includedir)/mate-menus
-libmate_menu_include_HEADERS = \
-	matemenu-tree.h
+libcafe_menu_includedir = $(includedir)/cafe-menus
+libcafe_menu_include_HEADERS = \
+	cafemenu-tree.h
 
-libmate_menu_sources = \
+libcafe_menu_sources = \
 	desktop-entries.c \
 	entry-directories.c \
-	matemenu-tree.c \
+	cafemenu-tree.c \
 	menu-layout.c \
 	menu-monitor.c \
 	menu-util.c
 
-libmate_menu_la_SOURCES = \
-	$(libmate_menu_sources) \
+libcafe_menu_la_SOURCES = \
+	$(libcafe_menu_sources) \
 	desktop-entries.h \
 	entry-directories.h \
-	matemenu-tree.h \
+	cafemenu-tree.h \
 	menu-layout.h \
 	menu-monitor.h \
 	menu-util.h
 
-libmate_menu_la_LIBADD = \
+libcafe_menu_la_LIBADD = \
 	$(GIO_UNIX_LIBS)
 
-libmate_menu_la_LDFLAGS = \
+libcafe_menu_la_LDFLAGS = \
 	-version-info $(LIB_MENU_LT_VERSION) \
 	-no-undefined \
-	-export-symbols-regex matemenu_tree
+	-export-symbols-regex cafemenu_tree
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libmate-menu.pc
+pkgconfig_DATA = libcafe-menu.pc
 
 EXTRA_DIST = \
-	libmate-menu.pc.in \
-	libmate-menu-uninstalled.pc.in
+	libcafe-menu.pc.in \
+	libcafe-menu-uninstalled.pc.in
 
 CLEANFILES =
 
@@ -54,13 +54,13 @@ INTROSPECTION_COMPILER_ARGS = --includedir=$(srcdir)
 
 if HAVE_INTROSPECTION
 # Note: we only include the headers here so far because there's no gtk-doc at all anyway
-introspection_sources = $(libmate_menu_include_HEADERS) matemenu-tree.c
+introspection_sources = $(libcafe_menu_include_HEADERS) cafemenu-tree.c
 
-MateMenu-2.0.gir: libmate-menu.la
+MateMenu-2.0.gir: libcafe-menu.la
 MateMenu_2_0_gir_INCLUDES = Gio-2.0
 MateMenu_2_0_gir_CFLAGS = $(AM_CPPFLAGS)
-MateMenu_2_0_gir_LIBS = libmate-menu.la
-MateMenu_2_0_gir_SCANNERFLAGS = --identifier-prefix=MateMenu --symbol-prefix=matemenu --pkg-export=libmate-menu --c-include=matemenu-tree.h
+MateMenu_2_0_gir_LIBS = libcafe-menu.la
+MateMenu_2_0_gir_SCANNERFLAGS = --identifier-prefix=MateMenu --symbol-prefix=cafemenu --pkg-export=libcafe-menu --c-include=cafemenu-tree.h
 MateMenu_2_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_sources))
 INTROSPECTION_GIRS += MateMenu-2.0.gir
 

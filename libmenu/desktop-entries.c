@@ -95,7 +95,7 @@ get_current_desktop (void)
   static char *current_desktop = NULL;
 
   /* Support XDG_CURRENT_DESKTOP environment variable; this can be used
-   * to abuse mate-menus in non-MATE desktops. */
+   * to abuse cafe-menus in non-MATE desktops. */
   if (!current_desktop)
     {
       const char *desktop;

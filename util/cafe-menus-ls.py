@@ -60,14 +60,14 @@ def main(args):
     if options.file:
         menu_file = options.file
     else:
-        menu_file = 'mate-applications.menu'
+        menu_file = 'cafe-applications.menu'
 
     flags = MateMenu.TreeFlags.NONE
     if options.exclude:
         flags |= MateMenu.TreeFlags.INCLUDE_EXCLUDED
     if options.nodisplay:
         flags |= MateMenu.TreeFlags.INCLUDE_NODISPLAY
-    tree = MateMenu.Tree(menu_basename = "mate-applications.menu", flags = flags)
+    tree = MateMenu.Tree(menu_basename = "cafe-applications.menu", flags = flags)
     tree.load_sync();
     root = tree.get_root_directory()
 
