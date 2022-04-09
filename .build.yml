@@ -2,19 +2,6 @@
 # THE FOLLOWING LINES IS USED BY docker-build
 ##########################################################
 requires:
-  archlinux:
-    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/mate-menus
-    - autoconf-archive
-    - clang
-    - gcc
-    - git
-    - glib2
-    - gobject-introspection
-    - make
-    - mate-common
-    - python2
-    - which
-
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/mate-menus
@@ -23,31 +10,6 @@ requires:
     - clang-tools
     - cppcheck
     - gcc
-    - git
-    - gobject-introspection
-    - libgirepository1.0-dev
-    - libglib2.0-dev
-    - make
-    - mate-common
-
-  fedora:
-    # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-menus.git
-    - autoconf-archive
-    - clang
-    - clang-analyzer
-    - chrpath
-    - gcc
-    - git
-    - gobject-introspection-devel
-    - make
-    - mate-common
-    - python2-devel
-    - redhat-rpm-config
-
-  ubuntu:
-    - autopoint
-    - clang
-    - clang-tools
     - git
     - gobject-introspection
     - libgirepository1.0-dev
