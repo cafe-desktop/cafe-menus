@@ -16,6 +16,7 @@ requires:
     - gobject-introspection
     - libgirepository1.0-dev
     - libglib2.0-dev
+    - libtool
     - make
 
 before_scripts:
