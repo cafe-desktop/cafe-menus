@@ -9,6 +9,7 @@ requires:
     - clang
     - clang-tools
     - cppcheck
+    - expect #required for unbuffer
     - gcc
     - git
     - gobject-introspection
