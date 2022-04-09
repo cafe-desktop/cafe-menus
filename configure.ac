@@ -70,7 +70,7 @@ AC_SUBST(DEBUG_CFLAGS)
 
 GOBJECT_INTROSPECTION_CHECK([0.6.7])
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 libmenu/Makefile
 libmenu/libmate-menu.pc
@@ -80,6 +80,8 @@ desktop-directories/Makefile
 util/Makefile
 po/Makefile.in
 ])
+
+AC_OUTPUT
 
 dnl ---------------------------------------------------------------------------
 dnl - Show summary
