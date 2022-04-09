@@ -16,7 +16,6 @@ requires:
     - libgirepository1.0-dev
     - libglib2.0-dev
     - make
-    - mate-common
 
 before_scripts:
   - ./html-cppcheck
