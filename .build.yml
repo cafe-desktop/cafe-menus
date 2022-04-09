@@ -22,6 +22,7 @@ before_scripts:
   - ./install-from-git https://github.com/mate-desktop/mate-common master
 
 build_scripts:
+  - ./before-build
   - NOCONFIGURE=1 ./autogen.sh
   - scan-build $CHECKERS ./configure
   - if [ $CPU_COUNT -gt 1 ]; then
