@@ -2,27 +2,28 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # ToMáš Marný, 2020
 # huskyviking <husky.viking@seznam.cz>, 2020
 # Radek kohout <radekpv@seznam.cz>, 2020
 # LiberteCzech <liberte.czech@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: LiberteCzech <liberte.czech@gmail.com>, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/cafe/teams/13566/cs/)\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Sound & Video"
@@ -32,10 +33,6 @@ msgstr "Zvuk a video"
 msgid "Multimedia menu"
 msgstr "Nabídka multimédií"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Programování"
@@ -44,17 +41,9 @@ msgstr "Programování"
 msgid "Tools for software development"
 msgstr "Nástroje na vývoj softwaru"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Vzdělávání"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -64,10 +53,6 @@ msgstr "Hry"
 msgid "Games and amusements"
 msgstr "Hry a zábava"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Grafika"
@@ -75,10 +60,6 @@ msgstr "Grafika"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Aplikace pro grafiku"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -88,10 +69,6 @@ msgstr "Hardware"
 msgid "Settings for several hardware devices"
 msgstr "Nastavení různých hardwarových zařízení"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Internet a síť"
@@ -99,10 +76,6 @@ msgstr "Internet a síť"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Nastavení související se sítí"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -112,11 +85,6 @@ msgstr "Vzhled a chování"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Nastavení ovládající vzhled a chování pracovního prostředí"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Internet"
@@ -125,10 +93,6 @@ msgstr "Internet"
 msgid "Programs for Internet access such as web and email"
 msgstr "Programy pro přístup k Internetu, například WWW a e-mail"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Kancelář"
@@ -136,10 +100,6 @@ msgstr "Kancelář"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Kancelářské aplikace"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -150,10 +110,6 @@ msgstr "Osobní"
 msgid "Personal settings"
 msgstr "Osobní nastavení"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Správa"
@@ -161,11 +117,6 @@ msgstr "Správa"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Změnit nastavení pro celý systém (ovlivní všechny uživatele)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -192,10 +143,6 @@ msgstr "Systémové nástroje"
 msgid "System configuration and monitoring"
 msgstr "Nastavení a sledování systému"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Zpřístupnění"
@@ -203,10 +150,6 @@ msgstr "Zpřístupnění"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Nastavení zpřístupnění"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -216,27 +159,14 @@ msgstr "Příslušenství"
 msgid "Desktop accessories"
 msgstr "Příslušenství prostředí pracovní plochy"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Aplikace"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Osobní volby a nastavení správy"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"
@@ -245,3 +175,9 @@ msgstr "Ostatní"
 #: desktop-directories/cafe-other.directory.in:4
 msgid "Applications that did not fit in other categories"
 msgstr "Aplikace nepatřící do jiných kategorií"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"

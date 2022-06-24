@@ -2,23 +2,23 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # ప్రవీణ్ ఇళ్ళ <mail2ipn@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Telugu (https://www.transifex.com/cafe/teams/13566/te/)\n"
+"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: te\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -29,10 +29,6 @@ msgstr "ధ్వని మరియు దృశ్యం"
 msgid "Multimedia menu"
 msgstr "బహుళమాధ్యమాల జాబితా"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "కార్యలేఖనం"
@@ -41,17 +37,9 @@ msgstr "కార్యలేఖనం"
 msgid "Tools for software development"
 msgstr "కార్యరూపకాలని తయారు చేయుటకు పనిముట్లు"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "విద్య"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -61,10 +49,6 @@ msgstr "ఆటలు"
 msgid "Games and amusements"
 msgstr "ఆటలు మరియు వినోదకాలు"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "రేఖాచిత్రాలు"
@@ -72,10 +56,6 @@ msgstr "రేఖాచిత్రాలు"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "రేఖాచిత్ర అనువర్తనాలు"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -85,10 +65,6 @@ msgstr "హార్డ్‌వేర్"
 msgid "Settings for several hardware devices"
 msgstr "పలు హార్డ్‌వేర్ పరికరాల కోసం అమరికలు"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "అంతర్జాలం మరియు జాలం"
@@ -96,10 +72,6 @@ msgstr "అంతర్జాలం మరియు జాలం"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "నెట్వర్క్ సంబంధిత అమరికలు"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -109,11 +81,6 @@ msgstr "రూపురేఖలు"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "రంగస్థల రూపం మరియు ప్రవర్తనను నియంత్రణ చేయు అమరికలు"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "అంతర్జాలం"
@@ -122,10 +89,6 @@ msgstr "అంతర్జాలం"
 msgid "Programs for Internet access such as web and email"
 msgstr "అంతర్జాల సాంగత్యం ఏర్పరుచు కార్యక్రమాలు"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "కార్యాలయం"
@@ -133,10 +96,6 @@ msgstr "కార్యాలయం"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "కార్యాలయ అనువర్తనాలు"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -147,10 +106,6 @@ msgstr "వ్యక్తిగతం"
 msgid "Personal settings"
 msgstr "వ్యక్తిగత అమరికలు"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "నిర్వహణ"
@@ -158,13 +113,7 @@ msgstr "నిర్వహణ"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr ""
-"వ్యవస్థకు సంబందించిన అన్ని అమరికలను మార్చు (ఈ మార్పులు అందరు వినియోగ దారులకు"
-" వమర్చబడతయి)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
+"వ్యవస్థకు సంబందించిన అన్ని అమరికలను మార్చు (ఈ మార్పులు అందరు వినియోగ దారులకు వమర్చబడతయి)"
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -191,10 +140,6 @@ msgstr "వ్యవస్థ పనిముట్లు"
 msgid "System configuration and monitoring"
 msgstr "వ్యవస్థ స్వరూపణం మరియు పర్యవేక్షణ"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "సార్వత్రిక ప్రాప్తి"
@@ -202,10 +147,6 @@ msgstr "సార్వత్రిక ప్రాప్తి"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "సార్వత్రిక ప్రాప్తి అమరికలు"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -215,27 +156,14 @@ msgstr "సహాయకాలు"
 msgid "Desktop accessories"
 msgstr "రంగస్థల సహాయకాలు"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "అనువర్తనాలు"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "వ్యక్తిగత అభిరుచులు మరియు నిర్వహణ అమరికలు"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"

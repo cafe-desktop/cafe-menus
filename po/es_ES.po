@@ -2,171 +2,173 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Jose11091 <josemanuellh@gmail.com>, 2018
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: CAFE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-20 14:55+0100\n"
+"Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2018-03-11 19:02+0000\n"
 "Last-Translator: Jose11091 <josemanuellh@gmail.com>, 2018\n"
-"Language-Team: Spanish (Spain) (https://www.transifex.com/cafe/teams/13566/es_ES/)\n"
+"Language-Team: Spanish (Spain) (https://www.transifex.com/cafe/teams/13566/"
+"es_ES/)\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../desktop-directories/cafe-audio-video.directory.in.h:1
+#: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Sound & Video"
 msgstr ""
 
-#: ../desktop-directories/cafe-audio-video.directory.in.h:2
+#: desktop-directories/cafe-audio-video.directory.in:4
 msgid "Multimedia menu"
 msgstr ""
 
-#: ../desktop-directories/cafe-development.directory.in.h:1
+#: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr ""
 
-#: ../desktop-directories/cafe-development.directory.in.h:2
+#: desktop-directories/cafe-development.directory.in:4
 msgid "Tools for software development"
 msgstr ""
 
-#: ../desktop-directories/cafe-education.directory.in.h:1
+#: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr ""
 
-#: ../desktop-directories/cafe-game.directory.in.h:1
+#: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
 msgstr ""
 
-#: ../desktop-directories/cafe-game.directory.in.h:2
+#: desktop-directories/cafe-game.directory.in:4
 msgid "Games and amusements"
 msgstr ""
 
-#: ../desktop-directories/cafe-graphics.directory.in.h:1
+#: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr ""
 
-#: ../desktop-directories/cafe-graphics.directory.in.h:2
+#: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr ""
 
-#: ../desktop-directories/cafe-hardware.directory.in.h:1
+#: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
 msgstr ""
 
-#: ../desktop-directories/cafe-hardware.directory.in.h:2
+#: desktop-directories/cafe-hardware.directory.in:4
 msgid "Settings for several hardware devices"
 msgstr ""
 
-#: ../desktop-directories/cafe-internet-and-network.directory.in.h:1
+#: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr ""
 
-#: ../desktop-directories/cafe-internet-and-network.directory.in.h:2
+#: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr ""
 
-#: ../desktop-directories/cafe-look-and-feel.directory.in.h:1
+#: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
 msgstr ""
 
-#: ../desktop-directories/cafe-look-and-feel.directory.in.h:2
+#: desktop-directories/cafe-look-and-feel.directory.in:4
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr ""
 
-#: ../desktop-directories/cafe-network.directory.in.h:1
+#: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr ""
 
-#: ../desktop-directories/cafe-network.directory.in.h:2
+#: desktop-directories/cafe-network.directory.in:4
 msgid "Programs for Internet access such as web and email"
 msgstr ""
 
-#: ../desktop-directories/cafe-office.directory.in.h:1
+#: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr ""
 
-#: ../desktop-directories/cafe-office.directory.in.h:2
+#: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
-#: ../desktop-directories/cafe-personal.directory.in.h:2
+#: desktop-directories/cafe-personal.directory.in:4
 msgid "Personal"
 msgstr ""
 
-#: ../desktop-directories/cafe-personal.directory.in.h:3
+#: desktop-directories/cafe-personal.directory.in:5
 msgid "Personal settings"
 msgstr ""
 
-#: ../desktop-directories/cafe-settings-system.directory.in.h:1
+#: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr ""
 
-#: ../desktop-directories/cafe-settings-system.directory.in.h:2
+#: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr ""
 
-#: ../desktop-directories/cafe-settings.directory.in.h:1
+#: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../desktop-directories/cafe-settings.directory.in.h:2
+#: desktop-directories/cafe-settings.directory.in:4
 msgid "Personal preferences"
 msgstr ""
 
-#: ../desktop-directories/cafe-system.directory.in.h:1
-#: ../desktop-directories/cafe-menu-system.directory.in.h:1
+#: desktop-directories/cafe-system.directory.in:3
+#: desktop-directories/cafe-menu-system.directory.in:3
 msgid "System"
 msgstr ""
 
-#: ../desktop-directories/cafe-system.directory.in.h:2
+#: desktop-directories/cafe-system.directory.in:4
 msgid "System settings"
 msgstr ""
 
-#: ../desktop-directories/cafe-system-tools.directory.in.h:1
+#: desktop-directories/cafe-system-tools.directory.in:3
 msgid "System Tools"
 msgstr ""
 
-#: ../desktop-directories/cafe-system-tools.directory.in.h:2
+#: desktop-directories/cafe-system-tools.directory.in:4
 msgid "System configuration and monitoring"
 msgstr ""
 
-#: ../desktop-directories/cafe-utility-accessibility.directory.in.h:1
+#: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr ""
 
-#: ../desktop-directories/cafe-utility-accessibility.directory.in.h:2
+#: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr ""
 
-#: ../desktop-directories/cafe-utility.directory.in.h:1
+#: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
 msgstr ""
 
-#: ../desktop-directories/cafe-utility.directory.in.h:2
+#: desktop-directories/cafe-utility.directory.in:4
 msgid "Desktop accessories"
 msgstr ""
 
-#: ../desktop-directories/cafe-menu-applications.directory.in.h:1
+#: desktop-directories/cafe-menu-applications.directory.in:3
+#: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr ""
 
-#: ../desktop-directories/cafe-menu-system.directory.in.h:2
+#: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr ""
 
-#: ../desktop-directories/cafe-other.directory.in.h:1
+#: desktop-directories/cafe-other.directory.in:3
 msgid "Other"
 msgstr ""
 
-#: ../desktop-directories/cafe-other.directory.in.h:2
+#: desktop-directories/cafe-other.directory.in:4
 msgid "Applications that did not fit in other categories"
 msgstr ""

@@ -2,23 +2,23 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Sven Keeter <sven.keeter@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Sven Keeter <sven.keeter@gmail.com>, 2020\n"
 "Language-Team: Nepali (https://www.transifex.com/cafe/teams/13566/ne/)\n"
+"Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ne\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -29,10 +29,6 @@ msgstr "ध्वनि र भिडियो"
 msgid "Multimedia menu"
 msgstr "मल्टिमिडिया मेनु"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "प्रोग्रामिङ"
@@ -41,17 +37,9 @@ msgstr "प्रोग्रामिङ"
 msgid "Tools for software development"
 msgstr "सफ्टवेर विकासका लागि उपकरण"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "शिक्षा"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -61,10 +49,6 @@ msgstr "खेल"
 msgid "Games and amusements"
 msgstr "खेल र मनोरञ्जन"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "ग्राफिक्स"
@@ -72,10 +56,6 @@ msgstr "ग्राफिक्स"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "ग्राफिक्स अनुप्रयोग"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -85,10 +65,6 @@ msgstr "हार्डवेयर"
 msgid "Settings for several hardware devices"
 msgstr "विभिन्न हार्डवेयर यन्त्रका लागि सेटिङ"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "इन्टरनेट र सञ्जाल"
@@ -96,10 +72,6 @@ msgstr "इन्टरनेट र सञ्जाल"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "सञ्जाल सम्बन्धि सेटिङ"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -109,11 +81,6 @@ msgstr "हेर्नुहोस् अनुभव गर्नुहोस�
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "डेस्कटप देखावट र व्यवहार नियन्त्रण गर्ने सेटिङ"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "इन्टरनेट"
@@ -122,10 +89,6 @@ msgstr "इन्टरनेट"
 msgid "Programs for Internet access such as web and email"
 msgstr "वेब र इमेल जस्तो इन्टरनेट पहुँचका लागि कार्यक्रम"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "कार्यालय"
@@ -133,10 +96,6 @@ msgstr "कार्यालय"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "कार्यालय अनुप्रयोग"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -147,24 +106,13 @@ msgstr "व्यक्तिगत"
 msgid "Personal settings"
 msgstr "व्यक्तिगत सेटिङ"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "प्रशासन"
 
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
-msgstr ""
-"सम्पूर्ण प्रणालीका सेटिङ परिवर्तन गर्नुहोस् ( सबै प्रयोगकर्तालाई प्रभाव "
-"पार्छ)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
+msgstr "सम्पूर्ण प्रणालीका सेटिङ परिवर्तन गर्नुहोस् ( सबै प्रयोगकर्तालाई प्रभाव पार्छ)"
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -191,10 +139,6 @@ msgstr "प्रणाली उपकरण"
 msgid "System configuration and monitoring"
 msgstr "प्रणाली कन्फिगरेसन र अनुगमन"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "विश्वब्यापी पहुँच"
@@ -202,10 +146,6 @@ msgstr "विश्वब्यापी पहुँच"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "विश्वब्यापी पहुँच सेटिङ"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -215,27 +155,14 @@ msgstr "सहायक उपकरण"
 msgid "Desktop accessories"
 msgstr "डेस्कटप सहायक उपकरण"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "अनुप्रयोग"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "व्यक्तिगत प्राथमिकता र प्रशासकिय सेटिङ"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"

@@ -2,22 +2,23 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Alexandre Raymond, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Alexandre Raymond, 2020\n"
-"Language-Team: Franco-Provençal (Arpitan) (https://www.transifex.com/cafe/teams/13566/frp/)\n"
+"Language-Team: Franco-Provençal (Arpitan) (https://www.transifex.com/cafe/"
+"teams/13566/frp/)\n"
+"Language: frp\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: frp\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -28,10 +29,6 @@ msgstr "Son et vidèô"
 msgid "Multimedia menu"
 msgstr "Menu son et vidèô"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Programacion"
@@ -40,17 +37,9 @@ msgstr "Programacion"
 msgid "Tools for software development"
 msgstr "Otils de programacion"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Èducacion"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -60,10 +49,6 @@ msgstr "Juè"
 msgid "Games and amusements"
 msgstr "Juès et divèrtissement"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Graficos"
@@ -71,10 +56,6 @@ msgstr "Graficos"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Aplicacions grafiques"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -84,10 +65,6 @@ msgstr "Quincalye"
 msgid "Settings for several hardware devices"
 msgstr "Règllâjos de la quincalye de l’aparèly"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Malyâjo et baranye"
@@ -95,10 +72,6 @@ msgstr "Malyâjo et baranye"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Règllâjos de baranye"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -108,11 +81,6 @@ msgstr "Vêr et sentir"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Règllâjos de controlo d’aparence et de comportement"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Malyâjo"
@@ -121,10 +89,6 @@ msgstr "Malyâjo"
 msgid "Programs for Internet access such as web and email"
 msgstr "Programos de malyâjo et de navìgacion sur la têla"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Ofiço"
@@ -132,10 +96,6 @@ msgstr "Ofiço"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Aplicacions d’ofiço"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -146,10 +106,6 @@ msgstr "Pèrsonèl"
 msgid "Personal settings"
 msgstr "Configuracion pèrsonèla"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Regence"
@@ -157,11 +113,6 @@ msgstr "Regence"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Changér lo sistèmo g·ènèrâl (a tuis los usancérs)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -188,10 +139,6 @@ msgstr "Otils de sistèmo"
 msgid "System configuration and monitoring"
 msgstr "Configuracion et diagnostico de sistèmo"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Accès univèrsèl"
@@ -199,10 +146,6 @@ msgstr "Accès univèrsèl"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Règllâjos d’accès univèrsèl"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -212,27 +155,14 @@ msgstr "Otilyâjo"
 msgid "Desktop accessories"
 msgstr "Otilyâjo d’ordinator"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Règllâjos de prèfèrence et d’administracion"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"

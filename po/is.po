@@ -2,23 +2,23 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Sveinn í Felli <sv1@fellsnet.is>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Icelandic (https://www.transifex.com/cafe/teams/13566/is/)\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -29,10 +29,6 @@ msgstr "Hljóð og mynd"
 msgid "Multimedia menu"
 msgstr "Margmiðlun"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Forritun"
@@ -41,17 +37,9 @@ msgstr "Forritun"
 msgid "Tools for software development"
 msgstr "Þróunarverkfæri"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Menntun"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -61,10 +49,6 @@ msgstr "Leikir"
 msgid "Games and amusements"
 msgstr "Leikir og skemmtun"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Myndefni"
@@ -72,10 +56,6 @@ msgstr "Myndefni"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Myndefnisforrit"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -85,10 +65,6 @@ msgstr "Vélbúnaður"
 msgid "Settings for several hardware devices"
 msgstr "Uppsetning á ýmsum vélbúnaði"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Internet og netkerfi"
@@ -96,10 +72,6 @@ msgstr "Internet og netkerfi"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Netkerfistengdar stillingar"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -109,11 +81,6 @@ msgstr "Útlit og viðmót"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Stillingar sem stjórna útliti og hegðun skjáborðsins"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Internetið"
@@ -122,10 +89,6 @@ msgstr "Internetið"
 msgid "Programs for Internet access such as web and email"
 msgstr "Forrit til að nálgast netið eins og vefinn og tölvupóst"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Skrifstofa"
@@ -133,10 +96,6 @@ msgstr "Skrifstofa"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Skrifstofuforrit"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -147,10 +106,6 @@ msgstr "Persónulegt"
 msgid "Personal settings"
 msgstr "Persónulegar stillingar"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Stjórnun"
@@ -158,11 +113,6 @@ msgstr "Stjórnun"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Breyta stillingum fyrir allt kerfið (hefur áhrif á alla notendur)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -189,10 +139,6 @@ msgstr "Kerfistól"
 msgid "System configuration and monitoring"
 msgstr "Kerfisstillingar og vöktun"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Altækur aðgangur"
@@ -200,10 +146,6 @@ msgstr "Altækur aðgangur"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Stillingar fyrir altækan aðgang"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -213,27 +155,14 @@ msgstr "Aukahlutir"
 msgid "Desktop accessories"
 msgstr "Aukahlutir fyrir skjáborð"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Forrit"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Persónulegir valmöguleikar og stjórnunar stillingar"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"

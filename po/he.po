@@ -2,27 +2,28 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # בר בוכובזה <bokovzabox@gmail.com>, 2020
 # Edward Sawyer <saoded@gmail.com>, 2020
 # shy tzedaka <shaytzedaka123@gmail.com>, 2020
 # Omer, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Omer, 2020\n"
 "Language-Team: Hebrew (https://www.transifex.com/cafe/teams/13566/he/)\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Sound & Video"
@@ -32,10 +33,6 @@ msgstr "קול ווידאו"
 msgid "Multimedia menu"
 msgstr "תפריט מולטימדיה"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "תכנות"
@@ -44,17 +41,9 @@ msgstr "תכנות"
 msgid "Tools for software development"
 msgstr "כלים לפיתוח תוכנה"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "השכלה"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -64,10 +53,6 @@ msgstr "משחקים"
 msgid "Games and amusements"
 msgstr "משחקים ושעשועים"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "גרפיקה"
@@ -75,10 +60,6 @@ msgstr "גרפיקה"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "יישומים גרפיים"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -88,10 +69,6 @@ msgstr "חומרה"
 msgid "Settings for several hardware devices"
 msgstr "הגדרות עבור מספר התקני חומרה"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "אינטרט ורשת"
@@ -99,10 +76,6 @@ msgstr "אינטרט ורשת"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "הגדרות רשת"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -112,11 +85,6 @@ msgstr "מראה ומרגש"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "הגדרות לשליטה במראה והתנהגות שולחן העבודה"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "אינטרנט"
@@ -125,10 +93,6 @@ msgstr "אינטרנט"
 msgid "Programs for Internet access such as web and email"
 msgstr "תוכנות לגישה לאינטרנט כגון דפדפן ולקוח דואר"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "משרד"
@@ -136,10 +100,6 @@ msgstr "משרד"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "יישומים משרדיים"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -150,10 +110,6 @@ msgstr "אישי"
 msgid "Personal settings"
 msgstr "הגדרות אישיות"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "ניהול"
@@ -161,11 +117,6 @@ msgstr "ניהול"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "שנה הגדרות מערכת כלליות (משפיע על כל המשתמשים)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -192,10 +143,6 @@ msgstr "כלי מערכת"
 msgid "System configuration and monitoring"
 msgstr "הגדרה וניטור של המערכת"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "גישה אוניברסלית"
@@ -203,10 +150,6 @@ msgstr "גישה אוניברסלית"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "הגדרות גישה אוניברסלית"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -216,27 +159,14 @@ msgstr "עזרים"
 msgid "Desktop accessories"
 msgstr "עזרי שולחן עבודה"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "יישומים"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "העדפות אישיות והגדרות ניהול"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"

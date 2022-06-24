@@ -2,23 +2,23 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 41e38594a6ab66d45dbd71e8e44a0b16_36d21e8, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: 41e38594a6ab66d45dbd71e8e44a0b16_36d21e8, 2020\n"
 "Language-Team: Kyrgyz (https://www.transifex.com/cafe/teams/13566/ky/)\n"
+"Language: ky\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ky\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -29,10 +29,6 @@ msgstr "Аудио жана видео"
 msgid "Multimedia menu"
 msgstr "Мультимедиа"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Программалоо"
@@ -41,17 +37,9 @@ msgstr "Программалоо"
 msgid "Tools for software development"
 msgstr "Программа иштетүү аспаптары"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Билим"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -61,10 +49,6 @@ msgstr "Оюндар"
 msgid "Games and amusements"
 msgstr "Оюн-тамаша"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Графика"
@@ -72,10 +56,6 @@ msgstr "Графика"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Графика тиркемелери"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -85,10 +65,6 @@ msgstr "Жабдуулар"
 msgid "Settings for several hardware devices"
 msgstr "Бир нече аппарат жабдууларынын параметрлери"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Интернет жана тармак"
@@ -96,10 +72,6 @@ msgstr "Интернет жана тармак"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Тармак параметрлери"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -109,11 +81,6 @@ msgstr "Жасалгалоо"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Иш столунун сырткы көрүнүшүнө же кылыгына таасир эткен ырастоолор"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Интернет"
@@ -122,10 +89,6 @@ msgstr "Интернет"
 msgid "Programs for Internet access such as web and email"
 msgstr "Интернетке кирүү программалары"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Кеңсе"
@@ -133,10 +96,6 @@ msgstr "Кеңсе"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Кеңсе тиркемелери"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -147,10 +106,6 @@ msgstr "Жеке"
 msgid "Personal settings"
 msgstr "Жеке параметрлер"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Башкаруу"
@@ -159,11 +114,6 @@ msgstr "Башкаруу"
 msgid "Change system-wide settings (affects all users)"
 msgstr ""
 "Жалпы системалык ырастоолорду өзгөртүү (бардык колдонуучуларга таасир этет)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -190,10 +140,6 @@ msgstr "Тутум аспаптары"
 msgid "System configuration and monitoring"
 msgstr "Тутум конфигурациясы жана мониторинги"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Атайы мүмкүндүктөр"
@@ -201,10 +147,6 @@ msgstr "Атайы мүмкүндүктөр"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Атайы мүмкүндүктөр параметрлери"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -214,27 +156,14 @@ msgstr "Шаймандар"
 msgid "Desktop accessories"
 msgstr "Иш столунун шаймандары"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Тиркемелер"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Жеке параметрлер жана административдик ырастоолор"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"

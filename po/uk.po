@@ -2,27 +2,30 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Микола Ткач <chistomov@gmail.com>, 2020
 # Evolve32 <evolve32@yandex.ru>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/cafe/teams/13566/uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Sound & Video"
@@ -32,10 +35,6 @@ msgstr "Звук та відео"
 msgid "Multimedia menu"
 msgstr "Мультимедія"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr "applications-multimedia"
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Програмування"
@@ -44,17 +43,9 @@ msgstr "Програмування"
 msgid "Tools for software development"
 msgstr "Знаряддя розробки програм"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr "applications-development"
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Навчання"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr "applications-science"
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -64,10 +55,6 @@ msgstr "Забавки"
 msgid "Games and amusements"
 msgstr "Ігри й розваги"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr "applications-games"
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Графіка"
@@ -75,10 +62,6 @@ msgstr "Графіка"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Графічні програми"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr "applications-graphics"
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -88,10 +71,6 @@ msgstr "Апаратне забезпечення"
 msgid "Settings for several hardware devices"
 msgstr "Параметри деяких апаратних пристроїв"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr "preferences-desktop-peripherals"
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Інтернет і мережа"
@@ -99,10 +78,6 @@ msgstr "Інтернет і мережа"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Параметри, що відносяться до налаштовування мережі"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr "preferences-system-network"
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -112,11 +87,6 @@ msgstr "Зовнішній вигляд"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Параметри, що впливають на зовнішній вигляд та поведінку стільниці"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Тенета"
@@ -125,10 +95,6 @@ msgstr "Тенета"
 msgid "Programs for Internet access such as web and email"
 msgstr "Програми для роботи з Інтернет (пошта, оглядач тенет, тощо)"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr "applications-internet"
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Офіс"
@@ -136,10 +102,6 @@ msgstr "Офіс"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Офісні програми"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr "applications-office"
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -150,10 +112,6 @@ msgstr "Особисті параметри"
 msgid "Personal settings"
 msgstr "Особисті параметри"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr "preferences-desktop-personal"
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Розпорядництво"
@@ -161,11 +119,6 @@ msgstr "Розпорядництво"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Зміна системних параметрів (впливає на усіх користувачів)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr "preferences-system"
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -192,10 +145,6 @@ msgstr "Системні засоби"
 msgid "System configuration and monitoring"
 msgstr "Засоби налаштовування і контролю системи"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr "applications-system"
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Усезагальний доступ"
@@ -203,10 +152,6 @@ msgstr "Усезагальний доступ"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Параметри усезагального доступу"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -216,27 +161,14 @@ msgstr "Стандартні"
 msgid "Desktop accessories"
 msgstr "Стандартні програми"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr "applications-accessories"
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Програми"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr "applications-other"
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Особисті параметри та розпорядницькі параметри"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr "preferences-other"
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"
@@ -245,3 +177,54 @@ msgstr "Інше"
 #: desktop-directories/cafe-other.directory.in:4
 msgid "Applications that did not fit in other categories"
 msgstr "Програми, що не належать до жодної категорії"
+
+#~ msgid "applications-multimedia"
+#~ msgstr "applications-multimedia"
+
+#~ msgid "applications-development"
+#~ msgstr "applications-development"
+
+#~ msgid "applications-science"
+#~ msgstr "applications-science"
+
+#~ msgid "applications-games"
+#~ msgstr "applications-games"
+
+#~ msgid "applications-graphics"
+#~ msgstr "applications-graphics"
+
+#~ msgid "preferences-desktop-peripherals"
+#~ msgstr "preferences-desktop-peripherals"
+
+#~ msgid "preferences-system-network"
+#~ msgstr "preferences-system-network"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "applications-internet"
+#~ msgstr "applications-internet"
+
+#~ msgid "applications-office"
+#~ msgstr "applications-office"
+
+#~ msgid "preferences-desktop-personal"
+#~ msgstr "preferences-desktop-personal"
+
+#~ msgid "preferences-system"
+#~ msgstr "preferences-system"
+
+#~ msgid "applications-system"
+#~ msgstr "applications-system"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"
+
+#~ msgid "applications-accessories"
+#~ msgstr "applications-accessories"
+
+#~ msgid "applications-other"
+#~ msgstr "applications-other"
+
+#~ msgid "preferences-other"
+#~ msgstr "preferences-other"

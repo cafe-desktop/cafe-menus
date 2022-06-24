@@ -2,25 +2,26 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Cédric Valmary <cvalmary@yahoo.fr>, 2020
 # 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2020
 # Quentin PAGÈS, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Quentin PAGÈS, 2020\n"
-"Language-Team: Occitan (post 1500) (https://www.transifex.com/cafe/teams/13566/oc/)\n"
+"Language-Team: Occitan (post 1500) (https://www.transifex.com/cafe/"
+"teams/13566/oc/)\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: oc\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -31,10 +32,6 @@ msgstr "Son e vidèo"
 msgid "Multimedia menu"
 msgstr "Multimèdia"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr "applications-multimedia"
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Desvolopament"
@@ -43,17 +40,9 @@ msgstr "Desvolopament"
 msgid "Tools for software development"
 msgstr "Aisinas per desvolopar de logicials"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr "applications-development"
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Educacion"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr "applications-science"
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -63,10 +52,6 @@ msgstr "Jòcs"
 msgid "Games and amusements"
 msgstr "Jòcs e divertiments"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr "applications-games"
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Grafisme"
@@ -74,10 +59,6 @@ msgstr "Grafisme"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Logicials grafics"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr "applications-graphics"
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -87,10 +68,6 @@ msgstr "Caferial"
 msgid "Settings for several hardware devices"
 msgstr "Paramètres per d'unes periferics caferials"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr "applications-development"
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Internet e ret"
@@ -99,10 +76,6 @@ msgstr "Internet e ret"
 msgid "Network-related settings"
 msgstr "Paramètres en relacion amb la ret"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr "preferences-system-network"
-
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
 msgstr "Aparéncia"
@@ -110,11 +83,6 @@ msgstr "Aparéncia"
 #: desktop-directories/cafe-look-and-feel.directory.in:4
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Configurar los paramètres de l’aparéncia e del compòrtament del burèu"
-
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
 
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
@@ -125,10 +93,6 @@ msgid "Programs for Internet access such as web and email"
 msgstr ""
 "Logicials per accedir a internet, coma lo web o los messatges electronics"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr "applications-internet"
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Burèu"
@@ -136,10 +100,6 @@ msgstr "Burèu"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Logicials pel burèu"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr "applications-office"
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -150,10 +110,6 @@ msgstr "Personal"
 msgid "Personal settings"
 msgstr "Paramètres personals"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr "preferences-desktop-personal"
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Administracion"
@@ -162,11 +118,6 @@ msgstr "Administracion"
 msgid "Change system-wide settings (affects all users)"
 msgstr ""
 "Modificar los paramètres de tot lo sistèma (tòca totes los utilizaires)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr "preferences-system"
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -193,10 +144,6 @@ msgstr "Aisinas sistèma"
 msgid "System configuration and monitoring"
 msgstr "Configuracion e susvelhança del sistèma"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr "applications-system"
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Accès universal"
@@ -204,10 +151,6 @@ msgstr "Accès universal"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Paramètres d'accès universal"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -217,27 +160,14 @@ msgstr "Accessòris"
 msgid "Desktop accessories"
 msgstr "Accessòris del burèu"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr "applications-accessories"
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr "applications-other"
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Preferéncias personalas e paramètres del sistèma"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr "preferences-other"
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"
@@ -246,3 +176,54 @@ msgstr "Autre"
 #: desktop-directories/cafe-other.directory.in:4
 msgid "Applications that did not fit in other categories"
 msgstr "Logicials que dintran pas dins las autras categorias"
+
+#~ msgid "applications-multimedia"
+#~ msgstr "applications-multimedia"
+
+#~ msgid "applications-development"
+#~ msgstr "applications-development"
+
+#~ msgid "applications-science"
+#~ msgstr "applications-science"
+
+#~ msgid "applications-games"
+#~ msgstr "applications-games"
+
+#~ msgid "applications-graphics"
+#~ msgstr "applications-graphics"
+
+#~ msgid "preferences-desktop-peripherals"
+#~ msgstr "applications-development"
+
+#~ msgid "preferences-system-network"
+#~ msgstr "preferences-system-network"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "applications-internet"
+#~ msgstr "applications-internet"
+
+#~ msgid "applications-office"
+#~ msgstr "applications-office"
+
+#~ msgid "preferences-desktop-personal"
+#~ msgstr "preferences-desktop-personal"
+
+#~ msgid "preferences-system"
+#~ msgstr "preferences-system"
+
+#~ msgid "applications-system"
+#~ msgstr "applications-system"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"
+
+#~ msgid "applications-accessories"
+#~ msgstr "applications-accessories"
+
+#~ msgid "applications-other"
+#~ msgstr "applications-other"
+
+#~ msgid "preferences-other"
+#~ msgstr "preferences-other"

@@ -2,26 +2,26 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Arif Budiman <arifpedia@gmail.com>, 2020
 # Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2020
 # La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2020
 # Andika Triwidada <andika@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/cafe/teams/13566/id/)\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -32,10 +32,6 @@ msgstr "Suara & Video"
 msgid "Multimedia menu"
 msgstr "Menu multimedia"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr "applications-multimedia"
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Pemrograman"
@@ -44,17 +40,9 @@ msgstr "Pemrograman"
 msgid "Tools for software development"
 msgstr "Perkakas untuk pengembangan perangkat lunak"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr "applications-development"
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Pendidikan"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr "applications-science"
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -64,10 +52,6 @@ msgstr "Permainan"
 msgid "Games and amusements"
 msgstr "Permainan dan hiburan"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr "applications-games"
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Grafik"
@@ -75,10 +59,6 @@ msgstr "Grafik"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Aplikasi grafik"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr "applications-graphics"
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -88,10 +68,6 @@ msgstr "Perangkat keras"
 msgid "Settings for several hardware devices"
 msgstr "Pengaturan untuk sejumlah perangkat keras"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr "preferences-desktop-peripherals"
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Internet dan Jaringan"
@@ -99,10 +75,6 @@ msgstr "Internet dan Jaringan"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Pengaturan jaringan"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr "preferences-system-network"
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -112,11 +84,6 @@ msgstr "Tampilan dan Rasa"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Mengelola tampilan dan perilaku desktop"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Internet"
@@ -125,10 +92,6 @@ msgstr "Internet"
 msgid "Programs for Internet access such as web and email"
 msgstr "Program untuk mengakses internet, seperti web dan surel"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr "applications-internet"
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Kantor"
@@ -136,10 +99,6 @@ msgstr "Kantor"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Aplikasi Perkantoran"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr "applications-office"
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -150,10 +109,6 @@ msgstr "Pribadi"
 msgid "Personal settings"
 msgstr "Pengaturan pribadi"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr "preferences-desktop-personal"
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Administrasi"
@@ -161,11 +116,6 @@ msgstr "Administrasi"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Pengaturan sistem secara luas (mempengaruhi seluruh pengguna)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr "preferences-system"
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -192,10 +142,6 @@ msgstr "Perkakas Sistem"
 msgid "System configuration and monitoring"
 msgstr "Konfigurasi serta pengawasan sistem"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr "applications-system"
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Akses Universal"
@@ -203,10 +149,6 @@ msgstr "Akses Universal"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Pengaturan Akses Universal"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -216,27 +158,14 @@ msgstr "Aksesoris"
 msgid "Desktop accessories"
 msgstr "Aksesoris desktop"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr "applications-accessories"
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr "applications-other"
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Preferensi pribadi dan pengaturan administrasi"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr "preferences-other"
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"
@@ -245,3 +174,54 @@ msgstr "Lainnya"
 #: desktop-directories/cafe-other.directory.in:4
 msgid "Applications that did not fit in other categories"
 msgstr "Aplikasi yang tidak termasuk dalam kategori manapun"
+
+#~ msgid "applications-multimedia"
+#~ msgstr "applications-multimedia"
+
+#~ msgid "applications-development"
+#~ msgstr "applications-development"
+
+#~ msgid "applications-science"
+#~ msgstr "applications-science"
+
+#~ msgid "applications-games"
+#~ msgstr "applications-games"
+
+#~ msgid "applications-graphics"
+#~ msgstr "applications-graphics"
+
+#~ msgid "preferences-desktop-peripherals"
+#~ msgstr "preferences-desktop-peripherals"
+
+#~ msgid "preferences-system-network"
+#~ msgstr "preferences-system-network"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "applications-internet"
+#~ msgstr "applications-internet"
+
+#~ msgid "applications-office"
+#~ msgstr "applications-office"
+
+#~ msgid "preferences-desktop-personal"
+#~ msgstr "preferences-desktop-personal"
+
+#~ msgid "preferences-system"
+#~ msgstr "preferences-system"
+
+#~ msgid "applications-system"
+#~ msgstr "applications-system"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"
+
+#~ msgid "applications-accessories"
+#~ msgstr "applications-accessories"
+
+#~ msgid "applications-other"
+#~ msgstr "applications-other"
+
+#~ msgid "preferences-other"
+#~ msgstr "preferences-other"

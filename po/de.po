@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Ettore Atalan <atalanttore@googlemail.com>, 2020
@@ -10,19 +10,19 @@
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Christian Kopp <christiankopp79@gmail.com>, 2020
 # Michael Hartmann, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Michael Hartmann, 2020\n"
 "Language-Team: German (https://www.transifex.com/cafe/teams/13566/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -33,10 +33,6 @@ msgstr "Ton & Video"
 msgid "Multimedia menu"
 msgstr "Multimediamenü"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr "Anwendungen-Multimedia"
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Programmierung"
@@ -45,17 +41,9 @@ msgstr "Programmierung"
 msgid "Tools for software development"
 msgstr "Werkzeuge zur Softwareentwicklung"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr "Anwendungen-Entwicklung"
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Bildung"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -65,10 +53,6 @@ msgstr "Spiele"
 msgid "Games and amusements"
 msgstr "Spiel und Spaß"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr "Anwendungen-Spiele"
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Grafik"
@@ -76,10 +60,6 @@ msgstr "Grafik"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Anwendungen zur Grafikbearbeitung"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -89,10 +69,6 @@ msgstr "Hardware"
 msgid "Settings for several hardware devices"
 msgstr "Einstellungen für Geräte"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Internet und Netzwerk"
@@ -101,23 +77,13 @@ msgstr "Internet und Netzwerk"
 msgid "Network-related settings"
 msgstr "Netzwerkbezogene Einstellungen"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
-
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
 msgstr "Darstellung"
 
 #: desktop-directories/cafe-look-and-feel.directory.in:4
 msgid "Settings controlling the desktop appearance and behavior"
-msgstr ""
-"Einstellungen für das Aussehen und das Verhalten der Arbeitsoberfläche"
-
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
+msgstr "Einstellungen für das Aussehen und das Verhalten der Arbeitsoberfläche"
 
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
@@ -127,10 +93,6 @@ msgstr "Internet"
 msgid "Programs for Internet access such as web and email"
 msgstr "Programme um Internet-Dienste wie E-Mail oder das WWW zu nutzen"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Büro"
@@ -138,10 +100,6 @@ msgstr "Büro"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Büroanwendungen"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -152,10 +110,6 @@ msgstr "Persönlich"
 msgid "Personal settings"
 msgstr "Persönliche Vorlieben und Einstellungen"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Systemverwaltung"
@@ -163,11 +117,6 @@ msgstr "Systemverwaltung"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Systemweite Einstellungen ändern (dies betrifft alle Benutzer)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -194,10 +143,6 @@ msgstr "Systemwerkzeuge"
 msgid "System configuration and monitoring"
 msgstr "Systemkonfiguration und -überwachung"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Barrierefreiheit"
@@ -205,10 +150,6 @@ msgstr "Barrierefreiheit"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Einstellungen zur Barrierefreiheit"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -218,27 +159,14 @@ msgstr "Zubehör"
 msgid "Desktop accessories"
 msgstr "Schreibtischzubehör"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Anwendungen"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Persönliche Anpassungen und Administratoreinstellungen"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"
@@ -246,5 +174,13 @@ msgstr "Sonstige"
 
 #: desktop-directories/cafe-other.directory.in:4
 msgid "Applications that did not fit in other categories"
-msgstr ""
-"Anwendungen welche in keine andere Kategorie eingeordnet werden können"
+msgstr "Anwendungen welche in keine andere Kategorie eingeordnet werden können"
+
+#~ msgid "applications-multimedia"
+#~ msgstr "Anwendungen-Multimedia"
+
+#~ msgid "applications-development"
+#~ msgstr "Anwendungen-Entwicklung"
+
+#~ msgid "applications-games"
+#~ msgstr "Anwendungen-Spiele"

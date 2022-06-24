@@ -2,25 +2,25 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # 437c9d6e19936ed69f57bed9e0fe4716, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: 437c9d6e19936ed69f57bed9e0fe4716, 2020\n"
 "Language-Team: Greek (https://www.transifex.com/cafe/teams/13566/el/)\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
@@ -31,10 +31,6 @@ msgstr "Ήχος και βίντεο"
 msgid "Multimedia menu"
 msgstr "Μενού πολυμέσων"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr ""
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Προγραμματισμός"
@@ -43,17 +39,9 @@ msgstr "Προγραμματισμός"
 msgid "Tools for software development"
 msgstr "Εργαλεία για ανάπτυξη λογισμικού"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr ""
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Εκπαίδευση"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr ""
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -63,10 +51,6 @@ msgstr "Παιχνίδια"
 msgid "Games and amusements"
 msgstr "Παιχνίδια και διασκέδαση"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr ""
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Γραφικά"
@@ -74,10 +58,6 @@ msgstr "Γραφικά"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Εφαρμογές γραφικών"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr ""
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -87,10 +67,6 @@ msgstr "Υλικό"
 msgid "Settings for several hardware devices"
 msgstr "Ρυθμίσεις για διάφορες συσκευές"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr ""
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Διαδίκτυο και Δίκτυο"
@@ -98,10 +74,6 @@ msgstr "Διαδίκτυο και Δίκτυο"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Ρυθμίσεις για το δίκτυο"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr ""
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -111,11 +83,6 @@ msgstr "Μορφή εμφάνισης"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Ρυθμίσεις για την εμφάνιση και συμπεριφορά της επιφάνειας εργασίας"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr ""
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Διαδίκτυο"
@@ -123,12 +90,7 @@ msgstr "Διαδίκτυο"
 #: desktop-directories/cafe-network.directory.in:4
 msgid "Programs for Internet access such as web and email"
 msgstr ""
-"Προγράμματα πρόσβασης στο Διαδίκτυο όπως φυλλομετρητής και ηλεκ. "
-"αλληλογραφία"
-
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr ""
+"Προγράμματα πρόσβασης στο Διαδίκτυο όπως φυλλομετρητής και ηλεκ. αλληλογραφία"
 
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
@@ -137,10 +99,6 @@ msgstr "Γραφείο"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Εφαρμογές γραφείου"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr ""
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -151,10 +109,6 @@ msgstr "Προσωπικά"
 msgid "Personal settings"
 msgstr "Προσωπικές ρυθμίσεις"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr ""
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Διαχείριση συστήματος"
@@ -162,11 +116,6 @@ msgstr "Διαχείριση συστήματος"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Τροποποίηση ρυθμίσεων συστήματος (επηρεάζει όλους τους χρήστες)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr ""
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -193,10 +142,6 @@ msgstr "Εργαλεία συστήματος"
 msgid "System configuration and monitoring"
 msgstr "Ρύθμιση και έλεγχος συστήματος"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr ""
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Γενική πρόσβαση"
@@ -204,10 +149,6 @@ msgstr "Γενική πρόσβαση"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Ρυθμίσεις γενικής πρόσβασης"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr ""
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -217,27 +158,14 @@ msgstr "Βοηθήματα"
 msgid "Desktop accessories"
 msgstr "Βοηθήματα επιφάνειας εργασίας"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr ""
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr ""
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Προσωπικές προτιμήσεις και ρυθμίσεις διαχείρισης"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr ""
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"

@@ -2,27 +2,28 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-menus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Damir Jerovšek <jierro@windowslive.com>, 2020
 # worm <thewormhole@gmail.com>, 2020
 # Helena S <ele@tutamail.com>, 2020
 # jetomit <timotej.lazar@araneo.si>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-menus 1.23.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2019-11-04 23:17+0100\n"
+"POT-Creation-Date: 2020-08-13 10:50+0200\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: jetomit <timotej.lazar@araneo.si>, 2020\n"
 "Language-Team: Slovenian (https://www.transifex.com/cafe/teams/13566/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
 
 #: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Sound & Video"
@@ -32,10 +33,6 @@ msgstr "Zvok in video"
 msgid "Multimedia menu"
 msgstr "Predstavnostni meni"
 
-#: desktop-directories/cafe-audio-video.directory.in:5
-msgid "applications-multimedia"
-msgstr "programi-predstavnost"
-
 #: desktop-directories/cafe-development.directory.in:3
 msgid "Programming"
 msgstr "Programiranje"
@@ -44,17 +41,9 @@ msgstr "Programiranje"
 msgid "Tools for software development"
 msgstr "Orodja za razvoj programske opreme"
 
-#: desktop-directories/cafe-development.directory.in:5
-msgid "applications-development"
-msgstr "programi-programiranje"
-
 #: desktop-directories/cafe-education.directory.in:3
 msgid "Education"
 msgstr "Izobraževanje"
-
-#: desktop-directories/cafe-education.directory.in:4
-msgid "applications-science"
-msgstr "programi-znanost"
 
 #: desktop-directories/cafe-game.directory.in:3
 msgid "Games"
@@ -64,10 +53,6 @@ msgstr "Igre"
 msgid "Games and amusements"
 msgstr "Igre in zabava"
 
-#: desktop-directories/cafe-game.directory.in:5
-msgid "applications-games"
-msgstr "programi-igre"
-
 #: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics"
 msgstr "Grafika"
@@ -75,10 +60,6 @@ msgstr "Grafika"
 #: desktop-directories/cafe-graphics.directory.in:4
 msgid "Graphics applications"
 msgstr "Grafični programi"
-
-#: desktop-directories/cafe-graphics.directory.in:5
-msgid "applications-graphics"
-msgstr "programi-grafika"
 
 #: desktop-directories/cafe-hardware.directory.in:3
 msgid "Hardware"
@@ -88,10 +69,6 @@ msgstr "Strojna oprema"
 msgid "Settings for several hardware devices"
 msgstr "Nastavitve za številne strojne naprave"
 
-#: desktop-directories/cafe-hardware.directory.in:5
-msgid "preferences-desktop-peripherals"
-msgstr "možnosti-namizje-zunanje-naprave"
-
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
 msgstr "Internet in omrežje"
@@ -99,10 +76,6 @@ msgstr "Internet in omrežje"
 #: desktop-directories/cafe-internet-and-network.directory.in:4
 msgid "Network-related settings"
 msgstr "Nastavitve, povezane z omrežjem"
-
-#: desktop-directories/cafe-internet-and-network.directory.in:5
-msgid "preferences-system-network"
-msgstr "možnosti-sistem-omrežje"
 
 #: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Look and Feel"
@@ -112,11 +85,6 @@ msgstr "Videz in občutek"
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Nastavitve nadzora videza in obnašanja namizja"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:5
-#: desktop-directories/cafe-settings.directory.in:5
-msgid "preferences-desktop"
-msgstr "možnosti-namizje"
-
 #: desktop-directories/cafe-network.directory.in:3
 msgid "Internet"
 msgstr "Internet"
@@ -125,10 +93,6 @@ msgstr "Internet"
 msgid "Programs for Internet access such as web and email"
 msgstr "Programi za dostop do spleta, kot sta brskalnik in elektronska pošta"
 
-#: desktop-directories/cafe-network.directory.in:5
-msgid "applications-internet"
-msgstr "programi-internet"
-
 #: desktop-directories/cafe-office.directory.in:3
 msgid "Office"
 msgstr "Pisarna"
@@ -136,10 +100,6 @@ msgstr "Pisarna"
 #: desktop-directories/cafe-office.directory.in:4
 msgid "Office Applications"
 msgstr "Pisarniški programi"
-
-#: desktop-directories/cafe-office.directory.in:5
-msgid "applications-office"
-msgstr "programi-pisarna"
 
 #. Translators: this is Personal as in "Personal settings"
 #: desktop-directories/cafe-personal.directory.in:4
@@ -150,10 +110,6 @@ msgstr "Osebno"
 msgid "Personal settings"
 msgstr "Osebne nastavitve"
 
-#: desktop-directories/cafe-personal.directory.in:6
-msgid "preferences-desktop-personal"
-msgstr "možnosti-namizje-osebno"
-
 #: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Administration"
 msgstr "Skrbništvo"
@@ -161,11 +117,6 @@ msgstr "Skrbništvo"
 #: desktop-directories/cafe-settings-system.directory.in:5
 msgid "Change system-wide settings (affects all users)"
 msgstr "Spremeni sistemske nastavitve (vpliva na vse uporabnike)"
-
-#: desktop-directories/cafe-settings-system.directory.in:6
-#: desktop-directories/cafe-system.directory.in:5
-msgid "preferences-system"
-msgstr "možnosti-sistem"
 
 #: desktop-directories/cafe-settings.directory.in:3
 msgid "Preferences"
@@ -192,10 +143,6 @@ msgstr "Sistemska orodja"
 msgid "System configuration and monitoring"
 msgstr "Nastavitve in nadziranje sistema"
 
-#: desktop-directories/cafe-system-tools.directory.in:5
-msgid "applications-system"
-msgstr "programi-sistem"
-
 #: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access"
 msgstr "Splošni dostop"
@@ -203,10 +150,6 @@ msgstr "Splošni dostop"
 #: desktop-directories/cafe-utility-accessibility.directory.in:4
 msgid "Universal Access Settings"
 msgstr "Splošne nastavitve dostopa"
-
-#: desktop-directories/cafe-utility-accessibility.directory.in:6
-msgid "preferences-desktop-accessibility"
-msgstr "možnosti-namizje-dostopnost"
 
 #: desktop-directories/cafe-utility.directory.in:3
 msgid "Accessories"
@@ -216,27 +159,14 @@ msgstr "Pripomočki"
 msgid "Desktop accessories"
 msgstr "Namizni pripomočki"
 
-#: desktop-directories/cafe-utility.directory.in:5
-msgid "applications-accessories"
-msgstr "programi-pripomočki"
-
 #: desktop-directories/cafe-menu-applications.directory.in:3
 #: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Programi"
 
-#: desktop-directories/cafe-menu-applications.directory.in:5
-#: desktop-directories/cafe-other.directory.in:5
-msgid "applications-other"
-msgstr "programi-ostalo"
-
 #: desktop-directories/cafe-menu-system.directory.in:4
 msgid "Personal preferences and administration settings"
 msgstr "Osebne možnosti in skrbniške nastavitve"
-
-#: desktop-directories/cafe-menu-system.directory.in:5
-msgid "preferences-other"
-msgstr "možnosti-ostalo"
 
 #: desktop-directories/cafe-other.directory.in:3
 msgid "Other"
@@ -245,3 +175,54 @@ msgstr "Ostalo"
 #: desktop-directories/cafe-other.directory.in:4
 msgid "Applications that did not fit in other categories"
 msgstr "Programi, ki ne sodijo v druge kategorije"
+
+#~ msgid "applications-multimedia"
+#~ msgstr "programi-predstavnost"
+
+#~ msgid "applications-development"
+#~ msgstr "programi-programiranje"
+
+#~ msgid "applications-science"
+#~ msgstr "programi-znanost"
+
+#~ msgid "applications-games"
+#~ msgstr "programi-igre"
+
+#~ msgid "applications-graphics"
+#~ msgstr "programi-grafika"
+
+#~ msgid "preferences-desktop-peripherals"
+#~ msgstr "možnosti-namizje-zunanje-naprave"
+
+#~ msgid "preferences-system-network"
+#~ msgstr "možnosti-sistem-omrežje"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "možnosti-namizje"
+
+#~ msgid "applications-internet"
+#~ msgstr "programi-internet"
+
+#~ msgid "applications-office"
+#~ msgstr "programi-pisarna"
+
+#~ msgid "preferences-desktop-personal"
+#~ msgstr "možnosti-namizje-osebno"
+
+#~ msgid "preferences-system"
+#~ msgstr "možnosti-sistem"
+
+#~ msgid "applications-system"
+#~ msgstr "programi-sistem"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "možnosti-namizje-dostopnost"
+
+#~ msgid "applications-accessories"
+#~ msgstr "programi-pripomočki"
+
+#~ msgid "applications-other"
+#~ msgstr "programi-ostalo"
+
+#~ msgid "preferences-other"
+#~ msgstr "možnosti-ostalo"
