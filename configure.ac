@@ -1,6 +1,6 @@
 AC_PREREQ(2.62)
 
-AC_INIT([cafe-menus], [1.24.1], [https://cafe-desktop.org])
+AC_INIT([cafe-menus], [1.25.0], [https://cafe-desktop.org])
 AC_CONFIG_SRCDIR(libmenu/cafemenu-tree.h)
 
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz check-news])
