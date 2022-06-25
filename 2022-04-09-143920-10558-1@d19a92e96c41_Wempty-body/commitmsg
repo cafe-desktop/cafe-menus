@@ -1,0 +1,6 @@
+desktop-entries: Fix [-Wempty-body] warning
+
+Fixes the warning:
+desktop-entries.c:313:66: warning: suggest braces around empty body in an else statement [-Wempty-body]
+  313 |             menu_verbose ("Failed to load \"%s\"\n", entry->path);
+      |                                                                  ^

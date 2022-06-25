@@ -1,0 +1,1180 @@
+Checking libmenu/cafemenu-tree.c ...
+libmenu/cafemenu-tree.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+1/7 files checked 48% done
+Checking libmenu/desktop-entries.c ...
+Checking libmenu/desktop-entries.c: G_ENABLE_DEBUG...
+Checking libmenu/desktop-entries.c: G_HAVE_GNUC_VARARGS...
+Checking libmenu/desktop-entries.c: G_HAVE_ISO_VARARGS...
+2/7 files checked 56% done
+Checking libmenu/entry-directories.c ...
+Checking libmenu/entry-directories.c: G_ENABLE_DEBUG...
+libmenu/entry-directories.c:675:71: style: Parameter 'ed' can be declared with const [constParameter]
+static void cached_dir_remove_monitor(CachedDir* dir, EntryDirectory* ed, EntryDirectoryChangedFunc callback, gpointer user_data)
+                                                                      ^
+libmenu/entry-directories.c:675:101: style: Parameter 'callback' can be declared with const [constParameter]
+static void cached_dir_remove_monitor(CachedDir* dir, EntryDirectory* ed, EntryDirectoryChangedFunc callback, gpointer user_data)
+                                                                                                    ^
+Checking libmenu/entry-directories.c: G_HAVE_GNUC_VARARGS...
+Checking libmenu/entry-directories.c: G_HAVE_ISO_VARARGS...
+3/7 files checked 67% done
+Checking libmenu/menu-layout.c ...
+Checking libmenu/menu-layout.c: G_ENABLE_DEBUG...
+libmenu/menu-layout.c:2087:16: style: Variable 'prev' is reassigned a value before the old one has been used. [redundantAssignment]
+          prev = child;
+               ^
+libmenu/menu-layout.c:2084:20: note: prev is assigned
+              prev = child;
+                   ^
+libmenu/menu-layout.c:2087:16: note: prev is overwritten
+          prev = child;
+               ^
+libmenu/menu-layout.c:1426:48: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                              "prefix", &prefix,
+                                               ^
+libmenu/menu-layout.c:1441:44: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                              "type", &type,
+                                           ^
+libmenu/menu-layout.c:1468:56: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                         "inline_alias",  &inline_alias,
+                                                       ^
+libmenu/menu-layout.c:1674:56: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                         "inline_alias",  &inline_alias,
+                                                       ^
+libmenu/menu-layout.c:1693:41: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                           "type", &type,
+                                        ^
+libmenu/menu-layout.c:1105:81: style: Parameter 'callback' can be declared with const [constParameter]
+                                              MenuLayoutNodeEntriesChangedFunc  callback,
+                                                                                ^
+Checking libmenu/menu-layout.c: G_HAVE_GNUC_VARARGS...
+Checking libmenu/menu-layout.c: G_HAVE_ISO_VARARGS...
+4/7 files checked 90% done
+Checking libmenu/menu-monitor.c ...
+Checking libmenu/menu-monitor.c: G_ENABLE_DEBUG...
+libmenu/menu-monitor.c:410:82: style: Parameter 'notify_func' can be declared with const [constParameter]
+void cafe_menu_monitor_notify_remove(MenuMonitor* monitor, MenuMonitorNotifyFunc notify_func, gpointer user_data)
+                                                                                 ^
+libmenu/menu-monitor.c:289:60: style: Parameter 'monitor' can be declared with const [constParameter]
+static void menu_monitor_clear_pending_events(MenuMonitor* monitor)
+                                                           ^
+Checking libmenu/menu-monitor.c: G_HAVE_GNUC_VARARGS...
+Checking libmenu/menu-monitor.c: G_HAVE_ISO_VARARGS...
+5/7 files checked 93% done
+Checking libmenu/menu-util.c ...
+Checking libmenu/menu-util.c: G_ENABLE_DEBUG...
+Checking libmenu/menu-util.c: G_HAVE_GNUC_VARARGS...
+Checking libmenu/menu-util.c: G_HAVE_ISO_VARARGS...
+6/7 files checked 97% done
+Checking util/test-menu-spec.c ...
+7/7 files checked 100% done
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
+/usr/bin/cafe-autogen
+checking for autoreconf >= 2.53...
+(B  testing autoreconf... found 2.71
+checking for pkg-config >= 0.14.0...
+(B  testing pkg-config... found 0.29.2
+checking for cafe-common >= 0.0.1...
+(B  testing cafe-doc-common... found 1.25.0
+Checking for required M4 macros...
+(BChecking for forbidden M4 macros...
+(BProcessing ./configure.ac
+(BRunning cafe-doc-common...
+(BRunning autoreconf...
+(Bautoreconf: export WARNINGS=no-portability
+autoreconf: Entering directory '.'
+autoreconf: running: autopoint --force
+autopoint: using AM_GNU_GETTEXT_REQUIRE_VERSION instead of AM_GNU_GETTEXT_VERSION
+Copying file ABOUT-NLS
+Copying file config.rpath
+Copying file m4/gettext.m4
+Copying file m4/host-cpu-c-abi.m4
+Copying file m4/iconv.m4
+Copying file m4/intlmacosx.m4
+Copying file m4/lib-ld.m4
+Copying file m4/lib-link.m4
+Copying file m4/lib-prefix.m4
+Copying file m4/nls.m4
+Copying file m4/po.m4
+Copying file m4/progtest.m4
+Copying file po/Makefile.in.in
+Copying file po/Makevars.template
+Copying file po/Rules-quot
+Copying file po/boldquot.sed
+Copying file po/en@boldquot.header
+Copying file po/en@quot.header
+Copying file po/insert-header.sin
+Copying file po/quot.sed
+Copying file po/remove-potcdate.sin
+autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:27: installing './compile'
+configure.ac:27: installing './config.guess'
+configure.ac:27: installing './config.sub'
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+libmenu/Makefile.am: installing './depcomp'
+autoreconf: Leaving directory '.'
+Skipping configure process.
+scan-build: Using '/usr/lib/llvm-13/bin/clang' for static analysis
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... /bin/sed
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer accepts -g... yes
+checking for /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer option to enable C11 features... none needed
+checking whether /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer understands -c and -o together... rm: cannot remove 'conftest.plist': Is a directory
+yes
+checking dependency style of /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for ld used by /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... no
+checking how to run the C preprocessor... /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib,lib
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for gcc... (cached) /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer
+checking whether the compiler supports GNU C... (cached) yes
+checking whether /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer accepts -g... (cached) yes
+checking for /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer option to enable C11 features... (cached) none needed
+checking whether /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer understands -c and -o together... (cached) yes
+checking dependency style of /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer... (cached) gcc3
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... rm: cannot remove 'conftest.plist': Is a directory
+BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3145728
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... rm: cannot remove 'conftest.plist': Is a directory
+@
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer object... rm: cannot remove 'conftest.plist': Is a directory
+ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer supports -fno-rtti -fno-exceptions... no
+checking for /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer option to produce PIC... -fPIC -DPIC
+checking if /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer PIC flag -fPIC -DPIC works... yes
+checking if /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer static flag -static works... yes
+checking if /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer supports -c -o file.o... yes
+checking if /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer supports -c -o file.o... (cached) yes
+checking whether the /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for gio-unix-2.0 >= 2.50.0... yes
+checking whether C compiler accepts -Werror=unknown-warning-option... no
+checking whether C compiler accepts -Wall... yes
+checking whether C compiler accepts -Wmissing-prototypes... yes
+checking whether C compiler accepts -Wbad-function-cast... yes
+checking whether C compiler accepts -Wcast-align... yes
+checking whether C compiler accepts -Wextra... yes
+checking whether C compiler accepts -Wformat-nonliteral... yes
+checking whether C compiler accepts -Wmissing-declarations... yes
+checking whether C compiler accepts -Wmissing-field-initializers... yes
+checking whether C compiler accepts -Wnested-externs... yes
+checking whether C compiler accepts -Wpointer-arith... yes
+checking whether C compiler accepts -Wredundant-decls... yes
+checking whether C compiler accepts -Wshadow... yes
+checking whether C compiler accepts -Wstrict-prototypes... yes
+checking whether C compiler accepts -Wunused-macros... yes
+checking whether C compiler accepts -Werror=format-security... yes
+checking flags to pass to the C compiler /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer... -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security
+checking for gobject-introspection... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libmenu/Makefile
+config.status: creating libmenu/libcafe-menu.pc
+config.status: creating libmenu/libcafe-menu-uninstalled.pc
+config.status: creating layout/Makefile
+config.status: creating desktop-directories/Makefile
+config.status: creating util/Makefile
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+              cafe-menus 1.24.1
+              =================
+
+        prefix:                       /usr/local
+        exec_prefix:                  ${prefix}
+        libdir:                       ${exec_prefix}/lib
+        bindir:                       ${exec_prefix}/bin
+        sbindir:                      ${exec_prefix}/sbin
+        sysconfdir:                   ${prefix}/etc
+        localstatedir:                ${prefix}/var
+        datadir:                      ${datarootdir}
+        source code location:         .
+        compiler:                     /usr/share/clang/scan-build-13/bin/../libexec/ccc-analyzer
+        cflags:                       -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security
+        Warning flags:                -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security
+        Maintainer mode:              no
+        Use *_DISABLE_DEPRECATED:     no
+
+        Turn on debugging:            minimum
+        Build introspection support:  yes
+
+
+scan-build: Analysis run complete.
+scan-build: Removing directory '/tmp/scan-build-2022-04-09-141652-8073-1' because it contains no reports.
+scan-build: No bugs found.
+scan-build: Using '/usr/lib/llvm-13/bin/clang' for static analysis
+make  all-recursive
+make[1]: Entering directory '/rootdir'
+Making all in po
+make[2]: Entering directory '/rootdir/po'
+make cafe-menus.pot-update
+make[3]: Entering directory '/rootdir/po'
+sed -e '/^#/d' remove-potcdate.sin > t-remove-potcdate.sed
+mv t-remove-potcdate.sed remove-potcdate.sed
+package_gnu=""; \
+test -n "$package_gnu" || { \
+  if { if (LC_ALL=C find --version) 2>/dev/null | grep GNU >/dev/null; then \
+         LC_ALL=C find -L .. -maxdepth 1 -type f -size -10000000c -exec grep -i 'GNU cafe-menus' /dev/null '{}' ';' 2>/dev/null; \
+       else \
+         LC_ALL=C grep -i 'GNU cafe-menus' ../* 2>/dev/null; \
+       fi; \
+     } | grep -v 'libtool:' >/dev/null; then \
+     package_gnu=yes; \
+   else \
+     package_gnu=no; \
+   fi; \
+}; \
+if test "$package_gnu" = "yes"; then \
+  package_prefix='GNU '; \
+else \
+  package_prefix=''; \
+fi; \
+if test -n '' || test 'https://cafe-desktop.org' = '@'PACKAGE_BUGREPORT'@'; then \
+  msgid_bugs_address=''; \
+else \
+  msgid_bugs_address='https://cafe-desktop.org'; \
+fi; \
+case `/usr/bin/xgettext --version | sed 1q | sed -e 's,^[^0-9]*,,'` in \
+  '' | 0.[0-9] | 0.[0-9].* | 0.1[0-5] | 0.1[0-5].* | 0.16 | 0.16.[0-1]*) \
+    /usr/bin/xgettext --default-domain=cafe-menus --directory=.. \
+      --add-comments=TRANSLATORS: \
+      --files-from=./POTFILES.in \
+      --copyright-holder='CAFE Desktop Environment team' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --from-code=UTF-8 -L Desktop --keyword=_ --keyword=N_ --keyword=C_:1c,2 --keyword=NC_:1c,2 --keyword=g_dngettext:2,3 --add-comments=Translators:  \
+    ;; \
+  *) \
+    /usr/bin/xgettext --default-domain=cafe-menus --directory=.. \
+      --add-comments=TRANSLATORS: \
+      --files-from=./POTFILES.in \
+      --copyright-holder='CAFE Desktop Environment team' \
+      --package-name="${package_prefix}cafe-menus" \
+      --package-version='1.24.1' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --from-code=UTF-8 -L Desktop --keyword=_ --keyword=N_ --keyword=C_:1c,2 --keyword=NC_:1c,2 --keyword=g_dngettext:2,3 --add-comments=Translators:  \
+    ;; \
+esac
+test ! -f cafe-menus.po || { \
+  if test -f ./cafe-menus.pot-header; then \
+    sed -e '1,/^#$/d' < cafe-menus.po > cafe-menus.1po && \
+    cat ./cafe-menus.pot-header cafe-menus.1po > cafe-menus.po && \
+    rm -f cafe-menus.1po \
+    || exit 1; \
+  fi; \
+  if test -f ./cafe-menus.pot; then \
+    sed -f remove-potcdate.sed < ./cafe-menus.pot > cafe-menus.1po && \
+    sed -f remove-potcdate.sed < cafe-menus.po > cafe-menus.2po && \
+    if cmp cafe-menus.1po cafe-menus.2po >/dev/null 2>&1; then \
+      rm -f cafe-menus.1po cafe-menus.2po cafe-menus.po; \
+    else \
+      rm -f cafe-menus.1po cafe-menus.2po ./cafe-menus.pot && \
+      mv cafe-menus.po ./cafe-menus.pot; \
+    fi; \
+  else \
+    mv cafe-menus.po ./cafe-menus.pot; \
+  fi; \
+}
+make[3]: Leaving directory '/rootdir/po'
+test ! -f ./cafe-menus.pot || \
+  test -z "af.gmo am.gmo an.gmo ar.gmo as.gmo ast.gmo az.gmo be.gmo bg.gmo bn_IN.gmo bn.gmo br.gmo bs.gmo ca.gmo ca@valencia.gmo cmn.gmo crh.gmo cs.gmo cy.gmo da.gmo de.gmo dz.gmo el.gmo en_AU.gmo en_CA.gmo en_GB.gmo eo.gmo es.gmo es_AR.gmo es_CL.gmo es_CO.gmo es_ES.gmo es_MX.gmo es_PR.gmo et.gmo eu.gmo fa.gmo fi.gmo fil.gmo fr.gmo fr_CA.gmo frp.gmo fur.gmo fy.gmo ga.gmo gl.gmo gu.gmo ha.gmo he.gmo hi.gmo hr.gmo hu.gmo hy.gmo ia.gmo id.gmo ie.gmo ig.gmo is.gmo it.gmo ja.gmo jv.gmo ka.gmo kk.gmo km.gmo kn.gmo ko.gmo ks.gmo ku.gmo ku_IQ.gmo ky.gmo kab.gmo la.gmo li.gmo lt.gmo lv.gmo mai.gmo mg.gmo mi.gmo mk.gmo ml.gmo mn.gmo mr.gmo ms.gmo my.gmo nah.gmo nb.gmo nds.gmo ne.gmo nl.gmo nn.gmo nso.gmo oc.gmo or.gmo pa.gmo pl.gmo pms.gmo ps.gmo pt_BR.gmo pt.gmo ro.gmo ru.gmo rw.gmo sc.gmo si.gmo sk.gmo sl.gmo sq.gmo sr.gmo sr@latin.gmo sv.gmo ta.gmo te.gmo th.gmo tk.gmo tr.gmo ts.gmo ug.gmo uk.gmo ur.gmo uz.gmo vi.gmo wa.gmo xh.gmo yo.gmo zh_CN.gmo zh_HK.gmo zh_TW.gmo zu.gmo" || make af.gmo am.gmo an.gmo ar.gmo as.gmo ast.gmo az.gmo be.gmo bg.gmo bn_IN.gmo bn.gmo br.gmo bs.gmo ca.gmo ca@valencia.gmo cmn.gmo crh.gmo cs.gmo cy.gmo da.gmo de.gmo dz.gmo el.gmo en_AU.gmo en_CA.gmo en_GB.gmo eo.gmo es.gmo es_AR.gmo es_CL.gmo es_CO.gmo es_ES.gmo es_MX.gmo es_PR.gmo et.gmo eu.gmo fa.gmo fi.gmo fil.gmo fr.gmo fr_CA.gmo frp.gmo fur.gmo fy.gmo ga.gmo gl.gmo gu.gmo ha.gmo he.gmo hi.gmo hr.gmo hu.gmo hy.gmo ia.gmo id.gmo ie.gmo ig.gmo is.gmo it.gmo ja.gmo jv.gmo ka.gmo kk.gmo km.gmo kn.gmo ko.gmo ks.gmo ku.gmo ku_IQ.gmo ky.gmo kab.gmo la.gmo li.gmo lt.gmo lv.gmo mai.gmo mg.gmo mi.gmo mk.gmo ml.gmo mn.gmo mr.gmo ms.gmo my.gmo nah.gmo nb.gmo nds.gmo ne.gmo nl.gmo nn.gmo nso.gmo oc.gmo or.gmo pa.gmo pl.gmo pms.gmo ps.gmo pt_BR.gmo pt.gmo ro.gmo ru.gmo rw.gmo sc.gmo si.gmo sk.gmo sl.gmo sq.gmo sr.gmo sr@latin.gmo sv.gmo ta.gmo te.gmo th.gmo tk.gmo tr.gmo ts.gmo ug.gmo uk.gmo ur.gmo uz.gmo vi.gmo wa.gmo xh.gmo yo.gmo zh_CN.gmo zh_HK.gmo zh_TW.gmo zu.gmo
+make[3]: Entering directory '/rootdir/po'
+/usr/bin/msgmerge --update  --lang=af --previous af.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=am --previous am.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=an --previous an.po cafe-menus.pot
+..... done.
+..... done.
+..... done.
+/usr/bin/msgmerge --update  --lang=ar --previous ar.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=as --previous as.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ast --previous ast.po cafe-menus.pot
+..... done.
+..... done.
+..../usr/bin/msgmerge --update  --lang=az --previous az.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=be --previous be.po cafe-menus.pot
+..../usr/bin/msgmerge --update  --lang=bg --previous bg.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=bn_IN --previous bn_IN.po cafe-menus.pot
+.... done.
+..... done.
+/usr/bin/msgmerge --update  --lang=br --previous br.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=bn --previous bn.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=bs --previous bs.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=ca --previous ca.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ca@valencia --previous ca@valencia.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=cmn --previous cmn.po cafe-menus.pot
+.... done.
+........ done.
+. done.
+/usr/bin/msgmerge --update  --lang=cs --previous cs.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=crh --previous crh.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=cy --previous cy.po cafe-menus.pot
+......... done.
+/usr/bin/msgmerge --update  --lang=da --previous da.po cafe-menus.pot
+ done.
+.... done.
+/usr/bin/msgmerge --update  --lang=de --previous de.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=dz --previous dz.po cafe-menus.pot
+..... done.
+......... done.
+ done.
+/usr/bin/msgmerge --update  --lang=el --previous el.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=en_AU --previous en_AU.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=en_CA --previous en_CA.po cafe-menus.pot
+.... done.
+........ done.
+ done.
+/usr/bin/msgmerge --update  --lang=en_GB --previous en_GB.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=es --previous es.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=eo --previous eo.po cafe-menus.pot
+..... done.
+..... done.
+/usr/bin/msgmerge --update  --lang=es_AR --previous es_AR.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=es_CL --previous es_CL.po cafe-menus.pot
+..... done.
+.... done.
+..... done.
+/usr/bin/msgmerge --update  --lang=es_CO --previous es_CO.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=es_ES --previous es_ES.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=es_MX --previous es_MX.po cafe-menus.pot
+..... done.
+.... done.
+..../usr/bin/msgmerge --update  --lang=es_PR --previous es_PR.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=et --previous et.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=eu --previous eu.po cafe-menus.pot
+......... done.
+ done.
+/usr/bin/msgmerge --update  --lang=fi --previous fi.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=fa --previous fa.po cafe-menus.pot
+./usr/bin/msgmerge --update  --lang=fil --previous fil.po cafe-menus.pot
+.... done.
+..... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=fr --previous fr.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=fr_CA --previous fr_CA.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=frp --previous frp.po cafe-menus.pot
+.... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=fur --previous fur.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=fy --previous fy.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ga --previous ga.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=gl --previous gl.po cafe-menus.pot
+.... done.
+..../usr/bin/msgmerge --update  --lang=gu --previous gu.po cafe-menus.pot
+. done.
+.... done.
+/usr/bin/msgmerge --update  --lang=ha --previous ha.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=he --previous he.po cafe-menus.pot
+..... done.
+.... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=hi --previous hi.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=hr --previous hr.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=hu --previous hu.po cafe-menus.pot
+..... done.
+.... done.
+..../usr/bin/msgmerge --update  --lang=hy --previous hy.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=ia --previous ia.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=id --previous id.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ie --previous ie.po cafe-menus.pot
+.... done.
+......... done.
+ done.
+/usr/bin/msgmerge --update  --lang=ig --previous ig.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=is --previous is.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=it --previous it.po cafe-menus.pot
+.... done.
+.... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=ja --previous ja.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=jv --previous jv.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ka --previous ka.po cafe-menus.pot
+.... done.
+......... done.
+ done.
+/usr/bin/msgmerge --update  --lang=kk --previous kk.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=km --previous km.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=kn --previous kn.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=ko --previous ko.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=ks --previous ks.po cafe-menus.pot
+.... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=ku --previous ku.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ku_IQ --previous ku_IQ.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=ky --previous ky.po cafe-menus.pot
+........ done.
+ done.
+/usr/bin/msgmerge --update  --lang=kab --previous kab.po cafe-menus.pot
+....... done.
+. done.
+/usr/bin/msgmerge --update  --lang=li --previous li.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=lt --previous lt.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=la --previous la.po cafe-menus.pot
+..... done.
+..... done.
+..... done.
+/usr/bin/msgmerge --update  --lang=lv --previous lv.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=mai --previous mai.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=mg --previous mg.po cafe-menus.pot
+..... done.
+.... done.
+..... done.
+/usr/bin/msgmerge --update  --lang=mi --previous mi.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=mk --previous mk.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ml --previous ml.po cafe-menus.pot
+..... done.
+.... done.
+..../usr/bin/msgmerge --update  --lang=mn --previous mn.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=mr --previous mr.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ms --previous ms.po cafe-menus.pot
+......... done.
+ done.
+..../usr/bin/msgmerge --update  --lang=my --previous my.po cafe-menus.pot
+. done.
+/usr/bin/msgmerge --update  --lang=nah --previous nah.po cafe-menus.pot
+........ done.
+ done.
+/usr/bin/msgmerge --update  --lang=nds --previous nds.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=nb --previous nb.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ne --previous ne.po cafe-menus.pot
+..... done.
+..... done.
+..../usr/bin/msgmerge --update  --lang=nl --previous nl.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=nn --previous nn.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=nso --previous nso.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=oc --previous oc.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=or --previous or.po cafe-menus.pot
+........ done.
+ done.
+..... done.
+/usr/bin/msgmerge --update  --lang=pa --previous pa.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=pl --previous pl.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=pms --previous pms.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=ps --previous ps.po cafe-menus.pot
+........ done.
+.... done.
+ done.
+/usr/bin/msgmerge --update  --lang=pt_BR --previous pt_BR.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=pt --previous pt.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ro --previous ro.po cafe-menus.pot
+..... done.
+........ done.
+ done.
+/usr/bin/msgmerge --update  --lang=ru --previous ru.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=rw --previous rw.po cafe-menus.pot
+../usr/bin/msgmerge --update  --lang=sc --previous sc.po cafe-menus.pot
+... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=si --previous si.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=sk --previous sk.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=sl --previous sl.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=sq --previous sq.po cafe-menus.pot
+.... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=sr@latin --previous sr@latin.po cafe-menus.pot
+..../usr/bin/msgmerge --update  --lang=sr --previous sr.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=sv --previous sv.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=ta --previous ta.po cafe-menus.pot
+......... done.
+... done.
+.. done.
+/usr/bin/msgmerge --update  --lang=te --previous te.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=th --previous th.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=tk --previous tk.po cafe-menus.pot
+......... done.
+ done.
+...../usr/bin/msgmerge --update  --lang=tr --previous tr.po cafe-menus.pot
+ done.
+/usr/bin/msgmerge --update  --lang=ts --previous ts.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ug --previous ug.po cafe-menus.pot
+..... done.
+..... done.
+/usr/bin/msgmerge --update  --lang=uk --previous uk.po cafe-menus.pot
+..... done.
+/usr/bin/msgmerge --update  --lang=uz --previous uz.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=ur --previous ur.po cafe-menus.pot
+.... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=wa --previous wa.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=vi --previous vi.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=xh --previous xh.po cafe-menus.pot
+.... done.
+/usr/bin/msgmerge --update  --lang=yo --previous yo.po cafe-menus.pot
+..... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=zh_CN --previous zh_CN.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=zh_HK --previous zh_HK.po cafe-menus.pot
+.... done.
+.... done.
+/usr/bin/msgmerge --update  --lang=zh_TW --previous zh_TW.po cafe-menus.pot
+/usr/bin/msgmerge --update  --lang=zu --previous zu.po cafe-menus.pot
+..... done.
+..... done.
+rm -f af.gmo && /usr/bin/msgmerge --for-msgfmt -o af.1po af.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o af.gmo af.1po && rm -f af.1po
+rm -f am.gmo && /usr/bin/msgmerge --for-msgfmt -o am.1po am.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o am.gmo am.1po && rm -f am.1po
+.... done.
+af.1po: 37 translated messages.
+rm -f an.gmo && /usr/bin/msgmerge --for-msgfmt -o an.1po an.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o an.gmo an.1po && rm -f an.1po
+am.1po: rm -f ar.gmo && /usr/bin/msgmerge --for-msgfmt -o ar.1po ar.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ar.gmo ar.1po && rm -f ar.1po
+37 translated messages.
+ar.1po: 37 translated messages.
+rm -f as.gmo && /usr/bin/msgmerge --for-msgfmt -o as.1po as.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o as.gmo as.1po && rm -f as.1po
+an.1po: 37 translated messages.
+as.1po: 37 translated messages.
+rm -f az.gmo && /usr/bin/msgmerge --for-msgfmt -o az.1po az.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o az.gmo az.1po && rm -f az.1po
+rm -f ast.gmo && /usr/bin/msgmerge --for-msgfmt -o ast.1po ast.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ast.gmo ast.1po && rm -f ast.1po
+rm -f be.gmo && /usr/bin/msgmerge --for-msgfmt -o be.1po be.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o be.gmo be.1po && rm -f be.1po
+be.1po: 37 translated messages.
+az.1po: 3 translated messages.
+rm -f bg.gmo && /usr/bin/msgmerge --for-msgfmt -o bg.1po bg.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bg.gmo bg.1po && rm -f bg.1po
+ast.1po: 37 translated messages.
+rm -f bn_IN.gmo && /usr/bin/msgmerge --for-msgfmt -o bn_IN.1po bn_IN.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bn_IN.gmo bn_IN.1po && rm -f bn_IN.1po
+bg.1po: 37 translated messages.
+rm -f bn.gmo && /usr/bin/msgmerge --for-msgfmt -o bn.1po bn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bn.gmo bn.1po && rm -f bn.1po
+rm -f br.gmo && /usr/bin/msgmerge --for-msgfmt -o br.1po br.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o br.gmo br.1po && rm -f br.1po
+bn_IN.1po: bn.1po: 37 translated messages.
+37 translated messages.
+rm -f bs.gmo && /usr/bin/msgmerge --for-msgfmt -o bs.1po bs.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bs.gmo bs.1po && rm -f bs.1po
+br.1po: 37 translated messages.
+rm -f ca.gmo && /usr/bin/msgmerge --for-msgfmt -o ca.1po ca.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ca.gmo ca.1po && rm -f ca.1po
+rm -f ca@valencia.gmo && /usr/bin/msgmerge --for-msgfmt -o ca@valencia.1po ca@valencia.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ca@valencia.gmo ca@valencia.1po && rm -f ca@valencia.1po
+bs.1po: ca.1po: 37 translated messages.
+33 translated messages.
+rm -f cmn.gmo && /usr/bin/msgmerge --for-msgfmt -o cmn.1po cmn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o cmn.gmo cmn.1po && rm -f cmn.1po
+rm -f crh.gmo && /usr/bin/msgmerge --for-msgfmt -o crh.1po crh.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o crh.gmo crh.1po && rm -f crh.1po
+ca@valencia.1po: 37 translated messages.
+cmn.1po: 37 translated messages.
+rm -f cs.gmo && /usr/bin/msgmerge --for-msgfmt -o cs.1po cs.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o cs.gmo cs.1po && rm -f cs.1po
+crh.1po: 37 translated messages.
+cs.1po: 37 translated messages.
+rm -f da.gmo && /usr/bin/msgmerge --for-msgfmt -o da.1po da.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o da.gmo da.1po && rm -f da.1po
+rm -f cy.gmo && /usr/bin/msgmerge --for-msgfmt -o cy.1po cy.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o cy.gmo cy.1po && rm -f cy.1po
+rm -f de.gmo && /usr/bin/msgmerge --for-msgfmt -o de.1po de.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o de.gmo de.1po && rm -f de.1po
+de.1po: 37 translated messages.
+rm -f dz.gmo && /usr/bin/msgmerge --for-msgfmt -o dz.1po dz.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o dz.gmo dz.1po && rm -f dz.1po
+da.1po: 37 translated messages.
+cy.1po: 37 translated messages.
+rm -f el.gmo && /usr/bin/msgmerge --for-msgfmt -o el.1po el.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o el.gmo el.1po && rm -f el.1po
+rm -f en_AU.gmo && /usr/bin/msgmerge --for-msgfmt -o en_AU.1po en_AU.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_AU.gmo en_AU.1po && rm -f en_AU.1po
+dz.1po: 37 translated messages.
+en_AU.1po: 37 translated messages.
+rm -f en_CA.gmo && /usr/bin/msgmerge --for-msgfmt -o en_CA.1po en_CA.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_CA.gmo en_CA.1po && rm -f en_CA.1po
+el.1po: 37 translated messages.
+rm -f en_GB.gmo && /usr/bin/msgmerge --for-msgfmt -o en_GB.1po en_GB.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_GB.gmo en_GB.1po && rm -f en_GB.1po
+en_CA.1po: en_GB.1po: 37 translated messages.
+25 translated messages.
+rm -f eo.gmo && /usr/bin/msgmerge --for-msgfmt -o eo.1po eo.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o eo.gmo eo.1po && rm -f eo.1po
+rm -f es.gmo && /usr/bin/msgmerge --for-msgfmt -o es.1po es.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es.gmo es.1po && rm -f es.1po
+rm -f es_AR.gmo && /usr/bin/msgmerge --for-msgfmt -o es_AR.1po es_AR.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_AR.gmo es_AR.1po && rm -f es_AR.1po
+es.1po: 37 translated messages.
+eo.1po: rm -f es_CL.gmo && /usr/bin/msgmerge --for-msgfmt -o es_CL.1po es_CL.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_CL.gmo es_CL.1po && rm -f es_CL.1po
+37 translated messages.
+es_CL.1po: 2 translated messages.
+es_AR.1po: 37 translated messages.
+rm -f es_CO.gmo && /usr/bin/msgmerge --for-msgfmt -o es_CO.1po es_CO.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_CO.gmo es_CO.1po && rm -f es_CO.1po
+rm -f es_ES.gmo && /usr/bin/msgmerge --for-msgfmt -o es_ES.1po es_ES.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_ES.gmo es_ES.1po && rm -f es_ES.1po
+rm -f es_MX.gmo && /usr/bin/msgmerge --for-msgfmt -o es_MX.1po es_MX.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_MX.gmo es_MX.1po && rm -f es_MX.1po
+es_CO.1po: 37 translated messages.
+rm -f es_PR.gmo && /usr/bin/msgmerge --for-msgfmt -o es_PR.1po es_PR.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_PR.gmo es_PR.1po && rm -f es_PR.1po
+es_PR.1po: 3 translated messages.
+rm -f et.gmo && /usr/bin/msgmerge --for-msgfmt -o et.1po et.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o et.gmo et.1po && rm -f et.1po
+es_ES.1po: 1 translated message.
+rm -f eu.gmo && /usr/bin/msgmerge --for-msgfmt -o eu.1po eu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o eu.gmo eu.1po && rm -f eu.1po
+es_MX.1po: 37 translated messages.
+et.1po: 37 translated messages.
+rm -f fa.gmo && /usr/bin/msgmerge --for-msgfmt -o fa.1po fa.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fa.gmo fa.1po && rm -f fa.1po
+rm -f fi.gmo && /usr/bin/msgmerge --for-msgfmt -o fi.1po fi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fi.gmo fi.1po && rm -f fi.1po
+eu.1po: 37 translated messages.
+fi.1po: 37 translated messages.
+fa.1po: 37 translated messages.
+rm -f fil.gmo && /usr/bin/msgmerge --for-msgfmt -o fil.1po fil.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fil.gmo fil.1po && rm -f fil.1po
+rm -f fr.gmo && /usr/bin/msgmerge --for-msgfmt -o fr.1po fr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fr.gmo fr.1po && rm -f fr.1po
+rm -f fr_CA.gmo && /usr/bin/msgmerge --for-msgfmt -o fr_CA.1po fr_CA.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fr_CA.gmo fr_CA.1po && rm -f fr_CA.1po
+fil.1po: 1 translated message.
+fr.1po: 37 translated messages.
+fr_CA.1po: 5 translated messages.
+rm -f frp.gmo && /usr/bin/msgmerge --for-msgfmt -o frp.1po frp.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o frp.gmo frp.1po && rm -f frp.1po
+rm -f fur.gmo && /usr/bin/msgmerge --for-msgfmt -o fur.1po fur.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fur.gmo fur.1po && rm -f fur.1po
+rm -f fy.gmo && /usr/bin/msgmerge --for-msgfmt -o fy.1po fy.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fy.gmo fy.1po && rm -f fy.1po
+frp.1po: 37 translated messagesfur.1po: 37 translated messages.
+.
+fy.1po: 37 translated messages.
+rm -f ga.gmo && /usr/bin/msgmerge --for-msgfmt -o ga.1po ga.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ga.gmo ga.1po && rm -f ga.1po
+rm -f gl.gmo && /usr/bin/msgmerge --for-msgfmt -o gl.1po gl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o gl.gmo gl.1po && rm -f gl.1po
+rm -f gu.gmo && /usr/bin/msgmerge --for-msgfmt -o gu.1po gu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o gu.gmo gu.1po && rm -f gu.1po
+ga.1po: 37 translated messages.
+gu.1po: 37 translated messages.
+gl.1po: 37 translated messages.
+rm -f ha.gmo && /usr/bin/msgmerge --for-msgfmt -o ha.1po ha.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ha.gmo ha.1po && rm -f ha.1po
+rm -f he.gmo && /usr/bin/msgmerge --for-msgfmt -o he.1po he.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o he.gmo he.1po && rm -f he.1po
+rm -f hi.gmo && /usr/bin/msgmerge --for-msgfmt -o hi.1po hi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hi.gmo hi.1po && rm -f hi.1po
+ha.1po: 24 translated messages.
+he.1po: 37 translated messages.
+hi.1po: 37 translated messages.
+rm -f hr.gmo && /usr/bin/msgmerge --for-msgfmt -o hr.1po hr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hr.gmo hr.1po && rm -f hr.1po
+rm -f hu.gmo && /usr/bin/msgmerge --for-msgfmt -o hu.1po hu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hu.gmo hu.1po && rm -f hu.1po
+rm -f hy.gmo && /usr/bin/msgmerge --for-msgfmt -o hy.1po hy.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hy.gmo hy.1po && rm -f hy.1po
+hu.1po: 37 translated messages.
+hr.1po: 37 translated messages.
+hy.1po: 37 translated messages.
+rm -f id.gmo && /usr/bin/msgmerge --for-msgfmt -o id.1po id.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o id.gmo id.1po && rm -f id.1po
+rm -f ia.gmo && /usr/bin/msgmerge --for-msgfmt -o ia.1po ia.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ia.gmo ia.1po && rm -f ia.1po
+rm -f ie.gmo && /usr/bin/msgmerge --for-msgfmt -o ie.1po ie.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ie.gmo ie.1po && rm -f ie.1po
+id.1po: 37 translated messages.
+rm -f ig.gmo && /usr/bin/msgmerge --for-msgfmt -o ig.1po ig.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ig.gmo ig.1po && rm -f ig.1po
+ia.1po: 28 translated messages.
+ie.1po: 37 translated messages.
+ig.1po: 24 translated messages.
+rm -f it.gmo && /usr/bin/msgmerge --for-msgfmt -o it.1po it.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o it.gmo it.1po && rm -f it.1po
+rm -f is.gmo && /usr/bin/msgmerge --for-msgfmt -o is.1po is.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o is.gmo is.1po && rm -f is.1po
+rm -f ja.gmo && /usr/bin/msgmerge --for-msgfmt -o ja.1po ja.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ja.gmo ja.1po && rm -f ja.1po
+is.1po: 37 translated messages.
+it.1po: 37 translated messages.
+ja.1po: 37 translated messages.
+rm -f ka.gmo && /usr/bin/msgmerge --for-msgfmt -o ka.1po ka.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ka.gmo ka.1po && rm -f ka.1po
+rm -f jv.gmo && /usr/bin/msgmerge --for-msgfmt -o jv.1po jv.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o jv.gmo jv.1po && rm -f jv.1po
+rm -f kk.gmo && /usr/bin/msgmerge --for-msgfmt -o kk.1po kk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o kk.gmo kk.1po && rm -f kk.1po
+jv.1po: 1 translated message.
+ka.1po: 25 translated messages.
+kk.1po: 37 translated messages.
+rm -f km.gmo && /usr/bin/msgmerge --for-msgfmt -o km.1po km.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o km.gmo km.1po && rm -f km.1po
+rm -f kn.gmo && /usr/bin/msgmerge --for-msgfmt -o kn.1po kn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o kn.gmo kn.1po && rm -f kn.1po
+rm -f ko.gmo && /usr/bin/msgmerge --for-msgfmt -o ko.1po ko.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ko.gmo ko.1po && rm -f ko.1po
+km.1po: 1 translated message.
+kn.1po: 37 translated messages.
+rm -f ku.gmo && /usr/bin/msgmerge --for-msgfmt -o ku.1po ku.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ku.gmo ku.1po && rm -f ku.1po
+ko.1po: 37 translated messages.
+rm -f ks.gmo && /usr/bin/msgmerge --for-msgfmt -o ks.1po ks.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ks.gmo ks.1po && rm -f ks.1po
+ks.1po: 1 translated message.
+ku.1po: 37 translated messages.
+rm -f ku_IQ.gmo && /usr/bin/msgmerge --for-msgfmt -o ku_IQ.1po ku_IQ.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ku_IQ.gmo ku_IQ.1po && rm -f ku_IQ.1po
+rm -f kab.gmo && /usr/bin/msgmerge --for-msgfmt -o kab.1po kab.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o kab.gmo kab.1po && rm -f kab.1po
+ku_IQ.1po: 21 translated messages.
+rm -f ky.gmo && /usr/bin/msgmerge --for-msgfmt -o ky.1po ky.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ky.gmo ky.1po && rm -f ky.1po
+rm -f la.gmo && /usr/bin/msgmerge --for-msgfmt -o la.1po la.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o la.gmo la.1po && rm -f la.1po
+kab.1po: 6 translated messages.
+ky.1po: 37 translated messages.
+la.1po: rm -f li.gmo && /usr/bin/msgmerge --for-msgfmt -o li.1po li.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o li.gmo li.1po && rm -f li.1po
+3 translated messages.
+rm -f lt.gmo && /usr/bin/msgmerge --for-msgfmt -o lt.1po lt.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o lt.gmo lt.1po && rm -f lt.1po
+rm -f lv.gmo && /usr/bin/msgmerge --for-msgfmt -o lv.1po lv.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o lv.gmo lv.1po && rm -f lv.1po
+li.1po: 2 translated messages.
+lt.1po: 37 translated messages.
+rm -f mai.gmo && /usr/bin/msgmerge --for-msgfmt -o mai.1po mai.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mai.gmo mai.1po && rm -f mai.1po
+lv.1po: 37 translated messages.
+rm -f mg.gmo && /usr/bin/msgmerge --for-msgfmt -o mg.1po mg.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mg.gmo mg.1po && rm -f mg.1po
+mai.1po: 37 translated messages.
+rm -f mi.gmo && /usr/bin/msgmerge --for-msgfmt -o mi.1po mi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mi.gmo mi.1po && rm -f mi.1po
+mg.1po: 25 translated messages.
+rm -f mk.gmo && /usr/bin/msgmerge --for-msgfmt -o mk.1po mk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mk.gmo mk.1po && rm -f mk.1po
+mi.1po: 2 translated messages.
+rm -f ml.gmo && /usr/bin/msgmerge --for-msgfmt -o ml.1po ml.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ml.gmo ml.1po && rm -f ml.1po
+mk.1po: 37 translated messages.
+rm -f mn.gmo && /usr/bin/msgmerge --for-msgfmt -o mn.1po mn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mn.gmo mn.1po && rm -f mn.1po
+ml.1po: 37 translated messages.
+rm -f mr.gmo && /usr/bin/msgmerge --for-msgfmt -o mr.1po mr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mr.gmo mr.1po && rm -f mr.1po
+mn.1po: 37 translated messages.
+rm -f my.gmo && /usr/bin/msgmerge --for-msgfmt -o my.1po my.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o my.gmo my.1po && rm -f my.1po
+rm -f ms.gmo && /usr/bin/msgmerge --for-msgfmt -o ms.1po ms.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ms.gmo ms.1po && rm -f ms.1po
+mr.1po: 37 translated messages.
+my.1po: 1 translated message.
+rm -f nah.gmo && /usr/bin/msgmerge --for-msgfmt -o nah.1po nah.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nah.gmo nah.1po && rm -f nah.1po
+ms.1po: 37 translated messages.
+rm -f nb.gmo && /usr/bin/msgmerge --for-msgfmt -o nb.1po nb.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nb.gmo nb.1po && rm -f nb.1po
+nah.1po: 1 translated message.
+rm -f nds.gmo && /usr/bin/msgmerge --for-msgfmt -o nds.1po nds.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nds.gmo nds.1po && rm -f nds.1po
+rm -f ne.gmo && /usr/bin/msgmerge --for-msgfmt -o ne.1po ne.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ne.gmo ne.1po && rm -f ne.1po
+nb.1po: 37 translated messages.
+nds.1po: 37 translated messages.
+rm -f nn.gmo && /usr/bin/msgmerge --for-msgfmt -o nn.1po nn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nn.gmo nn.1po && rm -f nn.1po
+rm -f nl.gmo && /usr/bin/msgmerge --for-msgfmt -o nl.1po nl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nl.gmo nl.1po && rm -f nl.1po
+nn.1po: 37 translated messages.
+ne.1po: 37 translated messages.
+nl.1po: 37 translated messages.
+rm -f nso.gmo && /usr/bin/msgmerge --for-msgfmt -o nso.1po nso.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nso.gmo nso.1po && rm -f nso.1po
+rm -f oc.gmo && /usr/bin/msgmerge --for-msgfmt -o oc.1po oc.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o oc.gmo oc.1po && rm -f oc.1po
+rm -f or.gmo && /usr/bin/msgmerge --for-msgfmt -o or.1po or.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o or.gmo or.1po && rm -f or.1po
+oc.1po: 37 translated messages.
+nso.1po: 3 translated messages.
+rm -f pa.gmo && /usr/bin/msgmerge --for-msgfmt -o pa.1po pa.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pa.gmo pa.1po && rm -f pa.1po
+or.1po: 37 translated messages.
+rm -f pl.gmo && /usr/bin/msgmerge --for-msgfmt -o pl.1po pl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pl.gmo pl.1po && rm -f pl.1po
+rm -f pms.gmo && /usr/bin/msgmerge --for-msgfmt -o pms.1po pms.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pms.gmo pms.1po && rm -f pms.1po
+pa.1po: 37 translated messages.
+pl.1po: 37 translated messages.
+rm -f ps.gmo && /usr/bin/msgmerge --for-msgfmt -o ps.1po ps.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ps.gmo ps.1po && rm -f ps.1po
+pms.1po: 1 translated message.
+rm -f pt.gmo && /usr/bin/msgmerge --for-msgfmt -o pt.1po pt.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pt.gmo pt.1po && rm -f pt.1po
+ps.1po: 37 translated messages.
+rm -f ro.gmo && /usr/bin/msgmerge --for-msgfmt -o ro.1po ro.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ro.gmo ro.1po && rm -f ro.1po
+rm -f pt_BR.gmo && /usr/bin/msgmerge --for-msgfmt -o pt_BR.1po pt_BR.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pt_BR.gmo pt_BR.1po && rm -f pt_BR.1po
+pt.1po: 37 translated messages.
+ro.1po: 37 translated messages.
+rm -f ru.gmo && /usr/bin/msgmerge --for-msgfmt -o ru.1po ru.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ru.gmo ru.1po && rm -f ru.1po
+rm -f rw.gmo && /usr/bin/msgmerge --for-msgfmt -o rw.1po rw.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o rw.gmo rw.1po && rm -f rw.1po
+pt_BR.1po: 37 translated messages.
+rm -f sc.gmo && /usr/bin/msgmerge --for-msgfmt -o sc.1po sc.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sc.gmo sc.1po && rm -f sc.1po
+rw.1po: 8 translated messages.
+ru.1po: 37 translated messages.
+rm -f si.gmo && /usr/bin/msgmerge --for-msgfmt -o si.1po si.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o si.gmo si.1po && rm -f si.1po
+rm -f sk.gmo && /usr/bin/msgmerge --for-msgfmt -o sk.1po sk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sk.gmo sk.1po && rm -f sk.1po
+sc.1po: 1 translated message.
+si.1po: 37 translated messages.
+rm -f sl.gmo && /usr/bin/msgmerge --for-msgfmt -o sl.1po sl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sl.gmo sl.1po && rm -f sl.1po
+sk.1po: 37 translated messages.
+rm -f sq.gmo && /usr/bin/msgmerge --for-msgfmt -o sq.1po sq.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sq.gmo sq.1po && rm -f sq.1po
+rm -f sr.gmo && /usr/bin/msgmerge --for-msgfmt -o sr.1po sr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sr.gmo sr.1po && rm -f sr.1po
+sl.1po: 37 translated messages.
+sq.1po: 37 translated messages.
+rm -f sr@latin.gmo && /usr/bin/msgmerge --for-msgfmt -o sr@latin.1po sr@latin.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sr@latin.gmo sr@latin.1po && rm -f sr@latin.1po
+sr.1po: 37 translated messages.
+sr@latin.1po: 37 translated messages.
+rm -f sv.gmo && /usr/bin/msgmerge --for-msgfmt -o sv.1po sv.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sv.gmo sv.1po && rm -f sv.1po
+rm -f ta.gmo && /usr/bin/msgmerge --for-msgfmt -o ta.1po ta.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ta.gmo ta.1po && rm -f ta.1po
+rm -f te.gmo && /usr/bin/msgmerge --for-msgfmt -o te.1po te.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o te.gmo te.1po && rm -f te.1po
+sv.1po: 37 translated messages.
+te.1po: 37 translated messages.
+ta.1po: 37 translated messages.
+rm -f th.gmo && /usr/bin/msgmerge --for-msgfmt -o th.1po th.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o th.gmo th.1po && rm -f th.1po
+rm -f tk.gmo && /usr/bin/msgmerge --for-msgfmt -o tk.1po tk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o tk.gmo tk.1po && rm -f tk.1po
+rm -f tr.gmo && /usr/bin/msgmerge --for-msgfmt -o tr.1po tr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o tr.gmo tr.1po && rm -f tr.1po
+th.1po: 37 translated messages.
+tk.1po: 2 translated messages.
+tr.1po: 37 translated messages.
+rm -f ts.gmo && /usr/bin/msgmerge --for-msgfmt -o ts.1po ts.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ts.gmo ts.1po && rm -f ts.1po
+rm -f ug.gmo && /usr/bin/msgmerge --for-msgfmt -o ug.1po ug.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ug.gmo ug.1po && rm -f ug.1po
+ts.1po: 1 translated message.
+rm -f uk.gmo && /usr/bin/msgmerge --for-msgfmt -o uk.1po uk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o uk.gmo uk.1po && rm -f uk.1po
+ug.1po: 37 translated messages.
+rm -f uz.gmo && /usr/bin/msgmerge --for-msgfmt -o uz.1po uz.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o uz.gmo uz.1po && rm -f uz.1po
+rm -f ur.gmo && /usr/bin/msgmerge --for-msgfmt -o ur.1po ur.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ur.gmo ur.1po && rm -f ur.1po
+uz.1po: 37 translated messages.
+uk.1po: 37 translated messages.
+ur.1po: 37 translated messages.
+rm -f wa.gmo && /usr/bin/msgmerge --for-msgfmt -o wa.1po wa.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o wa.gmo wa.1po && rm -f wa.1po
+rm -f vi.gmo && /usr/bin/msgmerge --for-msgfmt -o vi.1po vi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o vi.gmo vi.1po && rm -f vi.1po
+rm -f xh.gmo && /usr/bin/msgmerge --for-msgfmt -o xh.1po xh.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o xh.gmo xh.1po && rm -f xh.1po
+wa.1po: 4 translated messages.
+rm -f yo.gmo && /usr/bin/msgmerge --for-msgfmt -o yo.1po yo.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o yo.gmo yo.1po && rm -f yo.1po
+vi.1po: 37 translated messages.
+xh.1po: 22 translated messages.
+rm -f zh_CN.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_CN.1po zh_CN.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_CN.gmo zh_CN.1po && rm -f zh_CN.1po
+yo.1po: 24 translated messages.
+rm -f zh_HK.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_HK.1po zh_HK.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_HK.gmo zh_HK.1po && rm -f zh_HK.1po
+zh_CN.1po: 37 translated messages.
+rm -f zh_TW.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_TW.1po zh_TW.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_TW.gmo zh_TW.1po && rm -f zh_TW.1po
+zh_HK.1po: 37 translated messages.
+zh_TW.1po: 37 translated messages.
+rm -f zu.gmo && /usr/bin/msgmerge --for-msgfmt -o zu.1po zu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zu.gmo zu.1po && rm -f zu.1po
+zu.1po: 3 translated messages.
+make[3]: Leaving directory '/rootdir/po'
+touch ./stamp-po
+make[2]: Leaving directory '/rootdir/po'
+Making all in libmenu
+make[2]: Entering directory '/rootdir/libmenu'
+  CC       desktop-entries.lo
+  CC       entry-directories.lo
+  CC       cafemenu-tree.lo
+desktop-entries.c: In function 'desktop_entry_load':
+desktop-entries.c:313:66: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  313 |             menu_verbose ("Failed to load \"%s\"\n", entry->path);
+      |                                                                  ^
+desktop-entries.c: In function 'intersect_foreach_remove':
+desktop-entries.c:808:77: warning: unused parameter 'entry' [-Wunused-parameter]
+  808 | static gboolean intersect_foreach_remove(const char* file_id, DesktopEntry* entry, IntersectData* id)
+      |                                                               ~~~~~~~~~~~~~~^~~~~
+desktop-entries.c: In function 'subtract_foreach_remove':
+desktop-entries.c:847:76: warning: unused parameter 'entry' [-Wunused-parameter]
+  847 | static gboolean subtract_foreach_remove(const char* file_id, DesktopEntry* entry, SubtractData* sd)
+      |                                                              ~~~~~~~~~~~~~~^~~~~
+cafemenu-tree.c: In function 'handle_nonexistent_menu_file_changed':
+cafemenu-tree.c:185:57: warning: unused parameter 'monitor' [-Wunused-parameter]
+  185 | handle_nonexistent_menu_file_changed (MenuMonitor      *monitor,
+      |                                       ~~~~~~~~~~~~~~~~~~^~~~~~~
+cafemenu-tree.c:187:57: warning: unused parameter 'path' [-Wunused-parameter]
+  187 |                                       const char       *path,
+      |                                       ~~~~~~~~~~~~~~~~~~^~~~
+cafemenu-tree.c: In function 'handle_menu_file_changed':
+cafemenu-tree.c:203:45: warning: unused parameter 'monitor' [-Wunused-parameter]
+  203 | handle_menu_file_changed (MenuMonitor      *monitor,
+      |                           ~~~~~~~~~~~~~~~~~~^~~~~~~
+entry-directories.c: In function 'clear_cache':
+entry-directories.c:101:25: warning: unused parameter 'dir' [-Wunused-parameter]
+  101 | clear_cache (CachedDir *dir,
+      |              ~~~~~~~~~~~^~~
+entry-directories.c: In function 'cached_dir_free':
+entry-directories.c:145:35: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  145 |   g_slist_foreach (dir->monitors, (GFunc) g_free, NULL);
+      |                                   ^
+entry-directories.c:150:20: warning: cast between incompatible function types from 'void (*)(DesktopEntry *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  150 |                    (GFunc) desktop_entry_unref,
+      |                    ^
+entry-directories.c:156:20: warning: cast between incompatible function types from 'void (*)(CachedDir *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  156 |                    (GFunc) cached_dir_unref_noparent,
+      |                    ^
+entry-directories.c: In function 'cached_dir_add_entry':
+entry-directories.c:304:66: warning: unused parameter 'basename' [-Wunused-parameter]
+  304 | static gboolean cached_dir_add_entry(CachedDir* dir, const char* basename, const char* path)
+      |                                                      ~~~~~~~~~~~~^~~~~~~~
+cafemenu-tree.c:204:45: warning: unused parameter 'event' [-Wunused-parameter]
+  204 |                           MenuMonitorEvent  event,
+      |                           ~~~~~~~~~~~~~~~~~~^~~~~
+cafemenu-tree.c:205:45: warning: unused parameter 'path' [-Wunused-parameter]
+  205 |                           const char       *path,
+      |                           ~~~~~~~~~~~~~~~~~~^~~~
+cafemenu-tree.c: In function 'handle_menu_file_directory_changed':
+cafemenu-tree.c:218:55: warning: unused parameter 'monitor' [-Wunused-parameter]
+  218 | handle_menu_file_directory_changed (MenuMonitor      *monitor,
+      |                                     ~~~~~~~~~~~~~~~~~~^~~~~~~
+cafemenu-tree.c:219:55: warning: unused parameter 'event' [-Wunused-parameter]
+  219 |                                     MenuMonitorEvent  event,
+      |                                     ~~~~~~~~~~~~~~~~~~^~~~~
+entry-directories.c: In function 'cached_dir_queue_monitor_event':
+entry-directories.c:492:43: warning: cast between incompatible function types from 'gboolean (*)(void)' {aka 'int (*)(void)'} to 'gboolean (*)(void *)' {aka 'int (*)(void *)'} [-Wcast-function-type]
+  492 |       monitors_idle_handler = g_idle_add ((GSourceFunc) emit_monitors_in_idle, NULL);
+      |                                           ^
+entry-directories.c: In function 'handle_cached_dir_changed':
+entry-directories.c:496:53: warning: unused parameter 'monitor' [-Wunused-parameter]
+  496 | static void handle_cached_dir_changed (MenuMonitor* monitor, MenuMonitorEvent event, const char* path, CachedDir* dir)
+      |                                        ~~~~~~~~~~~~~^~~~~~~
+entry-directories.c: In function 'entry_directory_list_unref':
+entry-directories.c:1040:35: warning: cast between incompatible function types from 'void (*)(EntryDirectory *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 1040 |       g_list_foreach (list->dirs, (GFunc) entry_directory_unref, NULL);
+      |                                   ^
+entry-directories.c: In function 'get_all_func':
+entry-directories.c:1122:123: warning: unused parameter 'user_data' [-Wunused-parameter]
+ 1122 | static gboolean get_all_func(EntryDirectory* ed, DesktopEntry* entry, const char* file_id, DesktopEntrySet* set, gpointer user_data)
+      |                                                                                                                  ~~~~~~~~~^~~~~~~~~
+cafemenu-tree.c: In function 'cafemenu_tree_iter_unref':
+cafemenu-tree.c:972:36: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  972 |   g_slist_foreach (iter->contents, (GFunc)cafemenu_tree_item_unref, NULL);
+      |                                    ^
+cafemenu-tree.c: In function 'cafemenu_tree_directory_iter':
+cafemenu-tree.c:996:36: warning: cast between incompatible function types from 'void * (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  996 |   g_slist_foreach (iter->contents, (GFunc) cafemenu_tree_item_ref, NULL);
+      |                                    ^
+cafemenu-tree.c: In function 'cafemenu_tree_directory_finalize':
+cafemenu-tree.c:1483:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 1483 |                    (GFunc) cafemenu_tree_item_unref_and_unset_parent,
+      |                    ^
+cafemenu-tree.c:1489:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 1489 |                    (GFunc) menu_layout_node_unref,
+      |                    ^
+cafemenu-tree.c:1495:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 1495 |                    (GFunc) menu_layout_node_unref,
+      |                    ^
+cafemenu-tree.c:1501:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 1501 |                    (GFunc) cafemenu_tree_item_unref_and_unset_parent,
+      |                    ^
+cafemenu-tree.c:1507:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 1507 |                    (GFunc) cafemenu_tree_item_unref_and_unset_parent,
+      |                    ^
+cafemenu-tree.c: In function 'add_app_dir':
+cafemenu-tree.c:2193:33: warning: unused parameter 'tree' [-Wunused-parameter]
+ 2193 | add_app_dir (CafeMenuTree      *tree,
+      |              ~~~~~~~~~~~~~~~~~~~^~~~
+cafemenu-tree.c: In function 'add_directory_dir':
+cafemenu-tree.c:2242:56: warning: unused parameter 'tree' [-Wunused-parameter]
+ 2242 | static MenuLayoutNode* add_directory_dir(CafeMenuTree* tree, MenuLayoutNode* before, const char* data_dir)
+      |                                          ~~~~~~~~~~~~~~^~~~
+cafemenu-tree.c: In function 'is_dot_directory':
+cafemenu-tree.c:2385:33: warning: unused parameter 'entry' [-Wunused-parameter]
+ 2385 |                   DesktopEntry *entry,
+      |                   ~~~~~~~~~~~~~~^~~~~
+cafemenu-tree.c: In function 'add_menu_for_legacy_dir':
+cafemenu-tree.c:2522:29: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 2522 |   g_slist_foreach (subdirs, (GFunc) g_free, NULL);
+      |                             ^
+cafemenu-tree.c: In function 'collect_layout_info':
+cafemenu-tree.c:3322:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 3322 |                    (GFunc) menu_layout_node_unref,
+      |                    ^
+cafemenu-tree.c: In function 'preprocess_layout_info_subdir_helper':
+cafemenu-tree.c:3957:28: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 3957 |                            (GFunc) cafemenu_tree_item_unref_and_unset_parent,
+      |                            ^
+cafemenu-tree.c: In function 'merge_entry':
+cafemenu-tree.c:4293:37: warning: unused parameter 'tree' [-Wunused-parameter]
+ 4293 | merge_entry (CafeMenuTree          *tree,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~^~~~
+cafemenu-tree.c: In function 'process_layout_info':
+cafemenu-tree.c:4578:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 4578 |                    (GFunc) cafemenu_tree_item_unref_and_unset_parent,
+      |                    ^
+cafemenu-tree.c:4680:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 4680 |                    (GFunc) cafemenu_tree_item_unref,
+      |                    ^
+cafemenu-tree.c:4686:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 4686 |                    (GFunc) cafemenu_tree_item_unref,
+      |                    ^
+cafemenu-tree.c:4692:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 4692 |                    (GFunc) menu_layout_node_unref,
+      |                    ^
+cafemenu-tree.c:4698:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+ 4698 |                    (GFunc) menu_layout_node_unref,
+      |                    ^
+  CC       menu-layout.lo
+menu-layout.c: In function 'handle_entry_directory_changed':
+menu-layout.c:162:49: warning: unused parameter 'dir' [-Wunused-parameter]
+  162 | handle_entry_directory_changed (EntryDirectory *dir,
+      |                                 ~~~~~~~~~~~~~~~~^~~
+menu-layout.c: In function 'menu_layout_node_unref':
+menu-layout.c:246:42: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  246 |           g_slist_foreach (nr->monitors, (GFunc) g_free, NULL);
+      |                                          ^
+menu-layout.c: In function 'check_no_attributes':
+menu-layout.c:1337:44: warning: unused parameter 'attribute_values' [-Wunused-parameter]
+ 1337 |                      const char          **attribute_values,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+menu-layout.c: In function 'fixup_layout_node':
+menu-layout.c:1807:43: warning: unused parameter 'context' [-Wunused-parameter]
+ 1807 | fixup_layout_node (GMarkupParseContext   *context,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+menu-layout.c:1808:43: warning: unused parameter 'parser' [-Wunused-parameter]
+ 1808 |                    MenuParser            *parser,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+menu-layout.c:1810:42: warning: unused parameter 'error' [-Wunused-parameter]
+ 1810 |                    GError              **error)
+      |                    ~~~~~~~~~~~~~~~~~~~~~~^~~~~
+menu-layout.c: In function 'fixup_move_node':
+menu-layout.c:1956:41: warning: unused parameter 'parser' [-Wunused-parameter]
+ 1956 |                  MenuParser            *parser,
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+menu-layout.c: In function 'passthrough_handler':
+menu-layout.c:2262:44: warning: unused parameter 'text_len' [-Wunused-parameter]
+ 2262 |                      gsize                 text_len,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+cafemenu-tree.c:832:12: warning: This statement is never executed [alpha.deadcode.UnreachableCode]
+    return NULL;
+           ^~~~
+/usr/lib/llvm-13/lib/clang/13.0.1/include/stddef.h:89:24: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+                       ^
+1 warning generated.
+menu-layout.c:567:20: warning: Access to field 'prev' results in a dereference of a null pointer (loaded from field 'next') [core.NullDereference]
+  node->next->prev = node->prev;
+        ~~~~       ^
+menu-layout.c:2084:15: warning: Value stored to 'prev' is never read [deadcode.DeadStores]
+              prev = child;
+              ^      ~~~~~
+2 warnings generated.
+entry-directories.c:402:22: warning: Use of memory after it is freed [unix.Malloc]
+      dir->subdirs = g_slist_remove (dir->subdirs, subdir);
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+  CC       menu-monitor.lo
+menu-monitor.c: In function 'invoke_notifies':
+menu-monitor.c:68:20: warning: cast between incompatible function types from 'MenuMonitorNotify * (*)(MenuMonitorNotify *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+   68 |                    (GFunc) cafe_menu_monitor_notify_ref,
+      |                    ^
+menu-monitor.c: In function 'menu_monitor_queue_event':
+menu-monitor.c:143:41: warning: cast between incompatible function types from 'gboolean (*)(void)' {aka 'int (*)(void)'} to 'gboolean (*)(void *)' {aka 'int (*)(void *)'} [-Wcast-function-type]
+  143 |       events_idle_handler = g_idle_add ((GSourceFunc) emit_events_in_idle, NULL);
+      |                                         ^
+menu-monitor.c: In function 'monitor_callback':
+menu-monitor.c:154:49: warning: unused parameter 'monitor' [-Wunused-parameter]
+  154 | static gboolean monitor_callback (GFileMonitor* monitor, GFile* child, GFile* other_file, GFileMonitorEvent eflags, gpointer user_data)
+      |                                   ~~~~~~~~~~~~~~^~~~~~~
+menu-monitor.c:154:79: warning: unused parameter 'other_file' [-Wunused-parameter]
+  154 | static gboolean monitor_callback (GFileMonitor* monitor, GFile* child, GFile* other_file, GFileMonitorEvent eflags, gpointer user_data)
+      |                                                                        ~~~~~~~^~~~~~~~~~
+menu-monitor.c: In function 'menu_monitor_unref':
+menu-monitor.c:343:39: warning: cast between incompatible function types from 'void (*)(MenuMonitorNotify *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  343 |   g_slist_foreach (monitor->notifies, (GFunc) cafe_menu_monitor_notify_unref, NULL);
+      |                                       ^
+menu-monitor.c:160:3: warning: Value stored to 'event' is never read [deadcode.DeadStores]
+  event = MENU_MONITOR_EVENT_INVALID;
+  ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+  CC       menu-util.lo
+  CCLD     libcafe-menu.la
+  GISCAN   CafeMenu-2.0.gir
+  GICOMP   CafeMenu-2.0.gir
+make[2]: Leaving directory '/rootdir/libmenu'
+Making all in desktop-directories
+make[2]: Entering directory '/rootdir/desktop-directories'
+  GEN      cafe-audio-video.directory
+  GEN      cafe-development.directory
+  GEN      cafe-education.directory
+  GEN      cafe-game.directory
+  GEN      cafe-graphics.directory
+  GEN      cafe-network.directory
+  GEN      cafe-office.directory
+  GEN      cafe-settings.directory
+  GEN      cafe-settings-system.directory
+  GEN      cafe-system-tools.directory
+  GEN      cafe-utility.directory
+  GEN      cafe-utility-accessibility.directory
+  GEN      cafe-other.directory
+  GEN      cafe-menu-applications.directory
+  GEN      cafe-menu-system.directory
+  GEN      cafe-hardware.directory
+  GEN      cafe-internet-and-network.directory
+  GEN      cafe-look-and-feel.directory
+  GEN      cafe-personal.directory
+  GEN      cafe-system.directory
+make[2]: Leaving directory '/rootdir/desktop-directories'
+Making all in layout
+make[2]: Entering directory '/rootdir/layout'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/rootdir/layout'
+Making all in util
+make[2]: Entering directory '/rootdir/util'
+  CC       test-menu-spec.o
+  CCLD     cafe-menu-spec-test
+make[2]: Leaving directory '/rootdir/util'
+make[2]: Entering directory '/rootdir'
+make[2]: Leaving directory '/rootdir'
+make[1]: Leaving directory '/rootdir'
+scan-build: Analysis run complete.
+scan-build: 10 bugs found.
+scan-build: Run 'scan-view /rootdir/html-report/2022-04-09-141701-10562-1' to examine bug reports.
+Making check in po
+make[1]: Entering directory '/rootdir/po'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/po'
+Making check in libmenu
+make[1]: Entering directory '/rootdir/libmenu'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/libmenu'
+Making check in desktop-directories
+make[1]: Entering directory '/rootdir/desktop-directories'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/desktop-directories'
+Making check in layout
+make[1]: Entering directory '/rootdir/layout'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/layout'
+Making check in util
+make[1]: Entering directory '/rootdir/util'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/util'
+make[1]: Entering directory '/rootdir'
+make[1]: Leaving directory '/rootdir'
+Listing... 0%Listing... 0%Listing... 0%Listing... Done
+Errors detected in the build 0
+Warnings detected in the logs 63
+cppcheck defects detected in the logs 13
+TOTAL warnings detected in the logs 76
