@@ -66,7 +66,7 @@ msgstr "Caferial"
 
 #: desktop-directories/cafe-hardware.directory.in:4
 msgid "Settings for several hardware devices"
-msgstr "Paramètres per d'unes periferics caferials"
+msgstr "Paramètres per d'unes periferics materials"
 
 #: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Internet and Network"
