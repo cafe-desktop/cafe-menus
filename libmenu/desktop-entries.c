@@ -807,7 +807,9 @@ typedef struct {
 	DesktopEntrySet *with;
 } IntersectData;
 
-static gboolean intersect_foreach_remove(const char* file_id, DesktopEntry* entry, IntersectData* id)
+static gboolean intersect_foreach_remove (const char    *file_id,
+					  DesktopEntry  *entry G_GNUC_UNUSED,
+					  IntersectData *id)
 {
   /* Remove everything in "set" which is not in "with" */
 
@@ -846,7 +848,9 @@ typedef struct {
 	DesktopEntrySet *other;
 } SubtractData;
 
-static gboolean subtract_foreach_remove(const char* file_id, DesktopEntry* entry, SubtractData* sd)
+static gboolean subtract_foreach_remove (const char   *file_id,
+					 DesktopEntry *entry G_GNUC_UNUSED,
+					 SubtractData *sd)
 {
   /* Remove everything in "set" which is not in "other" */
 

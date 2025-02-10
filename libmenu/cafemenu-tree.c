@@ -182,10 +182,10 @@ typedef struct
 } MenuFileMonitor;
 
 static void
-handle_nonexistent_menu_file_changed (MenuMonitor      *monitor,
+handle_nonexistent_menu_file_changed (MenuMonitor      *monitor G_GNUC_UNUSED,
 				      MenuMonitorEvent  event,
-				      const char       *path,
-				      CafeMenuTree        *tree)
+				      const char       *path G_GNUC_UNUSED,
+				      CafeMenuTree     *tree)
 {
   if (event == MENU_MONITOR_EVENT_CHANGED ||
       event == MENU_MONITOR_EVENT_CREATED)
@@ -200,10 +200,10 @@ handle_nonexistent_menu_file_changed (MenuMonitor      *monitor,
 }
 
 static void
-handle_menu_file_changed (MenuMonitor      *monitor,
-			  MenuMonitorEvent  event,
-			  const char       *path,
-                          CafeMenuTree        *tree)
+handle_menu_file_changed (MenuMonitor      *monitor G_GNUC_UNUSED,
+			  MenuMonitorEvent  event G_GNUC_UNUSED,
+			  const char       *path G_GNUC_UNUSED,
+			  CafeMenuTree     *tree)
 {
   menu_verbose ("\"%s\" %s, marking tree for recanicalization\n",
 		path,
@@ -215,10 +215,10 @@ handle_menu_file_changed (MenuMonitor      *monitor,
 }
 
 static void
-handle_menu_file_directory_changed (MenuMonitor      *monitor,
-				    MenuMonitorEvent  event,
+handle_menu_file_directory_changed (MenuMonitor      *monitor G_GNUC_UNUSED,
+				    MenuMonitorEvent  event G_GNUC_UNUSED,
 				    const char       *path,
-				    CafeMenuTree        *tree)
+				    CafeMenuTree     *tree)
 {
   if (!g_str_has_suffix (path, ".menu"))
     return;
@@ -2190,9 +2190,9 @@ resolve_merge_dir (CafeMenuTree      *tree,
 }
 
 static MenuLayoutNode *
-add_app_dir (CafeMenuTree      *tree,
-             MenuLayoutNode *before,
-             const char     *data_dir)
+add_app_dir (CafeMenuTree   *tree G_GNUC_UNUSED,
+	     MenuLayoutNode *before,
+	     const char     *data_dir)
 {
   MenuLayoutNode *tmp;
   char           *dirname;
@@ -2239,7 +2239,9 @@ resolve_default_app_dirs (CafeMenuTree      *tree,
   menu_layout_node_unlink (layout);
 }
 
-static MenuLayoutNode* add_directory_dir(CafeMenuTree* tree, MenuLayoutNode* before, const char* data_dir)
+static MenuLayoutNode* add_directory_dir (CafeMenuTree   *tree G_GNUC_UNUSED,
+					  MenuLayoutNode *before,
+					  const char     *data_dir)
 {
 	MenuLayoutNode* tmp;
 	char* dirname;
@@ -2382,7 +2384,7 @@ add_filename_include (const char     *desktop_file_id,
 
 static void
 is_dot_directory (const char   *basename,
-		  DesktopEntry *entry,
+		  DesktopEntry *entry G_GNUC_UNUSED,
 		  gboolean     *has_dot_directory)
 {
   if (!strcmp (basename, ".directory"))
@@ -4290,7 +4292,7 @@ merge_subdir_by_name (CafeMenuTree          *tree,
 }
 
 static void
-merge_entry (CafeMenuTree          *tree,
+merge_entry (CafeMenuTree          *tree G_GNUC_UNUSED,
 	     CafeMenuTreeDirectory *directory,
 	     CafeMenuTreeEntry     *entry)
 {

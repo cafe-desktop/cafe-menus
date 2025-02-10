@@ -98,8 +98,8 @@ static void handle_cached_dir_changed (MenuMonitor      *monitor,
 static CachedDir* dir_cache = NULL;
 
 static void
-clear_cache (CachedDir *dir,
-             gpointer  *cache)
+clear_cache (CachedDir *dir G_GNUC_UNUSED,
+	     gpointer  *cache)
 {
   *cache = NULL;
 }
@@ -301,7 +301,9 @@ static CachedDir* cached_dir_lookup(const char* canonical)
   return dir;
 }
 
-static gboolean cached_dir_add_entry(CachedDir* dir, const char* basename, const char* path)
+static gboolean cached_dir_add_entry (CachedDir  *dir,
+				      const char *basename G_GNUC_UNUSED,
+				      const char *path)
 {
   DesktopEntry *entry;
 
@@ -493,7 +495,10 @@ cached_dir_queue_monitor_event (CachedDir *dir)
     }
 }
 
-static void handle_cached_dir_changed (MenuMonitor* monitor, MenuMonitorEvent event, const char* path, CachedDir* dir)
+static void handle_cached_dir_changed (MenuMonitor     *monitor G_GNUC_UNUSED,
+				       MenuMonitorEvent event,
+				       const char      *path,
+				       CachedDir       *dir)
 {
   gboolean  handled = FALSE;
   char     *basename;
@@ -1119,7 +1124,11 @@ gboolean _entry_directory_list_compare(const EntryDirectoryList* a, const EntryD
   return (al == NULL && bl == NULL);
 }
 
-static gboolean get_all_func(EntryDirectory* ed, DesktopEntry* entry, const char* file_id, DesktopEntrySet* set, gpointer user_data)
+static gboolean get_all_func (EntryDirectory  *ed,
+			      DesktopEntry    *entry,
+			      const char      *file_id,
+			      DesktopEntrySet *set,
+			      gpointer         user_data G_GNUC_UNUSED)
 {
   if (ed->is_legacy && !desktop_entry_has_categories (entry))
     {

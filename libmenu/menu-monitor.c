@@ -151,7 +151,11 @@ static inline char* get_registry_key(const char* path, gboolean is_directory)
 			  is_directory ? "<dir>" : "<file>");
 }
 
-static gboolean monitor_callback (GFileMonitor* monitor, GFile* child, GFile* other_file, GFileMonitorEvent eflags, gpointer user_data)
+static gboolean monitor_callback (GFileMonitor     *monitor G_GNUC_UNUSED,
+				  GFile            *child,
+				  GFile            *other_file G_GNUC_UNUSED,
+				  GFileMonitorEvent eflags,
+				  gpointer          user_data)
 {
   MenuMonitorEventInfo *event_info;
   MenuMonitorEvent      event;

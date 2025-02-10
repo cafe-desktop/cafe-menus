@@ -159,8 +159,8 @@ menu_layout_invoke_monitors (MenuLayoutNodeRoot *nr)
 }
 
 static void
-handle_entry_directory_changed (EntryDirectory *dir,
-                                MenuLayoutNode *node)
+handle_entry_directory_changed (EntryDirectory *dir G_GNUC_UNUSED,
+				MenuLayoutNode *node)
 {
   MenuLayoutNodeRoot *nr;
 
@@ -1332,10 +1332,10 @@ locate_attributes (GMarkupParseContext  *context,
 
 static gboolean
 check_no_attributes (GMarkupParseContext  *context,
-                     const char           *element_name,
-                     const char          **attribute_names,
-                     const char          **attribute_values,
-                     GError              **error)
+		     const char           *element_name,
+		     const char          **attribute_names,
+		     const char          **attribute_values G_GNUC_UNUSED,
+		     GError              **error)
 {
   if (attribute_names[0] != NULL)
     {
@@ -1804,10 +1804,10 @@ start_element_handler (GMarkupParseContext   *context,
  *    "files", we append one. (So menus are before files)
  */
 static gboolean
-fixup_layout_node (GMarkupParseContext   *context,
-                   MenuParser            *parser,
-                   MenuLayoutNode        *node,
-                   GError              **error)
+fixup_layout_node (GMarkupParseContext   *context G_GNUC_UNUSED,
+		   MenuParser            *parser G_GNUC_UNUSED,
+		   MenuLayoutNode        *node,
+		   GError              **error G_GNUC_UNUSED)
 {
   MenuLayoutNode *child;
   MenuLayoutNode *last_all;
@@ -1953,9 +1953,9 @@ fixup_layout_node (GMarkupParseContext   *context,
  */
 static gboolean
 fixup_move_node (GMarkupParseContext   *context,
-                 MenuParser            *parser,
-                 MenuLayoutNode        *node,
-                 GError              **error)
+		 MenuParser            *parser G_GNUC_UNUSED,
+		 MenuLayoutNode        *node,
+		 GError              **error)
 {
   MenuLayoutNode *child;
   int             n_old;
@@ -2258,10 +2258,10 @@ text_handler (GMarkupParseContext  *context,
 
 static void
 passthrough_handler (GMarkupParseContext  *context,
-                     const char           *passthrough_text,
-                     gsize                 text_len,
-                     gpointer              user_data,
-                     GError              **error)
+		     const char           *passthrough_text,
+		     gsize                 text_len G_GNUC_UNUSED,
+		     gpointer              user_data,
+		     GError              **error)
 {
   MenuParser *parser = user_data;
   MenuLayoutNode *node;
