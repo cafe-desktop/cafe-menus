@@ -58,6 +58,11 @@ static GHashTable* monitors_registry = NULL;
 static guint events_idle_handler = 0;
 static GSList* pending_events = NULL;
 
+static void cafe_menu_monitor_notify_ref_wrapper (gpointer data, gpointer user_data)
+{
+  cafe_menu_monitor_notify_ref ((MenuMonitorNotify *) data);
+}
+
 static void invoke_notifies(MenuMonitor* monitor, MenuMonitorEvent  event, const char* path)
 {
   GSList *copy;
@@ -65,7 +70,7 @@ static void invoke_notifies(MenuMonitor* monitor, MenuMonitorEvent  event, const
 
   copy = g_slist_copy (monitor->notifies);
   g_slist_foreach (copy,
-		   (GFunc) cafe_menu_monitor_notify_ref,
+		   (GFunc) cafe_menu_monitor_notify_ref_wrapper,
 		   NULL);
 
   tmp = copy;
