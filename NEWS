@@ -1,3 +1,12 @@
+### cafe-menus 2.0.0
+
+  * ci:
+    - Fix Github Actions Warnings
+    - use workflow inside cafe-common
+    - add debian sid build
+  * add G_GNUC_UNUSED in unused parameters
+  * update update translations
+
 ### cafe-menus 1.25.0
 
   * initial commit: mate-menus 1.24.1 fork
