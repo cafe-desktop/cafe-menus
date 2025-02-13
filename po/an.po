@@ -8,9 +8,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-menus 1.23.0\n"
+"Project-Id-Version: cafe-menus 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2020-08-13 10:50+0200\n"
+"POT-Creation-Date: 2025-02-13 09:50+0100\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Aragonese (https://www.transifex.com/cafe/teams/13566/an/)\n"
@@ -20,153 +20,153 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: desktop-directories/cafe-audio-video.directory.in:3
+#: desktop-directories/cafe-audio-video.directory.in:2
 msgid "Sound & Video"
 msgstr "Vidio y soniu"
 
-#: desktop-directories/cafe-audio-video.directory.in:4
+#: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Multimedia menu"
 msgstr "Menú de programas multimedia"
 
-#: desktop-directories/cafe-development.directory.in:3
+#: desktop-directories/cafe-development.directory.in:2
 msgid "Programming"
 msgstr "Programacion"
 
-#: desktop-directories/cafe-development.directory.in:4
+#: desktop-directories/cafe-development.directory.in:3
 msgid "Tools for software development"
 msgstr "Ainas ta lo desarrollo de software"
 
-#: desktop-directories/cafe-education.directory.in:3
+#: desktop-directories/cafe-education.directory.in:2
 msgid "Education"
 msgstr "Educacion"
 
-#: desktop-directories/cafe-game.directory.in:3
+#: desktop-directories/cafe-game.directory.in:2
 msgid "Games"
 msgstr "Chuegos"
 
-#: desktop-directories/cafe-game.directory.in:4
+#: desktop-directories/cafe-game.directory.in:3
 msgid "Games and amusements"
 msgstr "Chuegos y distraccions"
 
-#: desktop-directories/cafe-graphics.directory.in:3
+#: desktop-directories/cafe-graphics.directory.in:2
 msgid "Graphics"
 msgstr "Graficos"
 
-#: desktop-directories/cafe-graphics.directory.in:4
+#: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics applications"
 msgstr "Aplicacions graficas"
 
-#: desktop-directories/cafe-hardware.directory.in:3
+#: desktop-directories/cafe-hardware.directory.in:2
 msgid "Hardware"
 msgstr "Hardware"
 
-#: desktop-directories/cafe-hardware.directory.in:4
+#: desktop-directories/cafe-hardware.directory.in:3
 msgid "Settings for several hardware devices"
 msgstr "Propiedaz ta varios dispositivos de hardware"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:3
+#: desktop-directories/cafe-internet-and-network.directory.in:2
 msgid "Internet and Network"
 msgstr "Internet y rete"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:4
+#: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Network-related settings"
 msgstr "Propiedatz arredol d'o rete"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:3
+#: desktop-directories/cafe-look-and-feel.directory.in:2
 msgid "Look and Feel"
 msgstr "Visualizacion y comportamiento"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:4
+#: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Propiedaz que controlan l'apariencia y o comportamiento d'o escritorio"
 
-#: desktop-directories/cafe-network.directory.in:3
+#: desktop-directories/cafe-network.directory.in:2
 msgid "Internet"
 msgstr "Internet"
 
-#: desktop-directories/cafe-network.directory.in:4
+#: desktop-directories/cafe-network.directory.in:3
 msgid "Programs for Internet access such as web and email"
 msgstr "Programas ta l'acceso a internet, tals como web y e-mail"
 
-#: desktop-directories/cafe-office.directory.in:3
+#: desktop-directories/cafe-office.directory.in:2
 msgid "Office"
 msgstr "Oficina"
 
-#: desktop-directories/cafe-office.directory.in:4
+#: desktop-directories/cafe-office.directory.in:3
 msgid "Office Applications"
 msgstr "Aplicacions d'oficina"
 
 #. Translators: this is Personal as in "Personal settings"
-#: desktop-directories/cafe-personal.directory.in:4
+#: desktop-directories/cafe-personal.directory.in:3
 msgid "Personal"
 msgstr "Presonal"
 
-#: desktop-directories/cafe-personal.directory.in:5
+#: desktop-directories/cafe-personal.directory.in:4
 msgid "Personal settings"
 msgstr "Peferencias presonals"
 
-#: desktop-directories/cafe-settings-system.directory.in:4
+#: desktop-directories/cafe-settings-system.directory.in:3
 msgid "Administration"
 msgstr "Almenistracion"
 
-#: desktop-directories/cafe-settings-system.directory.in:5
+#: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Change system-wide settings (affects all users)"
 msgstr "Cambear as preferencias globals d'o sistema (ta toz os usuarios)"
 
-#: desktop-directories/cafe-settings.directory.in:3
+#: desktop-directories/cafe-settings.directory.in:2
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: desktop-directories/cafe-settings.directory.in:4
+#: desktop-directories/cafe-settings.directory.in:3
 msgid "Personal preferences"
 msgstr "Preferencias presonals "
 
-#: desktop-directories/cafe-system.directory.in:3
-#: desktop-directories/cafe-menu-system.directory.in:3
+#: desktop-directories/cafe-system.directory.in:2
+#: desktop-directories/cafe-menu-system.directory.in:2
 msgid "System"
 msgstr "Sistema"
 
-#: desktop-directories/cafe-system.directory.in:4
+#: desktop-directories/cafe-system.directory.in:3
 msgid "System settings"
 msgstr "Preferencias d'o sistema"
 
-#: desktop-directories/cafe-system-tools.directory.in:3
+#: desktop-directories/cafe-system-tools.directory.in:2
 msgid "System Tools"
 msgstr "Ainas d'o sistema"
 
-#: desktop-directories/cafe-system-tools.directory.in:4
+#: desktop-directories/cafe-system-tools.directory.in:3
 msgid "System configuration and monitoring"
 msgstr "Configuracion y monitorizacion d'o sistema"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:3
+#: desktop-directories/cafe-utility-accessibility.directory.in:2
 msgid "Universal Access"
 msgstr "Acceso universal"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:4
+#: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access Settings"
 msgstr "Preferencias d'acceso universal"
 
-#: desktop-directories/cafe-utility.directory.in:3
+#: desktop-directories/cafe-utility.directory.in:2
 msgid "Accessories"
 msgstr "Accesorios"
 
-#: desktop-directories/cafe-utility.directory.in:4
+#: desktop-directories/cafe-utility.directory.in:3
 msgid "Desktop accessories"
 msgstr "Accesorios d'o escritorio"
 
+#: desktop-directories/cafe-menu-applications.directory.in:2
 #: desktop-directories/cafe-menu-applications.directory.in:3
-#: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: desktop-directories/cafe-menu-system.directory.in:4
+#: desktop-directories/cafe-menu-system.directory.in:3
 msgid "Personal preferences and administration settings"
 msgstr "Preferencias presonals y opcions d'almenistracion"
 
-#: desktop-directories/cafe-other.directory.in:3
+#: desktop-directories/cafe-other.directory.in:2
 msgid "Other"
 msgstr "Atras"
 
-#: desktop-directories/cafe-other.directory.in:4
+#: desktop-directories/cafe-other.directory.in:3
 msgid "Applications that did not fit in other categories"
 msgstr "Aplicacions que no dentran en denguna atra categoria"

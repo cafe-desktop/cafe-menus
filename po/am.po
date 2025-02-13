@@ -8,9 +8,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-menus 1.23.0\n"
+"Project-Id-Version: cafe-menus 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2020-08-13 10:50+0200\n"
+"POT-Creation-Date: 2025-02-13 09:50+0100\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>, 2020\n"
 "Language-Team: Amharic (https://www.transifex.com/cafe/teams/13566/am/)\n"
@@ -20,153 +20,153 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: desktop-directories/cafe-audio-video.directory.in:3
+#: desktop-directories/cafe-audio-video.directory.in:2
 msgid "Sound & Video"
 msgstr "ድምፅ & ቪዲዮ"
 
-#: desktop-directories/cafe-audio-video.directory.in:4
+#: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Multimedia menu"
 msgstr "ብዙሀን መገናኛ ዝርዝር "
 
-#: desktop-directories/cafe-development.directory.in:3
+#: desktop-directories/cafe-development.directory.in:2
 msgid "Programming"
 msgstr "ፕሮግራም"
 
-#: desktop-directories/cafe-development.directory.in:4
+#: desktop-directories/cafe-development.directory.in:3
 msgid "Tools for software development"
 msgstr "የ ሶፍትዌር ማሳደጊያ መሳሪያዎች "
 
-#: desktop-directories/cafe-education.directory.in:3
+#: desktop-directories/cafe-education.directory.in:2
 msgid "Education"
 msgstr "ትምህርት"
 
-#: desktop-directories/cafe-game.directory.in:3
+#: desktop-directories/cafe-game.directory.in:2
 msgid "Games"
 msgstr "ጨዋታዎች"
 
-#: desktop-directories/cafe-game.directory.in:4
+#: desktop-directories/cafe-game.directory.in:3
 msgid "Games and amusements"
 msgstr "ጨዋታዎች እና መዝናኛዎች"
 
-#: desktop-directories/cafe-graphics.directory.in:3
+#: desktop-directories/cafe-graphics.directory.in:2
 msgid "Graphics"
 msgstr "ንድፎች"
 
-#: desktop-directories/cafe-graphics.directory.in:4
+#: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics applications"
 msgstr "የንድፍ መተግበሪያ"
 
-#: desktop-directories/cafe-hardware.directory.in:3
+#: desktop-directories/cafe-hardware.directory.in:2
 msgid "Hardware"
 msgstr "ጠንካራ አካል "
 
-#: desktop-directories/cafe-hardware.directory.in:4
+#: desktop-directories/cafe-hardware.directory.in:3
 msgid "Settings for several hardware devices"
 msgstr "ለበርካታ ጠንካራ አካሎች ማሰጃዎች "
 
-#: desktop-directories/cafe-internet-and-network.directory.in:3
+#: desktop-directories/cafe-internet-and-network.directory.in:2
 msgid "Internet and Network"
 msgstr "ኢንተርኔት እና ኔትዎርክ"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:4
+#: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Network-related settings"
 msgstr "ኔትዎርክን-የሚዛመዱ ማሰናጃዎች"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:3
+#: desktop-directories/cafe-look-and-feel.directory.in:2
 msgid "Look and Feel"
 msgstr "ይመልከቱ እና ይዳብሱ"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:4
+#: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "የዴስክቶፕ አቀራረብ እና ባህሪ መቆጣጠሪያ ማሰናጃዎች "
 
-#: desktop-directories/cafe-network.directory.in:3
+#: desktop-directories/cafe-network.directory.in:2
 msgid "Internet"
 msgstr "ኢንተርኔት "
 
-#: desktop-directories/cafe-network.directory.in:4
+#: desktop-directories/cafe-network.directory.in:3
 msgid "Programs for Internet access such as web and email"
 msgstr "ለኢንተርኔት መድረሻ ፕሮግራሞች እንደ ድህረ ገጽ እና ኢሜይል "
 
-#: desktop-directories/cafe-office.directory.in:3
+#: desktop-directories/cafe-office.directory.in:2
 msgid "Office"
 msgstr "ቢሮ "
 
-#: desktop-directories/cafe-office.directory.in:4
+#: desktop-directories/cafe-office.directory.in:3
 msgid "Office Applications"
 msgstr "የ ቢሮ መተግበሪያዎች "
 
 #. Translators: this is Personal as in "Personal settings"
-#: desktop-directories/cafe-personal.directory.in:4
+#: desktop-directories/cafe-personal.directory.in:3
 msgid "Personal"
 msgstr "የ ግል"
 
-#: desktop-directories/cafe-personal.directory.in:5
+#: desktop-directories/cafe-personal.directory.in:4
 msgid "Personal settings"
 msgstr "የግል ማሰናጃዎች"
 
-#: desktop-directories/cafe-settings-system.directory.in:4
+#: desktop-directories/cafe-settings-system.directory.in:3
 msgid "Administration"
 msgstr "አስተዳዳሪ"
 
-#: desktop-directories/cafe-settings-system.directory.in:5
+#: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Change system-wide settings (affects all users)"
 msgstr "ስርአቱን - ሙሉ መቀየሪያ ማሰናጃዎች (ተጽእኖው በሁሉም ተጠቃሚ ላይ ነው)"
 
-#: desktop-directories/cafe-settings.directory.in:3
+#: desktop-directories/cafe-settings.directory.in:2
 msgid "Preferences"
 msgstr "ምርጫዎች"
 
-#: desktop-directories/cafe-settings.directory.in:4
+#: desktop-directories/cafe-settings.directory.in:3
 msgid "Personal preferences"
 msgstr "የግል ምርጫዎች"
 
-#: desktop-directories/cafe-system.directory.in:3
-#: desktop-directories/cafe-menu-system.directory.in:3
+#: desktop-directories/cafe-system.directory.in:2
+#: desktop-directories/cafe-menu-system.directory.in:2
 msgid "System"
 msgstr "ስርአት"
 
-#: desktop-directories/cafe-system.directory.in:4
+#: desktop-directories/cafe-system.directory.in:3
 msgid "System settings"
 msgstr "ስርአት ማሰናጃዎች"
 
-#: desktop-directories/cafe-system-tools.directory.in:3
+#: desktop-directories/cafe-system-tools.directory.in:2
 msgid "System Tools"
 msgstr "የስርአቱ መሳሪያዎች"
 
-#: desktop-directories/cafe-system-tools.directory.in:4
+#: desktop-directories/cafe-system-tools.directory.in:3
 msgid "System configuration and monitoring"
 msgstr "ስርአት ማዋቀሪያ እና መቆጣጠሪያ "
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:3
+#: desktop-directories/cafe-utility-accessibility.directory.in:2
 msgid "Universal Access"
 msgstr "አለም አቀፍ መድረሻ "
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:4
+#: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access Settings"
 msgstr "አለም አቀፍ መድረሻ ማሰናጃዎች "
 
-#: desktop-directories/cafe-utility.directory.in:3
+#: desktop-directories/cafe-utility.directory.in:2
 msgid "Accessories"
 msgstr "ተጨማሪዎች"
 
-#: desktop-directories/cafe-utility.directory.in:4
+#: desktop-directories/cafe-utility.directory.in:3
 msgid "Desktop accessories"
 msgstr "የዴስክቶፕ ተጨማሪዎች"
 
+#: desktop-directories/cafe-menu-applications.directory.in:2
 #: desktop-directories/cafe-menu-applications.directory.in:3
-#: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "መተግበሪያዎች "
 
-#: desktop-directories/cafe-menu-system.directory.in:4
+#: desktop-directories/cafe-menu-system.directory.in:3
 msgid "Personal preferences and administration settings"
 msgstr "የግል ምርጫዎች እና የአስተዳዳሪ ማሰናጃዎች "
 
-#: desktop-directories/cafe-other.directory.in:3
+#: desktop-directories/cafe-other.directory.in:2
 msgid "Other"
 msgstr "ሌላ "
 
-#: desktop-directories/cafe-other.directory.in:4
+#: desktop-directories/cafe-other.directory.in:3
 msgid "Applications that did not fit in other categories"
 msgstr "በሌሎች ምድቦች ውስጥ ያልተካተቱ መተግበሪያዎች "

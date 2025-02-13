@@ -8,9 +8,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-menus 1.23.0\n"
+"Project-Id-Version: cafe-menus 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2020-08-13 10:50+0200\n"
+"POT-Creation-Date: 2025-02-13 09:50+0100\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Serbian (Latin) (https://www.transifex.com/cafe/teams/13566/"
@@ -22,153 +22,153 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: desktop-directories/cafe-audio-video.directory.in:3
+#: desktop-directories/cafe-audio-video.directory.in:2
 msgid "Sound & Video"
 msgstr "Zvuk i pokretne slike"
 
-#: desktop-directories/cafe-audio-video.directory.in:4
+#: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Multimedia menu"
 msgstr "Meni za multimediju"
 
-#: desktop-directories/cafe-development.directory.in:3
+#: desktop-directories/cafe-development.directory.in:2
 msgid "Programming"
 msgstr "Programiranje"
 
-#: desktop-directories/cafe-development.directory.in:4
+#: desktop-directories/cafe-development.directory.in:3
 msgid "Tools for software development"
 msgstr "Alatke za razvoj softvera"
 
-#: desktop-directories/cafe-education.directory.in:3
+#: desktop-directories/cafe-education.directory.in:2
 msgid "Education"
 msgstr "Obrazovanje"
 
-#: desktop-directories/cafe-game.directory.in:3
+#: desktop-directories/cafe-game.directory.in:2
 msgid "Games"
 msgstr "Igre"
 
-#: desktop-directories/cafe-game.directory.in:4
+#: desktop-directories/cafe-game.directory.in:3
 msgid "Games and amusements"
 msgstr "Igre i zabava"
 
-#: desktop-directories/cafe-graphics.directory.in:3
+#: desktop-directories/cafe-graphics.directory.in:2
 msgid "Graphics"
 msgstr "Grafika"
 
-#: desktop-directories/cafe-graphics.directory.in:4
+#: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics applications"
 msgstr "Grafički programi"
 
-#: desktop-directories/cafe-hardware.directory.in:3
+#: desktop-directories/cafe-hardware.directory.in:2
 msgid "Hardware"
 msgstr "Uređaji"
 
-#: desktop-directories/cafe-hardware.directory.in:4
+#: desktop-directories/cafe-hardware.directory.in:3
 msgid "Settings for several hardware devices"
 msgstr "Podešavanja za neke uređaje"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:3
+#: desktop-directories/cafe-internet-and-network.directory.in:2
 msgid "Internet and Network"
 msgstr "Internet i mreža"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:4
+#: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Network-related settings"
 msgstr "Mrežna podešavanja"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:3
+#: desktop-directories/cafe-look-and-feel.directory.in:2
 msgid "Look and Feel"
 msgstr "Izgled i ponašanje"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:4
+#: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Podešavanje izgleda i ponašanja radnog okruženja"
 
-#: desktop-directories/cafe-network.directory.in:3
+#: desktop-directories/cafe-network.directory.in:2
 msgid "Internet"
 msgstr "Internet"
 
-#: desktop-directories/cafe-network.directory.in:4
+#: desktop-directories/cafe-network.directory.in:3
 msgid "Programs for Internet access such as web and email"
 msgstr "Programi za pristup Internetu kao što je veb i e-pošta"
 
-#: desktop-directories/cafe-office.directory.in:3
+#: desktop-directories/cafe-office.directory.in:2
 msgid "Office"
 msgstr "Kancelarija"
 
-#: desktop-directories/cafe-office.directory.in:4
+#: desktop-directories/cafe-office.directory.in:3
 msgid "Office Applications"
 msgstr "Programi za kancelariju"
 
 #. Translators: this is Personal as in "Personal settings"
-#: desktop-directories/cafe-personal.directory.in:4
+#: desktop-directories/cafe-personal.directory.in:3
 msgid "Personal"
 msgstr "Lično"
 
-#: desktop-directories/cafe-personal.directory.in:5
+#: desktop-directories/cafe-personal.directory.in:4
 msgid "Personal settings"
 msgstr "Lična podešavanja"
 
-#: desktop-directories/cafe-settings-system.directory.in:4
+#: desktop-directories/cafe-settings-system.directory.in:3
 msgid "Administration"
 msgstr "Administracija"
 
-#: desktop-directories/cafe-settings-system.directory.in:5
+#: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Change system-wide settings (affects all users)"
 msgstr "Promenite sistemska podešavanja (utiče na sve korisnike)"
 
-#: desktop-directories/cafe-settings.directory.in:3
+#: desktop-directories/cafe-settings.directory.in:2
 msgid "Preferences"
 msgstr "Postavke"
 
-#: desktop-directories/cafe-settings.directory.in:4
+#: desktop-directories/cafe-settings.directory.in:3
 msgid "Personal preferences"
 msgstr "Lične postavke"
 
-#: desktop-directories/cafe-system.directory.in:3
-#: desktop-directories/cafe-menu-system.directory.in:3
+#: desktop-directories/cafe-system.directory.in:2
+#: desktop-directories/cafe-menu-system.directory.in:2
 msgid "System"
 msgstr "Sistem"
 
-#: desktop-directories/cafe-system.directory.in:4
+#: desktop-directories/cafe-system.directory.in:3
 msgid "System settings"
 msgstr "Podešavanja sistema"
 
-#: desktop-directories/cafe-system-tools.directory.in:3
+#: desktop-directories/cafe-system-tools.directory.in:2
 msgid "System Tools"
 msgstr "Sistemske alatke"
 
-#: desktop-directories/cafe-system-tools.directory.in:4
+#: desktop-directories/cafe-system-tools.directory.in:3
 msgid "System configuration and monitoring"
 msgstr "Podešavanje i praćenje sistema"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:3
+#: desktop-directories/cafe-utility-accessibility.directory.in:2
 msgid "Universal Access"
 msgstr "Univerzalni pristup"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:4
+#: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access Settings"
 msgstr "Podešavanja univerzalnog pristupa"
 
-#: desktop-directories/cafe-utility.directory.in:3
+#: desktop-directories/cafe-utility.directory.in:2
 msgid "Accessories"
 msgstr "Alatke"
 
-#: desktop-directories/cafe-utility.directory.in:4
+#: desktop-directories/cafe-utility.directory.in:3
 msgid "Desktop accessories"
 msgstr "Alatke okruženja"
 
+#: desktop-directories/cafe-menu-applications.directory.in:2
 #: desktop-directories/cafe-menu-applications.directory.in:3
-#: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Programi"
 
-#: desktop-directories/cafe-menu-system.directory.in:4
+#: desktop-directories/cafe-menu-system.directory.in:3
 msgid "Personal preferences and administration settings"
 msgstr "Lične postavke i administratorska podešavanja"
 
-#: desktop-directories/cafe-other.directory.in:3
+#: desktop-directories/cafe-other.directory.in:2
 msgid "Other"
 msgstr "Ostalo"
 
-#: desktop-directories/cafe-other.directory.in:4
+#: desktop-directories/cafe-other.directory.in:3
 msgid "Applications that did not fit in other categories"
 msgstr "Programi koji ne pripadaju ostalim kategorijama"

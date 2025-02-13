@@ -8,9 +8,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-menus 1.23.0\n"
+"Project-Id-Version: cafe-menus 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2020-08-13 10:50+0200\n"
+"POT-Creation-Date: 2025-02-13 09:50+0100\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Assamese (https://www.transifex.com/cafe/teams/13566/as/)\n"
@@ -20,154 +20,154 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: desktop-directories/cafe-audio-video.directory.in:3
+#: desktop-directories/cafe-audio-video.directory.in:2
 msgid "Sound & Video"
 msgstr "শব্দ ও ভিডিও"
 
-#: desktop-directories/cafe-audio-video.directory.in:4
+#: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Multimedia menu"
 msgstr "মাল্টি-মিডিয়া তালিকা"
 
-#: desktop-directories/cafe-development.directory.in:3
+#: desktop-directories/cafe-development.directory.in:2
 msgid "Programming"
 msgstr "প্ৰোগ্ৰামিং"
 
-#: desktop-directories/cafe-development.directory.in:4
+#: desktop-directories/cafe-development.directory.in:3
 msgid "Tools for software development"
 msgstr "চালনাজ্ঞান উন্নয়নৰ সামগ্ৰী"
 
-#: desktop-directories/cafe-education.directory.in:3
+#: desktop-directories/cafe-education.directory.in:2
 msgid "Education"
 msgstr "শিক্ষাবিষয়ক বস্তু"
 
-#: desktop-directories/cafe-game.directory.in:3
+#: desktop-directories/cafe-game.directory.in:2
 msgid "Games"
 msgstr "খেলা"
 
-#: desktop-directories/cafe-game.directory.in:4
+#: desktop-directories/cafe-game.directory.in:3
 msgid "Games and amusements"
 msgstr "খেলা ও বিনোদন"
 
-#: desktop-directories/cafe-graphics.directory.in:3
+#: desktop-directories/cafe-graphics.directory.in:2
 msgid "Graphics"
 msgstr "গ্ৰাফিক্স"
 
-#: desktop-directories/cafe-graphics.directory.in:4
+#: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics applications"
 msgstr "চাত্ৰাঙ্কিত অনুপ্ৰয়োগ"
 
-#: desktop-directories/cafe-hardware.directory.in:3
+#: desktop-directories/cafe-hardware.directory.in:2
 msgid "Hardware"
 msgstr "যান্ত্ৰিক সামগ্ৰী"
 
-#: desktop-directories/cafe-hardware.directory.in:4
+#: desktop-directories/cafe-hardware.directory.in:3
 msgid "Settings for several hardware devices"
 msgstr "বিবিধ যন্ত্ৰৰ সামগ্ৰীৰ সংক্ৰান্ত বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:3
+#: desktop-directories/cafe-internet-and-network.directory.in:2
 msgid "Internet and Network"
 msgstr "ইন্টাৰনেট ও নেটৱৰ্ক"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:4
+#: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Network-related settings"
 msgstr "নেটৱৰ্ক সংক্ৰান্ত বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:3
+#: desktop-directories/cafe-look-and-feel.directory.in:2
 msgid "Look and Feel"
 msgstr "চেহেৰা ছবি"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:4
+#: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "ডেস্কটপৰ চেহেৰা ও আচৰণ নিয়ন্ত্ৰণকাৰী বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-network.directory.in:3
+#: desktop-directories/cafe-network.directory.in:2
 msgid "Internet"
 msgstr "ইন্টাৰনেট"
 
-#: desktop-directories/cafe-network.directory.in:4
+#: desktop-directories/cafe-network.directory.in:3
 msgid "Programs for Internet access such as web and email"
 msgstr "ইন্টাৰনেট ব্যবহাৰৰ অনুপ্ৰয়োগ যেনে ওৱেব আৰু ই-মেইল অনুপ্ৰয়োগ"
 
-#: desktop-directories/cafe-office.directory.in:3
+#: desktop-directories/cafe-office.directory.in:2
 msgid "Office"
 msgstr "কাৰ্যালয়"
 
-#: desktop-directories/cafe-office.directory.in:4
+#: desktop-directories/cafe-office.directory.in:3
 msgid "Office Applications"
 msgstr "কাৰ্যালয়ৰ অনুপ্ৰয়োগ"
 
 #. Translators: this is Personal as in "Personal settings"
-#: desktop-directories/cafe-personal.directory.in:4
+#: desktop-directories/cafe-personal.directory.in:3
 msgid "Personal"
 msgstr "ব্যক্তিগত"
 
-#: desktop-directories/cafe-personal.directory.in:5
+#: desktop-directories/cafe-personal.directory.in:4
 msgid "Personal settings"
 msgstr "ব্যক্তিগত বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-settings-system.directory.in:4
+#: desktop-directories/cafe-settings-system.directory.in:3
 msgid "Administration"
 msgstr "প্ৰশাসনিক বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-settings-system.directory.in:5
+#: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Change system-wide settings (affects all users)"
 msgstr ""
 "সম্পূৰ্ণ ব্যৱস্থাপ্ৰণালী ব্যাপী বৈশিষ্ট্য পৰিবৰ্তন কৰক (সকলো ব্যৱহাৰকৰোঁতা প্ৰভাবিত হ'ব)"
 
-#: desktop-directories/cafe-settings.directory.in:3
+#: desktop-directories/cafe-settings.directory.in:2
 msgid "Preferences"
 msgstr "পছন্দসমূহ"
 
-#: desktop-directories/cafe-settings.directory.in:4
+#: desktop-directories/cafe-settings.directory.in:3
 msgid "Personal preferences"
 msgstr "ব্যক্তিগত পছন্দ"
 
-#: desktop-directories/cafe-system.directory.in:3
-#: desktop-directories/cafe-menu-system.directory.in:3
+#: desktop-directories/cafe-system.directory.in:2
+#: desktop-directories/cafe-menu-system.directory.in:2
 msgid "System"
 msgstr "ব্যৱস্থাপ্ৰণালী"
 
-#: desktop-directories/cafe-system.directory.in:4
+#: desktop-directories/cafe-system.directory.in:3
 msgid "System settings"
 msgstr "ব্যৱস্থাপ্ৰণালী সংক্ৰান্ত বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-system-tools.directory.in:3
+#: desktop-directories/cafe-system-tools.directory.in:2
 msgid "System Tools"
 msgstr "ব্যৱস্থাপ্ৰণালীৰ বিভিন্ন সৰঞ্জাম"
 
-#: desktop-directories/cafe-system-tools.directory.in:4
+#: desktop-directories/cafe-system-tools.directory.in:3
 msgid "System configuration and monitoring"
 msgstr "ব্যৱস্থাপ্ৰণালীৰ বৈশিষ্ট্যৰ বিন্যাস এবং নিৰীক্ষণ"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:3
+#: desktop-directories/cafe-utility-accessibility.directory.in:2
 msgid "Universal Access"
 msgstr "সাৰ্বজনীন ব্যবহাৰাধিকাৰ"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:4
+#: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access Settings"
 msgstr "সাৰ্বজনীন ব্যবহাৰাধিকাৰ সংক্ৰান্ত সম্পৰ্কিত বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-utility.directory.in:3
+#: desktop-directories/cafe-utility.directory.in:2
 msgid "Accessories"
 msgstr "আনুষঙ্গিক"
 
-#: desktop-directories/cafe-utility.directory.in:4
+#: desktop-directories/cafe-utility.directory.in:3
 msgid "Desktop accessories"
 msgstr "ডেস্কটপৰ ব্যৱহৃত আনুষঙ্গিক বস্তু"
 
+#: desktop-directories/cafe-menu-applications.directory.in:2
 #: desktop-directories/cafe-menu-applications.directory.in:3
-#: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "অনুপ্ৰয়োগ"
 
-#: desktop-directories/cafe-menu-system.directory.in:4
+#: desktop-directories/cafe-menu-system.directory.in:3
 msgid "Personal preferences and administration settings"
 msgstr "ব্যক্তিগত পছন্দ ও প্ৰশাসনিক বৈশিষ্ট্য"
 
-#: desktop-directories/cafe-other.directory.in:3
+#: desktop-directories/cafe-other.directory.in:2
 msgid "Other"
 msgstr "অন্যান্য"
 
-#: desktop-directories/cafe-other.directory.in:4
+#: desktop-directories/cafe-other.directory.in:3
 msgid "Applications that did not fit in other categories"
 msgstr "অন্যান্য শ্ৰেণীত অন্তৰ্গত নকৰা অনুপ্ৰয়োগ"

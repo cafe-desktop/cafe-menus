@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-menus 1.23.0\n"
+"Project-Id-Version: cafe-menus 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2020-08-13 10:50+0200\n"
+"POT-Creation-Date: 2025-02-13 09:50+0100\n"
 "PO-Revision-Date: 2020-02-15 14:17+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Estonian (https://www.transifex.com/cafe/teams/13566/et/)\n"
@@ -21,153 +21,153 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: desktop-directories/cafe-audio-video.directory.in:3
+#: desktop-directories/cafe-audio-video.directory.in:2
 msgid "Sound & Video"
 msgstr "Audio ja video"
 
-#: desktop-directories/cafe-audio-video.directory.in:4
+#: desktop-directories/cafe-audio-video.directory.in:3
 msgid "Multimedia menu"
 msgstr "Multimeediamenüü"
 
-#: desktop-directories/cafe-development.directory.in:3
+#: desktop-directories/cafe-development.directory.in:2
 msgid "Programming"
 msgstr "Programmeerimine"
 
-#: desktop-directories/cafe-development.directory.in:4
+#: desktop-directories/cafe-development.directory.in:3
 msgid "Tools for software development"
 msgstr "Tarkvaraarenduse tööriistad"
 
-#: desktop-directories/cafe-education.directory.in:3
+#: desktop-directories/cafe-education.directory.in:2
 msgid "Education"
 msgstr "Õppeprogrammid"
 
-#: desktop-directories/cafe-game.directory.in:3
+#: desktop-directories/cafe-game.directory.in:2
 msgid "Games"
 msgstr "Mängud"
 
-#: desktop-directories/cafe-game.directory.in:4
+#: desktop-directories/cafe-game.directory.in:3
 msgid "Games and amusements"
 msgstr "Mängud ja meelelahutus"
 
-#: desktop-directories/cafe-graphics.directory.in:3
+#: desktop-directories/cafe-graphics.directory.in:2
 msgid "Graphics"
 msgstr "Graafika"
 
-#: desktop-directories/cafe-graphics.directory.in:4
+#: desktop-directories/cafe-graphics.directory.in:3
 msgid "Graphics applications"
 msgstr "Graafikatöötlusprogrammid"
 
-#: desktop-directories/cafe-hardware.directory.in:3
+#: desktop-directories/cafe-hardware.directory.in:2
 msgid "Hardware"
 msgstr "Riistvara"
 
-#: desktop-directories/cafe-hardware.directory.in:4
+#: desktop-directories/cafe-hardware.directory.in:3
 msgid "Settings for several hardware devices"
 msgstr "Mõnede riistvaraliste seadmete sätted"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:3
+#: desktop-directories/cafe-internet-and-network.directory.in:2
 msgid "Internet and Network"
 msgstr "Internet ja võrk"
 
-#: desktop-directories/cafe-internet-and-network.directory.in:4
+#: desktop-directories/cafe-internet-and-network.directory.in:3
 msgid "Network-related settings"
 msgstr "Võrguga seotud sätted"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:3
+#: desktop-directories/cafe-look-and-feel.directory.in:2
 msgid "Look and Feel"
 msgstr "Välimus ja tunnetus"
 
-#: desktop-directories/cafe-look-and-feel.directory.in:4
+#: desktop-directories/cafe-look-and-feel.directory.in:3
 msgid "Settings controlling the desktop appearance and behavior"
 msgstr "Töölaua välimuse ja käitumise juhtimine"
 
-#: desktop-directories/cafe-network.directory.in:3
+#: desktop-directories/cafe-network.directory.in:2
 msgid "Internet"
 msgstr "Internet"
 
-#: desktop-directories/cafe-network.directory.in:4
+#: desktop-directories/cafe-network.directory.in:3
 msgid "Programs for Internet access such as web and email"
 msgstr "Internetprogrammid - näiteks veebi ja e-posti jaoks"
 
-#: desktop-directories/cafe-office.directory.in:3
+#: desktop-directories/cafe-office.directory.in:2
 msgid "Office"
 msgstr "Kontor"
 
-#: desktop-directories/cafe-office.directory.in:4
+#: desktop-directories/cafe-office.directory.in:3
 msgid "Office Applications"
 msgstr "Kontoritarkvara"
 
 #. Translators: this is Personal as in "Personal settings"
-#: desktop-directories/cafe-personal.directory.in:4
+#: desktop-directories/cafe-personal.directory.in:3
 msgid "Personal"
 msgstr "Isiklik"
 
-#: desktop-directories/cafe-personal.directory.in:5
+#: desktop-directories/cafe-personal.directory.in:4
 msgid "Personal settings"
 msgstr "Isiklikud sätted"
 
-#: desktop-directories/cafe-settings-system.directory.in:4
+#: desktop-directories/cafe-settings-system.directory.in:3
 msgid "Administration"
 msgstr "Haldamine"
 
-#: desktop-directories/cafe-settings-system.directory.in:5
+#: desktop-directories/cafe-settings-system.directory.in:4
 msgid "Change system-wide settings (affects all users)"
 msgstr "Ülesüsteemiliste sätete muutmine (mõjutab kõiki kasutajaid)"
 
-#: desktop-directories/cafe-settings.directory.in:3
+#: desktop-directories/cafe-settings.directory.in:2
 msgid "Preferences"
 msgstr "Eelistused"
 
-#: desktop-directories/cafe-settings.directory.in:4
+#: desktop-directories/cafe-settings.directory.in:3
 msgid "Personal preferences"
 msgstr "Isiklikud eelistused"
 
-#: desktop-directories/cafe-system.directory.in:3
-#: desktop-directories/cafe-menu-system.directory.in:3
+#: desktop-directories/cafe-system.directory.in:2
+#: desktop-directories/cafe-menu-system.directory.in:2
 msgid "System"
 msgstr "Süsteem"
 
-#: desktop-directories/cafe-system.directory.in:4
+#: desktop-directories/cafe-system.directory.in:3
 msgid "System settings"
 msgstr "Süsteemi sätted"
 
-#: desktop-directories/cafe-system-tools.directory.in:3
+#: desktop-directories/cafe-system-tools.directory.in:2
 msgid "System Tools"
 msgstr "Süsteemi tööriistad"
 
-#: desktop-directories/cafe-system-tools.directory.in:4
+#: desktop-directories/cafe-system-tools.directory.in:3
 msgid "System configuration and monitoring"
 msgstr "Süsteemi seadistamine ja seire"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:3
+#: desktop-directories/cafe-utility-accessibility.directory.in:2
 msgid "Universal Access"
 msgstr "Universaalne ligipääs"
 
-#: desktop-directories/cafe-utility-accessibility.directory.in:4
+#: desktop-directories/cafe-utility-accessibility.directory.in:3
 msgid "Universal Access Settings"
 msgstr "Universaalse ligipääsu sätted"
 
-#: desktop-directories/cafe-utility.directory.in:3
+#: desktop-directories/cafe-utility.directory.in:2
 msgid "Accessories"
 msgstr "Tarvikud"
 
-#: desktop-directories/cafe-utility.directory.in:4
+#: desktop-directories/cafe-utility.directory.in:3
 msgid "Desktop accessories"
 msgstr "Töölaua tarvikud"
 
+#: desktop-directories/cafe-menu-applications.directory.in:2
 #: desktop-directories/cafe-menu-applications.directory.in:3
-#: desktop-directories/cafe-menu-applications.directory.in:4
 msgid "Applications"
 msgstr "Rakendused"
 
-#: desktop-directories/cafe-menu-system.directory.in:4
+#: desktop-directories/cafe-menu-system.directory.in:3
 msgid "Personal preferences and administration settings"
 msgstr "Isiklikud eelistused ja haldussätted"
 
-#: desktop-directories/cafe-other.directory.in:3
+#: desktop-directories/cafe-other.directory.in:2
 msgid "Other"
 msgstr "Muu"
 
-#: desktop-directories/cafe-other.directory.in:4
+#: desktop-directories/cafe-other.directory.in:3
 msgid "Applications that did not fit in other categories"
 msgstr "Rakendused, mis ei sobinud teistesse kategooriatesse"
