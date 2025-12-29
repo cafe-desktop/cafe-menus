@@ -57,7 +57,7 @@ if HAVE_INTROSPECTION
 introspection_sources = $(libcafe_menu_include_HEADERS) cafemenu-tree.c
 
 CafeMenu-2.0.gir: libcafe-menu.la
-CafeMenu_2_0_gir_INCLUDES = Gio-2.0
+CafeMenu_2_0_gir_INCLUDES = Gio-2.0 GioUnix-2.0
 CafeMenu_2_0_gir_CFLAGS = $(AM_CPPFLAGS)
 CafeMenu_2_0_gir_LIBS = libcafe-menu.la
 CafeMenu_2_0_gir_SCANNERFLAGS = --identifier-prefix=CafeMenu --symbol-prefix=cafemenu --pkg-export=libcafe-menu --c-include=cafemenu-tree.h
