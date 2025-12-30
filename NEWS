@@ -1,3 +1,9 @@
+### cafe-menus 2.1.0
+
+  * ci: add debian stable build
+  * libmenu: Use GioUnix-2.0 to introspect the header
+
+
 ### cafe-menus 2.0.0
 
   * ci:
@@ -6,6 +12,7 @@
     - add debian sid build
   * add G_GNUC_UNUSED in unused parameters
   * update update translations
+
 
 ### cafe-menus 1.25.0
 
