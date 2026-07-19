@@ -142,20 +142,13 @@ cached_dir_free (CachedDir *dir)
       dir->dir_monitor = NULL;
     }
 
-  g_slist_foreach (dir->monitors, (GFunc) g_free, NULL);
-  g_slist_free (dir->monitors);
+  g_slist_free_full (dir->monitors, g_free);
   dir->monitors = NULL;
 
-  g_slist_foreach (dir->entries,
-                   (GFunc) desktop_entry_unref,
-                   NULL);
-  g_slist_free (dir->entries);
+  g_slist_free_full (dir->entries, (GDestroyNotify) desktop_entry_unref);
   dir->entries = NULL;
 
-  g_slist_foreach (dir->subdirs,
-                   (GFunc) cached_dir_unref_noparent,
-                   NULL);
-  g_slist_free (dir->subdirs);
+  g_slist_free_full (dir->subdirs, (GDestroyNotify) cached_dir_unref_noparent);
   dir->subdirs = NULL;
 
   g_free (dir->name);
@@ -433,7 +426,7 @@ cached_dir_invoke_monitors (CachedDir *dir)
 }
 
 static gboolean
-emit_monitors_in_idle (void)
+emit_monitors_in_idle (gpointer user_data G_GNUC_UNUSED)
 {
   GSList *monitors_to_emit;
   GSList *tmp;
@@ -456,7 +449,7 @@ emit_monitors_in_idle (void)
 
   g_slist_free (monitors_to_emit);
 
-  return FALSE;
+  return G_SOURCE_REMOVE;
 }
 
 static void
@@ -491,7 +484,7 @@ cached_dir_queue_monitor_event (CachedDir *dir)
 
   if (monitors_idle_handler == 0)
     {
-      monitors_idle_handler = g_idle_add ((GSourceFunc) emit_monitors_in_idle, NULL);
+      monitors_idle_handler = g_idle_add (emit_monitors_in_idle, NULL);
     }
 }
 
@@ -1042,8 +1035,7 @@ void entry_directory_list_unref(EntryDirectoryList* list)
   list->refcount -= 1;
   if (list->refcount == 0)
     {
-      g_list_foreach (list->dirs, (GFunc) entry_directory_unref, NULL);
-      g_list_free (list->dirs);
+      g_list_free_full (list->dirs, (GDestroyNotify) entry_directory_unref);
       list->dirs = NULL;
       list->length = 0;
       g_free (list);
