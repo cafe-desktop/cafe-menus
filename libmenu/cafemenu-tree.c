@@ -944,6 +944,13 @@ cafemenu_tree_item_set_parent (CafeMenuTreeItem      *item,
   item->parent = parent;
 }
 
+static gpointer
+cafemenu_tree_item_ref_copy (gconstpointer item,
+			     gpointer      user_data G_GNUC_UNUSED)
+{
+  return cafemenu_tree_item_ref ((gpointer) item);
+}
+
 /**
  * cafemenu_tree_iter_ref: (skip)
  * @iter: iter
@@ -969,8 +976,7 @@ cafemenu_tree_iter_unref (CafeMenuTreeIter *iter)
   if (!g_atomic_int_dec_and_test (&iter->refcount))
     return;
 
-  g_slist_foreach (iter->contents, (GFunc)cafemenu_tree_item_unref, NULL);
-  g_slist_free (iter->contents);
+  g_slist_free_full (iter->contents, (GDestroyNotify) cafemenu_tree_item_unref);
 
   g_slice_free (CafeMenuTreeIter, iter);
 }
@@ -991,9 +997,8 @@ cafemenu_tree_directory_iter (CafeMenuTreeDirectory *directory)
   iter = g_slice_new0 (CafeMenuTreeIter);
   iter->refcount = 1;
 
-  iter->contents = g_slist_copy (directory->contents);
+  iter->contents = g_slist_copy_deep (directory->contents, cafemenu_tree_item_ref_copy, NULL);
   iter->contents_iter = iter->contents;
-  g_slist_foreach (iter->contents, (GFunc) cafemenu_tree_item_ref, NULL);
 
   return iter;
 }
@@ -1479,34 +1484,19 @@ cafemenu_tree_directory_finalize (CafeMenuTreeDirectory *directory)
 {
   g_assert (directory->item.refcount == 0);
 
-  g_slist_foreach (directory->contents,
-		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
-		   NULL);
-  g_slist_free (directory->contents);
+  g_slist_free_full (directory->contents, (GDestroyNotify) cafemenu_tree_item_unref_and_unset_parent);
   directory->contents = NULL;
 
-  g_slist_foreach (directory->default_layout_info,
-		   (GFunc) menu_layout_node_unref,
-		   NULL);
-  g_slist_free (directory->default_layout_info);
+  g_slist_free_full (directory->default_layout_info, (GDestroyNotify) menu_layout_node_unref);
   directory->default_layout_info = NULL;
 
-  g_slist_foreach (directory->layout_info,
-		   (GFunc) menu_layout_node_unref,
-		   NULL);
-  g_slist_free (directory->layout_info);
+  g_slist_free_full (directory->layout_info, (GDestroyNotify) menu_layout_node_unref);
   directory->layout_info = NULL;
 
-  g_slist_foreach (directory->subdirs,
-		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
-		   NULL);
-  g_slist_free (directory->subdirs);
+  g_slist_free_full (directory->subdirs, (GDestroyNotify) cafemenu_tree_item_unref_and_unset_parent);
   directory->subdirs = NULL;
 
-  g_slist_foreach (directory->entries,
-		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
-		   NULL);
-  g_slist_free (directory->entries);
+  g_slist_free_full (directory->entries, (GDestroyNotify) cafemenu_tree_item_unref_and_unset_parent);
   directory->entries = NULL;
 
   if (directory->directory_entry)
@@ -2521,8 +2511,7 @@ add_menu_for_legacy_dir (MenuLayoutNode *parent,
 
   desktop_entry_set_unref (desktop_entries);
 
-  g_slist_foreach (subdirs, (GFunc) g_free, NULL);
-  g_slist_free (subdirs);
+  g_slist_free_full (subdirs, g_free);
 
   return menu_added;
 }
@@ -3320,10 +3309,7 @@ collect_layout_info (MenuLayoutNode  *layout,
 {
   MenuLayoutNode *iter;
 
-  g_slist_foreach (*layout_info,
-		   (GFunc) menu_layout_node_unref,
-		   NULL);
-  g_slist_free (*layout_info);
+  g_slist_free_full (*layout_info, (GDestroyNotify) menu_layout_node_unref);
   *layout_info = NULL;
 
   iter = menu_layout_node_get_children (layout);
@@ -3955,10 +3941,7 @@ preprocess_layout_info_subdir_helper (CafeMenuTree          *tree,
 
           alias = cafemenu_tree_alias_new (directory, subdir, item);
 
-          g_slist_foreach (list,
-                           (GFunc) cafemenu_tree_item_unref_and_unset_parent,
-                           NULL);
-          g_slist_free (list);
+          g_slist_free_full (list, (GDestroyNotify) cafemenu_tree_item_unref_and_unset_parent);
           subdir->subdirs = NULL;
           subdir->entries = NULL;
 
@@ -4576,10 +4559,7 @@ process_layout_info (CafeMenuTree          *tree,
 
   menu_verbose ("Processing menu layout hints for %s\n", directory->name);
 
-  g_slist_foreach (directory->contents,
-		   (GFunc) cafemenu_tree_item_unref_and_unset_parent,
-		   NULL);
-  g_slist_free (directory->contents);
+  g_slist_free_full (directory->contents, (GDestroyNotify) cafemenu_tree_item_unref_and_unset_parent);
   directory->contents = NULL;
   directory->layout_pending_separator = FALSE;
 
@@ -4678,28 +4658,16 @@ process_layout_info (CafeMenuTree          *tree,
 	}
     }
 
-  g_slist_foreach (directory->subdirs,
-		   (GFunc) cafemenu_tree_item_unref,
-		   NULL);
-  g_slist_free (directory->subdirs);
+  g_slist_free_full (directory->subdirs, (GDestroyNotify) cafemenu_tree_item_unref);
   directory->subdirs = NULL;
 
-  g_slist_foreach (directory->entries,
-		   (GFunc) cafemenu_tree_item_unref,
-		   NULL);
-  g_slist_free (directory->entries);
+  g_slist_free_full (directory->entries, (GDestroyNotify) cafemenu_tree_item_unref);
   directory->entries = NULL;
 
-  g_slist_foreach (directory->default_layout_info,
-		   (GFunc) menu_layout_node_unref,
-		   NULL);
-  g_slist_free (directory->default_layout_info);
+  g_slist_free_full (directory->default_layout_info, (GDestroyNotify) menu_layout_node_unref);
   directory->default_layout_info = NULL;
 
-  g_slist_foreach (directory->layout_info,
-		   (GFunc) menu_layout_node_unref,
-		   NULL);
-  g_slist_free (directory->layout_info);
+  g_slist_free_full (directory->layout_info, (GDestroyNotify) menu_layout_node_unref);
   directory->layout_info = NULL;
 }
 
