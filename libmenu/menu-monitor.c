@@ -58,15 +58,19 @@ static GHashTable* monitors_registry = NULL;
 static guint events_idle_handler = 0;
 static GSList* pending_events = NULL;
 
+static gpointer
+cafe_menu_monitor_notify_ref_copy (gconstpointer src,
+                                   gpointer      user_data G_GNUC_UNUSED)
+{
+  return cafe_menu_monitor_notify_ref ((MenuMonitorNotify *) src);
+}
+
 static void invoke_notifies(MenuMonitor* monitor, MenuMonitorEvent  event, const char* path)
 {
   GSList *copy;
   GSList *tmp;
 
-  copy = g_slist_copy (monitor->notifies);
-  g_slist_foreach (copy,
-		   (GFunc) cafe_menu_monitor_notify_ref,
-		   NULL);
+  copy = g_slist_copy_deep (monitor->notifies, cafe_menu_monitor_notify_ref_copy, NULL);
 
   tmp = copy;
   while (tmp != NULL)
@@ -87,7 +91,7 @@ static void invoke_notifies(MenuMonitor* monitor, MenuMonitorEvent  event, const
   g_slist_free (copy);
 }
 
-static gboolean emit_events_in_idle(void)
+static gboolean emit_events_in_idle (gpointer user_data G_GNUC_UNUSED)
 {
   GSList *events_to_emit;
   GSList *tmp;
@@ -131,7 +135,7 @@ static gboolean emit_events_in_idle(void)
 
   g_slist_free (events_to_emit);
 
-  return FALSE;
+  return G_SOURCE_REMOVE;
 }
 
 static void menu_monitor_queue_event(MenuMonitorEventInfo* event_info)
@@ -140,7 +144,7 @@ static void menu_monitor_queue_event(MenuMonitorEventInfo* event_info)
 
   if (events_idle_handler == 0)
     {
-      events_idle_handler = g_idle_add ((GSourceFunc) emit_events_in_idle, NULL);
+      events_idle_handler = g_idle_add (emit_events_in_idle, NULL);
     }
 }
 
@@ -344,8 +348,7 @@ void menu_monitor_unref(MenuMonitor* monitor)
       monitor->monitor = NULL;
     }
 
-  g_slist_foreach (monitor->notifies, (GFunc) cafe_menu_monitor_notify_unref, NULL);
-  g_slist_free (monitor->notifies);
+  g_slist_free_full (monitor->notifies, (GDestroyNotify) cafe_menu_monitor_notify_unref);
   monitor->notifies = NULL;
 
   menu_monitor_clear_pending_events (monitor);
