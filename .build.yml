@@ -3,33 +3,12 @@
 ##########################################################
 requires:
   debian:
-    # Useful URL: https://github.com/cafe-desktop/debian-packages
-    # cafe B-D: cafe-common
-    - aptitude
-    - autoconf
-    - autoconf-archive
-    - autopoint
-    - clang
-    - clang-tools
-    - cppcheck
-    - expect #required for unbuffer
-    - gcc
-    - git
-    - gobject-introspection
-    - intltool
-    - libgirepository1.0-dev
-    - libglib2.0-dev
-    - libtool
-    - make
 
 before_scripts:
-  - ./html-cppcheck
-  - ./install-from-git https://github.com/cafe-desktop/cafe-common master
+  - ./debrepo-install
 
 build_scripts:
-  - ./before-build
-  - ./make-scanbuild '--enable-compile-warnings=maximum'
-  - ./after-build
+  - ./build-debs https://github.com/cafe-desktop/debian-packages devel cafe-menus
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20; fi
