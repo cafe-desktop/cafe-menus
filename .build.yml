@@ -8,7 +8,7 @@ before_scripts:
   - ./debrepo-install
 
 build_scripts:
-  - ./build-debs https://github.com/cafe-desktop/debian-packages devel cafe-menus
+  - ./testrepo
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20; fi
