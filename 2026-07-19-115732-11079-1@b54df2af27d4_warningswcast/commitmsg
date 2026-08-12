@@ -1,0 +1,19 @@
+cafemenu-tree: Fix [-Wcast-function-type] warnings
+
+Fixes the warnings:
+
+cafemenu-tree.c:972:36: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:996:36: warning: cast between incompatible function types from 'void * (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:1483:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:1489:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:1495:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:1501:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:1507:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:2524:29: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:3324:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:3959:28: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:4580:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:4682:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:4688:20: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:4694:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+cafemenu-tree.c:4700:20: warning: cast between incompatible function types from 'void (*)(MenuLayoutNode *)' to 'void (*)(void *, void *)' [-Wcast-function-type]

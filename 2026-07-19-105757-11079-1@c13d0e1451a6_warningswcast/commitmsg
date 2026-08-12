@@ -1,0 +1,9 @@
+entry-directories: Fix [-Wcast-function-type] warnings
+
+Fixes the warnings:
+
+entry-directories.c:145:35: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+entry-directories.c:150:20: warning: cast between incompatible function types from 'void (*)(DesktopEntry *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+entry-directories.c:156:20: warning: cast between incompatible function types from 'void (*)(CachedDir *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+entry-directories.c:494:43: warning: cast between incompatible function types from 'gboolean (*)(void)' {aka 'int (*)(void)'} to 'gboolean (*)(void *)' {aka 'int (*)(void *)'} [-Wcast-function-type]
+entry-directories.c:1045:35: warning: cast between incompatible function types from 'void (*)(EntryDirectory *)' to 'void (*)(void *, void *)' [-Wcast-function-type]

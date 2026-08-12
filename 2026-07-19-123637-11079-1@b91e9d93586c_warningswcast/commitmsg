@@ -1,0 +1,5 @@
+menu-layout: Fix [-Wcast-function-type] warning
+
+Fixes the warning:
+
+menu-layout.c:246:42: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]

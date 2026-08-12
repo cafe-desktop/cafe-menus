@@ -1,0 +1,7 @@
+menu-monitor: Fix [-Wcast-function-type] warnings
+
+Fixes the warnings:
+
+menu-monitor.c:68:20: warning: cast between incompatible function types from 'MenuMonitorNotify * (*)(MenuMonitorNotify *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+menu-monitor.c:143:41: warning: cast between incompatible function types from 'gboolean (*)(void)' {aka 'int (*)(void)'} to 'gboolean (*)(void *)' {aka 'int (*)(void *)'} [-Wcast-function-type]
+menu-monitor.c:347:39: warning: cast between incompatible function types from 'void (*)(MenuMonitorNotify *)' to 'void (*)(void *, void *)' [-Wcast-function-type]

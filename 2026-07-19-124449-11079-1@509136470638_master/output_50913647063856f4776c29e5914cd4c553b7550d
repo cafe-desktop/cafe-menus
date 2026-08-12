@@ -1,0 +1,1337 @@
+Checking libmenu/cafemenu-tree.c ...
+libmenu/cafemenu-tree.h:24:2: error: #error "libcafe-menu should only be used if you understand that it's subject to frequent change, and is not supported as a fixed API/ABI or as part of the platform" [preprocessorErrorDirective]
+#error "libcafe-menu should only be used if you understand that it's subject to frequent change, and is not supported as a fixed API/ABI or as part of the platform"
+ ^
+libmenu/cafemenu-tree.c:0:0: information: This file is not analyzed. No working configuration could be extracted. Use -v for more details. [noValidConfiguration]
+
+^
+1/7 files checked 48% done
+Checking libmenu/desktop-entries.c ...
+Checking libmenu/desktop-entries.c: G_ENABLE_DEBUG=G_ENABLE_DEBUG...
+libmenu/desktop-entries.c:514:55: style: Parameter 'entry' can be declared as pointer to const [constParameterPointer]
+DesktopEntryType desktop_entry_get_type(DesktopEntry* entry)
+                                                      ^
+libmenu/desktop-entries.c:519:50: style: Parameter 'entry' can be declared as pointer to const [constParameterPointer]
+const char* desktop_entry_get_path(DesktopEntry* entry)
+                                                 ^
+libmenu/desktop-entries.c:525:43: style: Parameter 'entry' can be declared as pointer to const [constParameterPointer]
+desktop_entry_get_basename (DesktopEntry *entry)
+                                          ^
+libmenu/desktop-entries.c:597:24: style: Variable 'desktop_entry' can be declared as pointer to const [constVariablePointer]
+  DesktopEntryDesktop *desktop_entry;
+                       ^
+libmenu/desktop-entries.c:609:24: style: Variable 'desktop_entry' can be declared as pointer to const [constVariablePointer]
+  DesktopEntryDesktop *desktop_entry;
+                       ^
+Checking libmenu/desktop-entries.c: G_HAVE_GNUC_VARARGS=G_HAVE_GNUC_VARARGS...
+Checking libmenu/desktop-entries.c: G_HAVE_ISO_VARARGS=G_HAVE_ISO_VARARGS...
+2/7 files checked 56% done
+Checking libmenu/entry-directories.c ...
+Checking libmenu/entry-directories.c: G_ENABLE_DEBUG=G_ENABLE_DEBUG...
+libmenu/entry-directories.c:198:11: style: Variable 'tmp' can be declared as pointer to const [constVariablePointer]
+  GSList *tmp;
+          ^
+libmenu/entry-directories.c:458:11: style: Variable 'tmp' can be declared as pointer to const [constVariablePointer]
+  GSList *tmp;
+          ^
+libmenu/entry-directories.c:647:21: style: Variable 'tmp' can be declared as pointer to const [constVariablePointer]
+  GSList           *tmp;
+                    ^
+libmenu/entry-directories.c:673:71: style: Parameter 'ed' can be declared as pointer to const [constParameterPointer]
+static void cached_dir_remove_monitor(CachedDir* dir, EntryDirectory* ed, EntryDirectoryChangedFunc callback, gpointer user_data)
+                                                                      ^
+libmenu/entry-directories.c:1052:57: style: Parameter 'list' can be declared as pointer to const [constParameterPointer]
+int entry_directory_list_get_length(EntryDirectoryList* list)
+                                                        ^
+libmenu/entry-directories.c:1098:10: style: Variable 'al' can be declared as pointer to const [constVariablePointer]
+  GList *al, *bl;
+         ^
+libmenu/entry-directories.c:1098:15: style: Variable 'bl' can be declared as pointer to const [constVariablePointer]
+  GList *al, *bl;
+              ^
+libmenu/entry-directories.c:1119:48: style: Parameter 'ed' can be declared as pointer to const. However it seems that 'get_all_func' is a callback function, if 'ed' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static gboolean get_all_func (EntryDirectory  *ed,
+                                               ^
+libmenu/entry-directories.c:1193:43: note: You might need to cast the function pointer here
+      entry_directory_foreach (tmp->data, get_all_func, set, NULL);
+                                          ^
+libmenu/entry-directories.c:1119:48: note: Parameter 'ed' can be declared as pointer to const
+static gboolean get_all_func (EntryDirectory  *ed,
+                                               ^
+Checking libmenu/entry-directories.c: G_HAVE_GNUC_VARARGS=G_HAVE_GNUC_VARARGS...
+Checking libmenu/entry-directories.c: G_HAVE_ISO_VARARGS=G_HAVE_ISO_VARARGS...
+3/7 files checked 67% done
+Checking libmenu/menu-layout.c ...
+Checking libmenu/menu-layout.c: G_ENABLE_DEBUG=G_ENABLE_DEBUG...
+libmenu/menu-layout.c:2086:16: style: Variable 'prev' is reassigned a value before the old one has been used. [redundantAssignment]
+          prev = child;
+               ^
+libmenu/menu-layout.c:2083:20: note: prev is assigned
+              prev = child;
+                   ^
+libmenu/menu-layout.c:2086:16: note: prev is overwritten
+          prev = child;
+               ^
+libmenu/menu-layout.c:1425:48: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                              "prefix", &prefix,
+                                               ^
+libmenu/menu-layout.c:1440:44: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                              "type", &type,
+                                           ^
+libmenu/menu-layout.c:1467:56: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                         "inline_alias",  &inline_alias,
+                                                       ^
+libmenu/menu-layout.c:1673:56: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                         "inline_alias",  &inline_alias,
+                                                       ^
+libmenu/menu-layout.c:1692:41: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+                           "type", &type,
+                                        ^
+libmenu/menu-layout.c:125:28: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+node_next (MenuLayoutNode *node)
+                           ^
+libmenu/menu-layout.c:323:46: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+menu_layout_node_get_parent (MenuLayoutNode *node)
+                                             ^
+libmenu/menu-layout.c:329:48: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+menu_layout_node_get_children (MenuLayoutNode *node)
+                                               ^
+libmenu/menu-layout.c:576:44: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+menu_layout_node_get_type (MenuLayoutNode *node)
+                                           ^
+libmenu/menu-layout.c:582:47: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+menu_layout_node_get_content (MenuLayoutNode *node)
+                                              ^
+libmenu/menu-layout.c:601:23: style: Variable 'nr' can be declared as pointer to const [constVariablePointer]
+  MenuLayoutNodeRoot *nr;
+                      ^
+libmenu/menu-layout.c:613:23: style: Variable 'nr' can be declared as pointer to const [constVariablePointer]
+  MenuLayoutNodeRoot *nr;
+                      ^
+libmenu/menu-layout.c:735:36: style: Variable 'legacy' can be declared as pointer to const [constVariablePointer]
+          MenuLayoutNodeLegacyDir *legacy = (MenuLayoutNodeLegacyDir *) iter;
+                                   ^
+libmenu/menu-layout.c:820:48: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+menu_layout_node_move_get_old (MenuLayoutNode *node)
+                                               ^
+libmenu/menu-layout.c:837:48: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+menu_layout_node_move_get_new (MenuLayoutNode *node)
+                                               ^
+libmenu/menu-layout.c:856:28: style: Variable 'legacy' can be declared as pointer to const [constVariablePointer]
+  MenuLayoutNodeLegacyDir *legacy;
+                           ^
+libmenu/menu-layout.c:882:28: style: Variable 'merge_file' can be declared as pointer to const [constVariablePointer]
+  MenuLayoutNodeMergeFile *merge_file;
+                           ^
+libmenu/menu-layout.c:907:24: style: Variable 'merge' can be declared as pointer to const [constVariablePointer]
+  MenuLayoutNodeMerge *merge;
+                       ^
+libmenu/menu-layout.c:946:32: style: Variable 'default_layout' can be declared as pointer to const [constVariablePointer]
+  MenuLayoutNodeDefaultLayout *default_layout;
+                               ^
+libmenu/menu-layout.c:960:27: style: Variable 'menuname' can be declared as pointer to const [constVariablePointer]
+  MenuLayoutNodeMenuname *menuname;
+                          ^
+libmenu/menu-layout.c:1074:33: style: Variable 'tmp' can be declared as pointer to const [constVariablePointer]
+  GSList                       *tmp;
+                                ^
+libmenu/menu-layout.c:1352:40: style: Parameter 'node' can be declared as pointer to const [constParameterPointer]
+has_child_of_type (MenuLayoutNode     *node,
+                                       ^
+Checking libmenu/menu-layout.c: G_HAVE_GNUC_VARARGS=G_HAVE_GNUC_VARARGS...
+Checking libmenu/menu-layout.c: G_HAVE_ISO_VARARGS=G_HAVE_ISO_VARARGS...
+4/7 files checked 90% done
+Checking libmenu/menu-monitor.c ...
+Checking libmenu/menu-monitor.c: G_ENABLE_DEBUG=G_ENABLE_DEBUG...
+libmenu/menu-monitor.c:297:60: style: Parameter 'monitor' can be declared as pointer to const [constParameterPointer]
+static void menu_monitor_clear_pending_events(MenuMonitor* monitor)
+                                                           ^
+libmenu/menu-monitor.c:392:10: style: Variable 'tmp' can be declared as pointer to const [constVariablePointer]
+ GSList* tmp = monitor->notifies;
+         ^
+Checking libmenu/menu-monitor.c: G_HAVE_GNUC_VARARGS=G_HAVE_GNUC_VARARGS...
+Checking libmenu/menu-monitor.c: G_HAVE_ISO_VARARGS=G_HAVE_ISO_VARARGS...
+5/7 files checked 93% done
+Checking libmenu/menu-util.c ...
+Checking libmenu/menu-util.c: G_ENABLE_DEBUG=G_ENABLE_DEBUG...
+Checking libmenu/menu-util.c: G_HAVE_GNUC_VARARGS=G_HAVE_GNUC_VARARGS...
+Checking libmenu/menu-util.c: G_HAVE_ISO_VARARGS=G_HAVE_ISO_VARARGS...
+6/7 files checked 97% done
+Checking util/test-menu-spec.c ...
+7/7 files checked 100% done
+libmenu/desktop-entries.c:775:5: style: The function 'desktop_entry_set_get_count' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+int desktop_entry_set_get_count(DesktopEntrySet* set)
+    ^
+libmenu/entry-directories.c:768:17: style: The function 'entry_directory_ref' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+EntryDirectory* entry_directory_ref(EntryDirectory* ed)
+                ^
+libmenu/entry-directories.c:1020:21: style: The function 'entry_directory_list_ref' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+EntryDirectoryList* entry_directory_list_ref(EntryDirectoryList* list)
+                    ^
+libmenu/entry-directories.c:1096:10: style: The function '_entry_directory_list_compare' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+gboolean _entry_directory_list_compare(const EntryDirectoryList* a, const EntryDirectoryList* b)
+         ^
+libmenu/entry-directories.c:1144:6: style: The function '_entry_directory_list_empty_desktop_cache' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+void _entry_directory_list_empty_desktop_cache(void)
+     ^
+libmenu/menu-layout.c:196:1: style: The function 'menu_layout_node_ref' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_ref (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:206:1: style: The function 'menu_layout_node_unref' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_unref (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:266:1: style: The function 'menu_layout_node_new' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_new (MenuLayoutNodeType type)
+^
+libmenu/menu-layout.c:335:1: style: The function 'menu_layout_node_get_root' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_get_root (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:349:1: style: The function 'menu_layout_node_get_content_as_path' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_get_content_as_path (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:406:1: style: The function 'menu_layout_node_insert_before' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_insert_before (MenuLayoutNode *node,
+^
+libmenu/menu-layout.c:430:1: style: The function 'menu_layout_node_insert_after' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_insert_after (MenuLayoutNode *node,
+^
+libmenu/menu-layout.c:468:1: style: The function 'menu_layout_node_append_child' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_append_child (MenuLayoutNode *parent,
+^
+libmenu/menu-layout.c:485:1: style: The function 'menu_layout_node_unlink' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_unlink (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:525:1: style: The function 'menu_layout_node_steal' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_steal (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:588:1: style: The function 'menu_layout_node_set_content' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_set_content (MenuLayoutNode *node,
+^
+libmenu/menu-layout.c:792:1: style: The function 'menu_layout_node_menu_get_app_dirs' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_menu_get_app_dirs (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:806:1: style: The function 'menu_layout_node_menu_get_directory_dirs' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_menu_get_directory_dirs (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:820:1: style: The function 'menu_layout_node_move_get_old' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_move_get_old (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:837:1: style: The function 'menu_layout_node_move_get_new' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_move_get_new (MenuLayoutNode *node)
+^
+libmenu/menu-layout.c:866:1: style: The function 'menu_layout_node_legacy_dir_set_prefix' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_legacy_dir_set_prefix (MenuLayoutNode *node,
+^
+libmenu/menu-layout.c:892:1: style: The function 'menu_layout_node_merge_file_set_type' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+menu_layout_node_merge_file_set_type (MenuLayoutNode    *node,
+^
+libmenu/menu-monitor.c:287:14: style: The function 'menu_monitor_ref' should have static linkage since it is not used outside of its translation unit. [staticFunction]
+MenuMonitor* cafe_menu_monitor_ref(MenuMonitor* monitor)
+             ^
+nofile:0:0: information: Active checkers: There was critical errors (use --checkers-report=<filename> to see details) [checkersReport]
+
+/usr/bin/cafe-autogen
+checking for autoreconf >= 2.53...
+(B  testing autoreconf... found 2.73
+checking for pkg-config >= 0.14.0...
+(B  testing pkg-config... found 2.5.1
+checking for cafe-common >= 0.0.1...
+(B  testing cafe-doc-common... found 2.1.0
+Checking for required M4 macros...
+(BChecking for forbidden M4 macros...
+(BProcessing ./configure.ac
+(BRunning cafe-doc-common...
+(BRunning autoreconf...
+(Bautoreconf: export WARNINGS=no-portability
+autoreconf: Entering directory '.'
+autoreconf: running: autopoint --force
+autopoint: using AM_GNU_GETTEXT_REQUIRE_VERSION instead of AM_GNU_GETTEXT_VERSION
+Copying file ABOUT-NLS
+Copying file config.rpath
+Copying file m4/build-to-host.m4
+Copying file m4/gettext.m4
+Copying file m4/host-cpu-c-abi.m4
+Copying file m4/iconv.m4
+Copying file m4/intlmacosx.m4
+Copying file m4/lib-ld.m4
+Copying file m4/lib-link.m4
+Copying file m4/lib-prefix.m4
+Copying file m4/nls.m4
+Copying file m4/po.m4
+Copying file m4/progtest.m4
+Copying file po/Makefile.in.in
+Copying file po/Makevars.template
+Copying file po/Rules-quot
+Copying file po/boldquot.sed
+Copying file po/en@boldquot.header
+Copying file po/en@quot.header
+Copying file po/fetch-po
+Copying file po/insert-header.sed
+Copying file po/quot.sed
+Copying file po/remove-potcdate.sed
+autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: configure.ac: not running autopoint a second time
+autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:27: installing './compile'
+configure.ac:27: installing './config.guess'
+configure.ac:27: installing './config.sub'
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+libmenu/Makefile.am: installing './depcomp'
+autoreconf: configure.ac: not running make: --make not given
+autoreconf: Leaving directory '.'
+Skipping configure process.
+scan-build: Using '/usr/lib/llvm-21/bin/clang' for static analysis
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether UID '0' is supported by ustar format... yes
+checking whether GID '0' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... /usr/bin/sed
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer accepts -g... yes
+checking for /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer option to enable C23 features... none needed
+checking whether /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer understands -c and -o together... yes
+checking dependency style of /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for ld used by /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... no
+checking how to run the C preprocessor... /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer -E
+checking for egrep -e... /usr/bin/grep -E
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib,lib64
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for gcc... (cached) /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer
+checking whether the compiler supports GNU C... (cached) yes
+checking whether /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer accepts -g... (cached) yes
+checking for /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer option to enable C23 features... (cached) none needed
+checking whether /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer understands -c and -o together... (cached) yes
+checking dependency style of /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer... (cached) gcc3
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer... /usr/bin/x86_64-linux-gnu-ld
+checking if the linker (/usr/bin/x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... rm: cannot remove 'conftest.plist': Is a directory
+BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3145728
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/x86_64-linux-gnu-ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ranlib... ranlib
+checking for ar... ar
+checking for archiver @FILE support... rm: cannot remove 'conftest.plist': Is a directory
+@
+checking for strip... strip
+checking command to parse /usr/bin/nm -B output from /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer object... rm: cannot remove 'conftest.plist': Is a directory
+ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer supports -fno-rtti -fno-exceptions... no
+checking for /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer option to produce PIC... -fPIC -DPIC
+checking if /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer PIC flag -fPIC -DPIC works... yes
+checking if /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer static flag -static works... yes
+checking if /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer supports -c -o file.o... yes
+checking if /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer supports -c -o file.o... (cached) yes
+checking whether the /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer linker (/usr/bin/x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for gio-unix-2.0 >= 2.80.0... yes
+checking whether the C compiler accepts -Werror=unknown-warning-option... no
+checking whether the C compiler accepts -Wall... no
+checking whether the C compiler accepts -Wmissing-prototypes... no
+checking whether the C compiler accepts -Wbad-function-cast... no
+checking whether the C compiler accepts -Wcast-align... no
+checking whether the C compiler accepts -Wextra... no
+checking whether the C compiler accepts -Wformat-nonliteral... no
+checking whether the C compiler accepts -Wmissing-declarations... no
+checking whether the C compiler accepts -Wnested-externs... no
+checking whether the C compiler accepts -Wpointer-arith... no
+checking whether the C compiler accepts -Wredundant-decls... no
+checking whether the C compiler accepts -Wshadow... no
+checking whether the C compiler accepts -Wstrict-prototypes... no
+checking whether the C compiler accepts -Wunused-macros... no
+checking whether the C compiler accepts -Werror=format-security... no
+checking whether the C compiler accepts -fstrict-aliasing... no
+checking flags to pass to the C compiler /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer... 
+checking for gobject-introspection... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libmenu/Makefile
+config.status: creating libmenu/libcafe-menu.pc
+config.status: creating libmenu/libcafe-menu-uninstalled.pc
+config.status: creating layout/Makefile
+config.status: creating desktop-directories/Makefile
+config.status: creating util/Makefile
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing po-directories commands
+config.status: creating po/Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+              cafe-menus 2.1.0
+              ================
+
+        prefix:                       /usr
+        exec_prefix:                  ${prefix}
+        libdir:                       ${exec_prefix}/lib
+        bindir:                       ${exec_prefix}/bin
+        sbindir:                      ${exec_prefix}/sbin
+        sysconfdir:                   ${prefix}/etc
+        localstatedir:                ${prefix}/var
+        datadir:                      ${datarootdir}
+        source code location:         .
+        compiler:                     /usr/share/clang/scan-build-21/bin/../libexec/ccc-analyzer
+        cflags:                       -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security -fstrict-aliasing
+        Warning flags:                
+        Maintainer mode:              no
+        Use *_DISABLE_DEPRECATED:     no
+
+        Turn on debugging:            minimum
+        Build introspection support:  yes
+
+
+scan-build: Analysis run complete.
+scan-build: Removing directory '/tmp/scan-build-2026-07-19-124442-8679-1' because it contains no reports.
+scan-build: No bugs found.
+scan-build: Using '/usr/lib/llvm-21/bin/clang' for static analysis
+make  all-recursive
+make[1]: Entering directory '/rootdir'
+Making all in po
+make[2]: Entering directory '/rootdir/po'
+make cafe-menus.pot-update
+make[3]: Entering directory '/rootdir/po'
+package_gnu=""; \
+test -n "$package_gnu" || { \
+  if { if (LC_ALL=C find --version) 2>/dev/null | grep GNU >/dev/null; then \
+         LC_ALL=C find -L .. -maxdepth 1 -type f -size -10000000c -exec grep -i 'GNU cafe-menus' /dev/null '{}' ';' 2>/dev/null; \
+       else \
+         LC_ALL=C grep -i 'GNU cafe-menus' ../* 2>/dev/null; \
+       fi; \
+     } | grep -v 'libtool:' >/dev/null; then \
+     package_gnu=yes; \
+   else \
+     package_gnu=no; \
+   fi; \
+}; \
+if test "$package_gnu" = "yes"; then \
+  package_prefix='GNU '; \
+else \
+  package_prefix=''; \
+fi; \
+if test -n '' || test 'https://cafe-desktop.org' = '@'PACKAGE_BUGREPORT'@'; then \
+  msgid_bugs_address=''; \
+else \
+  msgid_bugs_address='https://cafe-desktop.org'; \
+fi; \
+case `/usr/bin/xgettext --version | sed 1q | sed -e 's,^[^0-9]*,,'` in \
+  '' | 0.[0-9] | 0.[0-9].* | 0.1[0-5] | 0.1[0-5].* | 0.16 | 0.16.[0-1]*) \
+    /usr/bin/xgettext --default-domain=cafe-menus --directory=.. \
+      --add-comments=TRANSLATORS: \
+      --files-from=./POTFILES.in \
+      --copyright-holder='CAFE Desktop Environment team' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --from-code=UTF-8 -L Desktop --keyword=_ --keyword=N_ --keyword=C_:1c,2 --keyword=NC_:1c,2 --keyword=g_dngettext:2,3 --add-comments=Translators:  \
+    ;; \
+  *) \
+    /usr/bin/xgettext --default-domain=cafe-menus --directory=.. \
+      --add-comments=TRANSLATORS: \
+      --files-from=./POTFILES.in \
+      --copyright-holder='CAFE Desktop Environment team' \
+      --package-name="${package_prefix}cafe-menus" \
+      --package-version='2.1.0' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --from-code=UTF-8 -L Desktop --keyword=_ --keyword=N_ --keyword=C_:1c,2 --keyword=NC_:1c,2 --keyword=g_dngettext:2,3 --add-comments=Translators:  \
+    ;; \
+esac
+test ! -f cafe-menus.po || { \
+  if test -f ./cafe-menus.pot-header; then \
+    sed -e '1,/^#$/d' < cafe-menus.po > cafe-menus.1po && \
+    cat ./cafe-menus.pot-header cafe-menus.1po > cafe-menus.po && \
+    rm -f cafe-menus.1po \
+    || exit 1; \
+  fi; \
+  if test -f ./cafe-menus.pot; then \
+    sed -f ./remove-potcdate.sed < ./cafe-menus.pot > cafe-menus.1po && \
+    sed -f ./remove-potcdate.sed < cafe-menus.po > cafe-menus.2po && \
+    if cmp cafe-menus.1po cafe-menus.2po >/dev/null 2>&1; then \
+      rm -f cafe-menus.1po cafe-menus.2po cafe-menus.po; \
+    else \
+      rm -f cafe-menus.1po cafe-menus.2po ./cafe-menus.pot && \
+      mv cafe-menus.po ./cafe-menus.pot; \
+    fi; \
+  else \
+    mv cafe-menus.po ./cafe-menus.pot; \
+  fi; \
+}
+make[3]: Leaving directory '/rootdir/po'
+test ! -f ./cafe-menus.pot || \
+  test -z "./af.gmo ./am.gmo ./an.gmo ./ar.gmo ./as.gmo ./ast.gmo ./az.gmo ./be.gmo ./bg.gmo ./bn_IN.gmo ./bn.gmo ./br.gmo ./bs.gmo ./ca.gmo ./ca@valencia.gmo ./cmn.gmo ./crh.gmo ./cs.gmo ./cy.gmo ./da.gmo ./de.gmo ./dz.gmo ./el.gmo ./en_AU.gmo ./en_CA.gmo ./en_GB.gmo ./eo.gmo ./es.gmo ./es_AR.gmo ./es_CL.gmo ./es_CO.gmo ./es_ES.gmo ./es_MX.gmo ./es_PR.gmo ./et.gmo ./eu.gmo ./fa.gmo ./fi.gmo ./fil.gmo ./fr.gmo ./fr_CA.gmo ./frp.gmo ./fur.gmo ./fy.gmo ./ga.gmo ./gl.gmo ./gu.gmo ./ha.gmo ./he.gmo ./hi.gmo ./hr.gmo ./hu.gmo ./hy.gmo ./ia.gmo ./id.gmo ./ie.gmo ./ig.gmo ./is.gmo ./it.gmo ./ja.gmo ./jv.gmo ./ka.gmo ./kk.gmo ./km.gmo ./kn.gmo ./ko.gmo ./ks.gmo ./ku.gmo ./ku_IQ.gmo ./ky.gmo ./kab.gmo ./la.gmo ./li.gmo ./lt.gmo ./lv.gmo ./mai.gmo ./mg.gmo ./mi.gmo ./mk.gmo ./ml.gmo ./mn.gmo ./mr.gmo ./ms.gmo ./my.gmo ./nah.gmo ./nb.gmo ./nds.gmo ./ne.gmo ./nl.gmo ./nn.gmo ./nso.gmo ./oc.gmo ./or.gmo ./pa.gmo ./pl.gmo ./pms.gmo ./ps.gmo ./pt_BR.gmo ./pt.gmo ./ro.gmo ./ru.gmo ./rw.gmo ./sc.gmo ./si.gmo ./sk.gmo ./sl.gmo ./sq.gmo ./sr.gmo ./sr@latin.gmo ./sv.gmo ./ta.gmo ./te.gmo ./th.gmo ./tk.gmo ./tr.gmo ./ts.gmo ./ug.gmo ./uk.gmo ./ur.gmo ./uz.gmo ./vi.gmo ./wa.gmo ./xh.gmo ./yo.gmo ./zh_CN.gmo ./zh_HK.gmo ./zh_TW.gmo ./zu.gmo" || make ./af.gmo ./am.gmo ./an.gmo ./ar.gmo ./as.gmo ./ast.gmo ./az.gmo ./be.gmo ./bg.gmo ./bn_IN.gmo ./bn.gmo ./br.gmo ./bs.gmo ./ca.gmo ./ca@valencia.gmo ./cmn.gmo ./crh.gmo ./cs.gmo ./cy.gmo ./da.gmo ./de.gmo ./dz.gmo ./el.gmo ./en_AU.gmo ./en_CA.gmo ./en_GB.gmo ./eo.gmo ./es.gmo ./es_AR.gmo ./es_CL.gmo ./es_CO.gmo ./es_ES.gmo ./es_MX.gmo ./es_PR.gmo ./et.gmo ./eu.gmo ./fa.gmo ./fi.gmo ./fil.gmo ./fr.gmo ./fr_CA.gmo ./frp.gmo ./fur.gmo ./fy.gmo ./ga.gmo ./gl.gmo ./gu.gmo ./ha.gmo ./he.gmo ./hi.gmo ./hr.gmo ./hu.gmo ./hy.gmo ./ia.gmo ./id.gmo ./ie.gmo ./ig.gmo ./is.gmo ./it.gmo ./ja.gmo ./jv.gmo ./ka.gmo ./kk.gmo ./km.gmo ./kn.gmo ./ko.gmo ./ks.gmo ./ku.gmo ./ku_IQ.gmo ./ky.gmo ./kab.gmo ./la.gmo ./li.gmo ./lt.gmo ./lv.gmo ./mai.gmo ./mg.gmo ./mi.gmo ./mk.gmo ./ml.gmo ./mn.gmo ./mr.gmo ./ms.gmo ./my.gmo ./nah.gmo ./nb.gmo ./nds.gmo ./ne.gmo ./nl.gmo ./nn.gmo ./nso.gmo ./oc.gmo ./or.gmo ./pa.gmo ./pl.gmo ./pms.gmo ./ps.gmo ./pt_BR.gmo ./pt.gmo ./ro.gmo ./ru.gmo ./rw.gmo ./sc.gmo ./si.gmo ./sk.gmo ./sl.gmo ./sq.gmo ./sr.gmo ./sr@latin.gmo ./sv.gmo ./ta.gmo ./te.gmo ./th.gmo ./tk.gmo ./tr.gmo ./ts.gmo ./ug.gmo ./uk.gmo ./ur.gmo ./uz.gmo ./vi.gmo ./wa.gmo ./xh.gmo ./yo.gmo ./zh_CN.gmo ./zh_HK.gmo ./zh_TW.gmo ./zu.gmo
+make[3]: Entering directory '/rootdir/po'
+rm -f af.gmo && /usr/bin/msgmerge --for-msgfmt -o af.gpo af.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o af.gmo af.gpo && rm -f af.gpo
+af.gpo: 37 translated messages.
+rm -f am.gmo && /usr/bin/msgmerge --for-msgfmt -o am.gpo am.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o am.gmo am.gpo && rm -f am.gpo
+am.gpo: 37 translated messages.
+rm -f an.gmo && /usr/bin/msgmerge --for-msgfmt -o an.gpo an.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o an.gmo an.gpo && rm -f an.gpo
+an.gpo: 37 translated messages.
+rm -f ar.gmo && /usr/bin/msgmerge --for-msgfmt -o ar.gpo ar.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ar.gmo ar.gpo && rm -f ar.gpo
+ar.gpo: 37 translated messages.
+rm -f as.gmo && /usr/bin/msgmerge --for-msgfmt -o as.gpo as.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o as.gmo as.gpo && rm -f as.gpo
+as.gpo: 37 translated messages.
+rm -f ast.gmo && /usr/bin/msgmerge --for-msgfmt -o ast.gpo ast.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ast.gmo ast.gpo && rm -f ast.gpo
+ast.gpo: 37 translated messages.
+rm -f az.gmo && /usr/bin/msgmerge --for-msgfmt -o az.gpo az.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o az.gmo az.gpo && rm -f az.gpo
+az.gpo: 3 translated messages.
+rm -f be.gmo && /usr/bin/msgmerge --for-msgfmt -o be.gpo be.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o be.gmo be.gpo && rm -f be.gpo
+be.gpo: 37 translated messages.
+rm -f bg.gmo && /usr/bin/msgmerge --for-msgfmt -o bg.gpo bg.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bg.gmo bg.gpo && rm -f bg.gpo
+bg.gpo: 37 translated messages.
+rm -f bn_IN.gmo && /usr/bin/msgmerge --for-msgfmt -o bn_IN.gpo bn_IN.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bn_IN.gmo bn_IN.gpo && rm -f bn_IN.gpo
+bn_IN.gpo: 37 translated messages.
+rm -f bn.gmo && /usr/bin/msgmerge --for-msgfmt -o bn.gpo bn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bn.gmo bn.gpo && rm -f bn.gpo
+bn.gpo: 37 translated messages.
+rm -f br.gmo && /usr/bin/msgmerge --for-msgfmt -o br.gpo br.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o br.gmo br.gpo && rm -f br.gpo
+br.gpo: 37 translated messages.
+rm -f bs.gmo && /usr/bin/msgmerge --for-msgfmt -o bs.gpo bs.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o bs.gmo bs.gpo && rm -f bs.gpo
+bs.gpo: 33 translated messages.
+rm -f ca.gmo && /usr/bin/msgmerge --for-msgfmt -o ca.gpo ca.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ca.gmo ca.gpo && rm -f ca.gpo
+ca.gpo: 37 translated messages.
+rm -f ca@valencia.gmo && /usr/bin/msgmerge --for-msgfmt -o ca@valencia.gpo ca@valencia.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ca@valencia.gmo ca@valencia.gpo && rm -f ca@valencia.gpo
+ca@valencia.gpo: 37 translated messages.
+rm -f cmn.gmo && /usr/bin/msgmerge --for-msgfmt -o cmn.gpo cmn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o cmn.gmo cmn.gpo && rm -f cmn.gpo
+cmn.gpo: 37 translated messages.
+rm -f crh.gmo && /usr/bin/msgmerge --for-msgfmt -o crh.gpo crh.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o crh.gmo crh.gpo && rm -f crh.gpo
+crh.gpo: 37 translated messages.
+rm -f cs.gmo && /usr/bin/msgmerge --for-msgfmt -o cs.gpo cs.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o cs.gmo cs.gpo && rm -f cs.gpo
+cs.gpo: 37 translated messages.
+rm -f cy.gmo && /usr/bin/msgmerge --for-msgfmt -o cy.gpo cy.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o cy.gmo cy.gpo && rm -f cy.gpo
+cy.gpo: 37 translated messages.
+rm -f da.gmo && /usr/bin/msgmerge --for-msgfmt -o da.gpo da.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o da.gmo da.gpo && rm -f da.gpo
+da.gpo: 37 translated messages.
+rm -f de.gmo && /usr/bin/msgmerge --for-msgfmt -o de.gpo de.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o de.gmo de.gpo && rm -f de.gpo
+de.gpo: 37 translated messages.
+rm -f dz.gmo && /usr/bin/msgmerge --for-msgfmt -o dz.gpo dz.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o dz.gmo dz.gpo && rm -f dz.gpo
+dz.gpo: 37 translated messages.
+rm -f el.gmo && /usr/bin/msgmerge --for-msgfmt -o el.gpo el.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o el.gmo el.gpo && rm -f el.gpo
+el.gpo: 37 translated messages.
+rm -f en_AU.gmo && /usr/bin/msgmerge --for-msgfmt -o en_AU.gpo en_AU.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_AU.gmo en_AU.gpo && rm -f en_AU.gpo
+en_AU.gpo: 37 translated messages.
+rm -f en_CA.gmo && /usr/bin/msgmerge --for-msgfmt -o en_CA.gpo en_CA.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_CA.gmo en_CA.gpo && rm -f en_CA.gpo
+en_CA.gpo: 25 translated messages.
+rm -f en_GB.gmo && /usr/bin/msgmerge --for-msgfmt -o en_GB.gpo en_GB.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_GB.gmo en_GB.gpo && rm -f en_GB.gpo
+en_GB.gpo: 37 translated messages.
+rm -f eo.gmo && /usr/bin/msgmerge --for-msgfmt -o eo.gpo eo.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o eo.gmo eo.gpo && rm -f eo.gpo
+eo.gpo: 37 translated messages.
+rm -f es.gmo && /usr/bin/msgmerge --for-msgfmt -o es.gpo es.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es.gmo es.gpo && rm -f es.gpo
+es.gpo: 37 translated messages.
+rm -f es_AR.gmo && /usr/bin/msgmerge --for-msgfmt -o es_AR.gpo es_AR.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_AR.gmo es_AR.gpo && rm -f es_AR.gpo
+es_AR.gpo: 37 translated messages.
+rm -f es_CL.gmo && /usr/bin/msgmerge --for-msgfmt -o es_CL.gpo es_CL.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_CL.gmo es_CL.gpo && rm -f es_CL.gpo
+es_CL.gpo: 2 translated messages.
+rm -f es_CO.gmo && /usr/bin/msgmerge --for-msgfmt -o es_CO.gpo es_CO.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_CO.gmo es_CO.gpo && rm -f es_CO.gpo
+es_CO.gpo: 37 translated messages.
+rm -f es_ES.gmo && /usr/bin/msgmerge --for-msgfmt -o es_ES.gpo es_ES.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_ES.gmo es_ES.gpo && rm -f es_ES.gpo
+es_ES.gpo: 1 translated message.
+rm -f es_MX.gmo && /usr/bin/msgmerge --for-msgfmt -o es_MX.gpo es_MX.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_MX.gmo es_MX.gpo && rm -f es_MX.gpo
+es_MX.gpo: 37 translated messages.
+rm -f es_PR.gmo && /usr/bin/msgmerge --for-msgfmt -o es_PR.gpo es_PR.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_PR.gmo es_PR.gpo && rm -f es_PR.gpo
+es_PR.gpo: 3 translated messages.
+rm -f et.gmo && /usr/bin/msgmerge --for-msgfmt -o et.gpo et.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o et.gmo et.gpo && rm -f et.gpo
+et.gpo: 37 translated messages.
+rm -f eu.gmo && /usr/bin/msgmerge --for-msgfmt -o eu.gpo eu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o eu.gmo eu.gpo && rm -f eu.gpo
+eu.gpo: 37 translated messages.
+rm -f fa.gmo && /usr/bin/msgmerge --for-msgfmt -o fa.gpo fa.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fa.gmo fa.gpo && rm -f fa.gpo
+fa.gpo: 37 translated messages.
+rm -f fi.gmo && /usr/bin/msgmerge --for-msgfmt -o fi.gpo fi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fi.gmo fi.gpo && rm -f fi.gpo
+fi.gpo: 37 translated messages.
+rm -f fil.gmo && /usr/bin/msgmerge --for-msgfmt -o fil.gpo fil.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fil.gmo fil.gpo && rm -f fil.gpo
+fil.gpo: 1 translated message.
+rm -f fr.gmo && /usr/bin/msgmerge --for-msgfmt -o fr.gpo fr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fr.gmo fr.gpo && rm -f fr.gpo
+fr.gpo: 37 translated messages.
+rm -f fr_CA.gmo && /usr/bin/msgmerge --for-msgfmt -o fr_CA.gpo fr_CA.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fr_CA.gmo fr_CA.gpo && rm -f fr_CA.gpo
+fr_CA.gpo: 5 translated messages.
+rm -f frp.gmo && /usr/bin/msgmerge --for-msgfmt -o frp.gpo frp.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o frp.gmo frp.gpo && rm -f frp.gpo
+frp.gpo: 37 translated messages.
+rm -f fur.gmo && /usr/bin/msgmerge --for-msgfmt -o fur.gpo fur.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fur.gmo fur.gpo && rm -f fur.gpo
+fur.gpo: 37 translated messages.
+rm -f fy.gmo && /usr/bin/msgmerge --for-msgfmt -o fy.gpo fy.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o fy.gmo fy.gpo && rm -f fy.gpo
+fy.gpo: 37 translated messages.
+rm -f ga.gmo && /usr/bin/msgmerge --for-msgfmt -o ga.gpo ga.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ga.gmo ga.gpo && rm -f ga.gpo
+ga.gpo: 37 translated messages.
+rm -f gl.gmo && /usr/bin/msgmerge --for-msgfmt -o gl.gpo gl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o gl.gmo gl.gpo && rm -f gl.gpo
+gl.gpo: 37 translated messages.
+rm -f gu.gmo && /usr/bin/msgmerge --for-msgfmt -o gu.gpo gu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o gu.gmo gu.gpo && rm -f gu.gpo
+gu.gpo: 37 translated messages.
+rm -f ha.gmo && /usr/bin/msgmerge --for-msgfmt -o ha.gpo ha.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ha.gmo ha.gpo && rm -f ha.gpo
+ha.gpo: 24 translated messages.
+rm -f he.gmo && /usr/bin/msgmerge --for-msgfmt -o he.gpo he.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o he.gmo he.gpo && rm -f he.gpo
+he.gpo: 37 translated messages.
+rm -f hi.gmo && /usr/bin/msgmerge --for-msgfmt -o hi.gpo hi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hi.gmo hi.gpo && rm -f hi.gpo
+hi.gpo: 37 translated messages.
+rm -f hr.gmo && /usr/bin/msgmerge --for-msgfmt -o hr.gpo hr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hr.gmo hr.gpo && rm -f hr.gpo
+hr.gpo: 37 translated messages.
+rm -f hu.gmo && /usr/bin/msgmerge --for-msgfmt -o hu.gpo hu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hu.gmo hu.gpo && rm -f hu.gpo
+hu.gpo: 37 translated messages.
+rm -f hy.gmo && /usr/bin/msgmerge --for-msgfmt -o hy.gpo hy.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o hy.gmo hy.gpo && rm -f hy.gpo
+hy.gpo: 37 translated messages.
+rm -f ia.gmo && /usr/bin/msgmerge --for-msgfmt -o ia.gpo ia.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ia.gmo ia.gpo && rm -f ia.gpo
+ia.gpo: 28 translated messages.
+rm -f id.gmo && /usr/bin/msgmerge --for-msgfmt -o id.gpo id.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o id.gmo id.gpo && rm -f id.gpo
+id.gpo: 37 translated messages.
+rm -f ie.gmo && /usr/bin/msgmerge --for-msgfmt -o ie.gpo ie.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ie.gmo ie.gpo && rm -f ie.gpo
+ie.gpo: 37 translated messages.
+rm -f ig.gmo && /usr/bin/msgmerge --for-msgfmt -o ig.gpo ig.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ig.gmo ig.gpo && rm -f ig.gpo
+ig.gpo: 24 translated messages.
+rm -f is.gmo && /usr/bin/msgmerge --for-msgfmt -o is.gpo is.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o is.gmo is.gpo && rm -f is.gpo
+is.gpo: 37 translated messages.
+rm -f it.gmo && /usr/bin/msgmerge --for-msgfmt -o it.gpo it.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o it.gmo it.gpo && rm -f it.gpo
+it.gpo: 37 translated messages.
+rm -f ja.gmo && /usr/bin/msgmerge --for-msgfmt -o ja.gpo ja.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ja.gmo ja.gpo && rm -f ja.gpo
+ja.gpo: 37 translated messages.
+rm -f jv.gmo && /usr/bin/msgmerge --for-msgfmt -o jv.gpo jv.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o jv.gmo jv.gpo && rm -f jv.gpo
+jv.gpo: 1 translated message.
+rm -f ka.gmo && /usr/bin/msgmerge --for-msgfmt -o ka.gpo ka.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ka.gmo ka.gpo && rm -f ka.gpo
+ka.gpo: 25 translated messages.
+rm -f kk.gmo && /usr/bin/msgmerge --for-msgfmt -o kk.gpo kk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o kk.gmo kk.gpo && rm -f kk.gpo
+kk.gpo: 37 translated messages.
+rm -f km.gmo && /usr/bin/msgmerge --for-msgfmt -o km.gpo km.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o km.gmo km.gpo && rm -f km.gpo
+km.gpo: 1 translated message.
+rm -f kn.gmo && /usr/bin/msgmerge --for-msgfmt -o kn.gpo kn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o kn.gmo kn.gpo && rm -f kn.gpo
+kn.gpo: 37 translated messages.
+rm -f ko.gmo && /usr/bin/msgmerge --for-msgfmt -o ko.gpo ko.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ko.gmo ko.gpo && rm -f ko.gpo
+ko.gpo: 37 translated messages.
+rm -f ks.gmo && /usr/bin/msgmerge --for-msgfmt -o ks.gpo ks.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ks.gmo ks.gpo && rm -f ks.gpo
+ks.gpo: 1 translated message.
+rm -f ku.gmo && /usr/bin/msgmerge --for-msgfmt -o ku.gpo ku.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ku.gmo ku.gpo && rm -f ku.gpo
+ku.gpo: 37 translated messages.
+rm -f ku_IQ.gmo && /usr/bin/msgmerge --for-msgfmt -o ku_IQ.gpo ku_IQ.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ku_IQ.gmo ku_IQ.gpo && rm -f ku_IQ.gpo
+ku_IQ.gpo: 21 translated messages.
+rm -f ky.gmo && /usr/bin/msgmerge --for-msgfmt -o ky.gpo ky.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ky.gmo ky.gpo && rm -f ky.gpo
+ky.gpo: 37 translated messages.
+rm -f kab.gmo && /usr/bin/msgmerge --for-msgfmt -o kab.gpo kab.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o kab.gmo kab.gpo && rm -f kab.gpo
+kab.gpo: 6 translated messages.
+rm -f la.gmo && /usr/bin/msgmerge --for-msgfmt -o la.gpo la.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o la.gmo la.gpo && rm -f la.gpo
+la.gpo: 3 translated messages.
+rm -f li.gmo && /usr/bin/msgmerge --for-msgfmt -o li.gpo li.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o li.gmo li.gpo && rm -f li.gpo
+li.gpo: 2 translated messages.
+rm -f lt.gmo && /usr/bin/msgmerge --for-msgfmt -o lt.gpo lt.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o lt.gmo lt.gpo && rm -f lt.gpo
+lt.gpo: 37 translated messages.
+rm -f lv.gmo && /usr/bin/msgmerge --for-msgfmt -o lv.gpo lv.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o lv.gmo lv.gpo && rm -f lv.gpo
+lv.gpo: 37 translated messages.
+rm -f mai.gmo && /usr/bin/msgmerge --for-msgfmt -o mai.gpo mai.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mai.gmo mai.gpo && rm -f mai.gpo
+mai.gpo: 37 translated messages.
+rm -f mg.gmo && /usr/bin/msgmerge --for-msgfmt -o mg.gpo mg.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mg.gmo mg.gpo && rm -f mg.gpo
+mg.gpo: 25 translated messages.
+rm -f mi.gmo && /usr/bin/msgmerge --for-msgfmt -o mi.gpo mi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mi.gmo mi.gpo && rm -f mi.gpo
+mi.gpo: 2 translated messages.
+rm -f mk.gmo && /usr/bin/msgmerge --for-msgfmt -o mk.gpo mk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mk.gmo mk.gpo && rm -f mk.gpo
+mk.gpo: 37 translated messages.
+rm -f ml.gmo && /usr/bin/msgmerge --for-msgfmt -o ml.gpo ml.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ml.gmo ml.gpo && rm -f ml.gpo
+ml.gpo: 37 translated messages.
+rm -f mn.gmo && /usr/bin/msgmerge --for-msgfmt -o mn.gpo mn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mn.gmo mn.gpo && rm -f mn.gpo
+mn.gpo: 37 translated messages.
+rm -f mr.gmo && /usr/bin/msgmerge --for-msgfmt -o mr.gpo mr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o mr.gmo mr.gpo && rm -f mr.gpo
+mr.gpo: 37 translated messages.
+rm -f ms.gmo && /usr/bin/msgmerge --for-msgfmt -o ms.gpo ms.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ms.gmo ms.gpo && rm -f ms.gpo
+ms.gpo: 37 translated messages.
+rm -f my.gmo && /usr/bin/msgmerge --for-msgfmt -o my.gpo my.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o my.gmo my.gpo && rm -f my.gpo
+my.gpo: 1 translated message.
+rm -f nah.gmo && /usr/bin/msgmerge --for-msgfmt -o nah.gpo nah.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nah.gmo nah.gpo && rm -f nah.gpo
+nah.gpo: 1 translated message.
+rm -f nb.gmo && /usr/bin/msgmerge --for-msgfmt -o nb.gpo nb.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nb.gmo nb.gpo && rm -f nb.gpo
+nb.gpo: 37 translated messages.
+rm -f nds.gmo && /usr/bin/msgmerge --for-msgfmt -o nds.gpo nds.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nds.gmo nds.gpo && rm -f nds.gpo
+nds.gpo: 37 translated messages.
+rm -f ne.gmo && /usr/bin/msgmerge --for-msgfmt -o ne.gpo ne.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ne.gmo ne.gpo && rm -f ne.gpo
+ne.gpo: 37 translated messages.
+rm -f nl.gmo && /usr/bin/msgmerge --for-msgfmt -o nl.gpo nl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nl.gmo nl.gpo && rm -f nl.gpo
+nl.gpo: 37 translated messages.
+rm -f nn.gmo && /usr/bin/msgmerge --for-msgfmt -o nn.gpo nn.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nn.gmo nn.gpo && rm -f nn.gpo
+nn.gpo: 37 translated messages.
+rm -f nso.gmo && /usr/bin/msgmerge --for-msgfmt -o nso.gpo nso.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o nso.gmo nso.gpo && rm -f nso.gpo
+nso.gpo: 3 translated messages.
+rm -f oc.gmo && /usr/bin/msgmerge --for-msgfmt -o oc.gpo oc.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o oc.gmo oc.gpo && rm -f oc.gpo
+oc.gpo: 37 translated messages.
+rm -f or.gmo && /usr/bin/msgmerge --for-msgfmt -o or.gpo or.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o or.gmo or.gpo && rm -f or.gpo
+or.gpo: 37 translated messages.
+rm -f pa.gmo && /usr/bin/msgmerge --for-msgfmt -o pa.gpo pa.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pa.gmo pa.gpo && rm -f pa.gpo
+pa.gpo: 37 translated messages.
+rm -f pl.gmo && /usr/bin/msgmerge --for-msgfmt -o pl.gpo pl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pl.gmo pl.gpo && rm -f pl.gpo
+pl.gpo: 37 translated messages.
+rm -f pms.gmo && /usr/bin/msgmerge --for-msgfmt -o pms.gpo pms.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pms.gmo pms.gpo && rm -f pms.gpo
+pms.gpo: 1 translated message.
+rm -f ps.gmo && /usr/bin/msgmerge --for-msgfmt -o ps.gpo ps.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ps.gmo ps.gpo && rm -f ps.gpo
+ps.gpo: 37 translated messages.
+rm -f pt_BR.gmo && /usr/bin/msgmerge --for-msgfmt -o pt_BR.gpo pt_BR.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pt_BR.gmo pt_BR.gpo && rm -f pt_BR.gpo
+pt_BR.gpo: 37 translated messages.
+rm -f pt.gmo && /usr/bin/msgmerge --for-msgfmt -o pt.gpo pt.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o pt.gmo pt.gpo && rm -f pt.gpo
+pt.gpo: 37 translated messages.
+rm -f ro.gmo && /usr/bin/msgmerge --for-msgfmt -o ro.gpo ro.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ro.gmo ro.gpo && rm -f ro.gpo
+ro.gpo: 37 translated messages.
+rm -f ru.gmo && /usr/bin/msgmerge --for-msgfmt -o ru.gpo ru.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ru.gmo ru.gpo && rm -f ru.gpo
+ru.gpo: 37 translated messages.
+rm -f rw.gmo && /usr/bin/msgmerge --for-msgfmt -o rw.gpo rw.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o rw.gmo rw.gpo && rm -f rw.gpo
+rw.gpo: 8 translated messages.
+rm -f sc.gmo && /usr/bin/msgmerge --for-msgfmt -o sc.gpo sc.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sc.gmo sc.gpo && rm -f sc.gpo
+sc.gpo: 1 translated message.
+rm -f si.gmo && /usr/bin/msgmerge --for-msgfmt -o si.gpo si.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o si.gmo si.gpo && rm -f si.gpo
+si.gpo: 37 translated messages.
+rm -f sk.gmo && /usr/bin/msgmerge --for-msgfmt -o sk.gpo sk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sk.gmo sk.gpo && rm -f sk.gpo
+sk.gpo: 37 translated messages.
+rm -f sl.gmo && /usr/bin/msgmerge --for-msgfmt -o sl.gpo sl.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sl.gmo sl.gpo && rm -f sl.gpo
+sl.gpo: 37 translated messages.
+rm -f sq.gmo && /usr/bin/msgmerge --for-msgfmt -o sq.gpo sq.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sq.gmo sq.gpo && rm -f sq.gpo
+sq.gpo: 37 translated messages.
+rm -f sr.gmo && /usr/bin/msgmerge --for-msgfmt -o sr.gpo sr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sr.gmo sr.gpo && rm -f sr.gpo
+sr.gpo: 37 translated messages.
+rm -f sr@latin.gmo && /usr/bin/msgmerge --for-msgfmt -o sr@latin.gpo sr@latin.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sr@latin.gmo sr@latin.gpo && rm -f sr@latin.gpo
+sr@latin.gpo: 37 translated messages.
+rm -f sv.gmo && /usr/bin/msgmerge --for-msgfmt -o sv.gpo sv.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o sv.gmo sv.gpo && rm -f sv.gpo
+sv.gpo: 37 translated messages.
+rm -f ta.gmo && /usr/bin/msgmerge --for-msgfmt -o ta.gpo ta.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ta.gmo ta.gpo && rm -f ta.gpo
+ta.gpo: 37 translated messages.
+rm -f te.gmo && /usr/bin/msgmerge --for-msgfmt -o te.gpo te.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o te.gmo te.gpo && rm -f te.gpo
+te.gpo: 37 translated messages.
+rm -f th.gmo && /usr/bin/msgmerge --for-msgfmt -o th.gpo th.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o th.gmo th.gpo && rm -f th.gpo
+th.gpo: 37 translated messages.
+rm -f tk.gmo && /usr/bin/msgmerge --for-msgfmt -o tk.gpo tk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o tk.gmo tk.gpo && rm -f tk.gpo
+tk.gpo: 2 translated messages.
+rm -f tr.gmo && /usr/bin/msgmerge --for-msgfmt -o tr.gpo tr.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o tr.gmo tr.gpo && rm -f tr.gpo
+tr.gpo: 37 translated messages.
+rm -f ts.gmo && /usr/bin/msgmerge --for-msgfmt -o ts.gpo ts.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ts.gmo ts.gpo && rm -f ts.gpo
+ts.gpo: 1 translated message.
+rm -f ug.gmo && /usr/bin/msgmerge --for-msgfmt -o ug.gpo ug.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ug.gmo ug.gpo && rm -f ug.gpo
+ug.gpo: 37 translated messages.
+rm -f uk.gmo && /usr/bin/msgmerge --for-msgfmt -o uk.gpo uk.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o uk.gmo uk.gpo && rm -f uk.gpo
+uk.gpo: 37 translated messages.
+rm -f ur.gmo && /usr/bin/msgmerge --for-msgfmt -o ur.gpo ur.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o ur.gmo ur.gpo && rm -f ur.gpo
+ur.gpo: 37 translated messages.
+rm -f uz.gmo && /usr/bin/msgmerge --for-msgfmt -o uz.gpo uz.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o uz.gmo uz.gpo && rm -f uz.gpo
+uz.gpo: 37 translated messages.
+rm -f vi.gmo && /usr/bin/msgmerge --for-msgfmt -o vi.gpo vi.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o vi.gmo vi.gpo && rm -f vi.gpo
+vi.gpo: 37 translated messages.
+rm -f wa.gmo && /usr/bin/msgmerge --for-msgfmt -o wa.gpo wa.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o wa.gmo wa.gpo && rm -f wa.gpo
+wa.gpo: 4 translated messages.
+rm -f xh.gmo && /usr/bin/msgmerge --for-msgfmt -o xh.gpo xh.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o xh.gmo xh.gpo && rm -f xh.gpo
+xh.gpo: 22 translated messages.
+rm -f yo.gmo && /usr/bin/msgmerge --for-msgfmt -o yo.gpo yo.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o yo.gmo yo.gpo && rm -f yo.gpo
+yo.gpo: 24 translated messages.
+rm -f zh_CN.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_CN.gpo zh_CN.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_CN.gmo zh_CN.gpo && rm -f zh_CN.gpo
+zh_CN.gpo: 37 translated messages.
+rm -f zh_HK.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_HK.gpo zh_HK.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_HK.gmo zh_HK.gpo && rm -f zh_HK.gpo
+zh_HK.gpo: 37 translated messages.
+rm -f zh_TW.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_TW.gpo zh_TW.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_TW.gmo zh_TW.gpo && rm -f zh_TW.gpo
+zh_TW.gpo: 37 translated messages.
+rm -f zu.gmo && /usr/bin/msgmerge --for-msgfmt -o zu.gpo zu.po cafe-menus.pot && /usr/bin/msgfmt -c --statistics --verbose -o zu.gmo zu.gpo && rm -f zu.gpo
+zu.gpo: 3 translated messages.
+make[3]: Leaving directory '/rootdir/po'
+touch ./stamp-po
+make[2]: Leaving directory '/rootdir/po'
+Making all in libmenu
+make[2]: Entering directory '/rootdir/libmenu'
+  CC       entry-directories.lo
+  CC       cafemenu-tree.lo
+  CC       desktop-entries.lo
+  CC       menu-layout.lo
+  CC       menu-monitor.lo
+In file included from /usr/include/glib-2.0/glib/giochannel.h:36,
+                 from /usr/include/glib-2.0/glib.h:56,
+                 from menu-layout.h:25,
+                 from menu-layout.c:24:
+menu-layout.c: In function 'menu_layout_load':
+/usr/include/glib-2.0/glib/gstring.h:78:5: warning: ignoring return value of 'g_string_free_and_steal' declared with attribute 'warn_unused_result' [-Wunused-result]
+   74 |   (__builtin_constant_p (free_segment) ?        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   75 |     ((free_segment) ?                           \
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   76 |       (g_string_free) ((str), (free_segment)) : \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   77 |       g_string_free_and_steal (str))            \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   78 |     :                                           \
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   79 |     (g_string_free) ((str), (free_segment)))
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu-layout.c:2348:3: note: in expansion of macro 'g_string_free'
+ 2348 |   g_string_free (str, FALSE);
+      |   ^~~~~~~~~~~~~
+menu-monitor.c:168:3: warning: Value stored to 'event' is never read [deadcode.DeadStores]
+  168 |   event = MENU_MONITOR_EVENT_INVALID;
+      |   ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+  CC       menu-util.lo
+cafemenu-tree.c:832:12: warning: This statement is never executed [alpha.deadcode.UnreachableCode]
+  832 |     return NULL;
+      |            ^~~~
+/usr/lib/llvm-21/lib/clang/21/include/__stddef_null.h:26:22: note: expanded from macro 'NULL'
+   26 | #define NULL ((void*)0)
+      |                      ^
+1 warning generated.
+menu-layout.c:566:20: warning: Access to field 'prev' results in a dereference of a null pointer (loaded from field 'next') [core.NullDereference]
+  566 |   node->next->prev = node->prev;
+      |         ~~~~       ^
+menu-layout.c:2083:15: warning: Value stored to 'prev' is never read [deadcode.DeadStores]
+ 2083 |               prev = child;
+      |               ^      ~~~~~
+menu-layout.c:2161:9: warning: This statement is never executed [alpha.deadcode.UnreachableCode]
+ 2161 |         goto out;
+      |         ^~~~~~~~
+3 warnings generated.
+entry-directories.c:397:22: warning: Use of memory after it is freed [unix.Malloc]
+  397 |       dir->subdirs = g_slist_remove (dir->subdirs, subdir);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+  CCLD     libcafe-menu.la
+  GISCAN   CafeMenu-2.0.gir
+/rootdir/libmenu/tmp-introspectknqqui73/CafeMenu-2.0.c:89:13: warning: File position of the stream might be 'indeterminate' after a failed operation. Can cause undefined behavior [unix.Stream]
+   89 |       ret = fread (&byte, 1, 1, input);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/rootdir/libmenu/tmp-introspectknqqui73/CafeMenu-2.0.c:89:13: warning: Read function called when stream is in EOF state. Function has no effect [unix.Stream]
+   89 |       ret = fread (&byte, 1, 1, input);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/rootdir/libmenu/tmp-introspectknqqui73/CafeMenu-2.0.c:239:11: warning: This statement is never executed [alpha.deadcode.UnreachableCode]
+  239 |           break;
+      |           ^~~~~
+/rootdir/libmenu/tmp-introspectknqqui73/CafeMenu-2.0.c:246:11: warning: This statement is never executed [alpha.deadcode.UnreachableCode]
+  246 |           break;
+      |           ^~~~~
+4 warnings generated.
+  GICOMP   CafeMenu-2.0.gir
+make[2]: Leaving directory '/rootdir/libmenu'
+Making all in desktop-directories
+make[2]: Entering directory '/rootdir/desktop-directories'
+  GEN      cafe-audio-video.directory
+  GEN      cafe-development.directory
+  GEN      cafe-education.directory
+  GEN      cafe-game.directory
+  GEN      cafe-graphics.directory
+  GEN      cafe-network.directory
+  GEN      cafe-office.directory
+  GEN      cafe-settings.directory
+  GEN      cafe-settings-system.directory
+  GEN      cafe-system-tools.directory
+  GEN      cafe-utility.directory
+  GEN      cafe-utility-accessibility.directory
+  GEN      cafe-other.directory
+  GEN      cafe-menu-applications.directory
+  GEN      cafe-menu-system.directory
+  GEN      cafe-hardware.directory
+  GEN      cafe-internet-and-network.directory
+  GEN      cafe-look-and-feel.directory
+  GEN      cafe-personal.directory
+  GEN      cafe-system.directory
+make[2]: Leaving directory '/rootdir/desktop-directories'
+Making all in layout
+make[2]: Entering directory '/rootdir/layout'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/rootdir/layout'
+Making all in util
+make[2]: Entering directory '/rootdir/util'
+  CC       test-menu-spec.o
+  CCLD     cafe-menu-spec-test
+make[2]: Leaving directory '/rootdir/util'
+make[2]: Entering directory '/rootdir'
+make[2]: Leaving directory '/rootdir'
+make[1]: Leaving directory '/rootdir'
+scan-build: Analysis run complete.
+scan-build: 9 bugs found.
+scan-build: Run 'scan-view /rootdir/html-report/2026-07-19-124449-11079-1' to examine bug reports.
+Making check in po
+make[1]: Entering directory '/rootdir/po'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/po'
+Making check in libmenu
+make[1]: Entering directory '/rootdir/libmenu'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/libmenu'
+Making check in desktop-directories
+make[1]: Entering directory '/rootdir/desktop-directories'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/desktop-directories'
+Making check in layout
+make[1]: Entering directory '/rootdir/layout'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/layout'
+Making check in util
+make[1]: Entering directory '/rootdir/util'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/util'
+make[1]: Entering directory '/rootdir'
+make[1]: Leaving directory '/rootdir'
+Listing... 0%Listing... 0%Listing... 0%              apt/testing,now 3.3.1 amd64 [installed,automatic]
+aptitude-common/testing,now 0.8.13-8.1 all [installed,automatic]
+aptitude/testing,now 0.8.13-8.1 amd64 [installed]
+autoconf-archive/testing,now 20241016-3 all [installed]
+autoconf/testing,now 2.73-2 all [installed]
+automake/testing,now 1:1.18.1-4 all [installed,automatic]
+autopoint/testing,now 1.0-3 all [installed]
+autotools-dev/testing,now 20240727.1+nmu1 all [installed,automatic]
+base-files/testing,now 14.2 amd64 [installed,automatic]
+base-passwd/testing,now 3.6.8 amd64 [installed,automatic]
+bash-completion/testing,now 1:2.16.0-8 all [installed,automatic]
+bash/testing,now 5.3-3 amd64 [installed,automatic]
+binfmt-support/testing,now 2.2.2-8 amd64 [installed,automatic]
+binutils-common/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+binutils-x86-64-linux-gnu/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+binutils/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+bsdutils/testing,now 1:2.42.2-2 amd64 [installed,automatic]
+build-essential/testing,now 12.12 amd64 [installed,automatic]
+bzip2/testing,now 1.0.8-6+b2 amd64 [installed,automatic]
+ca-certificates/testing,now 20260601 all [installed,automatic]
+clang-21/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+clang-tools-21/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+clang-tools/testing,now 1:21.1.6-71+b1 amd64 [installed]
+clang/testing,now 1:21.1.6-71+b1 amd64 [installed]
+coreutils/testing,now 9.10-1 amd64 [installed,automatic]
+cpp-15-x86-64-linux-gnu/testing,now 15.3.0-1 amd64 [installed,automatic]
+cpp-15/testing,now 15.3.0-1 amd64 [installed,automatic]
+cpp-x86-64-linux-gnu/testing,now 4:15.2.0-5 amd64 [installed,automatic]
+cpp/testing,now 4:15.2.0-5 amd64 [installed,automatic]
+cppcheck/testing,now 2.21.0-1 amd64 [installed]
+curl/testing,now 8.20.0-5 amd64 [installed,automatic]
+dash/testing,now 0.5.12-12 amd64 [installed,automatic]
+dbus-bin/testing,now 1.16.2-5+b1 amd64 [installed,automatic]
+dbus-daemon/testing,now 1.16.2-5+b1 amd64 [installed,automatic]
+dbus-session-bus-common/testing,now 1.16.2-5 all [installed,automatic]
+dbus-system-bus-common/testing,now 1.16.2-5 all [installed,automatic]
+dbus/testing,now 1.16.2-5+b1 amd64 [installed,automatic]
+debconf/testing,now 1.5.92 all [installed,automatic]
+debian-archive-keyring/testing,now 2025.1 all [installed,automatic]
+debianutils/testing,now 5.23.2 amd64 [installed,automatic]
+diffutils/testing,now 1:3.12-1 amd64 [installed,automatic]
+dmsetup/testing,now 2:1.02.205-2+b2 amd64 [installed,automatic]
+dpkg-dev/testing,now 1.23.7 all [installed,automatic]
+dpkg/testing,now 1.23.7 amd64 [installed,automatic]
+expect/testing,now 5.45.4-7 amd64 [installed]
+fakeroot/testing,now 2.1.4-1 amd64 [installed,automatic]
+file/testing,now 1:5.47-4 amd64 [installed,automatic]
+findutils/testing,now 4.10.0-4 amd64 [installed,automatic]
+fontconfig-config/testing,now 2.17.1-5 amd64 [installed,automatic]
+fonts-dejavu-core/testing,now 2.37-9 all [installed,automatic]
+fonts-dejavu-mono/testing,now 2.37-9 all [installed,automatic]
+g++-15-x86-64-linux-gnu/testing,now 15.3.0-1 amd64 [installed,automatic]
+g++-15/testing,now 15.3.0-1 amd64 [installed,automatic]
+g++-x86-64-linux-gnu/testing,now 4:15.2.0-5 amd64 [installed,automatic]
+g++/testing,now 4:15.2.0-5 amd64 [installed,automatic]
+gcc-15-base/testing,now 15.3.0-1 amd64 [installed,automatic]
+gcc-15-x86-64-linux-gnu/testing,now 15.3.0-1 amd64 [installed,automatic]
+gcc-15/testing,now 15.3.0-1 amd64 [installed,automatic]
+gcc-16-base/testing,now 16.1.0-2 amd64 [installed,automatic]
+gcc-x86-64-linux-gnu/testing,now 4:15.2.0-5 amd64 [installed,automatic]
+gcc/testing,now 4:15.2.0-5 amd64 [installed]
+gettext-base/testing,now 1.0-3 amd64 [installed,automatic]
+gettext/testing,now 1.0-3 amd64 [installed,automatic]
+gir1.2-freedesktop-dev/testing,now 1.86.0-6+b2 amd64 [installed,automatic]
+gir1.2-freedesktop/testing,now 1.86.0-6+b2 amd64 [installed,automatic]
+gir1.2-girepository-2.0-dev/testing,now 1.86.0-6+b2 amd64 [installed,automatic]
+gir1.2-girepository-2.0/testing,now 1.86.0-6+b2 amd64 [installed,automatic]
+gir1.2-glib-2.0-dev/testing,now 2.88.2-1 amd64 [installed,automatic]
+gir1.2-glib-2.0/testing,now 2.88.2-1 amd64 [installed,automatic]
+girepository-tools/testing,now 2.88.2-1 amd64 [installed,automatic]
+git-man/testing,now 1:2.53.0-1 all [installed,automatic]
+git/testing,now 1:2.53.0-1 amd64 [installed]
+gobject-introspection-bin/testing,now 1.86.0-6+b2 amd64 [installed,automatic]
+gobject-introspection/testing,now 1.86.0-6+b2 amd64 [installed]
+grep/testing,now 3.12-1 amd64 [installed,automatic]
+gzip/testing,now 1.13-1 amd64 [installed,automatic]
+hostname/testing,now 3.25 amd64 [installed,automatic]
+init-system-helpers/testing,now 1.69 all [installed,automatic]
+intltool/testing,now 0.51.0-7 all [installed]
+krb5-locales/testing,now 1.22.1-3 all [installed,automatic]
+less/testing,now 668-1 amd64 [installed,automatic]
+lib32gcc-s1/testing,now 16.1.0-2 amd64 [installed,automatic]
+lib32stdc++6/testing,now 16.1.0-2 amd64 [installed,automatic]
+libacl1/testing,now 2.4.0-1 amd64 [installed,automatic]
+libalgorithm-diff-perl/testing,now 1.201-1 all [installed,automatic]
+libalgorithm-diff-xs-perl/testing,now 0.04-9 amd64 [installed,automatic]
+libalgorithm-merge-perl/testing,now 0.08-5 all [installed,automatic]
+libapparmor1/testing,now 4.1.7-4 amd64 [installed,automatic]
+libapt-pkg7.0/testing,now 3.3.1 amd64 [installed,automatic]
+libasan8/testing,now 16.1.0-2 amd64 [installed,automatic]
+libatomic1/testing,now 16.1.0-2 amd64 [installed,automatic]
+libattr1/testing,now 1:2.6.0-1 amd64 [installed,automatic]
+libaudit-common/testing,now 1:4.1.2-1 all [installed,automatic]
+libaudit1/testing,now 1:4.1.2-1+b1 amd64 [installed,automatic]
+libauthen-sasl-perl/testing,now 2.2000-1 all [installed,automatic]
+libbinutils/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+libblkid-dev/testing,now 2.42.2-2 amd64 [installed,automatic]
+libblkid1/testing,now 2.42.2-2 amd64 [installed,automatic]
+libboost-iostreams1.90.0/testing,now 1.90.0-6 amd64 [installed,automatic]
+libbpf1/testing,now 1:1.7.0-1 amd64 [installed,automatic]
+libbrotli1/testing,now 1.2.0-3 amd64 [installed,automatic]
+libbsd0/testing,now 0.12.2-3 amd64 [installed,automatic]
+libbz2-1.0/testing,now 1.0.8-6+b2 amd64 [installed,automatic]
+libc-bin/testing,now 2.42-17 amd64 [installed,automatic]
+libc-dev-bin/testing,now 2.42-17 amd64 [installed,automatic]
+libc-gconv-modules-extra/testing,now 2.42-17 amd64 [installed,automatic]
+libc6-dev/testing,now 2.42-17 amd64 [installed,automatic]
+libc6-i386/testing,now 2.42-17 amd64 [installed,automatic]
+libc6/testing,now 2.42-17 amd64 [installed,automatic]
+libcairo-gobject2/testing,now 1.18.4-3+b1 amd64 [installed,automatic]
+libcairo2/testing,now 1.18.4-3+b1 amd64 [installed,automatic]
+libcap-ng0/testing,now 0.9.3-1+b1 amd64 [installed,automatic]
+libcbor0.10/testing,now 0.10.2-2.1+b1 amd64 [installed,automatic]
+libcc1-0/testing,now 16.1.0-2 amd64 [installed,automatic]
+libclang-common-21-dev/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+libclang-cpp21/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+libclang-rt-21-dev/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+libclang1-21/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+libclone-perl/testing,now 0.50-1 amd64 [installed,automatic]
+libcom-err2/testing,now 1.47.4-1 amd64 [installed,automatic]
+libcrypt-urandom-perl/testing,now 0.55-1 amd64 [installed,automatic]
+libcrypt1/testing,now 1:4.5.1-1+b1 amd64 [installed,automatic]
+libcryptsetup12/testing,now 2:2.8.6-2 amd64 [installed,automatic]
+libctf-nobfd0/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+libctf0/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+libcurl3t64-gnutls/testing,now 8.20.0-5 amd64 [installed,automatic]
+libcurl4-gnutls/testing,now 8.20.0-5 amd64 [installed,automatic]
+libcurl4t64/testing,now 8.20.0-5 amd64 [installed,automatic]
+libcwidget4/testing,now 0.5.18-6+b3 amd64 [installed,automatic]
+libdata-dump-perl/testing,now 1.25-1 all [installed,automatic]
+libdb5.3t64/testing,now 5.3.28+dfsg2-11+b1 amd64 [installed,automatic]
+libdbus-1-3/testing,now 1.16.2-5+b1 amd64 [installed,automatic]
+libdebconfclient0/testing,now 0.283 amd64 [installed,automatic]
+libdevmapper1.02.1/testing,now 2:1.02.205-2+b2 amd64 [installed,automatic]
+libdpkg-perl/testing,now 1.23.7 all [installed,automatic]
+libedit2/testing,now 3.1-20260512-1 amd64 [installed,automatic]
+libelf1t64/testing,now 0.195-1 amd64 [installed,automatic]
+libencode-locale-perl/testing,now 1.05-3 all [installed,automatic]
+liberror-perl/testing,now 0.17030-1 all [installed,automatic]
+libexpat1/testing,now 2.8.2-1 amd64 [installed,automatic]
+libfakeroot/testing,now 2.1.4-1 amd64 [installed,automatic]
+libffi-dev/testing,now 3.7.1-2 amd64 [installed,automatic]
+libffi8/testing,now 3.7.1-2 amd64 [installed,automatic]
+libfido2-1/testing,now 1.17.0-1 amd64 [installed,automatic]
+libfile-fcntllock-perl/testing,now 0.22-4+b4 amd64 [installed,automatic]
+libfile-listing-perl/testing,now 6.16-1 all [installed,automatic]
+libfont-afm-perl/testing,now 1.20-4 all [installed,automatic]
+libfontconfig1/testing,now 2.17.1-5 amd64 [installed,automatic]
+libfreetype6/testing,now 2.14.3+dfsg-1 amd64 [installed,automatic]
+libgc1/testing,now 1:8.2.12-1 amd64 [installed,automatic]
+libgcc-15-dev/testing,now 15.3.0-1 amd64 [installed,automatic]
+libgcc-s1/testing,now 16.1.0-2 amd64 [installed,automatic]
+libgcrypt20/testing,now 1.12.2-1 amd64 [installed,automatic]
+libgdbm-compat4t64/testing,now 1.26-1+b2 amd64 [installed,automatic]
+libgdbm6t64/testing,now 1.26-1+b2 amd64 [installed,automatic]
+libgio-2.0-dev-bin/testing,now 2.88.2-1 amd64 [installed,automatic]
+libgio-2.0-dev/testing,now 2.88.2-1 amd64 [installed,automatic]
+libgirepository-1.0-1/testing,now 1.86.0-6+b2 amd64 [installed,automatic]
+libgirepository-1.0-dev/testing,now 1.86.0-6+b2 amd64 [installed,automatic]
+libgirepository-2.0-0/testing,now 2.88.2-1 amd64 [installed,automatic]
+libgirepository1.0-dev/testing,now 1.86.0-6+b2 amd64 [installed]
+libglib2.0-0t64/testing,now 2.88.2-1 amd64 [installed,automatic]
+libglib2.0-bin/testing,now 2.88.2-1 amd64 [installed,automatic]
+libglib2.0-data/testing,now 2.88.2-1 all [installed,automatic]
+libglib2.0-dev-bin/testing,now 2.88.2-1 amd64 [installed,automatic]
+libglib2.0-dev/testing,now 2.88.2-1 amd64 [installed]
+libgmp10/testing,now 2:6.3.0+dfsg-5+b2 amd64 [installed,automatic]
+libgnutls30t64/testing,now 3.8.13-1 amd64 [installed,automatic]
+libgomp1/testing,now 16.1.0-2 amd64 [installed,automatic]
+libgpg-error-l10n/testing,now 1.61-3 all [installed,automatic]
+libgpg-error0/testing,now 1.61-3 amd64 [installed,automatic]
+libgpm2/testing,now 1.20.7-12+b2 amd64 [installed,automatic]
+libgprofng0/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+libgssapi-krb5-2/testing,now 1.22.1-3 amd64 [installed,automatic]
+libhogweed6t64/testing,now 3.10.2-1+b1 amd64 [installed,automatic]
+libhtml-form-perl/testing,now 6.13-1 all [installed,automatic]
+libhtml-format-perl/testing,now 2.16-2 all [installed,automatic]
+libhtml-parser-perl/testing,now 3.83-2 amd64 [installed,automatic]
+libhtml-tagset-perl/testing,now 3.24-1 all [installed,automatic]
+libhtml-tree-perl/testing,now 5.07-3 all [installed,automatic]
+libhttp-cookies-perl/testing,now 6.11-1 all [installed,automatic]
+libhttp-daemon-perl/testing,now 6.17-1 all [installed,automatic]
+libhttp-date-perl/testing,now 6.08-1 all [installed,automatic]
+libhttp-message-perl/testing,now 7.02-1 all [installed,automatic]
+libhttp-negotiate-perl/testing,now 6.01-2 all [installed,automatic]
+libhwasan0/testing,now 16.1.0-2 amd64 [installed,automatic]
+libidn2-0/testing,now 2.3.8-5 amd64 [installed,automatic]
+libio-compress-brotli-perl/testing,now 0.019000-1 amd64 [installed,automatic]
+libio-html-perl/testing,now 1.004-3 all [installed,automatic]
+libio-socket-ssl-perl/testing,now 2.099-1 all [installed,automatic]
+libisl23/testing,now 0.28-1 amd64 [installed,automatic]
+libitm1/testing,now 16.1.0-2 amd64 [installed,automatic]
+libjansson4/testing,now 2.15.1-1 amd64 [installed,automatic]
+libjson-c5/testing,now 0.19+ds-1 amd64 [installed,automatic]
+libk5crypto3/testing,now 1.22.1-3 amd64 [installed,automatic]
+libkeyutils1/testing,now 1.6.3-6+b2 amd64 [installed,automatic]
+libkmod2/testing,now 34.2-2+b2 amd64 [installed,automatic]
+libkrb5-3/testing,now 1.22.1-3 amd64 [installed,automatic]
+libkrb5support0/testing,now 1.22.1-3 amd64 [installed,automatic]
+libldap-common/testing,now 2.6.10+dfsg-1 all [installed,automatic]
+libldap2/testing,now 2.6.10+dfsg-1+b2 amd64 [installed,automatic]
+libllvm21/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+liblocale-gettext-perl/testing,now 1.07-10 amd64 [installed,automatic]
+liblsan0/testing,now 16.1.0-2 amd64 [installed,automatic]
+libltdl-dev/testing,now 2.5.4-11 amd64 [installed,automatic]
+libltdl7/testing,now 2.5.4-11 amd64 [installed,automatic]
+liblwp-mediatypes-perl/testing,now 6.04-2 all [installed,automatic]
+liblwp-protocol-https-perl/testing,now 6.15-1 all [installed,automatic]
+liblz4-1/testing,now 1.10.0-10 amd64 [installed,automatic]
+liblzma-dev/testing,now 5.8.3-1 amd64 [installed,automatic]
+liblzma5/testing,now 5.8.3-1 amd64 [installed,automatic]
+libmagic-mgc/testing,now 1:5.47-4 amd64 [installed,automatic]
+libmagic1t64/testing,now 1:5.47-4 amd64 [installed,automatic]
+libmailtools-perl/testing,now 2.22-1 all [installed,automatic]
+libmd0/testing,now 1.2.0-2 amd64 [installed,automatic]
+libmount-dev/testing,now 2.42.2-2 amd64 [installed,automatic]
+libmount1/testing,now 2.42.2-2 amd64 [installed,automatic]
+libmpc3/testing,now 1.3.1-3 amd64 [installed,automatic]
+libmpfr6/testing,now 4.2.2-3 amd64 [installed,automatic]
+libncurses-dev/testing,now 6.6+20260608-2 amd64 [installed,automatic]
+libncurses6/testing,now 6.6+20260608-2 amd64 [installed,automatic]
+libncursesw6/testing,now 6.6+20260608-2 amd64 [installed,automatic]
+libnet-http-perl/testing,now 6.24-1 all [installed,automatic]
+libnet-smtp-ssl-perl/testing,now 1.04-2 all [installed,automatic]
+libnet-ssleay-perl/testing,now 1.96-1 amd64 [installed,automatic]
+libnettle8t64/testing,now 3.10.2-1+b1 amd64 [installed,automatic]
+libnghttp2-14/testing,now 1.69.0-1 amd64 [installed,automatic]
+libnghttp3-9/testing,now 1.15.0-1 amd64 [installed,automatic]
+libngtcp2-16/testing,now 1.22.1-1 amd64 [installed,automatic]
+libngtcp2-crypto-gnutls8/testing,now 1.22.1-1 amd64 [installed,automatic]
+libngtcp2-crypto-ossl0/testing,now 1.22.1-1 amd64 [installed,automatic]
+libobjc-15-dev/testing,now 15.3.0-1 amd64 [installed,automatic]
+libobjc4/testing,now 16.1.0-2 amd64 [installed,automatic]
+libp11-kit0/testing,now 0.26.4-1 amd64 [installed,automatic]
+libpam-modules-bin/testing,now 1.7.0-8 amd64 [installed,automatic]
+libpam-modules/testing,now 1.7.0-8 amd64 [installed,automatic]
+libpam-runtime/testing,now 1.7.0-8 all [installed,automatic]
+libpam0g/testing,now 1.7.0-8 amd64 [installed,automatic]
+libpcre2-16-0/testing,now 10.46-1+b2 amd64 [installed,automatic]
+libpcre2-32-0/testing,now 10.46-1+b2 amd64 [installed,automatic]
+libpcre2-8-0/testing,now 10.46-1+b2 amd64 [installed,automatic]
+libpcre2-dev/testing,now 10.46-1+b2 amd64 [installed,automatic]
+libpcre2-posix3/testing,now 10.46-1+b2 amd64 [installed,automatic]
+libperl5.40/testing,now 5.40.1-8 amd64 [installed,automatic]
+libpfm4/testing,now 4.13.0+git106-g3e4031b-1+b2 amd64 [installed,automatic]
+libpipeline1/testing,now 1.5.8-3 amd64 [installed,automatic]
+libpixman-1-0/testing,now 0.46.4-1+b2 amd64 [installed,automatic]
+libpkgconf7/testing,now 2.5.1-4 amd64 [installed,automatic]
+libpng16-16t64/testing,now 1.6.58-1 amd64 [installed,automatic]
+libpsl5t64/testing,now 0.23.0-1 amd64 [installed,automatic]
+libpython3-stdlib/testing,now 3.14.6-1 amd64 [installed,automatic]
+libpython3.14-minimal/testing,now 3.14.6-1 amd64 [installed,automatic]
+libpython3.14-stdlib/testing,now 3.14.6-1 amd64 [installed,automatic]
+libquadmath0/testing,now 16.1.0-2 amd64 [installed,automatic]
+libreadline8t64/testing,now 8.3-4 amd64 [installed,automatic]
+libsasl2-2/testing,now 2.1.28+dfsg1-11 amd64 [installed,automatic]
+libsasl2-modules-db/testing,now 2.1.28+dfsg1-11 amd64 [installed,automatic]
+libsasl2-modules/testing,now 2.1.28+dfsg1-11 amd64 [installed,automatic]
+libseccomp2/testing,now 2.6.1-1 amd64 [installed,automatic]
+libselinux-dev/testing,now 3.11-2 amd64 [installed,automatic]
+libselinux1/testing,now 3.11-2 amd64 [installed,automatic]
+libsemanage-common/testing,now 3.11-1 all [installed,automatic]
+libsemanage2/testing,now 3.11-1 amd64 [installed,automatic]
+libsepol-dev/testing,now 3.11-1 amd64 [installed,automatic]
+libsepol2/testing,now 3.11-1 amd64 [installed,automatic]
+libsframe3/testing,now 2.46.90.20260712-1 amd64 [installed,automatic]
+libsigc++-2.0-0v5/testing,now 2.12.1-4+b1 amd64 [installed,automatic]
+libsmartcols1/testing,now 2.42.2-2 amd64 [installed,automatic]
+libsqlite3-0/testing,now 3.46.1-9+b1 amd64 [installed,automatic]
+libssh2-1t64/testing,now 1.11.1-4 amd64 [installed,automatic]
+libssl3t64/testing,now 3.6.3-1 amd64 [installed,automatic]
+libstdc++-15-dev/testing,now 15.3.0-1 amd64 [installed,automatic]
+libstdc++6/testing,now 16.1.0-2 amd64 [installed,automatic]
+libsysprof-capture-4-dev/testing,now 50.0-3 amd64 [installed,automatic]
+libsystemd-shared/testing,now 261.1-3 amd64 [installed,automatic]
+libsystemd0/testing,now 261.1-3 amd64 [installed,automatic]
+libtasn1-6/testing,now 4.21.0-2+b1 amd64 [installed,automatic]
+libtcl8.6/testing,now 8.6.18+dfsg-1 amd64 [installed,automatic]
+libtcl9.0/testing,now 9.0.4+dfsg-1 amd64 [installed,automatic]
+libtimedate-perl/testing,now 2.3500-1 all [installed,automatic]
+libtinfo6/testing,now 6.6+20260608-2 amd64 [installed,automatic]
+libtinyxml2-11/testing,now 11.0.0+dfsg-1+b3 amd64 [installed,automatic]
+libtommath1/testing,now 1.3.0-1+b2 amd64 [installed,automatic]
+libtool/testing,now 2.5.4-11 all [installed]
+libtry-tiny-perl/testing,now 0.32-1 all [installed,automatic]
+libtsan2/testing,now 16.1.0-2 amd64 [installed,automatic]
+libtss2-esys-3.0.2-0t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libtss2-mu-4.0.1-0t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libtss2-rc0t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libtss2-sys1t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libtss2-tcti-cmd0t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libtss2-tcti-device0t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libtss2-tcti-mssim0t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libtss2-tcti-swtpm0t64/testing,now 4.1.3-7 amd64 [installed,automatic]
+libubsan1/testing,now 16.1.0-2 amd64 [installed,automatic]
+libudev1/testing,now 261.1-3 amd64 [installed,automatic]
+libunistring5/testing,now 1.4.2-1 amd64 [installed,automatic]
+liburi-perl/testing,now 5.35-1 all [installed,automatic]
+libuuid1/testing,now 2.42.2-2 amd64 [installed,automatic]
+libwww-perl/testing,now 6.83-1 all [installed,automatic]
+libwww-robotrules-perl/testing,now 6.03-1 all [installed,automatic]
+libx11-6/testing,now 2:1.8.13-1 amd64 [installed,automatic]
+libx11-data/testing,now 2:1.8.13-1 all [installed,automatic]
+libxapian30/testing,now 1.4.31-2 amd64 [installed,automatic]
+libxau6/testing,now 1:1.0.11-1+b2 amd64 [installed,automatic]
+libxcb-render0/testing,now 1.17.0-2+b2 amd64 [installed,automatic]
+libxcb-shm0/testing,now 1.17.0-2+b2 amd64 [installed,automatic]
+libxcb1/testing,now 1.17.0-2+b2 amd64 [installed,automatic]
+libxdmcp6/testing,now 1:1.1.5-2+b1 amd64 [installed,automatic]
+libxext6/testing,now 2:1.3.4-1+b4 amd64 [installed,automatic]
+libxml-parser-perl/testing,now 2.47-2 amd64 [installed,automatic]
+libxml2-16/testing,now 2.15.3+dfsg-1 amd64 [installed,automatic]
+libxml2-dev/testing,now 2.15.3+dfsg-1 amd64 [installed,automatic]
+libxmuu1/testing,now 2:1.1.3-4+b1 amd64 [installed,automatic]
+libxrender1/testing,now 1:0.9.12-1+b2 amd64 [installed,automatic]
+libxxhash0/testing,now 0.8.3-2+b2 amd64 [installed,automatic]
+libyaml-0-2/testing,now 0.2.5-2+b1 amd64 [installed,automatic]
+libz3-4/testing,now 4.13.3-1.1 amd64 [installed,automatic]
+libz3-dev/testing,now 4.13.3-1.1 amd64 [installed,automatic]
+libzstd1/testing,now 1.5.7+dfsg-3+b2 amd64 [installed,automatic]
+linux-libc-dev/testing,now 7.1.3-1 all [installed,automatic]
+linux-sysctl-defaults/testing,now 4.15 all [installed,automatic]
+llvm-21-dev/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+llvm-21-linker-tools/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+llvm-21-runtime/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+llvm-21-tools/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+llvm-21/testing,now 1:21.1.8-7+b4 amd64 [installed,automatic]
+login.defs/testing,now 1:4.19.3-2 all [installed,automatic]
+login/testing,now 1:4.16.0-2+really2.42.2-2 amd64 [installed,automatic]
+m4/testing,now 1.4.21-1 amd64 [installed,automatic]
+make/testing,now 4.4.1-3 amd64 [installed]
+manpages-dev/testing,now 6.18-1 all [installed,automatic]
+manpages/testing,now 6.18-1 all [installed,automatic]
+mawk/testing,now 1.3.4.20260302-1 amd64 [installed,automatic]
+media-types/testing,now 14.0.0 all [installed,automatic]
+mount/testing,now 2.42.2-2 amd64 [installed,automatic]
+native-architecture/testing,now 0.2.6 all [installed,automatic]
+ncurses-base/testing,now 6.6+20260608-2 all [installed,automatic]
+ncurses-bin/testing,now 6.6+20260608-2 amd64 [installed,automatic]
+netbase/testing,now 6.5 all [installed,automatic]
+openssh-client/testing,now 1:10.3p1-5 amd64 [installed,automatic]
+openssl-provider-legacy/testing,now 3.6.3-1 amd64 [installed,automatic]
+openssl/testing,now 3.6.3-1 amd64 [installed,automatic]
+passwd/testing,now 1:4.19.3-2 amd64 [installed,automatic]
+patch/testing,now 2.8-2 amd64 [installed,automatic]
+perl-base/testing,now 5.40.1-8 amd64 [installed,automatic]
+perl-modules-5.40/testing,now 5.40.1-8 all [installed,automatic]
+perl-openssl-defaults/testing,now 7+b2 amd64 [installed,automatic]
+perl/testing,now 5.40.1-8 amd64 [installed,automatic]
+pkgconf-bin/testing,now 2.5.1-4 amd64 [installed,automatic]
+pkgconf/testing,now 2.5.1-4 amd64 [installed,automatic]
+publicsuffix/testing,now 20260624.0617-1 all [installed,automatic]
+python3-autocommand/testing,now 2.2.2-4 all [installed,automatic]
+python3-inflect/testing,now 7.5.0-2 all [installed,automatic]
+python3-jaraco.context/testing,now 6.0.1-2 all [installed,automatic]
+python3-jaraco.functools/testing,now 4.1.0-1 all [installed,automatic]
+python3-jaraco.text/testing,now 4.0.0-1 all [installed,automatic]
+python3-mako/testing,now 1.3.10-3 all [installed,automatic]
+python3-markdown/testing,now 3.10.2-2 all [installed,automatic]
+python3-markupsafe/testing,now 3.0.3-1+b1 amd64 [installed,automatic]
+python3-minimal/testing,now 3.14.6-1 amd64 [installed,automatic]
+python3-more-itertools/testing,now 10.8.0-1 all [installed,automatic]
+python3-packaging/testing,now 26.2-2 all [installed,automatic]
+python3-pkg-resources/testing,now 78.1.1-0.1 all [installed,automatic]
+python3-pygments/testing,now 2.20.0+dfsg-2 all [installed,automatic]
+python3-setuptools/testing,now 78.1.1-0.1 all [installed,automatic]
+python3-typeguard/testing,now 4.4.4-3 all [installed,automatic]
+python3-typing-extensions/testing,now 4.16.0-3 all [installed,automatic]
+python3-yaml/testing,now 6.0.3-1 amd64 [installed,automatic]
+python3-zipp/testing,now 3.23.0-1 all [installed,automatic]
+python3.14-minimal/testing,now 3.14.6-1 amd64 [installed,automatic]
+python3.14/testing,now 3.14.6-1 amd64 [installed,automatic]
+python3/testing,now 3.14.6-1 amd64 [installed,automatic]
+readline-common/testing,now 8.3-4 all [installed,automatic]
+rpcsvc-proto/testing,now 1.4.4-1 amd64 [installed,automatic]
+sed/testing,now 4.9-3 amd64 [installed,automatic]
+sensible-utils/testing,now 0.0.26 all [installed,automatic]
+shared-mime-info/testing,now 2.4-5+b3 amd64 [installed,automatic]
+sq/testing,now 1.3.1-11 amd64 [installed,automatic]
+sqv/testing,now 1.4.0-1 amd64 [installed,automatic]
+systemd-cryptsetup/testing,now 261.1-3 amd64 [installed,automatic]
+systemd-timesyncd/testing,now 261.1-3 amd64 [installed,automatic]
+systemd-tpm/testing,now 261.1-3 amd64 [installed,automatic]
+systemd/testing,now 261.1-3 amd64 [installed,automatic]
+sysvinit-utils/testing,now 3.18-1 amd64 [installed,automatic]
+tar/testing,now 1.35+dfsg-4 amd64 [installed,automatic]
+tcl-expect/testing,now 5.45.4-7 amd64 [installed,automatic]
+tcl8.6/testing,now 8.6.18+dfsg-1 amd64 [installed,automatic]
+tcl9.0/testing,now 9.0.4+dfsg-1 amd64 [installed,automatic]
+tpm-udev/testing,now 4.1.3-7 all [installed,automatic]
+tzdata/testing,now 2026c-1 all [installed,automatic]
+util-linux/testing,now 2.42.2-2 amd64 [installed,automatic]
+uuid-dev/testing,now 2.42.2-2 amd64 [installed,automatic]
+xauth/testing,now 1:1.1.2-1.1 amd64 [installed,automatic]
+xdg-user-dirs/testing,now 0.20-1 amd64 [installed,automatic]
+xz-utils/testing,now 5.8.3-1 amd64 [installed,automatic]
+zlib1g-dev/testing,now 1:1.3.dfsg+really1.3.2-3 amd64 [installed,automatic]
+zlib1g/testing,now 1:1.3.dfsg+really1.3.2-3 amd64 [installed,automatic]
+Errors detected in the build 0
+Warnings detected in the logs 19
+cppcheck defects detected in the logs 64
+TOTAL warnings detected in the logs 83
